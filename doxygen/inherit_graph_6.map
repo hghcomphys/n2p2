@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$a00832.html" title="Base class for all NNP applications. " alt="" coords="5,81,95,108"/>
+<area shape="rect" id="node2" href="$a00932.html" title="Collect and process large data sets. " alt="" coords="174,5,279,32"/>
+<area shape="rect" id="node4" href="$a00928.html" title="nnp::InterfaceLammps" alt="" coords="143,56,311,83"/>
+<area shape="rect" id="node5" href="$a00848.html" title="nnp::Prediction" alt="" coords="167,107,286,133"/>
+<area shape="rect" id="node6" href="$a00856.html" title="nnp::SetupAnalysis" alt="" coords="153,157,300,184"/>
+<area shape="rect" id="node3" href="$a00944.html" title="Training methods. " alt="" coords="359,5,464,32"/>
+</map>

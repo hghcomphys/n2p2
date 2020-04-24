@@ -1,0 +1,52 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp:
+
+File KalmanFilter.cpp
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/KalmanFilter.cpp``)
+----------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Eigen/LU``
+
+- ``KalmanFilter.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h`)
+
+- ``iostream``
+
+- ``stdexcept``
+
+- ``utility.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Eigen`
+

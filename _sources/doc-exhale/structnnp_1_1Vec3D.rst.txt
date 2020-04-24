@@ -1,0 +1,17 @@
+.. _exhale_struct_structnnp_1_1Vec3D:
+
+Struct Vec3D
+============
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: nnp::Vec3D
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -1,0 +1,36 @@
+.. _exhale_class_classnnp_1_1Training:
+
+Class Training
+==============
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structnnp_1_1Training_1_1UpdateCandidate`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public nnp::Dataset`` (:ref:`exhale_class_classnnp_1_1Dataset`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::Training
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

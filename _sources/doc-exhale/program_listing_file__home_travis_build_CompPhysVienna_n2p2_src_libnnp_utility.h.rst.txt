@@ -1,0 +1,93 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h:
+
+Program Listing for File utility.h
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/utility.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef UTILITY_H
+   #define UTILITY_H
+   
+   #include <cstdio>    // FILE
+   #include <fstream>   // std::ofstream
+   #include <map>       // std::map
+   #include <sstream>   // std::stringstream
+   #include <stdexcept> // std::range_error
+   #include <string>    // std::string
+   #include <vector>    // std::vector
+   
+   namespace nnp
+   {
+   
+   std::vector<std::string> split(std::string const& input,
+                                  char               delimiter = ' ');
+   std::string              trim(std::string const& line,
+                                 std::string const& whitespace = " \t");
+   std::string              reduce(std::string const& line,
+                                   std::string const& whitespace = " \t",
+                                   std::string const& fill = " ");
+   std::string              pad(std::string const& input,
+                                std::size_t        num,
+                                char               fill = ' ',
+                                bool               right = true);
+   std::string              strpr(const char* format, ...);
+   std::vector<std::string> createFileHeader(
+                               std::vector<std::string> const& title,
+                               std::vector<std::size_t> const& colLength,
+                               std::vector<std::string> const& colName,
+                               std::vector<std::string> const& colInfo,
+                               char const&                     commentChar = '#');
+   void                     appendLinesToFile(
+                                            std::ofstream&                 file,
+                                            std::vector<std::string> const lines);
+   void                     appendLinesToFile(
+                                            FILE* const&                   file,
+                                            std::vector<std::string> const lines);
+   template<typename K, typename V>
+   V const&                 safeFind(std::map<K, V> const&           stdMap,
+                                     typename
+                                     std::map<K, V>::key_type const& key)
+   {
+       if (stdMap.find(key) == stdMap.end())
+       {
+           std::stringstream message;
+           message << "ERROR: No map entry found for key \"";
+           message << key;
+           message << "\".\n";
+           throw std::range_error(message.str());
+       }
+       return stdMap.find(key)->second;
+   }
+   
+   template<typename T>
+   bool                     comparePointerTargets(T* lhs, T* rhs)
+   {
+       return ((*lhs) < (*rhs));
+   }
+   
+   double                   pow_int(double x, int n);
+   
+   }
+   
+   #endif

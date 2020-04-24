@@ -1,0 +1,152 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h:
+
+Program Listing for File SymmetryFunctionAngularWide.h
+======================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionAngularWide.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef SYMMETRYFUNCTIONANGULARWIDE_H
+   #define SYMMETRYFUNCTIONANGULARWIDE_H
+   
+   #include "SymmetryFunction.h"
+   #include <cstddef> // std::size_t
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   struct Atom;
+   class ElementMap;
+   class SymmetryFunctionStatistics;
+   
+   class SymmetryFunctionAngularWide : public SymmetryFunction
+   {
+   public:
+       SymmetryFunctionAngularWide(ElementMap const& elementMap);
+       bool         operator==(SymmetryFunction const& rhs) const;
+       bool         operator!=(SymmetryFunction const& rhs) const;
+       bool         operator<(SymmetryFunction const& rhs) const;
+       bool         operator>(SymmetryFunction const& rhs) const;
+       bool         operator<=(SymmetryFunction const& rhs) const;
+       bool         operator>=(SymmetryFunction const& rhs) const;
+       void         setParameters(std::string const& parameterString);
+       void         changeLengthUnit(double convLength);
+       std::string  getSettingsLine() const;
+       void         calculate(Atom& atom, bool const derivatives) const;
+       std::string  parameterLine() const;
+       std::vector<
+       std::string> parameterInfo() const;
+       bool         getUseIntegerPow() const;
+       std::size_t  getE1() const;
+       std::size_t  getE2() const;
+       int          getZetaInt() const;
+       double       getLambda() const;
+       double       getEta() const;
+       double       getZeta() const;
+       double       getRs() const;
+       double       calculateRadialPart(double distance) const;
+       double       calculateAngularPart(double angle) const;
+       bool         checkRelevantElement(std::size_t index) const;
+   
+   private:
+       bool        useIntegerPow;
+       std::size_t e1;
+       std::size_t e2;
+       int         zetaInt;
+       double      lambda;
+       double      eta;
+       double      zeta;
+       double      rs;
+   };
+   
+   // Inlined function definitions //
+   
+   inline bool SymmetryFunctionAngularWide::
+   operator!=(SymmetryFunction const& rhs) const
+   {
+       return !((*this) == rhs);
+   }
+   
+   inline bool SymmetryFunctionAngularWide::
+   operator>(SymmetryFunction const& rhs) const
+   {
+       return rhs < (*this);
+   }
+   
+   inline bool SymmetryFunctionAngularWide::
+   operator<=(SymmetryFunction const& rhs) const
+   {
+       return !((*this) > rhs);
+   }
+   
+   inline bool SymmetryFunctionAngularWide::
+   operator>=(SymmetryFunction const& rhs) const
+   {
+       return !((*this) < rhs);
+   }
+   
+   inline bool SymmetryFunctionAngularWide::getUseIntegerPow() const
+   {
+       return useIntegerPow;
+   }
+   
+   inline std::size_t SymmetryFunctionAngularWide::getE1() const
+   {
+       return e1;
+   }
+   
+   inline std::size_t SymmetryFunctionAngularWide::getE2() const
+   {
+       return e2;
+   }
+   
+   inline int SymmetryFunctionAngularWide::getZetaInt() const
+   {
+       return zetaInt;
+   }
+   
+   inline double SymmetryFunctionAngularWide::getLambda() const
+   {
+       return lambda;
+   }
+   
+   inline double SymmetryFunctionAngularWide::getEta() const
+   {
+       return eta;
+   }
+   
+   inline double SymmetryFunctionAngularWide::getZeta() const
+   {
+       return zeta;
+   }
+   
+   inline double SymmetryFunctionAngularWide::getRs() const
+   {
+       return rs;
+   }
+   
+   }
+   
+   #endif

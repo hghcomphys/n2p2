@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File Training.h &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File Training.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-training-h">
+<span id="program-listing-file-home-travis-build-compphysvienna-n2p2-src-libnnptrain-training-h"></span><h1>Program Listing for File Training.h<a class="headerlink" href="#program-listing-for-file-training-h" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnptrain-training-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Training.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// n2p2 - A neural network potential package</span>
+<span class="c1">// Copyright (C) 2018 Andreas Singraber (University of Vienna)</span>
+<span class="c1">//</span>
+<span class="c1">// This program is free software: you can redistribute it and/or modify</span>
+<span class="c1">// it under the terms of the GNU General Public License as published by</span>
+<span class="c1">// the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1">// (at your option) any later version.</span>
+<span class="c1">//</span>
+<span class="c1">// This program is distributed in the hope that it will be useful,</span>
+<span class="c1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1">// GNU General Public License for more details.</span>
+<span class="c1">//</span>
+<span class="c1">// You should have received a copy of the GNU General Public License</span>
+<span class="c1">// along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
+
+<span class="cp">#ifndef TRAINING_H</span>
+<span class="cp">#define TRAINING_H</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;Atom.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Dataset.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Updater.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstddef&gt; // std::size_t</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;fstream&gt; // std::ofstream</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;map&gt;     // std::map</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;random&gt;  // std::mt19937_64</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;  // std::string</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;  // std::vector</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">nnp</span>
+<span class="p">{</span>
+
+<span class="k">class</span> <span class="nc">Training</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Dataset</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">enum</span> <span class="n">UpdaterType</span>
+    <span class="p">{</span>
+        <span class="n">UT_GD</span><span class="p">,</span>
+        <span class="n">UT_KF</span><span class="p">,</span>
+        <span class="n">UT_LM</span>
+    <span class="p">};</span>
+
+    <span class="k">enum</span> <span class="n">ParallelMode</span>
+    <span class="p">{</span>
+        <span class="c1">//PM_DATASET,</span>
+        <span class="n">PM_TRAIN_RK0</span><span class="p">,</span>
+        <span class="n">PM_TRAIN_ALL</span>
+    <span class="p">};</span>
+
+    <span class="k">enum</span> <span class="n">JacobianMode</span>
+    <span class="p">{</span>
+        <span class="n">JM_SUM</span><span class="p">,</span>
+        <span class="n">JM_TASK</span><span class="p">,</span>
+        <span class="n">JM_FULL</span>
+    <span class="p">};</span>
+
+    <span class="k">enum</span> <span class="n">UpdateStrategy</span>
+    <span class="p">{</span>
+        <span class="n">US_COMBINED</span><span class="p">,</span>
+        <span class="n">US_ELEMENT</span>
+    <span class="p">};</span>
+
+    <span class="k">enum</span> <span class="n">SelectionMode</span>
+    <span class="p">{</span>
+        <span class="n">SM_RANDOM</span><span class="p">,</span>
+        <span class="n">SM_SORT</span><span class="p">,</span>
+        <span class="n">SM_THRESHOLD</span>
+    <span class="p">};</span>
+
+    <span class="n">Training</span><span class="p">();</span>
+    <span class="o">~</span><span class="n">Training</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">selectSets</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">writeSetsToFiles</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">initializeWeights</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">initializeWeightsMemory</span><span class="p">(</span><span class="n">UpdateStrategy</span> <span class="n">updateStrategy</span>
+                                                      <span class="o">=</span> <span class="n">US_COMBINED</span><span class="p">);</span>
+    <span class="kt">void</span>                  <span class="nf">setupTraining</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">calculateNeighborLists</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">calculateRmse</span><span class="p">(</span><span class="kt">bool</span> <span class="k">const</span>        <span class="n">writeCompFiles</span><span class="p">,</span>
+                                        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">identifier</span>
+                                            <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                                        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">fileNameEnergiesTrain</span>
+                                            <span class="o">=</span> <span class="s">&quot;energies-train.comp&quot;</span><span class="p">,</span>
+                                        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">fileNameEnergiesTest</span>
+                                            <span class="o">=</span> <span class="s">&quot;energies-test.comp&quot;</span><span class="p">,</span>
+                                        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">fileNameForcesTrain</span>
+                                            <span class="o">=</span> <span class="s">&quot;forces-train.comp&quot;</span><span class="p">,</span>
+                                        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">fileNameForcesTest</span>
+                                            <span class="o">=</span> <span class="s">&quot;forces-test.comp&quot;</span><span class="p">);</span>
+    <span class="kt">void</span>                  <span class="nf">calculateRmseEpoch</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">writeWeights</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">fileNameFormat</span>
+                                          <span class="o">=</span> <span class="s">&quot;weights.%03zu.data&quot;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span>                  <span class="nf">writeWeightsEpoch</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span>                  <span class="nf">writeLearningCurve</span><span class="p">(</span><span class="kt">bool</span>              <span class="n">append</span><span class="p">,</span>
+                                             <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">fileName</span>
+                                                 <span class="o">=</span> <span class="s">&quot;learning-curve.out&quot;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span>                  <span class="nf">writeNeuronStatistics</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">fileName</span>
+                                                   <span class="o">=</span> <span class="s">&quot;neuron-stats.out&quot;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span>                  <span class="nf">writeNeuronStatisticsEpoch</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span>                  <span class="nf">resetNeuronStatistics</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span>                  <span class="nf">writeUpdaterStatus</span><span class="p">(</span><span class="kt">bool</span>              <span class="n">append</span><span class="p">,</span>
+                                             <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="k">const</span> <span class="n">fileNameFormat</span>
+                                                 <span class="o">=</span> <span class="s">&quot;updater.%03zu.out&quot;</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span>                  <span class="nf">sortUpdateCandidates</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">shuffleUpdateCandidates</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">checkSelectionMode</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">loop</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">setEpochSchedule</span><span class="p">();</span>
+    <span class="kt">void</span>                  <span class="nf">update</span><span class="p">(</span><span class="kt">bool</span> <span class="n">force</span><span class="p">);</span>
+    <span class="kt">double</span>                <span class="nf">getSingleWeight</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">element</span><span class="p">,</span>
+                                          <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">index</span><span class="p">);</span>
+    <span class="kt">void</span>                  <span class="nf">setSingleWeight</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">element</span><span class="p">,</span>
+                                          <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">index</span><span class="p">,</span>
+                                          <span class="kt">double</span>      <span class="n">value</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">calculateWeightDerivatives</span><span class="p">(</span><span class="n">Structure</span><span class="o">*</span> <span class="n">structure</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">calculateWeightDerivatives</span><span class="p">(</span><span class="n">Structure</span><span class="o">*</span>  <span class="n">structure</span><span class="p">,</span>
+                                                     <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">atom</span><span class="p">,</span>
+                                                     <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">component</span><span class="p">);</span>
+    <span class="kt">void</span>                  <span class="nf">setTrainingLogFileName</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">fileName</span><span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="k">struct</span> <span class="n">UpdateCandidate</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">a</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">c</span><span class="p">;</span>
+        <span class="kt">double</span>      <span class="n">error</span><span class="p">;</span>
+
+        <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">UpdateCandidate</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="n">UpdaterType</span>                   <span class="n">updaterType</span><span class="p">;</span>
+    <span class="n">ParallelMode</span>                  <span class="n">parallelMode</span><span class="p">;</span>
+    <span class="n">JacobianMode</span>                  <span class="n">jacobianMode</span><span class="p">;</span>
+    <span class="n">UpdateStrategy</span>                <span class="n">updateStrategy</span><span class="p">;</span>
+    <span class="n">SelectionMode</span>                 <span class="n">selectionMode</span><span class="p">;</span>
+    <span class="kt">bool</span>                          <span class="n">hasUpdaters</span><span class="p">;</span>
+    <span class="kt">bool</span>                          <span class="n">hasStructures</span><span class="p">;</span>
+    <span class="kt">bool</span>                          <span class="n">useForces</span><span class="p">;</span>
+    <span class="kt">bool</span>                          <span class="n">reapeatedEnergyUpdates</span><span class="p">;</span>
+    <span class="kt">bool</span>                          <span class="n">freeMemory</span><span class="p">;</span>
+    <span class="kt">bool</span>                          <span class="n">writeTrainingLog</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">numUpdaters</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">numEnergiesTrain</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">numForcesTrain</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">numEpochs</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">taskBatchSizeEnergy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">taskBatchSizeForce</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">epoch</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">writeEnergiesEvery</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">writeForcesEvery</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">writeWeightsEvery</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">writeNeuronStatisticsEvery</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">writeEnergiesAlways</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">writeForcesAlways</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">writeWeightsAlways</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">writeNeuronStatisticsAlways</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">posUpdateCandidatesEnergy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">posUpdateCandidatesForce</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">rmseThresholdTrials</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">countUpdates</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">energyUpdates</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">forceUpdates</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">energiesPerUpdate</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">energiesPerUpdateGlobal</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">errorsGlobalEnergy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">forcesPerUpdate</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">forcesPerUpdateGlobal</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">errorsGlobalForce</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>                   <span class="n">numWeights</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">epochFractionEnergies</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">epochFractionForces</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">rmseEnergiesTrain</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">rmseEnergiesTest</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">rmseForcesTrain</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">rmseForcesTest</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">rmseThresholdEnergy</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">rmseThresholdForce</span><span class="p">;</span>
+    <span class="kt">double</span>                        <span class="n">forceWeight</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span>                   <span class="n">trainingLogFileName</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ofstream</span>                 <span class="n">trainingLog</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>              <span class="n">epochSchedule</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>              <span class="n">errorsPerTaskEnergy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>              <span class="n">errorsPerTaskForce</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>              <span class="n">offsetPerTaskEnergy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>              <span class="n">offsetPerTaskForce</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="o">&gt;</span>      <span class="n">numWeightsPerUpdater</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="o">&gt;</span>      <span class="n">weightsOffset</span><span class="p">;</span>
+<span class="cp">#ifdef IMPROVED_SFD_MEMORY</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span>           <span class="n">dGdxia</span><span class="p">;</span>
+<span class="cp">#endif</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">UpdateCandidate</span><span class="o">&gt;</span>  <span class="n">updateCandidatesEnergy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">UpdateCandidate</span><span class="o">&gt;</span>  <span class="n">updateCandidatesForce</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span>            <span class="n">weightsPerTaskEnergy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span>            <span class="n">offsetJacobianEnergy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span>            <span class="n">weightsPerTaskForce</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span>            <span class="n">offsetJacobianForce</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span>         <span class="n">weights</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span>         <span class="n">errorE</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span>         <span class="n">errorF</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span>         <span class="n">jacobianE</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span>         <span class="n">jacobianF</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Updater</span><span class="o">*&gt;</span>         <span class="n">updaters</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">,</span>
+             <span class="n">SelectionMode</span><span class="o">&gt;</span>       <span class="n">selectionModeSchedule</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">mt19937_64</span>               <span class="n">rngNew</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">mt19937_64</span>               <span class="n">rngGlobalNew</span><span class="p">;</span>
+
+    <span class="kt">bool</span> <span class="nf">advance</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">getWeights</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">setWeights</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">addTrainingLogEntry</span><span class="p">(</span><span class="kt">int</span>                 <span class="n">proc</span><span class="p">,</span>
+                             <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>         <span class="n">il</span><span class="p">,</span>
+                             <span class="kt">double</span>              <span class="n">f</span><span class="p">,</span>
+                             <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>         <span class="n">isg</span><span class="p">,</span>
+                             <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>         <span class="n">is</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">addTrainingLogEntry</span><span class="p">(</span><span class="kt">int</span>                 <span class="n">proc</span><span class="p">,</span>
+                             <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>         <span class="n">il</span><span class="p">,</span>
+                             <span class="kt">double</span>              <span class="n">f</span><span class="p">,</span>
+                             <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>         <span class="n">isg</span><span class="p">,</span>
+                             <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>         <span class="n">is</span><span class="p">,</span>
+                             <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>         <span class="n">ia</span><span class="p">,</span>
+                             <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span>         <span class="n">ic</span><span class="p">);</span>
+<span class="cp">#ifdef IMPROVED_SFD_MEMORY</span>
+
+    <span class="kt">void</span> <span class="nf">collectDGdxia</span><span class="p">(</span><span class="n">Atom</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">atom</span><span class="p">,</span>
+                       <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">indexAtom</span><span class="p">,</span>
+                       <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">indexComponent</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">};</span>
+
+<span class="c1">// Inlined function definitions //</span>
+
+<span class="kr">inline</span> <span class="kt">bool</span> <span class="n">Training</span><span class="o">::</span><span class="n">UpdateCandidate</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span>
+                                    <span class="n">Training</span><span class="o">::</span><span class="n">UpdateCandidate</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">error</span> <span class="o">&gt;</span> <span class="n">rhs</span><span class="p">.</span><span class="n">error</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

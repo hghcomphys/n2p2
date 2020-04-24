@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1a5d24728171accd3d3ea6ce905607c0ac:
+
+Function nnp::reduce(std::string const&)
+========================================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::reduce(std::string const&)

@@ -1,0 +1,13 @@
+.. _exhale_define_Stopwatch_8h_1a5d391b49011fbb7fed985e90557b1b79:
+
+Define NOTIME
+=============
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: NOTIME

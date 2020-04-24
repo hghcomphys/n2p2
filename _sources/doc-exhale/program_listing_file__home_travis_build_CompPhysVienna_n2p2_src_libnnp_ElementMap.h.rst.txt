@@ -1,0 +1,96 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h:
+
+Program Listing for File ElementMap.h
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/ElementMap.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef ELEMENTMAP_H
+   #define ELEMENTMAP_H
+   
+   #include <cstddef> // std::size_t
+   #include <map>     // std::map
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   class ElementMap
+   {
+   public:
+       std::string              operator[](std::size_t const index) const;
+       std::size_t              operator[](std::string const symbol) const;
+       std::size_t              size() const;
+       std::string              getElementsString() const;
+       std::size_t              index(std::string const& symbol) const;
+       std::string              symbol(std::size_t const index) const;
+       std::size_t              atomicNumber(std::size_t index) const;
+       std::size_t              registerElements(std::string const& elementLine);
+       void                     deregisterElements();
+       static std::string       symbolFromAtomicNumber(
+                                                  std::size_t const atomicNumber);
+       static std::size_t       atomicNumber(std::string const& symbol);
+       std::vector<std::string> info() const;
+   
+   private:
+       std::map<std::string, std::size_t> forwardMap;
+       std::map<std::size_t, std::string> reverseMap;
+       static std::string const           knownElements[];
+   
+       static bool compareAtomicNumber(std::string const& symbol1,
+                                       std::string const& symbol2);
+   };
+   
+   // Inlined function definitions //
+   
+   inline std::string ElementMap::operator[](std::size_t const index) const
+   {
+       return symbol(index);
+   }
+   
+   inline std::size_t ElementMap::operator[](std::string const symbol) const
+   {
+       return index(symbol);
+   }
+   
+   inline std::size_t ElementMap::size() const
+   {
+       return forwardMap.size();
+   }
+   
+   inline std::size_t ElementMap::atomicNumber(std::size_t index) const
+   {
+       return atomicNumber(symbol(index));
+   }
+   
+   inline bool ElementMap::compareAtomicNumber(std::string const& symbol1,
+                                               std::string const& symbol2)
+   {
+       return atomicNumber(symbol1) < atomicNumber(symbol2);
+   }
+   
+   }
+   
+   #endif

@@ -1,0 +1,26 @@
+.. _exhale_class_classnnp_1_1SymmetryFunctionGroupWeightedAngular:
+
+Class SymmetryFunctionGroupWeightedAngular
+==========================================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public nnp::SymmetryFunctionGroup`` (:ref:`exhale_class_classnnp_1_1SymmetryFunctionGroup`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::SymmetryFunctionGroupWeightedAngular
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

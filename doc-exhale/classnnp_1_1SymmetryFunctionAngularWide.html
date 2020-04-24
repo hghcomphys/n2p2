@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class SymmetryFunctionAngularWide &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class SymmetryFunctionGroup" href="classnnp_1_1SymmetryFunctionGroup.html" />
+    <link rel="prev" title="Class SymmetryFunctionAngularNarrow" href="classnnp_1_1SymmetryFunctionAngularNarrow.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class SymmetryFunctionAngularWide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1SymmetryFunctionAngularWide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-symmetryfunctionangularwide">
+<span id="exhale-class-classnnp-1-1symmetryfunctionangularwide"></span><h1>Class SymmetryFunctionAngularWide<a class="headerlink" href="#class-symmetryfunctionangularwide" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionangularwide-h"><span class="std std-ref">File SymmetryFunctionAngularWide.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::SymmetryFunction</span></code> (<a class="reference internal" href="classnnp_1_1SymmetryFunction.html#exhale-class-classnnp-1-1symmetryfunction"><span class="std std-ref">Class SymmetryFunction</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWideE">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWideE"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWideE"></span><span id="nnp::SymmetryFunctionAngularWide"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide"></span><em class="property">class </em><code class="sig-name descname">SymmetryFunctionAngularWide</code> : <em class="property">public</em> nnp::<a class="reference internal" href="classnnp_1_1SymmetryFunction.html#_CPPv4N3nnp16SymmetryFunctionE" title="nnp::SymmetryFunction">SymmetryFunction</a><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWideE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Angular symmetry function (type 9)</p>
+<p><div class="math notranslate nohighlight">
+\[\begin{split} G^9_i = 2^{1-\zeta} \sum_{\substack{j,k\neq i \\ j &lt; k}} \left( 1 + \lambda \cos \theta_{ijk} \right)^\zeta \mathrm{e}^{-\eta( (r_{ij}-r_s)^2 + (r_{ik}-r_s)^2 ) } f_c(r_{ij}) f_c(r_{ik}) \end{split}\]</div>
+ Parameter string: <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">element</span><span class="o">-</span><span class="n">central</span><span class="o">&gt;</span> <span class="mi">9</span> <span class="o">&lt;</span><span class="n">element</span><span class="o">-</span><span class="n">neighbor1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">element</span><span class="o">-</span><span class="n">neighbor2</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">eta</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">lambda</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">zeta</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">rcutoff</span><span class="o">&gt;</span> <span class="o">&lt;&lt;</span><span class="n">rshift</span><span class="o">&gt;&gt;</span>
+</pre></div>
+</div>
+ where<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;element-central&gt;</span> <span class="pre">.....</span></code> element symbol of central atom</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;element-neighbor1&gt;</span> <span class="pre">...</span></code> element symbol of neighbor atom 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;element-neighbor2&gt;</span> <span class="pre">...</span></code> element symbol of neighbor atom 2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;eta&gt;</span> <span class="pre">.................</span></code> <span class="math notranslate nohighlight">\(\eta\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;lambda&gt;</span> <span class="pre">..............</span></code> <span class="math notranslate nohighlight">\(\lambda\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;zeta&gt;</span> <span class="pre">................</span></code> <span class="math notranslate nohighlight">\(\zeta\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;rcutoff&gt;</span> <span class="pre">.............</span></code> <span class="math notranslate nohighlight">\(r_c\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;rshift&gt;&gt;</span> <span class="pre">............</span></code> <span class="math notranslate nohighlight">\(r_s\)</span> (optional, default <span class="math notranslate nohighlight">\(r_s = 0\)</span>) </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N27SymmetryFunctionAngularWide27SymmetryFunctionAngularWideERK10ElementMap">
+<span id="_CPPv3N27SymmetryFunctionAngularWide27SymmetryFunctionAngularWideERK10ElementMap"></span><span id="_CPPv2N27SymmetryFunctionAngularWide27SymmetryFunctionAngularWideERK10ElementMap"></span><span id="SymmetryFunctionAngularWide::SymmetryFunctionAngularWide__ElementMapCR"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a9f2b478a61ada330e0905a3343211a4f"></span><code class="sig-name descname">SymmetryFunctionAngularWide</code><span class="sig-paren">(</span>ElementMap <em class="property">const</em> &amp;<em>elementMap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N27SymmetryFunctionAngularWide27SymmetryFunctionAngularWideERK10ElementMap" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor, sets type = 9 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWideeqERK16SymmetryFunction">
+<span id="_CPPv3NK27SymmetryFunctionAngularWideeqERK16SymmetryFunction"></span><span id="_CPPv2NK27SymmetryFunctionAngularWideeqERK16SymmetryFunction"></span><span id="SymmetryFunctionAngularWide::eq-operator__SymmetryFunctionCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a6114aed060eb91a0fa1284170dc389af"></span>bool <code class="sig-name descname">operator==</code><span class="sig-paren">(</span>SymmetryFunction <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWideeqERK16SymmetryFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload == operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWideneERK16SymmetryFunction">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWideneERK16SymmetryFunction"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWideneERK16SymmetryFunction"></span><span id="nnp::SymmetryFunctionAngularWide::neq-operator__SymmetryFunctionCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a28fee5afc11296d5d3579cbf01a5bd76"></span>bool <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><a class="reference internal" href="classnnp_1_1SymmetryFunction.html#_CPPv4N3nnp16SymmetryFunctionE" title="nnp::SymmetryFunction">SymmetryFunction</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWideneERK16SymmetryFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload != operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWideltERK16SymmetryFunction">
+<span id="_CPPv3NK27SymmetryFunctionAngularWideltERK16SymmetryFunction"></span><span id="_CPPv2NK27SymmetryFunctionAngularWideltERK16SymmetryFunction"></span><span id="SymmetryFunctionAngularWide::lt-operator__SymmetryFunctionCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1ac44e448966f4cacfc06b33ee51d75ffc"></span>bool <code class="sig-name descname">operator&lt;</code><span class="sig-paren">(</span>SymmetryFunction <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWideltERK16SymmetryFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &lt; operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWidegtERK16SymmetryFunction">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWidegtERK16SymmetryFunction"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWidegtERK16SymmetryFunction"></span><span id="nnp::SymmetryFunctionAngularWide::gt-operator__SymmetryFunctionCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a0a8574c949fb4d1d5851071cdb17be95"></span>bool <code class="sig-name descname">operator&gt;</code><span class="sig-paren">(</span><a class="reference internal" href="classnnp_1_1SymmetryFunction.html#_CPPv4N3nnp16SymmetryFunctionE" title="nnp::SymmetryFunction">SymmetryFunction</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWidegtERK16SymmetryFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &gt; operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWideleERK16SymmetryFunction">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWideleERK16SymmetryFunction"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWideleERK16SymmetryFunction"></span><span id="nnp::SymmetryFunctionAngularWide::lte-operator__SymmetryFunctionCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a4ccca70b3d8b051ca375b88cdeb71337"></span>bool <code class="sig-name descname">operator&lt;=</code><span class="sig-paren">(</span><a class="reference internal" href="classnnp_1_1SymmetryFunction.html#_CPPv4N3nnp16SymmetryFunctionE" title="nnp::SymmetryFunction">SymmetryFunction</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWideleERK16SymmetryFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &lt;= operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWidegeERK16SymmetryFunction">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWidegeERK16SymmetryFunction"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWidegeERK16SymmetryFunction"></span><span id="nnp::SymmetryFunctionAngularWide::gte-operator__SymmetryFunctionCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a62f21e2b6c27eefe6bfde2bdc1260fbc"></span>bool <code class="sig-name descname">operator&gt;=</code><span class="sig-paren">(</span><a class="reference internal" href="classnnp_1_1SymmetryFunction.html#_CPPv4N3nnp16SymmetryFunctionE" title="nnp::SymmetryFunction">SymmetryFunction</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWidegeERK16SymmetryFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &gt;= operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N27SymmetryFunctionAngularWide13setParametersERKNSt6stringE">
+<span id="_CPPv3N27SymmetryFunctionAngularWide13setParametersERKNSt6stringE"></span><span id="_CPPv2N27SymmetryFunctionAngularWide13setParametersERKNSt6stringE"></span><span id="SymmetryFunctionAngularWide::setParameters__ssCR"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1aee48813a5a4b9551ba7f4c5eed2ba434"></span>void <code class="sig-name descname">setParameters</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>parameterString</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N27SymmetryFunctionAngularWide13setParametersERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set symmetry function parameters.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">parameterString</span></code>: String containing angular symmetry function parameters. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N27SymmetryFunctionAngularWide16changeLengthUnitEd">
+<span id="_CPPv3N27SymmetryFunctionAngularWide16changeLengthUnitEd"></span><span id="_CPPv2N27SymmetryFunctionAngularWide16changeLengthUnitEd"></span><span id="SymmetryFunctionAngularWide::changeLengthUnit__double"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1ae7897d9f07535ed5e0f88e4b566cecbd"></span>void <code class="sig-name descname">changeLengthUnit</code><span class="sig-paren">(</span>double <em>convLength</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N27SymmetryFunctionAngularWide16changeLengthUnitEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Change length unit.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convLength</span></code>: Multiplicative length unit conversion factor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWide15getSettingsLineEv">
+<span id="_CPPv3NK27SymmetryFunctionAngularWide15getSettingsLineEv"></span><span id="_CPPv2NK27SymmetryFunctionAngularWide15getSettingsLineEv"></span><span id="SymmetryFunctionAngularWide::getSettingsLineC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a83b32ef69535ea671aa32679a49403f4"></span>string <code class="sig-name descname">getSettingsLine</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWide15getSettingsLineEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get settings file line from currently set parameters.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="classnnp_1_1Settings.html#classnnp_1_1Settings"><span class="std std-ref">Settings</span></a> file string (“symfunction_short …”). </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWide9calculateER4AtomKb">
+<span id="_CPPv3NK27SymmetryFunctionAngularWide9calculateER4AtomKb"></span><span id="_CPPv2NK27SymmetryFunctionAngularWide9calculateER4AtomKb"></span><span id="SymmetryFunctionAngularWide::calculate__AtomR.bCC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a109c0d65ac880db9d53b954fb63fa14f"></span>void <code class="sig-name descname">calculate</code><span class="sig-paren">(</span>Atom &amp;<em>atom</em>, bool <em class="property">const</em> <em>derivatives</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWide9calculateER4AtomKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate symmetry function for one atom.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">atom</span></code>: <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a> for which the symmetry function is caluclated. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">derivatives</span></code>: If also symmetry function derivatives will be calculated and saved. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWide13parameterLineEv">
+<span id="_CPPv3NK27SymmetryFunctionAngularWide13parameterLineEv"></span><span id="_CPPv2NK27SymmetryFunctionAngularWide13parameterLineEv"></span><span id="SymmetryFunctionAngularWide::parameterLineC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a9e67c11858b864e578fd767d2bd12de6"></span>string <code class="sig-name descname">parameterLine</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWide13parameterLineEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Give symmetry function parameters in one line.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>String containing symmetry function parameter values. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWide13parameterInfoEv">
+<span id="_CPPv3NK27SymmetryFunctionAngularWide13parameterInfoEv"></span><span id="_CPPv2NK27SymmetryFunctionAngularWide13parameterInfoEv"></span><span id="SymmetryFunctionAngularWide::parameterInfoC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1ae42cc151d952563268e1c1f29029f374"></span>vector&lt;string&gt; <code class="sig-name descname">parameterInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWide13parameterInfoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get description with parameter names and values.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector of parameter description strings. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWide16getUseIntegerPowEv">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWide16getUseIntegerPowEv"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWide16getUseIntegerPowEv"></span><span id="nnp::SymmetryFunctionAngularWide::getUseIntegerPowC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a548967b4f1aef81c96917b74bfed635b"></span>bool <code class="sig-name descname">getUseIntegerPow</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWide16getUseIntegerPowEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get private <a class="reference internal" href="#classnnp_1_1SymmetryFunctionAngularWide_1afe36ecc8ab362a9a817602b70ecefea0"><span class="std std-ref">useIntegerPow</span></a> member variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWide5getE1Ev">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWide5getE1Ev"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWide5getE1Ev"></span><span id="nnp::SymmetryFunctionAngularWide::getE1C"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a3136bee9a988c37b0acca96ef535b0be"></span>std::size_t <code class="sig-name descname">getE1</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWide5getE1Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get private <a class="reference internal" href="#classnnp_1_1SymmetryFunctionAngularWide_1aa0f1f841957cd170d9eb8b4baececa91"><span class="std std-ref">e1</span></a> member variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWide5getE2Ev">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWide5getE2Ev"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWide5getE2Ev"></span><span id="nnp::SymmetryFunctionAngularWide::getE2C"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a010fbfb200e218d581d2daa77b6d90b4"></span>std::size_t <code class="sig-name descname">getE2</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWide5getE2Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get private <a class="reference internal" href="#classnnp_1_1SymmetryFunctionAngularWide_1ad178c26247019d33956308965f3d5619"><span class="std std-ref">e2</span></a> member variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWide10getZetaIntEv">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWide10getZetaIntEv"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWide10getZetaIntEv"></span><span id="nnp::SymmetryFunctionAngularWide::getZetaIntC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a36d7003819aec476dfad83507a2c4d72"></span>int <code class="sig-name descname">getZetaInt</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWide10getZetaIntEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get private <a class="reference internal" href="#classnnp_1_1SymmetryFunctionAngularWide_1ae293483fdc2a78bcbead7e1e43506348"><span class="std std-ref">zetaInt</span></a> member variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWide9getLambdaEv">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWide9getLambdaEv"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWide9getLambdaEv"></span><span id="nnp::SymmetryFunctionAngularWide::getLambdaC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a465bc5ace411d302898ddb0398ddaf2e"></span>double <code class="sig-name descname">getLambda</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWide9getLambdaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get private <a class="reference internal" href="#classnnp_1_1SymmetryFunctionAngularWide_1a73fa17aec7a9bc766a643a05d2f750e7"><span class="std std-ref">lambda</span></a> member variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWide6getEtaEv">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWide6getEtaEv"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWide6getEtaEv"></span><span id="nnp::SymmetryFunctionAngularWide::getEtaC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a9b4e2c934b06216d350c8b575e5239bb"></span>double <code class="sig-name descname">getEta</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWide6getEtaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get private <a class="reference internal" href="#classnnp_1_1SymmetryFunctionAngularWide_1ad592b1121f6cc43e95b20b0147bf96ac"><span class="std std-ref">eta</span></a> member variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWide7getZetaEv">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWide7getZetaEv"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWide7getZetaEv"></span><span id="nnp::SymmetryFunctionAngularWide::getZetaC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1ac49037d1775188d916eeb0109ae3e8aa"></span>double <code class="sig-name descname">getZeta</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWide7getZetaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get private <a class="reference internal" href="#classnnp_1_1SymmetryFunctionAngularWide_1ab61d126d4cc0255c5ca5f8eca30f754a"><span class="std std-ref">zeta</span></a> member variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp27SymmetryFunctionAngularWide5getRsEv">
+<span id="_CPPv3NK3nnp27SymmetryFunctionAngularWide5getRsEv"></span><span id="_CPPv2NK3nnp27SymmetryFunctionAngularWide5getRsEv"></span><span id="nnp::SymmetryFunctionAngularWide::getRsC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1aebd334c1269fc8516d515805f51b2cea"></span>double <code class="sig-name descname">getRs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp27SymmetryFunctionAngularWide5getRsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get private <a class="reference internal" href="#classnnp_1_1SymmetryFunctionAngularWide_1a1670f3e8eb02a6d6bbcc2169d9111585"><span class="std std-ref">rs</span></a> member variable. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWide19calculateRadialPartEd">
+<span id="_CPPv3NK27SymmetryFunctionAngularWide19calculateRadialPartEd"></span><span id="_CPPv2NK27SymmetryFunctionAngularWide19calculateRadialPartEd"></span><span id="SymmetryFunctionAngularWide::calculateRadialPart__doubleC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1aff5d4e9916d49967ed92b2d770e48737"></span>double <code class="sig-name descname">calculateRadialPart</code><span class="sig-paren">(</span>double <em>distance</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWide19calculateRadialPartEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate (partial) symmetry function value for one given distance.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><span class="math notranslate nohighlight">\(\left(e^{-\eta r^2} f_c(r)\right)^2\)</span> </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">distance</span></code>: Distance between two atoms. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWide20calculateAngularPartEd">
+<span id="_CPPv3NK27SymmetryFunctionAngularWide20calculateAngularPartEd"></span><span id="_CPPv2NK27SymmetryFunctionAngularWide20calculateAngularPartEd"></span><span id="SymmetryFunctionAngularWide::calculateAngularPart__doubleC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a790d5ad4050b43251bce08f89cd82ead"></span>double <code class="sig-name descname">calculateAngularPart</code><span class="sig-paren">(</span>double <em>angle</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWide20calculateAngularPartEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate (partial) symmetry function value for one given angle.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><span class="math notranslate nohighlight">\(1\)</span> </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">angle</span></code>: Angle between triplet of atoms (in radians). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK27SymmetryFunctionAngularWide20checkRelevantElementENSt6size_tE">
+<span id="_CPPv3NK27SymmetryFunctionAngularWide20checkRelevantElementENSt6size_tE"></span><span id="_CPPv2NK27SymmetryFunctionAngularWide20checkRelevantElementENSt6size_tE"></span><span id="SymmetryFunctionAngularWide::checkRelevantElement__std::sC"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1af392bd9d9bf392a03b8216161cb05e4f"></span>bool <code class="sig-name descname">checkRelevantElement</code><span class="sig-paren">(</span>std::size_t <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK27SymmetryFunctionAngularWide20checkRelevantElementENSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check whether symmetry function is relevant for given element.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>True if symmetry function is sensitive to given element, false otherwise. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">index</span></code>: Index of given element. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWide13useIntegerPowE">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWide13useIntegerPowE"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWide13useIntegerPowE"></span><span id="nnp::SymmetryFunctionAngularWide::useIntegerPow__b"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1afe36ecc8ab362a9a817602b70ecefea0"></span>bool <code class="sig-name descname">useIntegerPow</code><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWide13useIntegerPowE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Whether to use integer version of power function (faster). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWide2e1E">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWide2e1E"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWide2e1E"></span><span id="nnp::SymmetryFunctionAngularWide::e1__std::s"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1aa0f1f841957cd170d9eb8b4baececa91"></span>std::size_t <code class="sig-name descname">e1</code><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWide2e1E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> index of neighbor atom 1. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWide2e2E">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWide2e2E"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWide2e2E"></span><span id="nnp::SymmetryFunctionAngularWide::e2__std::s"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1ad178c26247019d33956308965f3d5619"></span>std::size_t <code class="sig-name descname">e2</code><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWide2e2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> index of neighbor atom 2. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWide7zetaIntE">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWide7zetaIntE"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWide7zetaIntE"></span><span id="nnp::SymmetryFunctionAngularWide::zetaInt__i"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1ae293483fdc2a78bcbead7e1e43506348"></span>int <code class="sig-name descname">zetaInt</code><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWide7zetaIntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer version of <span class="math notranslate nohighlight">\(\zeta\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWide6lambdaE">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWide6lambdaE"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWide6lambdaE"></span><span id="nnp::SymmetryFunctionAngularWide::lambda__double"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a73fa17aec7a9bc766a643a05d2f750e7"></span>double <code class="sig-name descname">lambda</code><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWide6lambdaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cosine shift factor. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWide3etaE">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWide3etaE"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWide3etaE"></span><span id="nnp::SymmetryFunctionAngularWide::eta__double"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1ad592b1121f6cc43e95b20b0147bf96ac"></span>double <code class="sig-name descname">eta</code><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWide3etaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Width <span class="math notranslate nohighlight">\(\eta\)</span> of gaussian. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWide4zetaE">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWide4zetaE"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWide4zetaE"></span><span id="nnp::SymmetryFunctionAngularWide::zeta__double"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1ab61d126d4cc0255c5ca5f8eca30f754a"></span>double <code class="sig-name descname">zeta</code><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWide4zetaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Exponent <span class="math notranslate nohighlight">\(\zeta\)</span> of cosine term. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp27SymmetryFunctionAngularWide2rsE">
+<span id="_CPPv3N3nnp27SymmetryFunctionAngularWide2rsE"></span><span id="_CPPv2N3nnp27SymmetryFunctionAngularWide2rsE"></span><span id="nnp::SymmetryFunctionAngularWide::rs__double"></span><span class="target" id="classnnp_1_1SymmetryFunctionAngularWide_1a1670f3e8eb02a6d6bbcc2169d9111585"></span>double <code class="sig-name descname">rs</code><a class="headerlink" href="#_CPPv4N3nnp27SymmetryFunctionAngularWide2rsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Shift <span class="math notranslate nohighlight">\(r_s\)</span> of gaussian. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1SymmetryFunctionGroup.html" class="btn btn-neutral float-right" title="Class SymmetryFunctionGroup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1SymmetryFunctionAngularNarrow.html" class="btn btn-neutral float-left" title="Class SymmetryFunctionAngularNarrow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

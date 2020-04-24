@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class ElementMap &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class GradientDescent" href="classnnp_1_1GradientDescent.html" />
+    <link rel="prev" title="Class Element" href="classnnp_1_1Element.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class ElementMap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1ElementMap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-elementmap">
+<span id="exhale-class-classnnp-1-1elementmap"></span><h1>Class ElementMap<a class="headerlink" href="#class-elementmap" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-elementmap-h"><span class="std std-ref">File ElementMap.h</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp10ElementMapE">
+<span id="_CPPv3N3nnp10ElementMapE"></span><span id="_CPPv2N3nnp10ElementMapE"></span><span id="nnp::ElementMap"></span><span class="target" id="classnnp_1_1ElementMap"></span><em class="property">class </em><code class="sig-name descname">ElementMap</code><a class="headerlink" href="#_CPPv4N3nnp10ElementMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Contains element map. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp10ElementMapixEKNSt6size_tE">
+<span id="_CPPv3NK3nnp10ElementMapixEKNSt6size_tE"></span><span id="_CPPv2NK3nnp10ElementMapixEKNSt6size_tE"></span><span id="nnp::ElementMap::subscript-operator__std::sCC"></span><span class="target" id="classnnp_1_1ElementMap_1a43d5d34598cfe35bf3e9cbb88d0dd161"></span>std::string <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp10ElementMapixEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload [] operator for index search.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Symbol of element in map. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">index</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> index. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp10ElementMapixEKNSt6stringE">
+<span id="_CPPv3NK3nnp10ElementMapixEKNSt6stringE"></span><span id="_CPPv2NK3nnp10ElementMapixEKNSt6stringE"></span><span id="nnp::ElementMap::subscript-operator__ssCC"></span><span class="target" id="classnnp_1_1ElementMap_1abb596b30ef866d5aca7c243ea1ffd84c"></span>std::size_t <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>std::string <em class="property">const</em> <em>symbol</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp10ElementMapixEKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload [] operator for symbol search.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Index of element in map. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">symbol</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> symbol. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp10ElementMap4sizeEv">
+<span id="_CPPv3NK3nnp10ElementMap4sizeEv"></span><span id="_CPPv2NK3nnp10ElementMap4sizeEv"></span><span id="nnp::ElementMap::sizeC"></span><span class="target" id="classnnp_1_1ElementMap_1a94031b84fe2b38bbdb62ba700d5481a4"></span>std::size_t <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp10ElementMap4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get element map size.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of elements registered. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK10ElementMap17getElementsStringEv">
+<span id="_CPPv3NK10ElementMap17getElementsStringEv"></span><span id="_CPPv2NK10ElementMap17getElementsStringEv"></span><span id="ElementMap::getElementsStringC"></span><span class="target" id="classnnp_1_1ElementMap_1ab3c6fd52cc1fa5f0c1a1c8bc50c4542a"></span>string <code class="sig-name descname">getElementsString</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK10ElementMap17getElementsStringEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get sorted list of elements in one string (space separated).</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> string. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK10ElementMap5indexERKNSt6stringE">
+<span id="_CPPv3NK10ElementMap5indexERKNSt6stringE"></span><span id="_CPPv2NK10ElementMap5indexERKNSt6stringE"></span><span id="ElementMap::index__ssCRC"></span><span class="target" id="classnnp_1_1ElementMap_1a179aafd2be2abe3c8be36fe97b2be2d8"></span>size_t <code class="sig-name descname">index</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>symbol</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK10ElementMap5indexERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get index of given element.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> index. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">symbol</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> symbol. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK10ElementMap6symbolEKNSt6size_tE">
+<span id="_CPPv3NK10ElementMap6symbolEKNSt6size_tE"></span><span id="_CPPv2NK10ElementMap6symbolEKNSt6size_tE"></span><span id="ElementMap::symbol__std::sCC"></span><span class="target" id="classnnp_1_1ElementMap_1ad76595c737610610fdf0cd34b91d0a3e"></span>string <code class="sig-name descname">symbol</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK10ElementMap6symbolEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get element symbol for given element index.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> symbol. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">index</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> index. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp10ElementMap12atomicNumberENSt6size_tE">
+<span id="_CPPv3NK3nnp10ElementMap12atomicNumberENSt6size_tE"></span><span id="_CPPv2NK3nnp10ElementMap12atomicNumberENSt6size_tE"></span><span id="nnp::ElementMap::atomicNumber__std::sC"></span><span class="target" id="classnnp_1_1ElementMap_1acd54eb7c8fd1f9967604463ff11ffce1"></span>std::size_t <code class="sig-name descname">atomicNumber</code><span class="sig-paren">(</span>std::size_t <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp10ElementMap12atomicNumberENSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get atomic number from element index.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Atomic number (proton number Z) of element. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">index</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> index in map. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N10ElementMap16registerElementsERKNSt6stringE">
+<span id="_CPPv3N10ElementMap16registerElementsERKNSt6stringE"></span><span id="_CPPv2N10ElementMap16registerElementsERKNSt6stringE"></span><span id="ElementMap::registerElements__ssCR"></span><span class="target" id="classnnp_1_1ElementMap_1a17d6d160054a064199a8757eb62b3350"></span>size_t <code class="sig-name descname">registerElements</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>elementLine</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10ElementMap16registerElementsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extract all elements and store in element map.</p>
+<p><p>Sorts all elements according to their atomic number and populates </p>
+<a class="reference internal" href="#classnnp_1_1ElementMap_1a27769fc84211bf630bbfa249ab0be36c"><span class="std std-ref">forwardMap</span></a> and <a class="reference internal" href="#classnnp_1_1ElementMap_1a3ca5228c68df8f79b47532adf5c1f6f3"><span class="std std-ref">reverseMap</span></a> with the symbol and the corresponding index number. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of registered elements.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">elementLine</span></code>: String containing all elements, e.g. “Cd S Zn”, separated by whitespaces. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N10ElementMap18deregisterElementsEv">
+<span id="_CPPv3N10ElementMap18deregisterElementsEv"></span><span id="_CPPv2N10ElementMap18deregisterElementsEv"></span><span id="ElementMap::deregisterElements"></span><span class="target" id="classnnp_1_1ElementMap_1aaa677937994a75bb40286d29c5aeec62"></span>void <code class="sig-name descname">deregisterElements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10ElementMap18deregisterElementsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear element map. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK10ElementMap4infoEv">
+<span id="_CPPv3NK10ElementMap4infoEv"></span><span id="_CPPv2NK10ElementMap4infoEv"></span><span id="ElementMap::infoC"></span><span class="target" id="classnnp_1_1ElementMap_1a502ccfa87ec2982d1be854c4fa3fa46b"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK10ElementMap4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get map information as a vector of strings.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Lines with map information. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N10ElementMap22symbolFromAtomicNumberEKNSt6size_tE">
+<span id="_CPPv3N10ElementMap22symbolFromAtomicNumberEKNSt6size_tE"></span><span id="_CPPv2N10ElementMap22symbolFromAtomicNumberEKNSt6size_tE"></span><span id="ElementMap::symbolFromAtomicNumber__std::sC"></span><span class="target" id="classnnp_1_1ElementMap_1a9750ed20860b5677722572f6a3fe36bf"></span>string <code class="sig-name descname">symbolFromAtomicNumber</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>atomicNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10ElementMap22symbolFromAtomicNumberEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get element symbol from atomic number.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> symbol. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">atomicNumber</span></code>: Atomic number of element. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp10ElementMap12atomicNumberERKNSt6stringE">
+<span id="_CPPv3N3nnp10ElementMap12atomicNumberERKNSt6stringE"></span><span id="_CPPv2N3nnp10ElementMap12atomicNumberERKNSt6stringE"></span><span id="nnp::ElementMap::atomicNumber__ssCR"></span><span class="target" id="classnnp_1_1ElementMap_1aea485692e5a099bfde3656dae4bf424c"></span><em class="property">static</em> std::size_t <code class="sig-name descname">atomicNumber</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp10ElementMap12atomicNumberERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get atomic number from element string.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Atomic number (proton number Z) of element. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">symbol</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> symbol (e.g. “He” for Helium). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp10ElementMap10forwardMapE">
+<span id="_CPPv3N3nnp10ElementMap10forwardMapE"></span><span id="_CPPv2N3nnp10ElementMap10forwardMapE"></span><span id="nnp::ElementMap::forwardMap__std::map:ss.std::s:"></span><span class="target" id="classnnp_1_1ElementMap_1a27769fc84211bf630bbfa249ab0be36c"></span>std::map&lt;std::string, std::size_t&gt; <code class="sig-name descname">forwardMap</code><a class="headerlink" href="#_CPPv4N3nnp10ElementMap10forwardMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Map of elements present and corresponding index number. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp10ElementMap10reverseMapE">
+<span id="_CPPv3N3nnp10ElementMap10reverseMapE"></span><span id="_CPPv2N3nnp10ElementMap10reverseMapE"></span><span id="nnp::ElementMap::reverseMap__std::map:std::s.ss:"></span><span class="target" id="classnnp_1_1ElementMap_1a3ca5228c68df8f79b47532adf5c1f6f3"></span>std::map&lt;std::size_t, std::string&gt; <code class="sig-name descname">reverseMap</code><a class="headerlink" href="#_CPPv4N3nnp10ElementMap10reverseMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reverse element map. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp10ElementMap19compareAtomicNumberERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N3nnp10ElementMap19compareAtomicNumberERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N3nnp10ElementMap19compareAtomicNumberERKNSt6stringERKNSt6stringE"></span><span id="nnp::ElementMap::compareAtomicNumber__ssCR.ssCR"></span><span class="target" id="classnnp_1_1ElementMap_1abbaa1f40d96f9b6da0a8ac9563b7cb95"></span>bool <code class="sig-name descname">compareAtomicNumber</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>symbol1</em>, std::string <em class="property">const</em> &amp;<em>symbol2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp10ElementMap19compareAtomicNumberERKNSt6stringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if arguments are sorted according to atomic number.</p>
+<p><p>Used for sorting in </p>
+<a class="reference internal" href="#classnnp_1_1ElementMap_1a17d6d160054a064199a8757eb62b3350"><span class="std std-ref">registerElements()</span></a>. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if atomic number of element 1 is smaller than atomic number of element 2, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">symbol1</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> symbol 1. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">symbol2</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> symbol 2. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Static Attributes</p>
+<dl class="cpp member">
+<dt id="_CPPv4N10ElementMap13knownElementsE">
+<span id="_CPPv3N10ElementMap13knownElementsE"></span><span id="_CPPv2N10ElementMap13knownElementsE"></span><span id="ElementMap::knownElements__stringC"></span><span class="target" id="classnnp_1_1ElementMap_1ad0295785b2db8268cfc175b835046a1e"></span>string <em class="property">const</em> <code class="sig-name descname">knownElements</code> = {&quot;H&quot;, &quot;He&quot;, &quot;Li&quot;, &quot;Be&quot;, &quot;B&quot;, &quot;C&quot;, &quot;N&quot;, &quot;O&quot;, &quot;F&quot;, &quot;Ne&quot;, &quot;Na&quot;, &quot;Mg&quot;, &quot;Al&quot;, &quot;Si&quot;, &quot;P&quot;, &quot;S&quot;, &quot;Cl&quot;, &quot;Ar&quot;, &quot;K&quot;, &quot;Ca&quot;, &quot;Sc&quot;, &quot;Ti&quot;, &quot;V&quot;, &quot;Cr&quot;, &quot;Mn&quot;, &quot;Fe&quot;, &quot;Co&quot;, &quot;Ni&quot;, &quot;Cu&quot;, &quot;Zn&quot;, &quot;Ga&quot;, &quot;Ge&quot;, &quot;As&quot;, &quot;Se&quot;, &quot;Br&quot;, &quot;Kr&quot;, &quot;Rb&quot;, &quot;Sr&quot;, &quot;Y&quot;, &quot;Zr&quot;, &quot;Nb&quot;, &quot;Mo&quot;, &quot;Tc&quot;, &quot;Ru&quot;, &quot;Rh&quot;, &quot;Pd&quot;, &quot;Ag&quot;, &quot;Cd&quot;, &quot;In&quot;, &quot;Sn&quot;, &quot;Sb&quot;, &quot;Te&quot;, &quot;I&quot;, &quot;Xe&quot;, &quot;Cs&quot;, &quot;Ba&quot;, &quot;La&quot;, &quot;Ce&quot;, &quot;Pr&quot;, &quot;Nd&quot;, &quot;Pm&quot;, &quot;Sm&quot;, &quot;Eu&quot;, &quot;Gd&quot;, &quot;Tb&quot;, &quot;Dy&quot;, &quot;Ho&quot;, &quot;Er&quot;, &quot;Tm&quot;, &quot;Yb&quot;, &quot;Lu&quot;, &quot;Hf&quot;, &quot;Ta&quot;, &quot;W&quot;, &quot;Re&quot;, &quot;Os&quot;, &quot;Ir&quot;, &quot;Pt&quot;, &quot;Au&quot;, &quot;Hg&quot;, &quot;Tl&quot;, &quot;Pb&quot;, &quot;Bi&quot;, &quot;Po&quot;, &quot;At&quot;, &quot;Rn&quot;, &quot;Fr&quot;, &quot;Ra&quot;, &quot;Ac&quot;, &quot;Th&quot;, &quot;Pa&quot;, &quot;U&quot;, &quot;Np&quot;, &quot;Pu&quot;, &quot;Am&quot;, &quot;Cm&quot;, &quot;Bk&quot;, &quot;Cf&quot;, &quot;Es&quot;, &quot;Fm&quot;, &quot;Md&quot;, &quot;No&quot;}<a class="headerlink" href="#_CPPv4N10ElementMap13knownElementsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List of element symbols (e.g. “He” for Helium). </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1GradientDescent.html" class="btn btn-neutral float-right" title="Class GradientDescent" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1Element.html" class="btn btn-neutral float-left" title="Class Element" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

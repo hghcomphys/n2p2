@@ -1,0 +1,56 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h:
+
+File mpi-extra.h
+================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/mpi-extra.h``)
+-----------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``climits``
+
+- ``cstdint``
+
+- ``mpi.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp`
+
+
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_libnnptrain_2mpi-extra_8h_1aaae430420e25984e327a89b068e1582b`
+

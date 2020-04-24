@@ -1,0 +1,23 @@
+.. _exhale_struct_structnnp_1_1Atom_1_1Neighbor:
+
+Struct Atom::Neighbor
+=====================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_struct_structnnp_1_1Atom`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: nnp::Atom::Neighbor
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

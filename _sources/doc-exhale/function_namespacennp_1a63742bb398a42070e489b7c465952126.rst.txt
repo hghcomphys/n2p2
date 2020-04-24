@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1a63742bb398a42070e489b7c465952126:
+
+Function nnp::split(string const&, char)
+========================================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::split(string const&, char)

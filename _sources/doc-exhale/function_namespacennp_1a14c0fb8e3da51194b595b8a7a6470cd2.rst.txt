@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1a14c0fb8e3da51194b595b8a7a6470cd2:
+
+Function nnp::createFileHeader(std::vector<std::string> const&, std::vector<std::size_t> const&, std::vector<std::string> const&, std::vector<std::string> const&, char const&)
+===============================================================================================================================================================================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::createFileHeader(std::vector<std::string> const&, std::vector<std::size_t> const&, std::vector<std::string> const&, std::vector<std::string> const&, char const&)

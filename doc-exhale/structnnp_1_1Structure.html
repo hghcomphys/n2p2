@@ -1,0 +1,760 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct Structure &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct SymmetryFunctionStatistics::Container" href="structnnp_1_1SymmetryFunctionStatistics_1_1Container.html" />
+    <link rel="prev" title="Struct NeuralNetwork::Neuron" href="structnnp_1_1NeuralNetwork_1_1Neuron.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Struct Structure</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/structnnp_1_1Structure.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-structure">
+<span id="exhale-struct-structnnp-1-1structure"></span><h1>Struct Structure<a class="headerlink" href="#struct-structure" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-structure-h"><span class="std std-ref">File Structure.h</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp9StructureE">
+<span id="_CPPv3N3nnp9StructureE"></span><span id="_CPPv2N3nnp9StructureE"></span><span id="nnp::Structure"></span><span class="target" id="structnnp_1_1Structure"></span><em class="property">struct </em><code class="sig-name descname">Structure</code><a class="headerlink" href="#_CPPv4N3nnp9StructureE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Storage for one atomic configuration. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N3nnp9Structure10SampleTypeE">
+<span id="_CPPv3N3nnp9Structure10SampleTypeE"></span><span id="_CPPv2N3nnp9Structure10SampleTypeE"></span><span class="target" id="structnnp_1_1Structure_1a118a744590977c2b258feace6dc6676e"></span><em class="property">enum </em><code class="sig-name descname">SampleType</code><a class="headerlink" href="#_CPPv4N3nnp9Structure10SampleTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enumerates different sample types (e.g. training or test set). </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp9Structure10ST_UNKNOWNE">
+<span id="_CPPv3N3nnp9Structure10ST_UNKNOWNE"></span><span id="_CPPv2N3nnp9Structure10ST_UNKNOWNE"></span><span class="target" id="structnnp_1_1Structure_1a118a744590977c2b258feace6dc6676ea937ae91516989440bcde413b084b7381"></span><code class="sig-name descname">ST_UNKNOWN</code><a class="headerlink" href="#_CPPv4N3nnp9Structure10ST_UNKNOWNE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sample type not assigned yet. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp9Structure11ST_TRAININGE">
+<span id="_CPPv3N3nnp9Structure11ST_TRAININGE"></span><span id="_CPPv2N3nnp9Structure11ST_TRAININGE"></span><span class="target" id="structnnp_1_1Structure_1a118a744590977c2b258feace6dc6676ea5fcad5340deda6f39ae1f68aeb252c50"></span><code class="sig-name descname">ST_TRAINING</code><a class="headerlink" href="#_CPPv4N3nnp9Structure11ST_TRAININGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#structnnp_1_1Structure"><span class="std std-ref">Structure</span></a> is part of the training set. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp9Structure13ST_VALIDATIONE">
+<span id="_CPPv3N3nnp9Structure13ST_VALIDATIONE"></span><span id="_CPPv2N3nnp9Structure13ST_VALIDATIONE"></span><span class="target" id="structnnp_1_1Structure_1a118a744590977c2b258feace6dc6676ea458bbb3ade8e97db0a7479a8c240a602"></span><code class="sig-name descname">ST_VALIDATION</code><a class="headerlink" href="#_CPPv4N3nnp9Structure13ST_VALIDATIONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#structnnp_1_1Structure"><span class="std std-ref">Structure</span></a> is part of validation set (currently unused). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp9Structure7ST_TESTE">
+<span id="_CPPv3N3nnp9Structure7ST_TESTE"></span><span id="_CPPv2N3nnp9Structure7ST_TESTE"></span><span class="target" id="structnnp_1_1Structure_1a118a744590977c2b258feace6dc6676ead9a235ef8a8768016b5e7192ba619719"></span><code class="sig-name descname">ST_TEST</code><a class="headerlink" href="#_CPPv4N3nnp9Structure7ST_TESTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#structnnp_1_1Structure"><span class="std std-ref">Structure</span></a> is part of the test set. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure9StructureEv">
+<span id="_CPPv3N9Structure9StructureEv"></span><span id="_CPPv2N9Structure9StructureEv"></span><span id="Structure::Structure"></span><span class="target" id="structnnp_1_1Structure_1ac6c101b28efea5a150cce3bb8948f8d1"></span><code class="sig-name descname">Structure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure9StructureEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor, initializes to zero. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure13setElementMapERK10ElementMap">
+<span id="_CPPv3N9Structure13setElementMapERK10ElementMap"></span><span id="_CPPv2N9Structure13setElementMapERK10ElementMap"></span><span id="Structure::setElementMap__ElementMapCR"></span><span class="target" id="structnnp_1_1Structure_1a57c375126ca37e8d390d406091e7dd5a"></span>void <code class="sig-name descname">setElementMap</code><span class="sig-paren">(</span>ElementMap <em class="property">const</em> &amp;<em>elementMap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure13setElementMapERK10ElementMap" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set element map of structure.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">elementMap</span></code>: Reference to a map containing all possible (symbol, index)-pairs (see <a class="reference internal" href="classnnp_1_1ElementMap.html#classnnp_1_1ElementMap"><span class="std std-ref">ElementMap</span></a>). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure7addAtomERK4AtomRKNSt6stringE">
+<span id="_CPPv3N9Structure7addAtomERK4AtomRKNSt6stringE"></span><span id="_CPPv2N9Structure7addAtomERK4AtomRKNSt6stringE"></span><span id="Structure::addAtom__AtomCR.ssCR"></span><span class="target" id="structnnp_1_1Structure_1a7b676463d894c0988c645fed1ddf36b1"></span>void <code class="sig-name descname">addAtom</code><span class="sig-paren">(</span>Atom <em class="property">const</em> &amp;<em>atom</em>, std::string <em class="property">const</em> &amp;<em>element</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure7addAtomERK4AtomRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add a single atom to structure.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Be sure to set the element map properly before adding atoms. This function will only keep the atom’s coordinates, energy, charge, tag and forces, all other members will be cleared or reset (in particular, the neighbor list and symmetry function data will be deleted). </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">atom</span></code>: <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a> to insert. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">element</span></code>: <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> string of new atom.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp9Structure12readFromFileEKNSt6stringE">
+<span id="_CPPv3N3nnp9Structure12readFromFileEKNSt6stringE"></span><span id="_CPPv2N3nnp9Structure12readFromFileEKNSt6stringE"></span><span id="nnp::Structure::readFromFile__ssC"></span><span class="target" id="structnnp_1_1Structure_1a46bcb087ce456c6c861c53c85c2c252c"></span>void <code class="sig-name descname">readFromFile</code><span class="sig-paren">(</span>std::string <em class="property">const</em> <em>fileName</em> = &quot;input.data&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp9Structure12readFromFileEKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read configuration from file.</p>
+<p><p>Reads the first configuration found in the input file. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: Input file name.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp9Structure12readFromFileERNSt8ifstreamE">
+<span id="_CPPv3N3nnp9Structure12readFromFileERNSt8ifstreamE"></span><span id="_CPPv2N3nnp9Structure12readFromFileERNSt8ifstreamE"></span><span id="nnp::Structure::readFromFile__std::ifstreamR"></span><span class="target" id="structnnp_1_1Structure_1ae92b67777cab1467a3892ff54a6bde58"></span>void <code class="sig-name descname">readFromFile</code><span class="sig-paren">(</span>std::ifstream &amp;<em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp9Structure12readFromFileERNSt8ifstreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read configuration from file.</p>
+<p><p>Expects that a file with configurations is open, first keyword on first line should be </p>
+<code class="docutils literal notranslate"><span class="pre">begin</span></code>. Reads until keyword is <code class="docutils literal notranslate"><span class="pre">end</span></code>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">file</span></code>: Input file stream (already opened).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure13readFromLinesERKNSt6vectorINSt6stringEEE">
+<span id="_CPPv3N9Structure13readFromLinesERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N9Structure13readFromLinesERKNSt6vectorINSt6stringEEE"></span><span id="Structure::readFromLines__std::vector:ss:CR"></span><span class="target" id="structnnp_1_1Structure_1ae3f4816f60d52e90cf213479ef443b32"></span>void <code class="sig-name descname">readFromLines</code><span class="sig-paren">(</span>std::vector&lt;std::string&gt; <em class="property">const</em> &amp;<em>lines</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure13readFromLinesERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read configuration from lines.</p>
+<p><p>Read the configuration from a vector of strings. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">lines</span></code>: One configuration in form of a vector of strings.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure21calculateNeighborListEd">
+<span id="_CPPv3N9Structure21calculateNeighborListEd"></span><span id="_CPPv2N9Structure21calculateNeighborListEd"></span><span id="Structure::calculateNeighborList__double"></span><span class="target" id="structnnp_1_1Structure_1ade6c70cf70dbbd3db3aa59497ca09f9c"></span>void <code class="sig-name descname">calculateNeighborList</code><span class="sig-paren">(</span>double <em>cutoffRadius</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure21calculateNeighborListEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate neighbor list for all atoms.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">cutoffRadius</span></code>: Atoms are neighbors if there distance is smaller than the cutoff radius. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure18calculatePbcCopiesEd">
+<span id="_CPPv3N9Structure18calculatePbcCopiesEd"></span><span id="_CPPv2N9Structure18calculatePbcCopiesEd"></span><span id="Structure::calculatePbcCopies__double"></span><span class="target" id="structnnp_1_1Structure_1a88970ff745896183b1029fb5719ff28a"></span>void <code class="sig-name descname">calculatePbcCopies</code><span class="sig-paren">(</span>double <em>cutoffRadius</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure18calculatePbcCopiesEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate required PBC copies.</p>
+<p><p>Called by </p>
+<a class="reference internal" href="#structnnp_1_1Structure_1ade6c70cf70dbbd3db3aa59497ca09f9c"><span class="std std-ref">calculateNeighborList()</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">cutoffRadius</span></code>: Cutoff radius for neighbor list.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure19calculateInverseBoxEv">
+<span id="_CPPv3N9Structure19calculateInverseBoxEv"></span><span id="_CPPv2N9Structure19calculateInverseBoxEv"></span><span id="Structure::calculateInverseBox"></span><span class="target" id="structnnp_1_1Structure_1a7d4ec60f305ae52787eb7dc0995eaec3"></span>void <code class="sig-name descname">calculateInverseBox</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure19calculateInverseBoxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate inverse box.</p>
+<p>Simulation box looks like this:</p>
+<p><div class="math notranslate nohighlight">
+\[\begin{split} h = \begin{pmatrix} \phantom{a_x} &amp; \phantom{b_x} &amp; \phantom{c_x} \\ \vec{\mathbf{a}} &amp; \vec{\mathbf{b}} &amp; \vec{\mathbf{c}} \\ \phantom{a_z} &amp; \phantom{b_z} &amp; \phantom{c_z} \\ \end{pmatrix} = \begin{pmatrix} a_x &amp; b_x &amp; c_x \\ a_y &amp; b_y &amp; c_y \\ a_z &amp; b_z &amp; c_z \\ \end{pmatrix}, \end{split}\]</div>
+</p>
+<p>where <span class="math notranslate nohighlight">\(\vec{\mathbf{a}} = \)</span> <code class="docutils literal notranslate"><span class="pre">box[0]</span></code>, <span class="math notranslate nohighlight">\(\vec{\mathbf{b}} = \)</span> <code class="docutils literal notranslate"><span class="pre">box[1]</span></code> and <span class="math notranslate nohighlight">\(\vec{\mathbf{c}} = \)</span> <code class="docutils literal notranslate"><span class="pre">box[2]</span></code>. Thus, indices are column first, row second:</p>
+<p><div class="math notranslate nohighlight">
+\[\begin{split} h = \begin{pmatrix} \texttt{box[0][0]} &amp; \texttt{box[1][0]} &amp; \texttt{box[2][0]} \\ \texttt{box[0][1]} &amp; \texttt{box[1][1]} &amp; \texttt{box[2][1]} \\ \texttt{box[0][2]} &amp; \texttt{box[1][2]} &amp; \texttt{box[2][2]} \\ \end{pmatrix}. \end{split}\]</div>
+</p>
+<p>The inverse box matrix (same scheme as above but with <code class="docutils literal notranslate"><span class="pre">invbox</span></code>) can be used to calculate fractional coordinates:</p>
+<p><div class="math notranslate nohighlight">
+\[\begin{split} \begin{pmatrix} f_0 \\ f_1 \\ f_2 \end{pmatrix} = h^{-1} \; \vec{\mathbf{r}}. \end{split}\]</div>
+ </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure15calculateVolumeEv">
+<span id="_CPPv3N9Structure15calculateVolumeEv"></span><span id="_CPPv2N9Structure15calculateVolumeEv"></span><span id="Structure::calculateVolume"></span><span class="target" id="structnnp_1_1Structure_1a10f626682421d3690d8f1cb9ceba006f"></span>void <code class="sig-name descname">calculateVolume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure15calculateVolumeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate volume from box vectors. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure5remapER4Atom">
+<span id="_CPPv3N9Structure5remapER4Atom"></span><span id="_CPPv2N9Structure5remapER4Atom"></span><span id="Structure::remap__AtomR"></span><span class="target" id="structnnp_1_1Structure_1a3259977e4b66dbe020c2e827d10ab18c"></span>void <code class="sig-name descname">remap</code><span class="sig-paren">(</span>Atom &amp;<em>atom</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure5remapER4Atom" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Translate atom back into box if outside.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">atom</span></code>: <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a> to be remapped. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure17toNormalizedUnitsEddd">
+<span id="_CPPv3N9Structure17toNormalizedUnitsEddd"></span><span id="_CPPv2N9Structure17toNormalizedUnitsEddd"></span><span id="Structure::toNormalizedUnits__double.double.double"></span><span class="target" id="structnnp_1_1Structure_1acd39fe39b2b0e86e676c7bd52dc2b835"></span>void <code class="sig-name descname">toNormalizedUnits</code><span class="sig-paren">(</span>double <em>meanEnergy</em>, double <em>convEnergy</em>, double <em>convLength</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure17toNormalizedUnitsEddd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Normalize structure, shift energy and change energy and length unit.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">meanEnergy</span></code>: Mean energy per atom (in old units). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convEnergy</span></code>: Multiplicative energy unit conversion factor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convLength</span></code>: Multiplicative length unit conversion factor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure15toPhysicalUnitsEddd">
+<span id="_CPPv3N9Structure15toPhysicalUnitsEddd"></span><span id="_CPPv2N9Structure15toPhysicalUnitsEddd"></span><span id="Structure::toPhysicalUnits__double.double.double"></span><span class="target" id="structnnp_1_1Structure_1a041778a6c0a2f6d436852e2325c65d20"></span>void <code class="sig-name descname">toPhysicalUnits</code><span class="sig-paren">(</span>double <em>meanEnergy</em>, double <em>convEnergy</em>, double <em>convLength</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure15toPhysicalUnitsEddd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Switch to physical units, shift energy and change energy and length unit.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">meanEnergy</span></code>: Mean energy per atom (in old units). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convEnergy</span></code>: Multiplicative energy unit conversion factor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convLength</span></code>: Multiplicative length unit conversion factor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK9Structure18getMaxNumNeighborsEv">
+<span id="_CPPv3NK9Structure18getMaxNumNeighborsEv"></span><span id="_CPPv2NK9Structure18getMaxNumNeighborsEv"></span><span id="Structure::getMaxNumNeighborsC"></span><span class="target" id="structnnp_1_1Structure_1a26e79c2155e6dd905e7642c6cda008e6"></span>size_t <code class="sig-name descname">getMaxNumNeighbors</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK9Structure18getMaxNumNeighborsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Find maximum number of neighbors.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Maximum numbor of neighbors of all atoms in this structure. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure9freeAtomsEb">
+<span id="_CPPv3N9Structure9freeAtomsEb"></span><span id="_CPPv2N9Structure9freeAtomsEb"></span><span id="Structure::freeAtoms__b"></span><span class="target" id="structnnp_1_1Structure_1a9a0f3518c376324d41786e29a7b5300d"></span>void <code class="sig-name descname">freeAtoms</code><span class="sig-paren">(</span>bool <em>all</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure9freeAtomsEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Free symmetry function memory for all atoms, see free() in <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a> class.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">all</span></code>: See description in <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure5resetEv">
+<span id="_CPPv3N9Structure5resetEv"></span><span id="_CPPv2N9Structure5resetEv"></span><span id="Structure::reset"></span><span class="target" id="structnnp_1_1Structure_1abf6bf40715b7ffd70707baf5e95746ce"></span>void <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure5resetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset everything but <a class="reference internal" href="#structnnp_1_1Structure_1a56766c6996fa1bf63e4616b7fd03c84e"><span class="std std-ref">elementMap</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N9Structure17clearNeighborListEv">
+<span id="_CPPv3N9Structure17clearNeighborListEv"></span><span id="_CPPv2N9Structure17clearNeighborListEv"></span><span id="Structure::clearNeighborList"></span><span class="target" id="structnnp_1_1Structure_1af289c389f76b4981aef3c92300aa668d"></span>void <code class="sig-name descname">clearNeighborList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Structure17clearNeighborListEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear neighbor list of all atoms. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK9Structure16updateRmseEnergyERdRNSt6size_tE">
+<span id="_CPPv3NK9Structure16updateRmseEnergyERdRNSt6size_tE"></span><span id="_CPPv2NK9Structure16updateRmseEnergyERdRNSt6size_tE"></span><span id="Structure::updateRmseEnergy__doubleR.std::sRC"></span><span class="target" id="structnnp_1_1Structure_1a6287fe2a300bf302618ce96eb9b025d5"></span>void <code class="sig-name descname">updateRmseEnergy</code><span class="sig-paren">(</span>double &amp;<em>rmse</em>, std::size_t &amp;<em>count</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK9Structure16updateRmseEnergyERdRNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update energy RMSE with this structure.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">rmse</span></code>: Input RMSE to be updated. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">count</span></code>: Input counter to be updated. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK9Structure16updateRmseForcesERdRNSt6size_tE">
+<span id="_CPPv3NK9Structure16updateRmseForcesERdRNSt6size_tE"></span><span id="_CPPv2NK9Structure16updateRmseForcesERdRNSt6size_tE"></span><span id="Structure::updateRmseForces__doubleR.std::sRC"></span><span class="target" id="structnnp_1_1Structure_1a541b1f62ec5b391f6646d7b8f3f046bd"></span>void <code class="sig-name descname">updateRmseForces</code><span class="sig-paren">(</span>double &amp;<em>rmse</em>, std::size_t &amp;<em>count</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK9Structure16updateRmseForcesERdRNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update force RMSE with all atoms of this structure.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">rmse</span></code>: Input RMSE to be updated. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">count</span></code>: Input counter to be updated. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK9Structure13getEnergyLineEv">
+<span id="_CPPv3NK9Structure13getEnergyLineEv"></span><span id="_CPPv2NK9Structure13getEnergyLineEv"></span><span id="Structure::getEnergyLineC"></span><span class="target" id="structnnp_1_1Structure_1a96b44fa434482a31e7453a739b84fc09"></span>string <code class="sig-name descname">getEnergyLine</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK9Structure13getEnergyLineEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get reference and NN energy.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>String with <a class="reference internal" href="#structnnp_1_1Structure_1a5af7b5cd0a2154c2e34a3b8a73a51ca6"><span class="std std-ref">index</span></a>, <a class="reference internal" href="#structnnp_1_1Structure_1aaee087b13af754a75198def4d12c8b61"><span class="std std-ref">energyRef</span></a> and <a class="reference internal" href="#structnnp_1_1Structure_1aa9fd0fd0f8a23b6bf96247589feceeb5"><span class="std std-ref">energy</span></a> values. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK9Structure14getForcesLinesEv">
+<span id="_CPPv3NK9Structure14getForcesLinesEv"></span><span id="_CPPv2NK9Structure14getForcesLinesEv"></span><span id="Structure::getForcesLinesC"></span><span class="target" id="structnnp_1_1Structure_1ac5a70e2e3f8368758300957a48ead3e2"></span>vector&lt;string&gt; <code class="sig-name descname">getForcesLines</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK9Structure14getForcesLinesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get reference and NN forces for all atoms.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector of strings with force comparison. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp9Structure11writeToFileEKNSt6stringEKbKb">
+<span id="_CPPv3NK3nnp9Structure11writeToFileEKNSt6stringEKbKb"></span><span id="_CPPv2NK3nnp9Structure11writeToFileEKNSt6stringEKbKb"></span><span id="nnp::Structure::writeToFile__ssC.bC.bCC"></span><span class="target" id="structnnp_1_1Structure_1adc1fe115ab14ad262e0394a394057837"></span>void <code class="sig-name descname">writeToFile</code><span class="sig-paren">(</span>std::string <em class="property">const</em> <em>fileName</em> = &quot;output.data&quot;, bool <em class="property">const</em> <em>ref</em> = true, bool <em class="property">const</em> <em>append</em> = false<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp9Structure11writeToFileEKNSt6stringEKbKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write configuration to file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">fileName</span></code>: Ouptut file name. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ref</span></code>: If true, write reference energy and forces, if false, write NNP results instead. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">append</span></code>: If true, append to existing file. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp9Structure11writeToFileERPCNSt8ofstreamEKb">
+<span id="_CPPv3NK3nnp9Structure11writeToFileERPCNSt8ofstreamEKb"></span><span id="_CPPv2NK3nnp9Structure11writeToFileERPCNSt8ofstreamEKb"></span><span id="nnp::Structure::writeToFile__std::ofstreamPCR.bCC"></span><span class="target" id="structnnp_1_1Structure_1a29f3fced14ca13930a4f21965172716e"></span>void <code class="sig-name descname">writeToFile</code><span class="sig-paren">(</span>std::ofstream *<em class="property">const</em> &amp;<em>file</em>, bool <em class="property">const</em> <em>ref</em> = true<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp9Structure11writeToFileERPCNSt8ofstreamEKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write configuration to file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">file</span></code>: Ouptut file. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ref</span></code>: If true, write reference energy and forces, if false, write NNP results instead. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK9Structure14writeToFileXyzERPCNSt8ofstreamE">
+<span id="_CPPv3NK9Structure14writeToFileXyzERPCNSt8ofstreamE"></span><span id="_CPPv2NK9Structure14writeToFileXyzERPCNSt8ofstreamE"></span><span id="Structure::writeToFileXyz__std::ofstreamPCRC"></span><span class="target" id="structnnp_1_1Structure_1a8285382c3e2d908c8073a1fac315176b"></span>void <code class="sig-name descname">writeToFileXyz</code><span class="sig-paren">(</span>std::ofstream *<em class="property">const</em> &amp;<em>file</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK9Structure14writeToFileXyzERPCNSt8ofstreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write configuration to xyz file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">file</span></code>: xyz output file. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp9Structure17writeToFilePoscarERPCNSt8ofstreamE">
+<span id="_CPPv3NK3nnp9Structure17writeToFilePoscarERPCNSt8ofstreamE"></span><span id="_CPPv2NK3nnp9Structure17writeToFilePoscarERPCNSt8ofstreamE"></span><span id="nnp::Structure::writeToFilePoscar__std::ofstreamPCRC"></span><span class="target" id="structnnp_1_1Structure_1a280186f4c00fc282cec9008ccd50e7f1"></span>void <code class="sig-name descname">writeToFilePoscar</code><span class="sig-paren">(</span>std::ofstream *<em class="property">const</em> &amp;<em>file</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp9Structure17writeToFilePoscarERPCNSt8ofstreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write configuration to POSCAR file.</p>
+<p><dl class="simple">
+<dt><strong>Warning</strong></dt><dd><p>Elements in POTCAR file must be ordered according to periodic table. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">file</span></code>: POSCAR output file.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp9Structure17writeToFilePoscarERPCNSt8ofstreamEKNSt6stringE">
+<span id="_CPPv3NK3nnp9Structure17writeToFilePoscarERPCNSt8ofstreamEKNSt6stringE"></span><span id="_CPPv2NK3nnp9Structure17writeToFilePoscarERPCNSt8ofstreamEKNSt6stringE"></span><span id="nnp::Structure::writeToFilePoscar__std::ofstreamPCR.ssCC"></span><span class="target" id="structnnp_1_1Structure_1a5130d354e5c86ae2792d79b532aaba81"></span>void <code class="sig-name descname">writeToFilePoscar</code><span class="sig-paren">(</span>std::ofstream *<em class="property">const</em> &amp;<em>file</em>, std::string <em class="property">const</em> <em>elements</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp9Structure17writeToFilePoscarERPCNSt8ofstreamEKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write configuration to POSCAR file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">file</span></code>: POSCAR output file. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">elements</span></code>: User-defined order of elements, e.g. “Zn O Cu”. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK9Structure4infoEv">
+<span id="_CPPv3NK9Structure4infoEv"></span><span id="_CPPv2NK9Structure4infoEv"></span><span id="Structure::infoC"></span><span class="target" id="structnnp_1_1Structure_1af6d63337cd7d1a4e0058cd818543caef"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK9Structure4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get structure information as a vector of strings.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Lines with structure information. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure10elementMapE">
+<span id="_CPPv3N3nnp9Structure10elementMapE"></span><span id="_CPPv2N3nnp9Structure10elementMapE"></span><span id="nnp::Structure::elementMap__ElementMap"></span><span class="target" id="structnnp_1_1Structure_1a56766c6996fa1bf63e4616b7fd03c84e"></span><a class="reference internal" href="classnnp_1_1ElementMap.html#_CPPv4N3nnp10ElementMapE" title="nnp::ElementMap">ElementMap</a> <code class="sig-name descname">elementMap</code><a class="headerlink" href="#_CPPv4N3nnp9Structure10elementMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy of element map provided as constructor argument. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure10isPeriodicE">
+<span id="_CPPv3N3nnp9Structure10isPeriodicE"></span><span id="_CPPv2N3nnp9Structure10isPeriodicE"></span><span id="nnp::Structure::isPeriodic__b"></span><span class="target" id="structnnp_1_1Structure_1a4d8ebcacb8fc434178c7c90cb2f70110"></span>bool <code class="sig-name descname">isPeriodic</code><a class="headerlink" href="#_CPPv4N3nnp9Structure10isPeriodicE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If periodic boundary conditions apply. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure11isTriclinicE">
+<span id="_CPPv3N3nnp9Structure11isTriclinicE"></span><span id="_CPPv2N3nnp9Structure11isTriclinicE"></span><span id="nnp::Structure::isTriclinic__b"></span><span class="target" id="structnnp_1_1Structure_1a2627321edafea60f478b35e7387e0681"></span>bool <code class="sig-name descname">isTriclinic</code><a class="headerlink" href="#_CPPv4N3nnp9Structure11isTriclinicE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If the simulation box is triclinic. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure15hasNeighborListE">
+<span id="_CPPv3N3nnp9Structure15hasNeighborListE"></span><span id="_CPPv2N3nnp9Structure15hasNeighborListE"></span><span id="nnp::Structure::hasNeighborList__b"></span><span class="target" id="structnnp_1_1Structure_1af21dfbdaf41e8332ee0f773a070f3f74"></span>bool <code class="sig-name descname">hasNeighborList</code><a class="headerlink" href="#_CPPv4N3nnp9Structure15hasNeighborListE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If the neighbor list has been calculated. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure20hasSymmetryFunctionsE">
+<span id="_CPPv3N3nnp9Structure20hasSymmetryFunctionsE"></span><span id="_CPPv2N3nnp9Structure20hasSymmetryFunctionsE"></span><span id="nnp::Structure::hasSymmetryFunctions__b"></span><span class="target" id="structnnp_1_1Structure_1aff934fe32fb46e93dd9551d50ed4b0b6"></span>bool <code class="sig-name descname">hasSymmetryFunctions</code><a class="headerlink" href="#_CPPv4N3nnp9Structure20hasSymmetryFunctionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If symmetry function values are saved for each atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure30hasSymmetryFunctionDerivativesE">
+<span id="_CPPv3N3nnp9Structure30hasSymmetryFunctionDerivativesE"></span><span id="_CPPv2N3nnp9Structure30hasSymmetryFunctionDerivativesE"></span><span id="nnp::Structure::hasSymmetryFunctionDerivatives__b"></span><span class="target" id="structnnp_1_1Structure_1a82f10399909e0f7fa8f6344c305781cc"></span>bool <code class="sig-name descname">hasSymmetryFunctionDerivatives</code><a class="headerlink" href="#_CPPv4N3nnp9Structure30hasSymmetryFunctionDerivativesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If symmetry function derivatives are saved for each atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure5indexE">
+<span id="_CPPv3N3nnp9Structure5indexE"></span><span id="_CPPv2N3nnp9Structure5indexE"></span><span id="nnp::Structure::index__std::s"></span><span class="target" id="structnnp_1_1Structure_1a5af7b5cd0a2154c2e34a3b8a73a51ca6"></span>std::size_t <code class="sig-name descname">index</code><a class="headerlink" href="#_CPPv4N3nnp9Structure5indexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Index number of this structure. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure8numAtomsE">
+<span id="_CPPv3N3nnp9Structure8numAtomsE"></span><span id="_CPPv2N3nnp9Structure8numAtomsE"></span><span id="nnp::Structure::numAtoms__std::s"></span><span class="target" id="structnnp_1_1Structure_1ad2c737c945e42ec42fa852e4dbacaf90"></span>std::size_t <code class="sig-name descname">numAtoms</code><a class="headerlink" href="#_CPPv4N3nnp9Structure8numAtomsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Total number of atoms present in this structure. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure11numElementsE">
+<span id="_CPPv3N3nnp9Structure11numElementsE"></span><span id="_CPPv2N3nnp9Structure11numElementsE"></span><span id="nnp::Structure::numElements__std::s"></span><span class="target" id="structnnp_1_1Structure_1ad47f8d1a1742f5430418fcd1b8919eb6"></span>std::size_t <code class="sig-name descname">numElements</code><a class="headerlink" href="#_CPPv4N3nnp9Structure11numElementsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Global number of elements (all structures). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure18numElementsPresentE">
+<span id="_CPPv3N3nnp9Structure18numElementsPresentE"></span><span id="_CPPv2N3nnp9Structure18numElementsPresentE"></span><span id="nnp::Structure::numElementsPresent__std::s"></span><span class="target" id="structnnp_1_1Structure_1ae2fa28a5a6b564d3ec23a6905736730a"></span>std::size_t <code class="sig-name descname">numElementsPresent</code><a class="headerlink" href="#_CPPv4N3nnp9Structure18numElementsPresentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of elements present in this structure. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure3pbcE">
+<span id="_CPPv3N3nnp9Structure3pbcE"></span><span id="_CPPv2N3nnp9Structure3pbcE"></span><span id="nnp::Structure::pbc__iA"></span><span class="target" id="structnnp_1_1Structure_1ab4f8ec9fb43d1dc3d07b4c59bf28a8bd"></span>int <code class="sig-name descname">pbc</code>[3]<a class="headerlink" href="#_CPPv4N3nnp9Structure3pbcE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of PBC images necessary in each direction. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure6energyE">
+<span id="_CPPv3N3nnp9Structure6energyE"></span><span id="_CPPv2N3nnp9Structure6energyE"></span><span id="nnp::Structure::energy__double"></span><span class="target" id="structnnp_1_1Structure_1aa9fd0fd0f8a23b6bf96247589feceeb5"></span>double <code class="sig-name descname">energy</code><a class="headerlink" href="#_CPPv4N3nnp9Structure6energyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Potential energy determined by neural network. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure9energyRefE">
+<span id="_CPPv3N3nnp9Structure9energyRefE"></span><span id="_CPPv2N3nnp9Structure9energyRefE"></span><span id="nnp::Structure::energyRef__double"></span><span class="target" id="structnnp_1_1Structure_1aaee087b13af754a75198def4d12c8b61"></span>double <code class="sig-name descname">energyRef</code><a class="headerlink" href="#_CPPv4N3nnp9Structure9energyRefE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reference potential energy. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure9chargeRefE">
+<span id="_CPPv3N3nnp9Structure9chargeRefE"></span><span id="_CPPv2N3nnp9Structure9chargeRefE"></span><span id="nnp::Structure::chargeRef__double"></span><span class="target" id="structnnp_1_1Structure_1a65839bc1a3213a6d77e064b5edade786"></span>double <code class="sig-name descname">chargeRef</code><a class="headerlink" href="#_CPPv4N3nnp9Structure9chargeRefE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reference charge. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure6volumeE">
+<span id="_CPPv3N3nnp9Structure6volumeE"></span><span id="_CPPv2N3nnp9Structure6volumeE"></span><span id="nnp::Structure::volume__double"></span><span class="target" id="structnnp_1_1Structure_1ac8c6f2c95c4ca25893d2be192effff3d"></span>double <code class="sig-name descname">volume</code><a class="headerlink" href="#_CPPv4N3nnp9Structure6volumeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Simulation box volume. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure10sampleTypeE">
+<span id="_CPPv3N3nnp9Structure10sampleTypeE"></span><span id="_CPPv2N3nnp9Structure10sampleTypeE"></span><span id="nnp::Structure::sampleType__SampleType"></span><span class="target" id="structnnp_1_1Structure_1a6665217897b26fa4fd01a07aa652cd2f"></span><a class="reference internal" href="#_CPPv4N3nnp9Structure10SampleTypeE" title="nnp::Structure::SampleType">SampleType</a> <code class="sig-name descname">sampleType</code><a class="headerlink" href="#_CPPv4N3nnp9Structure10sampleTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sample type (training or test set). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure7commentE">
+<span id="_CPPv3N3nnp9Structure7commentE"></span><span id="_CPPv2N3nnp9Structure7commentE"></span><span id="nnp::Structure::comment__ss"></span><span class="target" id="structnnp_1_1Structure_1a4d519c01388cad10212f64eda1fa6c8b"></span>std::string <code class="sig-name descname">comment</code><a class="headerlink" href="#_CPPv4N3nnp9Structure7commentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#structnnp_1_1Structure"><span class="std std-ref">Structure</span></a> comment. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure3boxE">
+<span id="_CPPv3N3nnp9Structure3boxE"></span><span id="_CPPv2N3nnp9Structure3boxE"></span><span id="nnp::Structure::box__Vec3DA"></span><span class="target" id="structnnp_1_1Structure_1a21e5cd213176fab9075b3f040dd6dee6"></span><a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <code class="sig-name descname">box</code>[3]<a class="headerlink" href="#_CPPv4N3nnp9Structure3boxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Simulation box vectors. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure6invboxE">
+<span id="_CPPv3N3nnp9Structure6invboxE"></span><span id="_CPPv2N3nnp9Structure6invboxE"></span><span id="nnp::Structure::invbox__Vec3DA"></span><span class="target" id="structnnp_1_1Structure_1a177773f58df6da23d833e1cca0eb2cf8"></span><a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <code class="sig-name descname">invbox</code>[3]<a class="headerlink" href="#_CPPv4N3nnp9Structure6invboxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inverse simulation box vectors. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure18numAtomsPerElementE">
+<span id="_CPPv3N3nnp9Structure18numAtomsPerElementE"></span><span id="_CPPv2N3nnp9Structure18numAtomsPerElementE"></span><span id="nnp::Structure::numAtomsPerElement__std::vector:std::s:"></span><span class="target" id="structnnp_1_1Structure_1a3427c9bd877e3bf72ad71f30dfb76ac2"></span>std::vector&lt;std::size_t&gt; <code class="sig-name descname">numAtomsPerElement</code><a class="headerlink" href="#_CPPv4N3nnp9Structure18numAtomsPerElementE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of atoms of each element in this structure. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp9Structure5atomsE">
+<span id="_CPPv3N3nnp9Structure5atomsE"></span><span id="_CPPv2N3nnp9Structure5atomsE"></span><span id="nnp::Structure::atoms__std::vector:Atom:"></span><span class="target" id="structnnp_1_1Structure_1adee965dec483f9479378a2ed4acd5544"></span>std::vector&lt;<a class="reference internal" href="structnnp_1_1Atom.html#_CPPv4N3nnp4AtomE" title="nnp::Atom">Atom</a>&gt; <code class="sig-name descname">atoms</code><a class="headerlink" href="#_CPPv4N3nnp9Structure5atomsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vector of all atoms in this structure. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structnnp_1_1SymmetryFunctionStatistics_1_1Container.html" class="btn btn-neutral float-right" title="Struct SymmetryFunctionStatistics::Container" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="structnnp_1_1NeuralNetwork_1_1Neuron.html" class="btn btn-neutral float-left" title="Struct NeuralNetwork::Neuron" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

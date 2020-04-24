@@ -1,0 +1,1294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File NeuralNetwork.cpp &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File NeuralNetwork.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-neuralnetwork-cpp">
+<span id="program-listing-file-home-travis-build-compphysvienna-n2p2-src-libnnp-neuralnetwork-cpp"></span><h1>Program Listing for File NeuralNetwork.cpp<a class="headerlink" href="#program-listing-for-file-neuralnetwork-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-neuralnetwork-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/NeuralNetwork.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// n2p2 - A neural network potential package</span>
+<span class="c1">// Copyright (C) 2018 Andreas Singraber (University of Vienna)</span>
+<span class="c1">//</span>
+<span class="c1">// This program is free software: you can redistribute it and/or modify</span>
+<span class="c1">// it under the terms of the GNU General Public License as published by</span>
+<span class="c1">// the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1">// (at your option) any later version.</span>
+<span class="c1">//</span>
+<span class="c1">// This program is distributed in the hope that it will be useful,</span>
+<span class="c1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1">// GNU General Public License for more details.</span>
+<span class="c1">//</span>
+<span class="c1">// You should have received a copy of the GNU General Public License</span>
+<span class="c1">// along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;NeuralNetwork.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;utility.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt; // std::min, std::max</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;     // sqrt, pow, tanh</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;    // fprintf, stderr</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstdlib&gt;   // exit, EXIT_FAILURE, rand, srand</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;limits&gt;    // std::numeric_limits</span><span class="cp"></span>
+
+<span class="cp">#define EXP_LIMIT 35.0</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">nnp</span><span class="p">;</span>
+
+<span class="n">NeuralNetwork</span><span class="o">::</span>
+<span class="n">NeuralNetwork</span><span class="p">(</span><span class="kt">int</span>                              <span class="n">numLayers</span><span class="p">,</span>
+              <span class="kt">int</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span>                <span class="n">numNeuronsPerLayer</span><span class="p">,</span>
+              <span class="n">ActivationFunction</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">activationFunctionsPerLayer</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// check number of layers</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">numLayers</span> <span class="o">=</span> <span class="n">numLayers</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">numLayers</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span>
+                <span class="s">&quot;ERROR: Neural network must have at least three layers&quot;</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">numHiddenLayers</span> <span class="o">=</span> <span class="n">numLayers</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="c1">// do not normalize neurons by default</span>
+    <span class="n">normalizeNeurons</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// allocate layers and populate with neurons</span>
+    <span class="n">layers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Layer</span><span class="p">[</span><span class="n">numLayers</span><span class="p">];</span>
+    <span class="n">inputLayer</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">outputLayer</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">layers</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">allocateLayer</span><span class="p">(</span><span class="o">*</span><span class="n">inputLayer</span><span class="p">,</span>
+                  <span class="mi">0</span><span class="p">,</span>
+                  <span class="n">numNeuronsPerLayer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="n">activationFunctionsPerLayer</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">allocateLayer</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                      <span class="n">numNeuronsPerLayer</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                      <span class="n">numNeuronsPerLayer</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                      <span class="n">activationFunctionsPerLayer</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// count connections</span>
+    <span class="n">numWeights</span>     <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">numBiases</span>      <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">numConnections</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">numBiases</span>  <span class="o">+=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span>
+        <span class="n">numWeights</span> <span class="o">+=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span> <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">numConnections</span> <span class="o">=</span> <span class="n">numWeights</span> <span class="o">+</span> <span class="n">numBiases</span><span class="p">;</span>
+
+    <span class="c1">// calculate weight and bias offsets for each layer</span>
+    <span class="n">weightOffset</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">weightOffset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">weightOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">weightOffset</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span>
+                          <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">biasOffset</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">weightOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span>
+                        <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span> <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">biasOnlyOffset</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">biasOnlyOffset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">NeuralNetwork</span><span class="o">::~</span><span class="n">NeuralNetwork</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">delete</span><span class="p">[]</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">weights</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">delete</span><span class="p">[]</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">layers</span><span class="p">;</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">weightOffset</span><span class="p">;</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">biasOffset</span><span class="p">;</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">biasOnlyOffset</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">setNormalizeNeurons</span><span class="p">(</span><span class="kt">bool</span> <span class="n">normalizeNeurons</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">normalizeNeurons</span> <span class="o">=</span> <span class="n">normalizeNeurons</span><span class="p">;</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">getNumNeurons</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">getNumConnections</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">numConnections</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">getNumWeights</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">numWeights</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">getNumBiases</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">numBiases</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">setConnections</span><span class="p">(</span><span class="kt">double</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">connections</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">connections</span><span class="p">[</span><span class="n">count</span><span class="p">];</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">bias</span> <span class="o">=</span> <span class="n">connections</span><span class="p">[</span><span class="n">count</span><span class="p">];</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">getConnections</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span> <span class="n">connections</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">connections</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">;</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">connections</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">bias</span><span class="p">;</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">initializeConnectionsRandomUniform</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">seed</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span><span class="o">*</span> <span class="n">connections</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">numConnections</span><span class="p">];</span>
+
+    <span class="n">srand</span><span class="p">(</span><span class="n">seed</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numConnections</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">connections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">rand</span><span class="p">()</span> <span class="o">/</span> <span class="n">RAND_MAX</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">setConnections</span><span class="p">(</span><span class="n">connections</span><span class="p">);</span>
+
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">connections</span><span class="p">;</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">modifyConnections</span><span class="p">(</span><span class="n">ModificationScheme</span> <span class="n">modificationScheme</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">modificationScheme</span> <span class="o">==</span> <span class="n">MS_ZEROBIAS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">bias</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">modificationScheme</span> <span class="o">==</span> <span class="n">MS_ZEROOUTPUTWEIGHTS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">modificationScheme</span> <span class="o">==</span> <span class="n">MS_FANIN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_TANH</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">/=</span>
+                                           <span class="n">sqrt</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">modificationScheme</span> <span class="o">==</span> <span class="n">MS_GLOROTBENGIO</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_TANH</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mf">6.0</span> <span class="o">/</span> <span class="p">(</span>
+                                             <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span>
+                                           <span class="o">+</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">));</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">modificationScheme</span> <span class="o">==</span> <span class="n">MS_NGUYENWIDROW</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">beta</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">sum</span>    <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">weight</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.7</span> <span class="o">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">,</span>
+                             <span class="mf">1.0</span> <span class="o">/</span> <span class="kt">double</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">));</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">sum</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">weight</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+                    <span class="n">sum</span> <span class="o">+=</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">weight</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">sum</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*=</span> <span class="n">beta</span> <span class="o">/</span> <span class="n">sum</span><span class="p">;</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_TANH</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">2.0</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">bias</span> <span class="o">*=</span> <span class="n">beta</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_TANH</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">bias</span> <span class="o">*=</span> <span class="mf">2.0</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">0.5</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;ERROR: Incorrect modifyConnections call.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">modifyConnections</span><span class="p">(</span><span class="n">ModificationScheme</span> <span class="n">modificationScheme</span><span class="p">,</span>
+                                      <span class="kt">double</span> <span class="n">parameter1</span><span class="p">,</span>
+                                      <span class="kt">double</span> <span class="n">parameter2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">modificationScheme</span> <span class="o">==</span> <span class="n">MS_PRECONDITIONOUTPUT</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">mean</span>  <span class="o">=</span> <span class="n">parameter1</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">parameter2</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="n">sigma</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">bias</span> <span class="o">+=</span> <span class="n">mean</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;ERROR: Incorrect modifyConnections call.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">setInput</span><span class="p">(</span><span class="kt">double</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">input</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">inputLayer</span><span class="o">-&gt;</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">value</span> <span class="o">=</span> <span class="n">input</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">Neuron</span><span class="o">&amp;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">inputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">min</span>  <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">n</span><span class="p">.</span><span class="n">min</span><span class="p">);</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">max</span>  <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">n</span><span class="p">.</span><span class="n">max</span><span class="p">);</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">sum</span>  <span class="o">+=</span> <span class="n">value</span><span class="p">;</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">sum2</span> <span class="o">+=</span> <span class="n">value</span> <span class="o">*</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">getOutput</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span> <span class="n">output</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">propagate</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">propagateLayer</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">calculateDEdG</span><span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">dEdG</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">double</span><span class="o">**</span> <span class="n">inner</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">*</span><span class="p">[</span><span class="n">numHiddenLayers</span><span class="p">];</span>
+    <span class="kt">double</span><span class="o">**</span> <span class="n">outer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">*</span><span class="p">[</span><span class="n">numHiddenLayers</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numHiddenLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">inner</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">];</span>
+        <span class="n">outer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">inner</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                        <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span><span class="p">)</span> <span class="n">inner</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span> <span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">numHiddenLayers</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">l</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i2</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i2</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">outer</span><span class="p">[</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">i2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i1</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">l</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i1</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">outer</span><span class="p">[</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">i2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">layers</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">i2</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">i1</span><span class="p">]</span>
+                                    <span class="o">*</span> <span class="n">inner</span><span class="p">[</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">i1</span><span class="p">];</span>
+                <span class="p">}</span>
+                <span class="n">outer</span><span class="p">[</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">i2</span><span class="p">]</span> <span class="o">*=</span> <span class="n">layers</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">i2</span><span class="p">].</span><span class="n">dfdx</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span><span class="p">)</span> <span class="n">outer</span><span class="p">[</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">i2</span><span class="p">]</span> <span class="o">/=</span> <span class="n">layers</span><span class="p">[</span><span class="n">l</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">numHiddenLayers</span><span class="p">)</span> <span class="n">inner</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">i2</span><span class="p">]</span> <span class="o">=</span> <span class="n">outer</span><span class="p">[</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">i2</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">dEdG</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">outer</span><span class="p">[</span><span class="n">numHiddenLayers</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numHiddenLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">delete</span><span class="p">[]</span> <span class="n">inner</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">delete</span><span class="p">[]</span> <span class="n">outer</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">inner</span><span class="p">;</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">outer</span><span class="p">;</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">calculateDEdc</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span> <span class="n">dEdc</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numConnections</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">dEdc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">dEdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">dEdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span>
+                <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">dEdc</span><span class="p">[</span><span class="n">weightOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">dEdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">]</span>
+                                            <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">value</span><span class="p">;</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">dEdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dEdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">]</span>
+                        <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                        <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dfdx</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">dEdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">/=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">calculateDFdc</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span>              <span class="n">dFdc</span><span class="p">,</span>
+                                  <span class="kt">double</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">dGdxyz</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">double</span><span class="o">*</span> <span class="n">dEdb</span>    <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">numBiases</span><span class="p">];</span>
+    <span class="kt">double</span><span class="o">*</span> <span class="n">d2EdGdc</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">numConnections</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numBiases</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">dEdb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numConnections</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">dFdc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>    <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">calculateDEdb</span><span class="p">(</span><span class="n">dEdb</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numConnections</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">calculateDxdG</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="n">calculateD2EdGdc</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">dEdb</span><span class="p">,</span> <span class="n">d2EdGdc</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numConnections</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Note: F = - dE / dx !!</span>
+            <span class="c1">//           ^</span>
+            <span class="n">dFdc</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-=</span> <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">dGdxyz</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">dEdb</span><span class="p">;</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">d2EdGdc</span><span class="p">;</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">writeConnections</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="o">&amp;</span> <span class="n">file</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="c1">// File header.</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">title</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">colName</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">colInfo</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">colSize</span><span class="p">;</span>
+    <span class="n">title</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Neural network connection values (weights and biases).&quot;</span><span class="p">);</span>
+    <span class="n">colSize</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">24</span><span class="p">);</span>
+    <span class="n">colName</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;connection&quot;</span><span class="p">);</span>
+    <span class="n">colInfo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Neural network connection value.&quot;</span><span class="p">);</span>
+    <span class="n">colSize</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">colName</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">);</span>
+    <span class="n">colInfo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Connection type (a = weight, b = bias).&quot;</span><span class="p">);</span>
+    <span class="n">colSize</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+    <span class="n">colName</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;index&quot;</span><span class="p">);</span>
+    <span class="n">colInfo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Index enumerating weights.&quot;</span><span class="p">);</span>
+    <span class="n">colSize</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">colName</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;l_s&quot;</span><span class="p">);</span>
+    <span class="n">colInfo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Starting point layer (end point layer for biases).&quot;</span><span class="p">);</span>
+    <span class="n">colSize</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">colName</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;n_s&quot;</span><span class="p">);</span>
+    <span class="n">colInfo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Starting point neuron in starting layer (end point &quot;</span>
+                      <span class="s">&quot;neuron for biases).&quot;</span><span class="p">);</span>
+    <span class="n">colSize</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">colName</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;l_e&quot;</span><span class="p">);</span>
+    <span class="n">colInfo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;End point layer.&quot;</span><span class="p">);</span>
+    <span class="n">colSize</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">colName</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;n_e&quot;</span><span class="p">);</span>
+    <span class="n">colInfo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;End point neuron in end layer.&quot;</span><span class="p">);</span>
+    <span class="n">appendLinesToFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span>
+                      <span class="n">createFileHeader</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">colSize</span><span class="p">,</span> <span class="n">colName</span><span class="p">,</span> <span class="n">colInfo</span><span class="p">));</span>
+
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;%24.16E a %9d %5d %5d %5d %5d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+                              <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">],</span>
+                              <span class="n">count</span><span class="p">,</span>
+                              <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="n">i</span><span class="p">,</span>
+                              <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;%24.16E b %9d %5d %5d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+                          <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">bias</span><span class="p">,</span>
+                          <span class="n">count</span><span class="p">,</span>
+                          <span class="n">i</span><span class="p">,</span>
+                          <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">calculateDEdb</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span> <span class="n">dEdb</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">dEdb</span><span class="p">[</span><span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">dEdb</span><span class="p">[</span><span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span>
+                <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">dEdb</span><span class="p">[</span><span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dEdb</span><span class="p">[</span><span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">]</span>
+                        <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                        <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dfdx</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">dEdb</span><span class="p">[</span><span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">/=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">calculateDxdG</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dxdG</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dxdG</span> <span class="o">/=</span> <span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dxdG</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dxdG</span> <span class="o">+=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                                           <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">dfdx</span>
+                                           <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">dxdG</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dxdG</span> <span class="o">/=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">calculateD2EdGdc</span><span class="p">(</span><span class="kt">int</span>                  <span class="n">index</span><span class="p">,</span>
+                                     <span class="kt">double</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">dEdb</span><span class="p">,</span>
+                                     <span class="kt">double</span><span class="o">*</span>              <span class="n">d2EdGdc</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span>
+                                           <span class="o">*</span> <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dxdG</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span>
+                <span class="n">outputLayer</span><span class="o">-&gt;</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">numLayers</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">weightOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span>
+                        <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">value</span><span class="p">;</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">index</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">weightOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">count</span><span class="p">]</span> <span class="o">+=</span>
+                            <span class="n">dEdb</span><span class="p">[</span><span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">];</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">weightOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span>
+                        <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">value</span>
+                      <span class="o">+</span> <span class="n">dEdb</span><span class="p">[</span><span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dfdx</span>
+                      <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dxdG</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span>
+                        <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                      <span class="o">*</span> <span class="p">(</span><span class="n">d2EdGdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dfdx</span>
+                      <span class="o">+</span> <span class="n">dEdb</span><span class="p">[</span><span class="n">biasOnlyOffset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">]</span>
+                      <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">d2fdx2</span>
+                      <span class="o">*</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">dxdG</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">d2EdGdc</span><span class="p">[</span><span class="n">biasOffset</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">/=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">allocateLayer</span><span class="p">(</span><span class="n">Layer</span><span class="o">&amp;</span>             <span class="n">layer</span><span class="p">,</span>
+                                  <span class="kt">int</span>                <span class="n">numNeuronsPrevLayer</span><span class="p">,</span>
+                                  <span class="kt">int</span>                <span class="n">numNeurons</span><span class="p">,</span>
+                                  <span class="n">ActivationFunction</span> <span class="n">activationFunction</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">layer</span><span class="p">.</span><span class="n">numNeurons</span>          <span class="o">=</span> <span class="n">numNeurons</span><span class="p">;</span>
+    <span class="n">layer</span><span class="p">.</span><span class="n">numNeuronsPrevLayer</span> <span class="o">=</span> <span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+    <span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span>  <span class="o">=</span> <span class="n">activationFunction</span><span class="p">;</span>
+
+    <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Neuron</span><span class="p">[</span><span class="n">layer</span><span class="p">.</span><span class="n">numNeurons</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">layer</span><span class="p">.</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span>      <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">bias</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dxdG</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">min</span>    <span class="o">=</span>  <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">max</span>    <span class="o">=</span> <span class="o">-</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">sum</span>    <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">sum2</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">numNeuronsPrevLayer</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">weights</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">layer</span><span class="p">.</span><span class="n">numNeuronsPrevLayer</span><span class="p">];</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layer</span><span class="p">.</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">weights</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">propagateLayer</span><span class="p">(</span><span class="n">Layer</span><span class="o">&amp;</span> <span class="n">layer</span><span class="p">,</span> <span class="n">Layer</span><span class="o">&amp;</span> <span class="n">layerPrev</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dtmp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">layer</span><span class="p">.</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">dtmp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layer</span><span class="p">.</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">dtmp</span> <span class="o">+=</span> <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">layerPrev</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">value</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">dtmp</span> <span class="o">+=</span> <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">bias</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">normalizeNeurons</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">dtmp</span> <span class="o">/=</span> <span class="n">layer</span><span class="p">.</span><span class="n">numNeuronsPrevLayer</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span> <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_IDENTITY</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_TANH</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">dtmp</span> <span class="o">=</span> <span class="n">tanh</span><span class="p">(</span><span class="n">dtmp</span><span class="p">);</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="n">dtmp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="n">dtmp</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_LOGISTIC</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">dtmp</span> <span class="o">&gt;</span> <span class="n">EXP_LIMIT</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">dtmp</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">EXP_LIMIT</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">dtmp</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dtmp</span><span class="p">));</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">dtmp</span><span class="p">);</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">dtmp</span><span class="p">)</span>
+                                        <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">dtmp</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_SOFTPLUS</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">dtmp</span> <span class="o">&gt;</span> <span class="n">EXP_LIMIT</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">dtmp</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">EXP_LIMIT</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">dtmp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">dtmp</span><span class="p">);</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">dtmp</span><span class="p">);</span>
+                <span class="n">dtmp</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">dtmp</span><span class="p">);</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">dtmp</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_RELU</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">dtmp</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+                <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_GAUSSIAN</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">double</span> <span class="k">const</span> <span class="n">tmpexp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="n">dtmp</span><span class="p">);</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">tmpexp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="o">-</span><span class="n">dtmp</span> <span class="o">*</span> <span class="n">tmpexp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="p">(</span><span class="n">dtmp</span> <span class="o">*</span> <span class="n">dtmp</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">tmpexp</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_COS</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">double</span> <span class="k">const</span> <span class="n">tmpcos</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">dtmp</span><span class="p">);</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">tmpcos</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">dtmp</span><span class="p">);</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="o">-</span><span class="n">tmpcos</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_REVLOGISTIC</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">dtmp</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dtmp</span><span class="p">));</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">dtmp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="p">(</span><span class="n">dtmp</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">);</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="p">(</span><span class="n">dtmp</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">dtmp</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_EXP</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">dtmp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dtmp</span><span class="p">);</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="o">-</span><span class="n">dtmp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="n">dtmp</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layer</span><span class="p">.</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_HARMONIC</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span>  <span class="o">=</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="n">dtmp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dfdx</span>   <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">dtmp</span><span class="p">;</span>
+            <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">d2fdx2</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">dtmp</span> <span class="o">=</span> <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">min</span>  <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dtmp</span><span class="p">,</span> <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">min</span><span class="p">);</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">max</span>  <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dtmp</span><span class="p">,</span> <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">max</span><span class="p">);</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">sum</span>  <span class="o">+=</span> <span class="n">dtmp</span><span class="p">;</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">neurons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">sum2</span> <span class="o">+=</span> <span class="n">dtmp</span> <span class="o">*</span> <span class="n">dtmp</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">resetNeuronStatistics</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">min</span>   <span class="o">=</span>  <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
+            <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">max</span>   <span class="o">=</span> <span class="o">-</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
+            <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">sum</span>   <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">sum2</span>  <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">getNeuronStatistics</span><span class="p">(</span><span class="kt">long</span><span class="o">*</span>   <span class="n">count</span><span class="p">,</span>
+                                        <span class="kt">double</span><span class="o">*</span> <span class="n">min</span><span class="p">,</span>
+                                        <span class="kt">double</span><span class="o">*</span> <span class="n">max</span><span class="p">,</span>
+                                        <span class="kt">double</span><span class="o">*</span> <span class="n">sum</span><span class="p">,</span>
+                                        <span class="kt">double</span><span class="o">*</span> <span class="n">sum2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">iNeuron</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">count</span><span class="p">[</span><span class="n">iNeuron</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">count</span><span class="p">;</span>
+            <span class="n">min</span>  <span class="p">[</span><span class="n">iNeuron</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">min</span><span class="p">;</span>
+            <span class="n">max</span>  <span class="p">[</span><span class="n">iNeuron</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">max</span><span class="p">;</span>
+            <span class="n">sum</span>  <span class="p">[</span><span class="n">iNeuron</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">sum</span><span class="p">;</span>
+            <span class="n">sum2</span> <span class="p">[</span><span class="n">iNeuron</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">neurons</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">sum2</span><span class="p">;</span>
+            <span class="n">iNeuron</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">void NeuralNetwork::writeStatus(int element, int epoch)</span>
+<span class="cm">{</span>
+<span class="cm">    char  fName[LSTR] = &quot;&quot;;</span>
+<span class="cm">    FILE* fpn         = NULL;</span>
+<span class="cm">    FILE* fpw         = NULL;</span>
+
+<span class="cm">    for (int i = 0; i &lt; numLayers; i++)</span>
+<span class="cm">    {</span>
+<span class="cm">        sprintf(fName, &quot;nn.neurons.%03d.%1d.%06d&quot;, element, i, epoch);</span>
+<span class="cm">        fpn = fopen(fName, &quot;a&quot;);</span>
+<span class="cm">        if (fpn == NULL)</span>
+<span class="cm">        {</span>
+<span class="cm">            fprintf(stderr, &quot;ERROR: Could not open file: %s.\n&quot;, fName);</span>
+<span class="cm">            exit(EXIT_FAILURE);</span>
+<span class="cm">        }</span>
+<span class="cm">        sprintf(fName, &quot;nn.weights.%03d.%1d.%06d&quot;, element, i, epoch);</span>
+<span class="cm">        fpw = fopen(fName, &quot;a&quot;);</span>
+<span class="cm">        if (fpw == NULL)</span>
+<span class="cm">        {</span>
+<span class="cm">            fprintf(stderr, &quot;ERROR: Could not open file: %s.\n&quot;, fName);</span>
+<span class="cm">            exit(EXIT_FAILURE);</span>
+<span class="cm">        }</span>
+<span class="cm">        for (int j = 0; j &lt; layers[i].numNeurons; j++)</span>
+<span class="cm">        {</span>
+<span class="cm">            fprintf(fpn, &quot;%4d %.8f %.8f %.8f %.8f %.8f %.8f\n&quot;, j, layers[i].neurons[j].x,</span>
+<span class="cm">                    layers[i].neurons[j].value, layers[i].neurons[j].dfdx, layers[i].neurons[j].d2fdx2,</span>
+<span class="cm">                    layers[i].neurons[j].bias, layers[i].neurons[j].dxdG);</span>
+<span class="cm">            for (int k = 0; k &lt; layers[i].numNeuronsPrevLayer; k++)</span>
+<span class="cm">            {</span>
+<span class="cm">                fprintf(fpw, &quot;%4d %4d %.8f\n&quot;, j, k, layers[i].neurons[j].weights[k]);</span>
+<span class="cm">            }</span>
+<span class="cm">        }</span>
+<span class="cm">        fclose(fpn);</span>
+<span class="cm">        fclose(fpw);</span>
+<span class="cm">    }</span>
+
+<span class="cm">    return;</span>
+
+<span class="cm">}</span>
+<span class="cm">*/</span>
+
+<span class="kt">long</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">getMemoryUsage</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">long</span> <span class="n">mem</span>        <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
+    <span class="kt">int</span>  <span class="n">numNeurons</span> <span class="o">=</span> <span class="n">getNumNeurons</span><span class="p">();</span>
+
+    <span class="n">mem</span> <span class="o">+=</span> <span class="p">(</span><span class="n">numLayers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span> <span class="c1">// weightOffset</span>
+    <span class="n">mem</span> <span class="o">+=</span> <span class="p">(</span><span class="n">numLayers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span> <span class="c1">// biasOffset</span>
+    <span class="n">mem</span> <span class="o">+=</span> <span class="p">(</span><span class="n">numLayers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span> <span class="c1">// biasOnlyOffset</span>
+    <span class="n">mem</span> <span class="o">+=</span> <span class="n">numLayers</span>  <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Layer</span><span class="p">);</span>    <span class="c1">// layers</span>
+    <span class="n">mem</span> <span class="o">+=</span> <span class="n">numNeurons</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Neuron</span><span class="p">);</span>   <span class="c1">// neurons</span>
+    <span class="n">mem</span> <span class="o">+=</span> <span class="n">numWeights</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>   <span class="c1">// weights</span>
+
+    <span class="k">return</span> <span class="n">mem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">NeuralNetwork</span><span class="o">::</span><span class="n">info</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">maxNeurons</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">strpr</span><span class="p">(</span><span class="s">&quot;Number of weights    : %6zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">numWeights</span><span class="p">));</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">strpr</span><span class="p">(</span><span class="s">&quot;Number of biases     : %6zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">numBiases</span><span class="p">));</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">strpr</span><span class="p">(</span><span class="s">&quot;Number of connections: %6zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">numConnections</span><span class="p">));</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">strpr</span><span class="p">(</span><span class="s">&quot;Architecture    &quot;</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">maxNeurons</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">,</span> <span class="n">maxNeurons</span><span class="p">);</span>
+        <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %4d&quot;</span><span class="p">,</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;-----------------------------------------&quot;</span>
+                <span class="s">&quot;--------------------------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">maxNeurons</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">strpr</span><span class="p">(</span><span class="s">&quot;%4d&quot;</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numLayers</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">numNeurons</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;G&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_IDENTITY</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;l&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_TANH</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;t&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_LOGISTIC</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;s&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_SOFTPLUS</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_RELU</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_GAUSSIAN</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;g&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_COS</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_REVLOGISTIC</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;S&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_EXP</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">activationFunction</span> <span class="o">==</span> <span class="n">AF_HARMONIC</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot; %3s&quot;</span><span class="p">,</span> <span class="s">&quot;h&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;    &quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">v</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

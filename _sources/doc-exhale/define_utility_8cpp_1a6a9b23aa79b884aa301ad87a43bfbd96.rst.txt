@@ -1,0 +1,13 @@
+.. _exhale_define_utility_8cpp_1a6a9b23aa79b884aa301ad87a43bfbd96:
+
+Define STRPR_MAXBUF
+===================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: STRPR_MAXBUF

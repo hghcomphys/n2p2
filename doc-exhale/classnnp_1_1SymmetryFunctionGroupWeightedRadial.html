@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class SymmetryFunctionGroupWeightedRadial &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class SymmetryFunctionRadial" href="classnnp_1_1SymmetryFunctionRadial.html" />
+    <link rel="prev" title="Class SymmetryFunctionGroupWeightedAngular" href="classnnp_1_1SymmetryFunctionGroupWeightedAngular.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class SymmetryFunctionGroupWeightedRadial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1SymmetryFunctionGroupWeightedRadial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-symmetryfunctiongroupweightedradial">
+<span id="exhale-class-classnnp-1-1symmetryfunctiongroupweightedradial"></span><h1>Class SymmetryFunctionGroupWeightedRadial<a class="headerlink" href="#class-symmetryfunctiongroupweightedradial" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupweightedradial-h"><span class="std std-ref">File SymmetryFunctionGroupWeightedRadial.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::SymmetryFunctionGroup</span></code> (<a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#exhale-class-classnnp-1-1symmetryfunctiongroup"><span class="std std-ref">Class SymmetryFunctionGroup</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp35SymmetryFunctionGroupWeightedRadialE">
+<span id="_CPPv3N3nnp35SymmetryFunctionGroupWeightedRadialE"></span><span id="_CPPv2N3nnp35SymmetryFunctionGroupWeightedRadialE"></span><span id="nnp::SymmetryFunctionGroupWeightedRadial"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial"></span><em class="property">class </em><code class="sig-name descname">SymmetryFunctionGroupWeightedRadial</code> : <em class="property">public</em> nnp::<a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#_CPPv4N3nnp21SymmetryFunctionGroupE" title="nnp::SymmetryFunctionGroup">SymmetryFunctionGroup</a><a class="headerlink" href="#_CPPv4N3nnp35SymmetryFunctionGroupWeightedRadialE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Weighted radial symmetry function group (type 12)</p>
+<p><div class="math notranslate nohighlight">
+\[ G^{12}_i = \sum_{j \neq i} Z_j \mathrm{e}^{-\eta(r_{ij} - r_\mathrm{s})^2} f_c(r_{ij}) \]</div>
+ Common features:<ul class="simple">
+<li><p>element of central atom</p></li>
+<li><p>cutoff type</p></li>
+<li><p><span class="math notranslate nohighlight">\(r_c\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N35SymmetryFunctionGroupWeightedRadial35SymmetryFunctionGroupWeightedRadialERK10ElementMap">
+<span id="_CPPv3N35SymmetryFunctionGroupWeightedRadial35SymmetryFunctionGroupWeightedRadialERK10ElementMap"></span><span id="_CPPv2N35SymmetryFunctionGroupWeightedRadial35SymmetryFunctionGroupWeightedRadialERK10ElementMap"></span><span id="SymmetryFunctionGroupWeightedRadial::SymmetryFunctionGroupWeightedRadial__ElementMapCR"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a2ce55b5ec23336292278a02fed362444"></span><code class="sig-name descname">SymmetryFunctionGroupWeightedRadial</code><span class="sig-paren">(</span>ElementMap <em class="property">const</em> &amp;<em>elementMap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N35SymmetryFunctionGroupWeightedRadial35SymmetryFunctionGroupWeightedRadialERK10ElementMap" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor, sets type = 12 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK35SymmetryFunctionGroupWeightedRadialeqERK21SymmetryFunctionGroup">
+<span id="_CPPv3NK35SymmetryFunctionGroupWeightedRadialeqERK21SymmetryFunctionGroup"></span><span id="_CPPv2NK35SymmetryFunctionGroupWeightedRadialeqERK21SymmetryFunctionGroup"></span><span id="SymmetryFunctionGroupWeightedRadial::eq-operator__SymmetryFunctionGroupCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1aca661c70326d9802089d4f686f82dd2b"></span>bool <code class="sig-name descname">operator==</code><span class="sig-paren">(</span>SymmetryFunctionGroup <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK35SymmetryFunctionGroupWeightedRadialeqERK21SymmetryFunctionGroup" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload == operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp35SymmetryFunctionGroupWeightedRadialneERK21SymmetryFunctionGroup">
+<span id="_CPPv3NK3nnp35SymmetryFunctionGroupWeightedRadialneERK21SymmetryFunctionGroup"></span><span id="_CPPv2NK3nnp35SymmetryFunctionGroupWeightedRadialneERK21SymmetryFunctionGroup"></span><span id="nnp::SymmetryFunctionGroupWeightedRadial::neq-operator__SymmetryFunctionGroupCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a6c77ee4e2988576f94a573be0b98c04d"></span>bool <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#_CPPv4N3nnp21SymmetryFunctionGroupE" title="nnp::SymmetryFunctionGroup">SymmetryFunctionGroup</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp35SymmetryFunctionGroupWeightedRadialneERK21SymmetryFunctionGroup" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload != operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK35SymmetryFunctionGroupWeightedRadialltERK21SymmetryFunctionGroup">
+<span id="_CPPv3NK35SymmetryFunctionGroupWeightedRadialltERK21SymmetryFunctionGroup"></span><span id="_CPPv2NK35SymmetryFunctionGroupWeightedRadialltERK21SymmetryFunctionGroup"></span><span id="SymmetryFunctionGroupWeightedRadial::lt-operator__SymmetryFunctionGroupCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1ad0220ed83fef3748f3fe657bb4822499"></span>bool <code class="sig-name descname">operator&lt;</code><span class="sig-paren">(</span>SymmetryFunctionGroup <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK35SymmetryFunctionGroupWeightedRadialltERK21SymmetryFunctionGroup" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &lt; operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp35SymmetryFunctionGroupWeightedRadialgtERK21SymmetryFunctionGroup">
+<span id="_CPPv3NK3nnp35SymmetryFunctionGroupWeightedRadialgtERK21SymmetryFunctionGroup"></span><span id="_CPPv2NK3nnp35SymmetryFunctionGroupWeightedRadialgtERK21SymmetryFunctionGroup"></span><span id="nnp::SymmetryFunctionGroupWeightedRadial::gt-operator__SymmetryFunctionGroupCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1ae77a31aec4edf821e3fb174f114189cb"></span>bool <code class="sig-name descname">operator&gt;</code><span class="sig-paren">(</span><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#_CPPv4N3nnp21SymmetryFunctionGroupE" title="nnp::SymmetryFunctionGroup">SymmetryFunctionGroup</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp35SymmetryFunctionGroupWeightedRadialgtERK21SymmetryFunctionGroup" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &gt; operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp35SymmetryFunctionGroupWeightedRadialleERK21SymmetryFunctionGroup">
+<span id="_CPPv3NK3nnp35SymmetryFunctionGroupWeightedRadialleERK21SymmetryFunctionGroup"></span><span id="_CPPv2NK3nnp35SymmetryFunctionGroupWeightedRadialleERK21SymmetryFunctionGroup"></span><span id="nnp::SymmetryFunctionGroupWeightedRadial::lte-operator__SymmetryFunctionGroupCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a6a5f0d4330755d10547dda32280a919f"></span>bool <code class="sig-name descname">operator&lt;=</code><span class="sig-paren">(</span><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#_CPPv4N3nnp21SymmetryFunctionGroupE" title="nnp::SymmetryFunctionGroup">SymmetryFunctionGroup</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp35SymmetryFunctionGroupWeightedRadialleERK21SymmetryFunctionGroup" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &lt;= operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp35SymmetryFunctionGroupWeightedRadialgeERK21SymmetryFunctionGroup">
+<span id="_CPPv3NK3nnp35SymmetryFunctionGroupWeightedRadialgeERK21SymmetryFunctionGroup"></span><span id="_CPPv2NK3nnp35SymmetryFunctionGroupWeightedRadialgeERK21SymmetryFunctionGroup"></span><span id="nnp::SymmetryFunctionGroupWeightedRadial::gte-operator__SymmetryFunctionGroupCRC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a60a118ae6abbb37fead0d79d5f992705"></span>bool <code class="sig-name descname">operator&gt;=</code><span class="sig-paren">(</span><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#_CPPv4N3nnp21SymmetryFunctionGroupE" title="nnp::SymmetryFunctionGroup">SymmetryFunctionGroup</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp35SymmetryFunctionGroupWeightedRadialgeERK21SymmetryFunctionGroup" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &gt;= operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N35SymmetryFunctionGroupWeightedRadial9addMemberEPCK16SymmetryFunction">
+<span id="_CPPv3N35SymmetryFunctionGroupWeightedRadial9addMemberEPCK16SymmetryFunction"></span><span id="_CPPv2N35SymmetryFunctionGroupWeightedRadial9addMemberEPCK16SymmetryFunction"></span><span id="SymmetryFunctionGroupWeightedRadial::addMember__SymmetryFunctionCPC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a399f9c5744ff053ebb17229caccd601d"></span>bool <code class="sig-name descname">addMember</code><span class="sig-paren">(</span>SymmetryFunction <em class="property">const</em> *<em class="property">const</em> <em>symmetryFunction</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N35SymmetryFunctionGroupWeightedRadial9addMemberEPCK16SymmetryFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Potentially add a member to group.</p>
+<p><p>If symmetry function is compatible with common feature list its pointer will be added to </p>
+<a class="reference internal" href="#classnnp_1_1SymmetryFunctionGroupWeightedRadial_1ae9075e3c1c5826f35d8dcc687de08b27"><span class="std std-ref">members</span></a>. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>If addition was successful.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">symmetryFunction</span></code>: Candidate symmetry function. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N35SymmetryFunctionGroupWeightedRadial11sortMembersEv">
+<span id="_CPPv3N35SymmetryFunctionGroupWeightedRadial11sortMembersEv"></span><span id="_CPPv2N35SymmetryFunctionGroupWeightedRadial11sortMembersEv"></span><span id="SymmetryFunctionGroupWeightedRadial::sortMembers"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a3658bd585921ba858ae975caaf47ebdf"></span>void <code class="sig-name descname">sortMembers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N35SymmetryFunctionGroupWeightedRadial11sortMembersEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sort member symmetry functions.</p>
+<p>Also allocate and precalculate additional stuff. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N35SymmetryFunctionGroupWeightedRadial17setScalingFactorsEv">
+<span id="_CPPv3N35SymmetryFunctionGroupWeightedRadial17setScalingFactorsEv"></span><span id="_CPPv2N35SymmetryFunctionGroupWeightedRadial17setScalingFactorsEv"></span><span id="SymmetryFunctionGroupWeightedRadial::setScalingFactors"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a97755dfbeeaa381c837fa24d5c52ef38"></span>void <code class="sig-name descname">setScalingFactors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N35SymmetryFunctionGroupWeightedRadial17setScalingFactorsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fill <a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#classnnp_1_1SymmetryFunctionGroup_1ad649d268f6a27e103ed4080b29ebba82"><span class="std std-ref">scalingFactors</span></a> with values from member symmetry functions. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK35SymmetryFunctionGroupWeightedRadial9calculateER4AtomKb">
+<span id="_CPPv3NK35SymmetryFunctionGroupWeightedRadial9calculateER4AtomKb"></span><span id="_CPPv2NK35SymmetryFunctionGroupWeightedRadial9calculateER4AtomKb"></span><span id="SymmetryFunctionGroupWeightedRadial::calculate__AtomR.bCC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a3045446d90de7531df14fd05bd6b1f59"></span>void <code class="sig-name descname">calculate</code><span class="sig-paren">(</span>Atom &amp;<em>atom</em>, bool <em class="property">const</em> <em>derivatives</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK35SymmetryFunctionGroupWeightedRadial9calculateER4AtomKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate all symmetry functions of this group for one atom.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">atom</span></code>: <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a> for which symmetry functions are caluclated. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">derivatives</span></code>: If also symmetry function derivatives will be calculated and saved. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK35SymmetryFunctionGroupWeightedRadial14parameterLinesEv">
+<span id="_CPPv3NK35SymmetryFunctionGroupWeightedRadial14parameterLinesEv"></span><span id="_CPPv2NK35SymmetryFunctionGroupWeightedRadial14parameterLinesEv"></span><span id="SymmetryFunctionGroupWeightedRadial::parameterLinesC"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1a2c14b6d1bd5e3aff7799219a7b22c218"></span>vector&lt;string&gt; <code class="sig-name descname">parameterLines</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK35SymmetryFunctionGroupWeightedRadial14parameterLinesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Give symmetry function group parameters on multiple lines.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector of string containing symmetry function parameters lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp35SymmetryFunctionGroupWeightedRadial7membersE">
+<span id="_CPPv3N3nnp35SymmetryFunctionGroupWeightedRadial7membersE"></span><span id="_CPPv2N3nnp35SymmetryFunctionGroupWeightedRadial7membersE"></span><span id="nnp::SymmetryFunctionGroupWeightedRadial::members__std::vector:SymmetryFunctionWeightedRadialCP:"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1ae9075e3c1c5826f35d8dcc687de08b27"></span>std::vector&lt;<a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedRadial.html#_CPPv4N3nnp30SymmetryFunctionWeightedRadialE" title="nnp::SymmetryFunctionWeightedRadial">SymmetryFunctionWeightedRadial</a> <em class="property">const</em>*&gt; <code class="sig-name descname">members</code><a class="headerlink" href="#_CPPv4N3nnp35SymmetryFunctionGroupWeightedRadial7membersE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vector of all group member pointers. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp35SymmetryFunctionGroupWeightedRadial3etaE">
+<span id="_CPPv3N3nnp35SymmetryFunctionGroupWeightedRadial3etaE"></span><span id="_CPPv2N3nnp35SymmetryFunctionGroupWeightedRadial3etaE"></span><span id="nnp::SymmetryFunctionGroupWeightedRadial::eta__std::vector:double:"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1ab29908f49d64d7a3b09c5ec1ba8ddb20"></span>std::vector&lt;double&gt; <code class="sig-name descname">eta</code><a class="headerlink" href="#_CPPv4N3nnp35SymmetryFunctionGroupWeightedRadial3etaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vector containing values of all member symmetry functions. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp35SymmetryFunctionGroupWeightedRadial2rsE">
+<span id="_CPPv3N3nnp35SymmetryFunctionGroupWeightedRadial2rsE"></span><span id="_CPPv2N3nnp35SymmetryFunctionGroupWeightedRadial2rsE"></span><span id="nnp::SymmetryFunctionGroupWeightedRadial::rs__std::vector:double:"></span><span class="target" id="classnnp_1_1SymmetryFunctionGroupWeightedRadial_1aa8181c54eca2f63074e627967a4b0a48"></span>std::vector&lt;double&gt; <code class="sig-name descname">rs</code><a class="headerlink" href="#_CPPv4N3nnp35SymmetryFunctionGroupWeightedRadial2rsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vector containing values of all member symmetry functions. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1SymmetryFunctionRadial.html" class="btn btn-neutral float-right" title="Class SymmetryFunctionRadial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1SymmetryFunctionGroupWeightedAngular.html" class="btn btn-neutral float-left" title="Class SymmetryFunctionGroupWeightedAngular" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

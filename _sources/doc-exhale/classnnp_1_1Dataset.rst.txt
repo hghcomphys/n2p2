@@ -1,0 +1,32 @@
+.. _exhale_class_classnnp_1_1Dataset:
+
+Class Dataset
+=============
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public nnp::Mode`` (:ref:`exhale_class_classnnp_1_1Mode`)
+
+
+Derived Type
+************
+
+- ``public nnp::Training`` (:ref:`exhale_class_classnnp_1_1Training`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::Dataset
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

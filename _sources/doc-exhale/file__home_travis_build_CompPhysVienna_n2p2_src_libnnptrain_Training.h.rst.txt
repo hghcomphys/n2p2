@@ -1,0 +1,75 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h:
+
+File Training.h
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Training.h``)
+----------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Atom.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h`)
+
+- ``Dataset.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h`)
+
+- ``Updater.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h`)
+
+- ``cstddef``
+
+- ``fstream``
+
+- ``map``
+
+- ``random``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_nnp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structnnp_1_1Training_1_1UpdateCandidate`
+
+- :ref:`exhale_class_classnnp_1_1Training`
+

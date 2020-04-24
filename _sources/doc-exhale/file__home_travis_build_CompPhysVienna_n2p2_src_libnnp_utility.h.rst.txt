@@ -1,0 +1,139 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h:
+
+File utility.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnp>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/utility.h``)
+----------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstdio``
+
+- ``fstream``
+
+- ``map``
+
+- ``sstream``
+
+- ``stdexcept``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_nnp`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacennp_1aeed037cd4a793db2c1b490e6607c0866`
+
+- :ref:`exhale_function_namespacennp_1a9a01beaa989d3578f213a32be1283f76`
+
+- :ref:`exhale_function_namespacennp_1ac861b7fcd089a4cbaea63589dd8ac69e`
+
+- :ref:`exhale_function_namespacennp_1a14c0fb8e3da51194b595b8a7a6470cd2`
+
+- :ref:`exhale_function_namespacennp_1ac5a2a928d69bd2ddc2e3aaea872f7e3b`
+
+- :ref:`exhale_function_namespacennp_1a5d24728171accd3d3ea6ce905607c0ac`
+
+- :ref:`exhale_function_namespacennp_1a355b6ae0b4e3495fa9461cb59e22fa76`
+
+- :ref:`exhale_function_namespacennp_1af6ccf9c445dcf9671d4dfb9486d0a56c`
+
+- :ref:`exhale_function_namespacennp_1abbc59184f0532e61f412f99d5f7a33a2`
+

@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1a398f0bcafb57e99ba1581c4b8f8a7f76:
+
+Function nnp::strpr
+===================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::strpr(const char *, ...)

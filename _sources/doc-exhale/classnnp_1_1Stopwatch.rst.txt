@@ -1,0 +1,17 @@
+.. _exhale_class_classnnp_1_1Stopwatch:
+
+Class Stopwatch
+===============
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::Stopwatch
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

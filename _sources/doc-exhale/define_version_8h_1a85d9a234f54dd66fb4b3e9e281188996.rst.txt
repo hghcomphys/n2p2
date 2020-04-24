@@ -1,0 +1,13 @@
+.. _exhale_define_version_8h_1a85d9a234f54dd66fb4b3e9e281188996:
+
+Define NNP_GIT_REV_SHORT
+========================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_version.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: NNP_GIT_REV_SHORT

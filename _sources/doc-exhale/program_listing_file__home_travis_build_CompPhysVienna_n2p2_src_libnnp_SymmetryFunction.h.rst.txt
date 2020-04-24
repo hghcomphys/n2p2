@@ -1,0 +1,237 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h:
+
+Program Listing for File SymmetryFunction.h
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunction.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef SYMMETRYFUNCTION_H
+   #define SYMMETRYFUNCTION_H
+   
+   #include "CutoffFunction.h"
+   #include "ElementMap.h"
+   #include <cstddef> // std::size_t
+   #include <map>     // std::map
+   #include <set>     // std::set
+   #include <string>  // std::string
+   #include <utility> // std::pair
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   struct Atom;
+   class SymmetryFunctionStatistics;
+   
+   class SymmetryFunction
+   {
+   public:
+       enum ScalingType
+       {
+           ST_NONE,
+           ST_SCALE,
+           ST_CENTER,
+           ST_SCALECENTER,
+           ST_SCALESIGMA
+       };
+   
+       virtual             ~SymmetryFunction() {};
+       virtual bool        operator==(SymmetryFunction const& rhs) const = 0;
+       virtual bool        operator!=(SymmetryFunction const& rhs) const = 0;
+       virtual bool        operator<(SymmetryFunction const& rhs) const = 0;
+       virtual bool        operator>(SymmetryFunction const& rhs) const = 0;
+       virtual bool        operator<=(SymmetryFunction const& rhs) const = 0;
+       virtual bool        operator>=(SymmetryFunction const& rhs) const = 0;
+       virtual void        setParameters(std::string const& parameterString) = 0;
+       virtual void        changeLengthUnit(double convLength) = 0;
+       virtual std::string getSettingsLine() const = 0;
+       virtual void        calculate(Atom&      atom,
+                                     bool const derivatives) const = 0;
+       virtual std::string parameterLine() const = 0;
+       virtual std::vector<std::string>
+                           parameterInfo() const;
+       void                setCutoffFunction(CutoffFunction::
+                                             CutoffType cutoffType,
+                                             double     cutoffAlpha);
+       void                setScalingType(ScalingType scalingType,
+                                          std::string statisticsLine,
+                                          double      Smin,
+                                          double      Smax);
+       double              scale(double value) const;
+       double              unscale(double value) const;
+       std::size_t         getType() const;
+       std::size_t         getIndex() const;
+       std::size_t         getLineNumber() const;
+       std::size_t         getEc() const;
+       std::size_t         getMinNeighbors() const;
+       double              getRc() const;
+       double              getGmin() const;
+       double              getGmax() const;
+       double              getScalingFactor() const;
+       double              getCutoffAlpha() const;
+       double              getConvLength() const;
+       CutoffFunction::
+       CutoffType          getCutoffType() const;
+       std::set<
+       std::string>        getParameters() const;
+       std::vector<
+       std::size_t>        getIndexPerElement() const;
+       void                setIndex(std::size_t index);
+       void                setIndexPerElement(std::size_t elementIndex,
+                                              std::size_t index);
+       void                setLineNumber(std::size_t lineNumber);
+       std::string         scalingLine() const;
+       virtual double      calculateRadialPart(double distance) const = 0;
+       virtual double      calculateAngularPart(double angle) const = 0;
+       virtual bool        checkRelevantElement(std::size_t index) const = 0;
+   
+   protected:
+       typedef std::map<std::string,
+                        std::pair<std::string, std::string> > PrintFormat;
+       typedef std::vector<std::string>                       PrintOrder;
+       std::size_t                type;
+       ElementMap                 elementMap;
+       std::size_t                index;
+       std::size_t                lineNumber;
+       std::size_t                ec;
+       std::size_t                minNeighbors;
+       double                     Smin;
+       double                     Smax;
+       double                     Gmin;
+       double                     Gmax;
+       double                     Gmean;
+       double                     Gsigma;
+       double                     rc;
+       double                     scalingFactor;
+       double                     cutoffAlpha;
+       double                     convLength;
+       CutoffFunction             fc;
+       CutoffFunction::CutoffType cutoffType;
+       ScalingType                scalingType;
+       std::set<std::string>      parameters;
+       std::vector<std::size_t>   indexPerElement;
+       static std::size_t const   sfinfoWidth;
+       static PrintFormat const   printFormat;
+       static PrintOrder const    printOrder;
+   
+       SymmetryFunction(std::size_t type, ElementMap const&);
+       static PrintFormat const initializePrintFormat();
+       static PrintOrder const  initializePrintOrder();
+       std::string              getPrintFormat() const;
+   };
+   
+   // Inlined function definitions //
+   
+   inline std::size_t SymmetryFunction::getType() const
+   {
+       return type;
+   }
+   
+   inline std::size_t SymmetryFunction::getEc() const
+   {
+       return ec;
+   }
+   
+   inline std::size_t SymmetryFunction::getIndex() const
+   {
+       return index;
+   }
+   
+   inline std::size_t SymmetryFunction::getLineNumber() const
+   {
+       return lineNumber;
+   }
+   
+   inline std::size_t SymmetryFunction::getMinNeighbors() const
+   {
+       return minNeighbors;
+   }
+   
+   inline double SymmetryFunction::getRc() const
+   {
+       return rc;
+   }
+   
+   inline double SymmetryFunction::getGmin() const
+   {
+       return Gmin;
+   }
+   
+   inline double SymmetryFunction::getGmax() const
+   {
+       return Gmax;
+   }
+   
+   inline double SymmetryFunction::getScalingFactor() const
+   {
+       return scalingFactor;
+   }
+   
+   inline double SymmetryFunction::getCutoffAlpha() const
+   {
+       return cutoffAlpha;
+   }
+   
+   inline double SymmetryFunction::getConvLength() const
+   {
+       return convLength;
+   }
+   
+   inline void SymmetryFunction::setIndex(std::size_t index)
+   {
+       this->index = index;
+       return;
+   }
+   
+   inline void SymmetryFunction::setLineNumber(std::size_t lineNumber)
+   {
+       this->lineNumber = lineNumber;
+       return;
+   }
+   
+   inline CutoffFunction::CutoffType SymmetryFunction::getCutoffType() const
+   {
+       return cutoffType;
+   }
+   
+   inline std::set<std::string> SymmetryFunction::getParameters() const
+   {
+       return parameters;
+   }
+   
+   inline std::vector<std::size_t> SymmetryFunction::getIndexPerElement() const
+   {
+       return indexPerElement;
+   }
+   
+   inline void SymmetryFunction::setIndexPerElement(std::size_t elementIndex,
+                                                    std::size_t index)
+   {
+       indexPerElement.at(elementIndex) = index;
+       return;
+   }
+   
+   }
+   
+   #endif

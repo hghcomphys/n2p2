@@ -1,0 +1,13 @@
+.. _exhale_define_NeuralNetwork_8cpp_1ae9e86c8b5c8422daa552e390225303ca:
+
+Define EXP_LIMIT
+================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: EXP_LIMIT

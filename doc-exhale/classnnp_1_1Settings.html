@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Settings &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class SetupAnalysis" href="classnnp_1_1SetupAnalysis.html" />
+    <link rel="prev" title="Class Prediction" href="classnnp_1_1Prediction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class Settings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1Settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-settings">
+<span id="exhale-class-classnnp-1-1settings"></span><h1>Class Settings<a class="headerlink" href="#class-settings" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-settings-h"><span class="std std-ref">File Settings.h</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp8SettingsE">
+<span id="_CPPv3N3nnp8SettingsE"></span><span id="_CPPv2N3nnp8SettingsE"></span><span id="nnp::Settings"></span><span class="target" id="classnnp_1_1Settings"></span><em class="property">class </em><code class="sig-name descname">Settings</code><a class="headerlink" href="#_CPPv4N3nnp8SettingsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads and analyzes settings file and stores parameters. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N3nnp8Settings6KeyMapE">
+<span id="_CPPv3N3nnp8Settings6KeyMapE"></span><span id="_CPPv2N3nnp8Settings6KeyMapE"></span><span id="nnp::Settings::KeyMap"></span><span class="target" id="classnnp_1_1Settings_1af404c5ea0e62a90c809cc7bd40a92ccc"></span><em class="property">typedef </em>std::multimap&lt;std::string, std::pair&lt;std::string, std::size_t&gt;&gt; <code class="sig-name descname">KeyMap</code><a class="headerlink" href="#_CPPv4N3nnp8Settings6KeyMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N3nnp8Settings8KeyRangeE">
+<span id="_CPPv3N3nnp8Settings8KeyRangeE"></span><span id="_CPPv2N3nnp8Settings8KeyRangeE"></span><span id="nnp::Settings::KeyRange"></span><span class="target" id="classnnp_1_1Settings_1ac0f72e3b3484f4d411eb4a5d36e3d959"></span><em class="property">typedef </em>std::pair&lt;<a class="reference internal" href="#_CPPv4N3nnp8Settings6KeyMapE" title="nnp::Settings::KeyMap">KeyMap</a>::const_iterator, <a class="reference internal" href="#_CPPv4N3nnp8Settings6KeyMapE" title="nnp::Settings::KeyMap">KeyMap</a>::const_iterator&gt; <code class="sig-name descname">KeyRange</code><a class="headerlink" href="#_CPPv4N3nnp8Settings8KeyRangeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4NK8SettingsixERKNSt6stringE">
+<span id="_CPPv3NK8SettingsixERKNSt6stringE"></span><span id="_CPPv2NK8SettingsixERKNSt6stringE"></span><span id="Settings::subscript-operator__ssCRC"></span><span class="target" id="classnnp_1_1Settings_1afb10a15962eb486d0dd5096d0861bd22"></span>string <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>keyword</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK8SettingsixERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload [] operator.</p>
+<p><p>Internally calls </p>
+<a class="reference internal" href="#classnnp_1_1Settings_1abe28e4e40135fa996a04c00494a403d8"><span class="std std-ref">getValue()</span></a>. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Value string corresponding to keyword.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">keyword</span></code>: Keyword string. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N8Settings8loadFileERKNSt6stringE">
+<span id="_CPPv3N8Settings8loadFileERKNSt6stringE"></span><span id="_CPPv2N8Settings8loadFileERKNSt6stringE"></span><span id="Settings::loadFile__ssCR"></span><span class="target" id="classnnp_1_1Settings_1abb345542f6456257aae2e3409ab035f5"></span>void <code class="sig-name descname">loadFile</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>fileName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Settings8loadFileERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load a file with settings.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: Name of file containing settings. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK8Settings13keywordExistsERKNSt6stringE">
+<span id="_CPPv3NK8Settings13keywordExistsERKNSt6stringE"></span><span id="_CPPv2NK8Settings13keywordExistsERKNSt6stringE"></span><span id="Settings::keywordExists__ssCRC"></span><span class="target" id="classnnp_1_1Settings_1a14649c081ce9e5c31c8b152079407f1b"></span>bool <code class="sig-name descname">keywordExists</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>keyword</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK8Settings13keywordExistsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if keyword was read from the settings file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if keyword exists, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">keyword</span></code>: Keyword string. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK8Settings8getValueERKNSt6stringE">
+<span id="_CPPv3NK8Settings8getValueERKNSt6stringE"></span><span id="_CPPv2NK8Settings8getValueERKNSt6stringE"></span><span id="Settings::getValue__ssCRC"></span><span class="target" id="classnnp_1_1Settings_1abe28e4e40135fa996a04c00494a403d8"></span>string <code class="sig-name descname">getValue</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>keyword</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK8Settings8getValueERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get value for given keyword.</p>
+<p><p>If keyword is present multiple times only the value of the first keyword-value pair is returned (use </p>
+<a class="reference internal" href="#classnnp_1_1Settings_1a8b0d951c5548f17e64598900b5aca088"><span class="std std-ref">getValues()</span></a> instead). <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Value string corresponding to keyword.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">keyword</span></code>: Keyword string. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK8Settings9getValuesERKNSt6stringE">
+<span id="_CPPv3NK8Settings9getValuesERKNSt6stringE"></span><span id="_CPPv2NK8Settings9getValuesERKNSt6stringE"></span><span id="Settings::getValues__ssCRC"></span><span class="target" id="classnnp_1_1Settings_1a8b0d951c5548f17e64598900b5aca088"></span>Settings::KeyRange <code class="sig-name descname">getValues</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>keyword</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK8Settings9getValuesERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get all keyword-value pairs for given keyword.</p>
+<p><p>Useful if keyword appears multiple times. Returns a pair representing begin and end for an iterator over all corresponding keyword-value pairs. Use like this: </p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Settings</span><span class="o">*</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Settings</span><span class="p">(</span><span class="s">&quot;input.nn&quot;</span><span class="p">);</span>
+<span class="n">Settings</span><span class="o">::</span><span class="n">KeyRange</span> <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">getValues</span><span class="p">(</span><span class="s">&quot;symfunction_short&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Settings</span><span class="o">::</span><span class="n">KeyMap</span><span class="o">::</span><span class="n">const_iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">first</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">r</span><span class="p">.</span><span class="n">second</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;keyword: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="o">-&gt;</span><span class="n">first</span>
+         <span class="o">&lt;&lt;</span> <span class="s">&quot; value: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">first</span>
+         <span class="o">&lt;&lt;</span> <span class="s">&quot; line : &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Pair with begin and end values for iteration.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">keyword</span></code>: Keyword string. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK8Settings4infoEv">
+<span id="_CPPv3NK8Settings4infoEv"></span><span id="_CPPv2NK8Settings4infoEv"></span><span id="Settings::infoC"></span><span class="target" id="classnnp_1_1Settings_1a10b63d77176a5a7a4f171e16bc1fccae"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK8Settings4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get logged information about settings file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with log lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK8Settings16getSettingsLinesEv">
+<span id="_CPPv3NK8Settings16getSettingsLinesEv"></span><span id="_CPPv2NK8Settings16getSettingsLinesEv"></span><span id="Settings::getSettingsLinesC"></span><span class="target" id="classnnp_1_1Settings_1abe55e2b7294788622da5e888799732ff"></span>vector&lt;string&gt; <code class="sig-name descname">getSettingsLines</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK8Settings16getSettingsLinesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get complete settings file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with settings file lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK8Settings17writeSettingsFileERPCNSt8ofstreamE">
+<span id="_CPPv3NK8Settings17writeSettingsFileERPCNSt8ofstreamE"></span><span id="_CPPv2NK8Settings17writeSettingsFileERPCNSt8ofstreamE"></span><span id="Settings::writeSettingsFile__std::ofstreamPCRC"></span><span class="target" id="classnnp_1_1Settings_1ade34327a049d86489676aaa55d32b854"></span>void <code class="sig-name descname">writeSettingsFile</code><span class="sig-paren">(</span>std::ofstream *<em class="property">const</em> &amp;<em>file</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK8Settings17writeSettingsFileERPCNSt8ofstreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write complete settings file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">file</span></code>: <a class="reference internal" href="#classnnp_1_1Settings"><span class="std std-ref">Settings</span></a> file. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N8Settings8readFileEv">
+<span id="_CPPv3N8Settings8readFileEv"></span><span id="_CPPv2N8Settings8readFileEv"></span><span id="Settings::readFile"></span><span class="target" id="classnnp_1_1Settings_1adb0042e7d1b48ef2888966b4eaefb751"></span>void <code class="sig-name descname">readFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Settings8readFileEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read file once and save all lines in <a class="reference internal" href="#classnnp_1_1Settings_1a941167254e8b99c4f3ac523df1d088cf"><span class="std std-ref">lines</span></a> vector.</p>
+<p>Called automatically by constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N8Settings10parseLinesEv">
+<span id="_CPPv3N8Settings10parseLinesEv"></span><span id="_CPPv2N8Settings10parseLinesEv"></span><span id="Settings::parseLines"></span><span class="target" id="classnnp_1_1Settings_1a6a43d773b024d4bd44277124cf15a0ef"></span>void <code class="sig-name descname">parseLines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Settings10parseLinesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Parse lines and create <a class="reference internal" href="#classnnp_1_1Settings_1adca4df0c4acd796ae12a974bf8c87e6c"><span class="std std-ref">contents</span></a> map.</p>
+<p>Called automatically by constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N8Settings11sanityCheckEv">
+<span id="_CPPv3N8Settings11sanityCheckEv"></span><span id="_CPPv2N8Settings11sanityCheckEv"></span><span id="Settings::sanityCheck"></span><span class="target" id="classnnp_1_1Settings_1a2b2208c8889c7311b5b3dd9130b0abac"></span>size_t <code class="sig-name descname">sanityCheck</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Settings11sanityCheckEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if all keywords are in known-keywords database and for duplicates.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of detected problems. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp8Settings5linesE">
+<span id="_CPPv3N3nnp8Settings5linesE"></span><span id="_CPPv2N3nnp8Settings5linesE"></span><span id="nnp::Settings::lines__std::vector:ss:"></span><span class="target" id="classnnp_1_1Settings_1a941167254e8b99c4f3ac523df1d088cf"></span>std::vector&lt;std::string&gt; <code class="sig-name descname">lines</code><a class="headerlink" href="#_CPPv4N3nnp8Settings5linesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vector of all lines in settings file. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp8Settings3logE">
+<span id="_CPPv3N3nnp8Settings3logE"></span><span id="_CPPv2N3nnp8Settings3logE"></span><span id="nnp::Settings::log__std::vector:ss:"></span><span class="target" id="classnnp_1_1Settings_1a83e5d341a7162c8f1426f31e10b6152e"></span>std::vector&lt;std::string&gt; <code class="sig-name descname">log</code><a class="headerlink" href="#_CPPv4N3nnp8Settings3logE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vector with log lines. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp8Settings8contentsE">
+<span id="_CPPv3N3nnp8Settings8contentsE"></span><span id="_CPPv2N3nnp8Settings8contentsE"></span><span id="nnp::Settings::contents__KeyMap"></span><span class="target" id="classnnp_1_1Settings_1adca4df0c4acd796ae12a974bf8c87e6c"></span><a class="reference internal" href="#_CPPv4N3nnp8Settings6KeyMapE" title="nnp::Settings::KeyMap">KeyMap</a> <code class="sig-name descname">contents</code><a class="headerlink" href="#_CPPv4N3nnp8Settings8contentsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Map containing all keyword-value pairs. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp8Settings8fileNameE">
+<span id="_CPPv3N3nnp8Settings8fileNameE"></span><span id="_CPPv2N3nnp8Settings8fileNameE"></span><span id="nnp::Settings::fileName__ss"></span><span class="target" id="classnnp_1_1Settings_1ad93480bf568d4684ff9407f85619552e"></span>std::string <code class="sig-name descname">fileName</code><a class="headerlink" href="#_CPPv4N3nnp8Settings8fileNameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Settings file name. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Static Attributes</p>
+<dl class="cpp member">
+<dt id="_CPPv4N8Settings13knownKeywordsE">
+<span id="_CPPv3N8Settings13knownKeywordsE"></span><span id="_CPPv2N8Settings13knownKeywordsE"></span><span id="Settings::knownKeywords__map:string.string:C"></span><span class="target" id="classnnp_1_1Settings_1a7693f9f4bbcf8cb1d8e4fcbdf3da3367"></span>map&lt;string, string&gt; <em class="property">const</em> <code class="sig-name descname">knownKeywords</code> = createKnownKeywordsMap()<a class="headerlink" href="#_CPPv4N8Settings13knownKeywordsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Map containing all known keywords and a description. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1SetupAnalysis.html" class="btn btn-neutral float-right" title="Class SetupAnalysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1Prediction.html" class="btn btn-neutral float-left" title="Class Prediction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h:
+
+File Vec3D.h
+============
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnp>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Vec3D.h``)
+--------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cmath``
+
+- ``cstddef``
+
+- ``stdexcept``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_nnp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structnnp_1_1Vec3D`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacennp_1a5d65048b293d0abbd6c77a3f0365ea6a`
+
+- :ref:`exhale_function_namespacennp_1aa351f31ce77706c4a47f54dd018fb11f`
+
+- :ref:`exhale_function_namespacennp_1a0fca5b1d14fc5cf58d0503812ace7542`
+
+- :ref:`exhale_function_namespacennp_1aa41946cc03a845d677b7ec47c11edf17`
+
+- :ref:`exhale_function_namespacennp_1aa9f1f4126ca847a2d5a060772f6d4cb6`
+
+- :ref:`exhale_function_namespacennp_1ae895f68792de93c081ef2d568ae3358e`
+

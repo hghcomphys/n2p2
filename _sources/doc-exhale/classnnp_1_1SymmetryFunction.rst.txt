@@ -1,0 +1,30 @@
+.. _exhale_class_classnnp_1_1SymmetryFunction:
+
+Class SymmetryFunction
+======================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public nnp::SymmetryFunctionAngularNarrow`` (:ref:`exhale_class_classnnp_1_1SymmetryFunctionAngularNarrow`)
+- ``public nnp::SymmetryFunctionAngularWide`` (:ref:`exhale_class_classnnp_1_1SymmetryFunctionAngularWide`)
+- ``public nnp::SymmetryFunctionRadial`` (:ref:`exhale_class_classnnp_1_1SymmetryFunctionRadial`)
+- ``public nnp::SymmetryFunctionWeightedAngular`` (:ref:`exhale_class_classnnp_1_1SymmetryFunctionWeightedAngular`)
+- ``public nnp::SymmetryFunctionWeightedRadial`` (:ref:`exhale_class_classnnp_1_1SymmetryFunctionWeightedRadial`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::SymmetryFunction
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

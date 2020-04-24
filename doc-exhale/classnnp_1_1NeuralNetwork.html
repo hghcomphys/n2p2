@@ -1,0 +1,941 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class NeuralNetwork &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class Prediction" href="classnnp_1_1Prediction.html" />
+    <link rel="prev" title="Class Mode" href="classnnp_1_1Mode.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class NeuralNetwork</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1NeuralNetwork.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-neuralnetwork">
+<span id="exhale-class-classnnp-1-1neuralnetwork"></span><h1>Class NeuralNetwork<a class="headerlink" href="#class-neuralnetwork" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-neuralnetwork-h"><span class="std std-ref">File NeuralNetwork.h</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Layer.html#exhale-struct-structnnp-1-1neuralnetwork-1-1layer"><span class="std std-ref">Struct NeuralNetwork::Layer</span></a></p></li>
+<li><p><a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Neuron.html#exhale-struct-structnnp-1-1neuralnetwork-1-1neuron"><span class="std std-ref">Struct NeuralNetwork::Neuron</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp13NeuralNetworkE">
+<span id="_CPPv3N3nnp13NeuralNetworkE"></span><span id="_CPPv2N3nnp13NeuralNetworkE"></span><span id="nnp::NeuralNetwork"></span><span class="target" id="classnnp_1_1NeuralNetwork"></span><em class="property">class </em><code class="sig-name descname">NeuralNetwork</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetworkE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This class implements a feed-forward neural network. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N3nnp13NeuralNetwork18ActivationFunctionE">
+<span id="_CPPv3N3nnp13NeuralNetwork18ActivationFunctionE"></span><span id="_CPPv2N3nnp13NeuralNetwork18ActivationFunctionE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbed"></span><em class="property">enum </em><code class="sig-name descname">ActivationFunction</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork18ActivationFunctionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List of available activation function types. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork11AF_IDENTITYE">
+<span id="_CPPv3N3nnp13NeuralNetwork11AF_IDENTITYE"></span><span id="_CPPv2N3nnp13NeuralNetwork11AF_IDENTITYE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbeda5b0c59d80a0e661ef1f0bfc3df1f5a04"></span><code class="sig-name descname">AF_IDENTITY</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork11AF_IDENTITYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = x\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork7AF_TANHE">
+<span id="_CPPv3N3nnp13NeuralNetwork7AF_TANHE"></span><span id="_CPPv2N3nnp13NeuralNetwork7AF_TANHE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbeda1569427fccd98a9f3e8ec25d334b982b"></span><code class="sig-name descname">AF_TANH</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork7AF_TANHE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = \tanh(x)\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork11AF_LOGISTICE">
+<span id="_CPPv3N3nnp13NeuralNetwork11AF_LOGISTICE"></span><span id="_CPPv2N3nnp13NeuralNetwork11AF_LOGISTICE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbeda5915a5141aaee3c8fd8ea61da99b3b41"></span><code class="sig-name descname">AF_LOGISTIC</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork11AF_LOGISTICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = 1 / (1 + \mathrm{e}^{-x})\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork11AF_SOFTPLUSE">
+<span id="_CPPv3N3nnp13NeuralNetwork11AF_SOFTPLUSE"></span><span id="_CPPv2N3nnp13NeuralNetwork11AF_SOFTPLUSE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbeda85811bbf7c259d1fee628b2a69114530"></span><code class="sig-name descname">AF_SOFTPLUS</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork11AF_SOFTPLUSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = \ln (1 + \mathrm{e}^x)\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork7AF_RELUE">
+<span id="_CPPv3N3nnp13NeuralNetwork7AF_RELUE"></span><span id="_CPPv2N3nnp13NeuralNetwork7AF_RELUE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbedafe93c3a968224442e85a58ba3627e3a9"></span><code class="sig-name descname">AF_RELU</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork7AF_RELUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = \max(0, x)\)</span> (NOT recommended for HDNNPs!) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork11AF_GAUSSIANE">
+<span id="_CPPv3N3nnp13NeuralNetwork11AF_GAUSSIANE"></span><span id="_CPPv2N3nnp13NeuralNetwork11AF_GAUSSIANE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbeda66545b5c028ebb8934093188e3279492"></span><code class="sig-name descname">AF_GAUSSIAN</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork11AF_GAUSSIANE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = \mathrm{e}^{-x^2 / 2}\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork6AF_COSE">
+<span id="_CPPv3N3nnp13NeuralNetwork6AF_COSE"></span><span id="_CPPv2N3nnp13NeuralNetwork6AF_COSE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbeda2721d2639f95e923ac6fafd0980a2588"></span><code class="sig-name descname">AF_COS</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6AF_COSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = \cos (x)\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork14AF_REVLOGISTICE">
+<span id="_CPPv3N3nnp13NeuralNetwork14AF_REVLOGISTICE"></span><span id="_CPPv2N3nnp13NeuralNetwork14AF_REVLOGISTICE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbedaf1b2dce761bdf00c9ff8d6ebd1374578"></span><code class="sig-name descname">AF_REVLOGISTIC</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork14AF_REVLOGISTICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = 1 - 1 / (1 + \mathrm{e}^{-x})\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork6AF_EXPE">
+<span id="_CPPv3N3nnp13NeuralNetwork6AF_EXPE"></span><span id="_CPPv2N3nnp13NeuralNetwork6AF_EXPE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbedad56bdaa89dd2aa1d72d539995267a967"></span><code class="sig-name descname">AF_EXP</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6AF_EXPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = \mathrm{e}^{-x}\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork11AF_HARMONICE">
+<span id="_CPPv3N3nnp13NeuralNetwork11AF_HARMONICE"></span><span id="_CPPv2N3nnp13NeuralNetwork11AF_HARMONICE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbedaf565187036a46ee35d905df14542dc01"></span><code class="sig-name descname">AF_HARMONIC</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork11AF_HARMONICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_a(x) = x^2\)</span> </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv4N3nnp13NeuralNetwork18ModificationSchemeE">
+<span id="_CPPv3N3nnp13NeuralNetwork18ModificationSchemeE"></span><span id="_CPPv2N3nnp13NeuralNetwork18ModificationSchemeE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1"></span><em class="property">enum </em><code class="sig-name descname">ModificationScheme</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork18ModificationSchemeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List of available connection modification schemes. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork11MS_ZEROBIASE">
+<span id="_CPPv3N3nnp13NeuralNetwork11MS_ZEROBIASE"></span><span id="_CPPv2N3nnp13NeuralNetwork11MS_ZEROBIASE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1a66ae2f43aca0c9fbc5285c4b81e79bfa"></span><code class="sig-name descname">MS_ZEROBIAS</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork11MS_ZEROBIASE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set all bias values to zero. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork20MS_ZEROOUTPUTWEIGHTSE">
+<span id="_CPPv3N3nnp13NeuralNetwork20MS_ZEROOUTPUTWEIGHTSE"></span><span id="_CPPv2N3nnp13NeuralNetwork20MS_ZEROOUTPUTWEIGHTSE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1a327dc589d3a961565fb0754bad7b80f3"></span><code class="sig-name descname">MS_ZEROOUTPUTWEIGHTS</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork20MS_ZEROOUTPUTWEIGHTSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set all weights connecting to the output layer to zero. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork8MS_FANINE">
+<span id="_CPPv3N3nnp13NeuralNetwork8MS_FANINE"></span><span id="_CPPv2N3nnp13NeuralNetwork8MS_FANINE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1aa284452e4756a63d3fe791ea6739ab08"></span><code class="sig-name descname">MS_FANIN</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork8MS_FANINE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Normalize weights via number of neuron inputs (fan-in). <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>   <span class="n">If</span> <span class="n">initial</span> <span class="n">weights</span> <span class="n">are</span> <span class="n">uniformly</span> <span class="n">distributed</span> <span class="n">in</span>
+</pre></div>
+</div>
+ <span class="math notranslate nohighlight">\(\left[-1, 1\right]\)</span> they will be scaled to be in <span class="math notranslate nohighlight">\(\left[\frac{-1}{\sqrt{n_\text{in}}}, \frac{1}{\sqrt{n_\text{in}}}\right]\)</span>, where <span class="math notranslate nohighlight">\(n_\text{in}\)</span> is the number of incoming weights of a neuron (if activation function is of type <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbeda1569427fccd98a9f3e8ec25d334b982b"><span class="std std-ref">AF_TANH</span></a>). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork15MS_GLOROTBENGIOE">
+<span id="_CPPv3N3nnp13NeuralNetwork15MS_GLOROTBENGIOE"></span><span id="_CPPv2N3nnp13NeuralNetwork15MS_GLOROTBENGIOE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1ab96a1476ad0c41c52f782708a82d7949"></span><code class="sig-name descname">MS_GLOROTBENGIO</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork15MS_GLOROTBENGIOE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Normalize connections according to Glorot and Bengio. <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>   <span class="n">If</span> <span class="n">initial</span> <span class="n">weights</span> <span class="n">are</span> <span class="n">uniformly</span> <span class="n">distributed</span> <span class="n">in</span>
+</pre></div>
+</div>
+ <span class="math notranslate nohighlight">\(\left[-1, 1\right]\)</span> they will be scaled to be in <span class="math notranslate nohighlight">\(\left[-\sqrt{\frac{6}{n_\text{in} + n_\text{out}}}, \sqrt{\frac{6}{n_\text{in} + n_\text{out}}}\right]\)</span>, where <span class="math notranslate nohighlight">\(n_\text{in}\)</span> and <span class="math notranslate nohighlight">\(n_\text{out}\)</span> are the number of incoming and outgoing weights of a neuron, respectively (if activation function is of type <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a032b3b525f06cd70953aec8e6aeedbeda1569427fccd98a9f3e8ec25d334b982b"><span class="std std-ref">AF_TANH</span></a>).</p>
+<p>For details see:<ul class="simple">
+<li><p><p>X. Glorot and Y. Bengio, “Understanding the difficulty of</p>
+<p>          training deep feedforward neural networks”, International conference on artificial intelligence and statistics. 2010. </p>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork15MS_NGUYENWIDROWE">
+<span id="_CPPv3N3nnp13NeuralNetwork15MS_NGUYENWIDROWE"></span><span id="_CPPv2N3nnp13NeuralNetwork15MS_NGUYENWIDROWE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1ade647e2d9f5c0d6f8f20d95df165c827"></span><code class="sig-name descname">MS_NGUYENWIDROW</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork15MS_NGUYENWIDROWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize connections according to Nguyen-Widrow scheme. <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>   For details see:
+    - D. Nguyen and B. Widrow, Improving the learning speed of 2-layer
+      neural networks by choosing initial values of the adaptive
+      weights, Proceedings of the International Joint Conference on
+      Neural networks (IJCNN), pages 21-26, San Diego, 1990
+    - T. Morawietz, Entwicklung eines effizienten Potentials für das
+      Wasser-Dimer basierend auf künstlichen neuronalen Netzen,
+      Master&#39;s thesis, pages 24-28, Bochum, 2010
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp13NeuralNetwork21MS_PRECONDITIONOUTPUTE">
+<span id="_CPPv3N3nnp13NeuralNetwork21MS_PRECONDITIONOUTPUTE"></span><span id="_CPPv2N3nnp13NeuralNetwork21MS_PRECONDITIONOUTPUTE"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1a9c1def9ad2311fe4774afdc8790406ce"></span><code class="sig-name descname">MS_PRECONDITIONOUTPUT</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork21MS_PRECONDITIONOUTPUTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Apply preconditioning to output layer connections. <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>   Multiply weights connecting to output neurons with \form#70 and
+   add &quot;mean&quot; to biases.
+
+   Call #modifyConnections with two additional arguments:
+   #modifyConnections(NeuralNetwork::MS_PRECONDITIONOUTPUT,
+   mean, sigma);
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork13NeuralNetworkEiRPCKiRPCK18ActivationFunction">
+<span id="_CPPv3N13NeuralNetwork13NeuralNetworkEiRPCKiRPCK18ActivationFunction"></span><span id="_CPPv2N13NeuralNetwork13NeuralNetworkEiRPCKiRPCK18ActivationFunction"></span><span id="NeuralNetwork::NeuralNetwork__i.iCPCR.ActivationFunctionCPCR"></span><span class="target" id="classnnp_1_1NeuralNetwork_1ad8b7ab63576027f56f1cbae20d2d7d58"></span><code class="sig-name descname">NeuralNetwork</code><span class="sig-paren">(</span>int <em>numLayers</em>, int <em class="property">const</em> *<em class="property">const</em> &amp;<em>numNeuronsPerLayer</em>, ActivationFunction <em class="property">const</em> *<em class="property">const</em> &amp;<em>activationFunctionsPerLayer</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork13NeuralNetworkEiRPCKiRPCK18ActivationFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Neural network class constructor.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">numLayers</span></code>: Total number of layers (including in- and output layer). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">numNeuronsPerLayer</span></code>: Array with number of neurons per layer. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">activationFunctionsPerLayer</span></code>: Array with activation function type per layer (note: input layer activation function is is mandatory although it is never used). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetworkD0Ev">
+<span id="_CPPv3N13NeuralNetworkD0Ev"></span><span id="_CPPv2N13NeuralNetworkD0Ev"></span><span id="NeuralNetwork::~NeuralNetwork"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a65475a7d7b05d302392333302626b2f8"></span><code class="sig-name descname">~NeuralNetwork</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetworkD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork19setNormalizeNeuronsEb">
+<span id="_CPPv3N13NeuralNetwork19setNormalizeNeuronsEb"></span><span id="_CPPv2N13NeuralNetwork19setNormalizeNeuronsEb"></span><span id="NeuralNetwork::setNormalizeNeurons__b"></span><span class="target" id="classnnp_1_1NeuralNetwork_1aa3970c1a57ef211ce23e5dfd85619e93"></span>void <code class="sig-name descname">setNormalizeNeurons</code><span class="sig-paren">(</span>bool <em>normalizeNeurons</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork19setNormalizeNeuronsEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Turn on/off neuron normalization.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">normalizeNeurons</span></code>: true or false (default: false). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork13getNumNeuronsEv">
+<span id="_CPPv3NK13NeuralNetwork13getNumNeuronsEv"></span><span id="_CPPv2NK13NeuralNetwork13getNumNeuronsEv"></span><span id="NeuralNetwork::getNumNeuronsC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a0f1499117239804e1e33e20234021eef"></span>int <code class="sig-name descname">getNumNeurons</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork13getNumNeuronsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return total number of neurons.</p>
+<p>Includes input and output layer. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork17getNumConnectionsEv">
+<span id="_CPPv3NK13NeuralNetwork17getNumConnectionsEv"></span><span id="_CPPv2NK13NeuralNetwork17getNumConnectionsEv"></span><span id="NeuralNetwork::getNumConnectionsC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a0a5977b23676166a39fefbb0d232f050"></span>int <code class="sig-name descname">getNumConnections</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork17getNumConnectionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return total number of connections.</p>
+<p>Connections are all weights and biases. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork13getNumWeightsEv">
+<span id="_CPPv3NK13NeuralNetwork13getNumWeightsEv"></span><span id="_CPPv2NK13NeuralNetwork13getNumWeightsEv"></span><span id="NeuralNetwork::getNumWeightsC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a2f31e2bf59c2cb5e378a40d7caa5077e"></span>int <code class="sig-name descname">getNumWeights</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork13getNumWeightsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return number of weights. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork12getNumBiasesEv">
+<span id="_CPPv3NK13NeuralNetwork12getNumBiasesEv"></span><span id="_CPPv2NK13NeuralNetwork12getNumBiasesEv"></span><span id="NeuralNetwork::getNumBiasesC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1aa3e377047279b8b0bbd11c80a8aefb3d"></span>int <code class="sig-name descname">getNumBiases</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork12getNumBiasesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return number of biases. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork14setConnectionsERPCKd">
+<span id="_CPPv3N13NeuralNetwork14setConnectionsERPCKd"></span><span id="_CPPv2N13NeuralNetwork14setConnectionsERPCKd"></span><span id="NeuralNetwork::setConnections__doubleCPCR"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a3479cb0b5dc64c4260837adbfa11f868"></span>void <code class="sig-name descname">setConnections</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> &amp;<em>connections</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork14setConnectionsERPCKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set neural network weights and biases.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">connections</span></code>: One-dimensional array with neural network connections in the following order: <div class="math notranslate nohighlight">
+\[ \underbrace{ \overbrace{ a^{01}_{00}, \ldots, a^{01}_{0m_1}, a^{01}_{10}, \ldots, a^{01}_{1m_1}, \ldots, a^{01}_{n_00}, \ldots, a^{01}_{n_0m_1}, }^{\text{Weights}} \overbrace{ b^{1}_{0}, \ldots, b^{1}_{m_1} }^{\text{Biases}} }_{\text{Layer } 0 \rightarrow 1}, \underbrace{ a^{12}_{00}, \ldots, b^{2}_{m_2} }_{\text{Layer } 1 \rightarrow 2}, \ldots, \underbrace{ a^{p-1,p}_{00}, \ldots, b^{p}_{m_p} }_{\text{Layer } p-1 \rightarrow p} \]</div>
+ where <span class="math notranslate nohighlight">\(a^{i-1, i}_{jk}\)</span> is the weight connecting neuron <span class="math notranslate nohighlight">\(j\)</span> in layer <span class="math notranslate nohighlight">\(i-1\)</span> to neuron <span class="math notranslate nohighlight">\(k\)</span> in layer <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(b^{i}_{k}\)</span> is the bias assigned to neuron <span class="math notranslate nohighlight">\(k\)</span> in layer <span class="math notranslate nohighlight">\(i\)</span>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork14getConnectionsEPd">
+<span id="_CPPv3NK13NeuralNetwork14getConnectionsEPd"></span><span id="_CPPv2NK13NeuralNetwork14getConnectionsEPd"></span><span id="NeuralNetwork::getConnections__doublePC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a93e137591120925fe9ec70011385a972"></span>void <code class="sig-name descname">getConnections</code><span class="sig-paren">(</span>double *<em>connections</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork14getConnectionsEPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get neural network weights and biases.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">connections</span></code>: One-dimensional array with neural network connections (same order as described in <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a3479cb0b5dc64c4260837adbfa11f868"><span class="std std-ref">setConnections()</span></a>) </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork34initializeConnectionsRandomUniformEj">
+<span id="_CPPv3N13NeuralNetwork34initializeConnectionsRandomUniformEj"></span><span id="_CPPv2N13NeuralNetwork34initializeConnectionsRandomUniformEj"></span><span id="NeuralNetwork::initializeConnectionsRandomUniform__unsigned-i"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a5f3200be3d54c5960bc979a1ba27e9d7"></span>void <code class="sig-name descname">initializeConnectionsRandomUniform</code><span class="sig-paren">(</span>unsigned int <em>seed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork34initializeConnectionsRandomUniformEj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize connections with random numbers.</p>
+<p><p>Weights are initialized with random values in the </p>
+<span class="math notranslate nohighlight">\([-1, 1]\)</span> interval. The C standard library rand() function is used. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">seed</span></code>: Random number generator seed.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork17modifyConnectionsE18ModificationScheme">
+<span id="_CPPv3N13NeuralNetwork17modifyConnectionsE18ModificationScheme"></span><span id="_CPPv2N13NeuralNetwork17modifyConnectionsE18ModificationScheme"></span><span id="NeuralNetwork::modifyConnections__ModificationScheme"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a12b98d35abbe2cd5d6357e061a2a5bc7"></span>void <code class="sig-name descname">modifyConnections</code><span class="sig-paren">(</span>ModificationScheme <em>modificationScheme</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork17modifyConnectionsE18ModificationScheme" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Change connections according to a given modification scheme.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">modificationScheme</span></code>: Defines how the connections are modified. See <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1"><span class="std std-ref">ModificationScheme</span></a> for possible options. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork17modifyConnectionsE18ModificationSchemedd">
+<span id="_CPPv3N13NeuralNetwork17modifyConnectionsE18ModificationSchemedd"></span><span id="_CPPv2N13NeuralNetwork17modifyConnectionsE18ModificationSchemedd"></span><span id="NeuralNetwork::modifyConnections__ModificationScheme.double.double"></span><span class="target" id="classnnp_1_1NeuralNetwork_1ad09333ff42f79590846ab2af21e37fcb"></span>void <code class="sig-name descname">modifyConnections</code><span class="sig-paren">(</span>ModificationScheme <em>modificationScheme</em>, double <em>parameter1</em>, double <em>parameter2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork17modifyConnectionsE18ModificationSchemedd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Change connections according to a given modification scheme.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">modificationScheme</span></code>: Defines how the connections are modified. See <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1"><span class="std std-ref">ModificationScheme</span></a> for possible options. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">parameter1</span></code>: Additional parameter (see <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1"><span class="std std-ref">ModificationScheme</span></a>). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">parameter2</span></code>: Additional parameter (see <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a87219d930829f343d65e5c59bc0220b1"><span class="std std-ref">ModificationScheme</span></a>). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork8setInputERPCKd">
+<span id="_CPPv3NK13NeuralNetwork8setInputERPCKd"></span><span id="_CPPv2NK13NeuralNetwork8setInputERPCKd"></span><span id="NeuralNetwork::setInput__doubleCPCRC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a0ddcfb0243cca5956075a75c90431c37"></span>void <code class="sig-name descname">setInput</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> &amp;<em>input</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork8setInputERPCKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set neural network input layer node values.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">input</span></code>: Input layer node values. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork9getOutputEPd">
+<span id="_CPPv3NK13NeuralNetwork9getOutputEPd"></span><span id="_CPPv2NK13NeuralNetwork9getOutputEPd"></span><span id="NeuralNetwork::getOutput__doublePC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1ad7e18949cd215e5427440fce7a1437d7"></span>void <code class="sig-name descname">getOutput</code><span class="sig-paren">(</span>double *<em>output</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork9getOutputEPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get neural network output layer node values.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">output</span></code>: Output layer node values. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork9propagateEv">
+<span id="_CPPv3N13NeuralNetwork9propagateEv"></span><span id="_CPPv2N13NeuralNetwork9propagateEv"></span><span id="NeuralNetwork::propagate"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a9d2a2d332c23876935e3a3272f40f5c2"></span>void <code class="sig-name descname">propagate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork9propagateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Propagate input information through all layers.</p>
+<p>With the input data set by <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a0ddcfb0243cca5956075a75c90431c37"><span class="std std-ref">setInput()</span></a> this will calculate all remaining neuron values, the output in the last layer is acccessible via <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1ad7e18949cd215e5427440fce7a1437d7"><span class="std std-ref">getOutput()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork13calculateDEdGEPd">
+<span id="_CPPv3NK13NeuralNetwork13calculateDEdGEPd"></span><span id="_CPPv2NK13NeuralNetwork13calculateDEdGEPd"></span><span id="NeuralNetwork::calculateDEdG__doublePC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1abf46d0d0d2a4c068f67bb13ae445d725"></span>void <code class="sig-name descname">calculateDEdG</code><span class="sig-paren">(</span>double *<em>dEdG</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork13calculateDEdGEPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate derivative of output neuron with respect to input neurons.</p>
+<p><strong>CAUTION</strong>: This works only for neural networks with a single output neuron!<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">dEdG</span></code>: Array containing derivative (length is number of input neurons).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Returns <span class="math notranslate nohighlight">\(\left(\frac{dE}{dG_i}\right)_{i=1,\ldots,N}\)</span>, where <span class="math notranslate nohighlight">\(E\)</span> is the output neuron and <span class="math notranslate nohighlight">\(\left(G_i\right)_{i=1,\ldots,N}\)</span> are the <span class="math notranslate nohighlight">\(N\)</span> input neurons. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork13calculateDEdcEPd">
+<span id="_CPPv3NK13NeuralNetwork13calculateDEdcEPd"></span><span id="_CPPv2NK13NeuralNetwork13calculateDEdcEPd"></span><span id="NeuralNetwork::calculateDEdc__doublePC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1aa38d991173328eb5c977dacf39347dca"></span>void <code class="sig-name descname">calculateDEdc</code><span class="sig-paren">(</span>double *<em>dEdc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork13calculateDEdcEPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate derivative of output neuron with respect to connections.</p>
+<p><strong>CAUTION</strong>: This works only for neural networks with a single output neuron!<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">dEdc</span></code>: Array containing derivative (length is number of connections, see <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a0a5977b23676166a39fefbb0d232f050"><span class="std std-ref">getNumConnections()</span></a>).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Returns <span class="math notranslate nohighlight">\(\left(\frac{dE}{dc_i}\right)_{i=1,\ldots,N}\)</span>, where <span class="math notranslate nohighlight">\(E\)</span> is the output neuron and <span class="math notranslate nohighlight">\(\left(c_i\right)_{i=1,\ldots,N}\)</span> are the <span class="math notranslate nohighlight">\(N\)</span> connections (weights and biases) of the neural network. See <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a3479cb0b5dc64c4260837adbfa11f868"><span class="std std-ref">setConnections()</span></a> for details on the order of weights an biases. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork13calculateDFdcEPdRPCKd">
+<span id="_CPPv3NK13NeuralNetwork13calculateDFdcEPdRPCKd"></span><span id="_CPPv2NK13NeuralNetwork13calculateDFdcEPdRPCKd"></span><span id="NeuralNetwork::calculateDFdc__doubleP.doubleCPCRC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a4526b9a7e947a38b861098d0826a6161"></span>void <code class="sig-name descname">calculateDFdc</code><span class="sig-paren">(</span>double *<em>dFdc</em>, double <em class="property">const</em> *<em class="property">const</em> &amp;<em>dGdxyz</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork13calculateDFdcEPdRPCKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate “second” derivative of output with respect to connections.</p>
+<p><strong>CAUTION</strong>: This works only for neural networks with a single output neuron!<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">dFdc</span></code>: Array containing derivative (length is number of connections, see <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a0a5977b23676166a39fefbb0d232f050"><span class="std std-ref">getNumConnections()</span></a>). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">dGdxyz</span></code>: Array containing derivative of input neurons with respect to coordinates <span class="math notranslate nohighlight">\(\frac{\partial G_j} {\partial x_{l, \gamma}}\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>In the context of the neural network potentials this function is used to calculate derivatives of forces with respect to connections. The force component <span class="math notranslate nohighlight">\(\gamma\)</span> (where <span class="math notranslate nohighlight">\(\gamma\)</span> is one of <span class="math notranslate nohighlight">\(x,y,z\)</span>) of particle <span class="math notranslate nohighlight">\(l\)</span> is <div class="math notranslate nohighlight">
+\[ F_{l, \gamma} = - \frac{\partial}{\partial x_{l, \gamma}} \sum_i^{N} E_i = - \sum_i^N \sum_j^M \frac{\partial E_i}{\partial G_j} \frac{\partial G_j}{\partial x_{l, \gamma}}, \]</div>
+ where <span class="math notranslate nohighlight">\(N\)</span> is the number of particles in the system and <span class="math notranslate nohighlight">\(M\)</span> is the number of symmetry functions (number of input neurons). Hence the derivative of <span class="math notranslate nohighlight">\(F_{l, \gamma}\)</span> with respect to the neural network connection <span class="math notranslate nohighlight">\(c_n\)</span> is <div class="math notranslate nohighlight">
+\[ \frac{\partial}{\partial c_n} F_{l, \gamma} = - \sum_i^N \sum_j^M \frac{\partial^2 E_i}{\partial c_n \partial G_j} \frac{\partial G_j}{\partial x_{l, \gamma}}. \]</div>
+ Thus, with given <span class="math notranslate nohighlight">\(\frac{\partial G_j}{\partial x_{l, \gamma}}\)</span> this function calculates <div class="math notranslate nohighlight">
+\[ \sum_j^M \frac{\partial^2 E}{\partial c_n \partial G_j} \frac{\partial G_j}{\partial x_{l, \gamma}} \]</div>
+ for the current network status and returns it via the output array. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork16writeConnectionsERNSt8ofstreamE">
+<span id="_CPPv3NK13NeuralNetwork16writeConnectionsERNSt8ofstreamE"></span><span id="_CPPv2NK13NeuralNetwork16writeConnectionsERNSt8ofstreamE"></span><span id="NeuralNetwork::writeConnections__std::ofstreamRC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a38e5d3edf8eb6c1a28cfddeb674207e2"></span>void <code class="sig-name descname">writeConnections</code><span class="sig-paren">(</span>std::ofstream &amp;<em>file</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork16writeConnectionsERNSt8ofstreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write connections to file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">file</span></code>: File stream to write to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork19getNeuronStatisticsEPlPdPdPdPd">
+<span id="_CPPv3N13NeuralNetwork19getNeuronStatisticsEPlPdPdPdPd"></span><span id="_CPPv2N13NeuralNetwork19getNeuronStatisticsEPlPdPdPdPd"></span><span id="NeuralNetwork::getNeuronStatistics__lP.doubleP.doubleP.doubleP.doubleP"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a09cc59613969f7172abc6effab174dc4"></span>void <code class="sig-name descname">getNeuronStatistics</code><span class="sig-paren">(</span>long *<em>count</em>, double *<em>min</em>, double *<em>max</em>, double *<em>sum</em>, double *<em>sum2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork19getNeuronStatisticsEPlPdPdPdPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return gathered neuron statistics.</p>
+<p><strong>CAUTION</strong>: This works only for neural networks with a single output neuron!<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">count</span></code>: Number of neuron output value calculations. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">min</span></code>: Minimum neuron value encountered. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">max</span></code>: Maximum neuron value encountered. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">sum</span></code>: Sum of all neuron values encountered. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">sum2</span></code>: Sum of squares of all neuron values encountered.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>When neuron values are calculated (e.g. when <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a9d2a2d332c23876935e3a3272f40f5c2"><span class="std std-ref">propagate()</span></a> is called) statistics about encountered values are automatically gathered. The internal counters can be reset calling <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a86ead163e79c0680db2355733ef293b7"><span class="std std-ref">resetNeuronStatistics()</span></a>. <a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Neuron.html#structnnp_1_1NeuralNetwork_1_1Neuron"><span class="std std-ref">Neuron</span></a> values are ordered layer by layer: <div class="math notranslate nohighlight">
+\[ \underbrace{y^0_1, \ldots, y^0_{N_0}}_\text{Input layer}, \underbrace{y^1_1, \ldots, y^1_{N_1}}_{\text{Hidden Layer } 1}, \ldots, \underbrace{y^p_1, \ldots, y^p_{N_p}}_\text{Output layer}, \]</div>
+ where <span class="math notranslate nohighlight">\(y^m_i\)</span> is neuron <span class="math notranslate nohighlight">\(i\)</span> in layer <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(N_m\)</span> is the total number of neurons in this layer. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork21resetNeuronStatisticsEv">
+<span id="_CPPv3N13NeuralNetwork21resetNeuronStatisticsEv"></span><span id="_CPPv2N13NeuralNetwork21resetNeuronStatisticsEv"></span><span id="NeuralNetwork::resetNeuronStatistics"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a86ead163e79c0680db2355733ef293b7"></span>void <code class="sig-name descname">resetNeuronStatistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork21resetNeuronStatisticsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset neuron statistics.</p>
+<p>Counters and summation variables for neuron statistics are reset. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork14getMemoryUsageEv">
+<span id="_CPPv3N13NeuralNetwork14getMemoryUsageEv"></span><span id="_CPPv2N13NeuralNetwork14getMemoryUsageEv"></span><span id="NeuralNetwork::getMemoryUsage"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a6163a65341980f16ec4376ec035f609f"></span>long <code class="sig-name descname">getMemoryUsage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork14getMemoryUsageEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork4infoEv">
+<span id="_CPPv3NK13NeuralNetwork4infoEv"></span><span id="_CPPv2NK13NeuralNetwork4infoEv"></span><span id="NeuralNetwork::infoC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1aee07252d0a6b47e550117120470845f3"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print neural network architecture. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork13calculateDEdbEPd">
+<span id="_CPPv3NK13NeuralNetwork13calculateDEdbEPd"></span><span id="_CPPv2NK13NeuralNetwork13calculateDEdbEPd"></span><span id="NeuralNetwork::calculateDEdb__doublePC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a2ed910e1e6cd8ba8ffa9bb495ea96656"></span>void <code class="sig-name descname">calculateDEdb</code><span class="sig-paren">(</span>double *<em>dEdb</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork13calculateDEdbEPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate derivative of output neuron with respect to biases.</p>
+<p><strong>CAUTION</strong>: This works only for neural networks with a single output neuron!<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">dEdb</span></code>: Array containing derivatives (length is number of biases).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Similar to <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1aa38d991173328eb5c977dacf39347dca"><span class="std std-ref">calculateDEdc()</span></a> but includes only biases. Used internally by <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a4526b9a7e947a38b861098d0826a6161"><span class="std std-ref">calculateDFdc()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork13calculateDxdGEi">
+<span id="_CPPv3NK13NeuralNetwork13calculateDxdGEi"></span><span id="_CPPv2NK13NeuralNetwork13calculateDxdGEi"></span><span id="NeuralNetwork::calculateDxdG__iC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1acc168a80af0a840675f46ed31c7a6723"></span>void <code class="sig-name descname">calculateDxdG</code><span class="sig-paren">(</span>int <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork13calculateDxdGEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate derivative of neuron values before activation function with respect to input neuron.</p>
+<p><p>No output, derivatives are internally saved for each neuron in </p>
+<a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Neuron.html#structnnp_1_1NeuralNetwork_1_1Neuron_1a72a2be6d45403d23a24b87f422e6f43e"><span class="std std-ref">Neuron::dxdG</span></a>. Used internally by <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a4526b9a7e947a38b861098d0826a6161"><span class="std std-ref">calculateDFdc()</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">index</span></code>: Index of input neuron the derivative will be calculated for.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13NeuralNetwork16calculateD2EdGdcEiRPCKdPd">
+<span id="_CPPv3NK13NeuralNetwork16calculateD2EdGdcEiRPCKdPd"></span><span id="_CPPv2NK13NeuralNetwork16calculateD2EdGdcEiRPCKdPd"></span><span id="NeuralNetwork::calculateD2EdGdc__i.doubleCPCR.doublePC"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a7619d39464dd49cbfedd1ec6d86fe71b"></span>void <code class="sig-name descname">calculateD2EdGdc</code><span class="sig-paren">(</span>int <em>index</em>, double <em class="property">const</em> *<em class="property">const</em> &amp;<em>dEdb</em>, double *<em>d2EdGdc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK13NeuralNetwork16calculateD2EdGdcEiRPCKdPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate second derivative of output neuron with respect to input neuron and connections.</p>
+<p><strong>CAUTION</strong>: This works only for neural networks with a single output neuron!<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">index</span></code>: Index of input neuron the derivative will be calculated for. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">dEdb</span></code>: Derivatives of output neuron with respect to biases. See <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a2ed910e1e6cd8ba8ffa9bb495ea96656"><span class="std std-ref">calculateDEdb()</span></a>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">d2EdGdc</span></code>: Array containing the derivatives (ordered as described in <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a3479cb0b5dc64c4260837adbfa11f868"><span class="std std-ref">setConnections()</span></a>).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Used internally by <a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a4526b9a7e947a38b861098d0826a6161"><span class="std std-ref">calculateDFdc()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork13allocateLayerER5Layerii18ActivationFunction">
+<span id="_CPPv3N13NeuralNetwork13allocateLayerER5Layerii18ActivationFunction"></span><span id="_CPPv2N13NeuralNetwork13allocateLayerER5Layerii18ActivationFunction"></span><span id="NeuralNetwork::allocateLayer__LayerR.i.i.ActivationFunction"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a4f06892244af00ab70125061bbcbe3c3"></span>void <code class="sig-name descname">allocateLayer</code><span class="sig-paren">(</span>Layer &amp;<em>layer</em>, int <em>numNeuronsPrevLayer</em>, int <em>numNeurons</em>, ActivationFunction <em>activationFunction</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork13allocateLayerER5Layerii18ActivationFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Allocate a single layer.</p>
+<p><p>This function is internally called by the constructor to allocate all neurons layer by layer. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">layer</span></code>: Neural network layer to allocate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">numNeuronsPrevLayer</span></code>: Number of neurons in the previous layer. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">numNeurons</span></code>: Number of neurons in this layer. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">activationFunction</span></code>: Activation function to use for all neurons in this layer.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13NeuralNetwork14propagateLayerER5LayerR5Layer">
+<span id="_CPPv3N13NeuralNetwork14propagateLayerER5LayerR5Layer"></span><span id="_CPPv2N13NeuralNetwork14propagateLayerER5LayerR5Layer"></span><span id="NeuralNetwork::propagateLayer__LayerR.LayerR"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a45b217aee588e3a9d443f497e4cc5bf4"></span>void <code class="sig-name descname">propagateLayer</code><span class="sig-paren">(</span>Layer &amp;<em>layer</em>, Layer &amp;<em>layerPrev</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13NeuralNetwork14propagateLayerER5LayerR5Layer" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Propagate information from one layer to the next.</p>
+<p><p>This function is internally looped by </p>
+<a class="reference internal" href="#classnnp_1_1NeuralNetwork_1a9d2a2d332c23876935e3a3272f40f5c2"><span class="std std-ref">propagate()</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">layer</span></code>: Neuron values in this layer will be calculated. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">layerPrev</span></code>: Neuron values in this layer will be used as input.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork16normalizeNeuronsE">
+<span id="_CPPv3N3nnp13NeuralNetwork16normalizeNeuronsE"></span><span id="_CPPv2N3nnp13NeuralNetwork16normalizeNeuronsE"></span><span id="nnp::NeuralNetwork::normalizeNeurons__b"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a41aedf8cb1f2f786205c7d792870077b"></span>bool <code class="sig-name descname">normalizeNeurons</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork16normalizeNeuronsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If neurons are normalized. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork10numWeightsE">
+<span id="_CPPv3N3nnp13NeuralNetwork10numWeightsE"></span><span id="_CPPv2N3nnp13NeuralNetwork10numWeightsE"></span><span id="nnp::NeuralNetwork::numWeights__i"></span><span class="target" id="classnnp_1_1NeuralNetwork_1ad7ca98e12a802d108ad987acd3beb088"></span>int <code class="sig-name descname">numWeights</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork10numWeightsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of NN weights only. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork9numBiasesE">
+<span id="_CPPv3N3nnp13NeuralNetwork9numBiasesE"></span><span id="_CPPv2N3nnp13NeuralNetwork9numBiasesE"></span><span id="nnp::NeuralNetwork::numBiases__i"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a7924eda7794c924a52474b45f83acfb8"></span>int <code class="sig-name descname">numBiases</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork9numBiasesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of NN biases only. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork14numConnectionsE">
+<span id="_CPPv3N3nnp13NeuralNetwork14numConnectionsE"></span><span id="_CPPv2N3nnp13NeuralNetwork14numConnectionsE"></span><span id="nnp::NeuralNetwork::numConnections__i"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a964d98ad76e025e3f95c87e8fa322d27"></span>int <code class="sig-name descname">numConnections</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork14numConnectionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of NN connections (weights + biases). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork9numLayersE">
+<span id="_CPPv3N3nnp13NeuralNetwork9numLayersE"></span><span id="_CPPv2N3nnp13NeuralNetwork9numLayersE"></span><span id="nnp::NeuralNetwork::numLayers__i"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a1f2248da5de33a697f76780423ecc3be"></span>int <code class="sig-name descname">numLayers</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork9numLayersE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Total number of layers (includes input and output layers). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork15numHiddenLayersE">
+<span id="_CPPv3N3nnp13NeuralNetwork15numHiddenLayersE"></span><span id="_CPPv2N3nnp13NeuralNetwork15numHiddenLayersE"></span><span id="nnp::NeuralNetwork::numHiddenLayers__i"></span><span class="target" id="classnnp_1_1NeuralNetwork_1ae71395d9b5b66ad73c8f1f2eac764aa9"></span>int <code class="sig-name descname">numHiddenLayers</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork15numHiddenLayersE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of hidden layers. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork12weightOffsetE">
+<span id="_CPPv3N3nnp13NeuralNetwork12weightOffsetE"></span><span id="_CPPv2N3nnp13NeuralNetwork12weightOffsetE"></span><span id="nnp::NeuralNetwork::weightOffset__iP"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a59be6ffbe6c6c5ae246cb105e188fa1b"></span>int *<code class="sig-name descname">weightOffset</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork12weightOffsetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Offset adress of weights per layer in combined weights+bias array. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork10biasOffsetE">
+<span id="_CPPv3N3nnp13NeuralNetwork10biasOffsetE"></span><span id="_CPPv2N3nnp13NeuralNetwork10biasOffsetE"></span><span id="nnp::NeuralNetwork::biasOffset__iP"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a6e9ce480278a211b224a135a16a9efe6"></span>int *<code class="sig-name descname">biasOffset</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork10biasOffsetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Offset adress of biases per layer in combined weights+bias array. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork14biasOnlyOffsetE">
+<span id="_CPPv3N3nnp13NeuralNetwork14biasOnlyOffsetE"></span><span id="_CPPv2N3nnp13NeuralNetwork14biasOnlyOffsetE"></span><span id="nnp::NeuralNetwork::biasOnlyOffset__iP"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a0f8a213775aa8f185e85748f0bbf4a79"></span>int *<code class="sig-name descname">biasOnlyOffset</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork14biasOnlyOffsetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Offset adress of biases per layer in bias only array. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork10inputLayerE">
+<span id="_CPPv3N3nnp13NeuralNetwork10inputLayerE"></span><span id="_CPPv2N3nnp13NeuralNetwork10inputLayerE"></span><span id="nnp::NeuralNetwork::inputLayer__LayerP"></span><span class="target" id="classnnp_1_1NeuralNetwork_1a0c17ca3a07ca010d5911a8fb93a71069"></span><a class="reference internal" href="#_CPPv4N3nnp13NeuralNetwork5LayerE" title="nnp::NeuralNetwork::Layer">Layer</a> *<code class="sig-name descname">inputLayer</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork10inputLayerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pointer to input layer. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork11outputLayerE">
+<span id="_CPPv3N3nnp13NeuralNetwork11outputLayerE"></span><span id="_CPPv2N3nnp13NeuralNetwork11outputLayerE"></span><span id="nnp::NeuralNetwork::outputLayer__LayerP"></span><span class="target" id="classnnp_1_1NeuralNetwork_1ad88ef411d3514a71f20a880f0ba81336"></span><a class="reference internal" href="#_CPPv4N3nnp13NeuralNetwork5LayerE" title="nnp::NeuralNetwork::Layer">Layer</a> *<code class="sig-name descname">outputLayer</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork11outputLayerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pointer to output layer. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6layersE">
+<span id="_CPPv3N3nnp13NeuralNetwork6layersE"></span><span id="_CPPv2N3nnp13NeuralNetwork6layersE"></span><span id="nnp::NeuralNetwork::layers__LayerP"></span><span class="target" id="classnnp_1_1NeuralNetwork_1ad39acdd5f3f75914a8ed4bb28dc1f56a"></span><a class="reference internal" href="#_CPPv4N3nnp13NeuralNetwork5LayerE" title="nnp::NeuralNetwork::Layer">Layer</a> *<code class="sig-name descname">layers</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6layersE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Neural network layers. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp13NeuralNetwork5LayerE">
+<span id="_CPPv3N3nnp13NeuralNetwork5LayerE"></span><span id="_CPPv2N3nnp13NeuralNetwork5LayerE"></span><span id="nnp::NeuralNetwork::Layer"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer"></span><em class="property">struct </em><code class="sig-name descname">Layer</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork5LayerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>One neural network layer. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork5Layer10numNeuronsE">
+<span id="_CPPv3N3nnp13NeuralNetwork5Layer10numNeuronsE"></span><span id="_CPPv2N3nnp13NeuralNetwork5Layer10numNeuronsE"></span><span id="nnp::NeuralNetwork::Layer::numNeurons__i"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer_1a433e45aaa1fbaa3413da4fc84c747506"></span>int <code class="sig-name descname">numNeurons</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork5Layer10numNeuronsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of neurons in this layer <span class="math notranslate nohighlight">\( N_n \)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork5Layer19numNeuronsPrevLayerE">
+<span id="_CPPv3N3nnp13NeuralNetwork5Layer19numNeuronsPrevLayerE"></span><span id="_CPPv2N3nnp13NeuralNetwork5Layer19numNeuronsPrevLayerE"></span><span id="nnp::NeuralNetwork::Layer::numNeuronsPrevLayer__i"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer_1af80ea27029ef0c8e4f44bffab2f04914"></span>int <code class="sig-name descname">numNeuronsPrevLayer</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork5Layer19numNeuronsPrevLayerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of neurons in previous layer <span class="math notranslate nohighlight">\( N_{n-1} \)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork5Layer18activationFunctionE">
+<span id="_CPPv3N3nnp13NeuralNetwork5Layer18activationFunctionE"></span><span id="_CPPv2N3nnp13NeuralNetwork5Layer18activationFunctionE"></span><span id="nnp::NeuralNetwork::Layer::activationFunction__ActivationFunction"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer_1abff1a6be61f7989d7231e382b265f175"></span><a class="reference internal" href="#_CPPv4N3nnp13NeuralNetwork18ActivationFunctionE" title="nnp::NeuralNetwork::ActivationFunction">ActivationFunction</a> <code class="sig-name descname">activationFunction</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork5Layer18activationFunctionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Common activation function for all neurons in this layer. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork5Layer7neuronsE">
+<span id="_CPPv3N3nnp13NeuralNetwork5Layer7neuronsE"></span><span id="_CPPv2N3nnp13NeuralNetwork5Layer7neuronsE"></span><span id="nnp::NeuralNetwork::Layer::neurons__NeuronP"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer_1ab3ec99a587ce9904e7587c3e28495a4e"></span><a class="reference internal" href="#_CPPv4N3nnp13NeuralNetwork6NeuronE" title="nnp::NeuralNetwork::Neuron">Neuron</a> *<code class="sig-name descname">neurons</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork5Layer7neuronsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Array of neurons in this layer. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp13NeuralNetwork6NeuronE">
+<span id="_CPPv3N3nnp13NeuralNetwork6NeuronE"></span><span id="_CPPv2N3nnp13NeuralNetwork6NeuronE"></span><span id="nnp::NeuralNetwork::Neuron"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron"></span><em class="property">struct </em><code class="sig-name descname">Neuron</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6NeuronE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A single neuron. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron5countE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron5countE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron5countE"></span><span id="nnp::NeuralNetwork::Neuron::count__l"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1ac612fe3fb612893474822688e3e75182"></span>long <code class="sig-name descname">count</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron5countE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>How often the value of this neuron has been evaluated. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron1xE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron1xE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron1xE"></span><span id="nnp::NeuralNetwork::Neuron::x__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1af8558cd80fa7ef59bc9db1cf56bc8994"></span>double <code class="sig-name descname">x</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron1xE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Neuron value before application of activation function. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron5valueE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron5valueE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron5valueE"></span><span id="nnp::NeuralNetwork::Neuron::value__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1a821570bc82ddc88ae4e91d8878a67a12"></span>double <code class="sig-name descname">value</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron5valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Neuron value. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron4dfdxE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron4dfdxE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron4dfdxE"></span><span id="nnp::NeuralNetwork::Neuron::dfdx__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1ae3246e44e6bb25ed89a26b99ac460560"></span>double <code class="sig-name descname">dfdx</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron4dfdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivative of activation function with respect to its argument <span class="math notranslate nohighlight">\( \frac{\partial f_a}{\partial x} \)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron6d2fdx2E">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron6d2fdx2E"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron6d2fdx2E"></span><span id="nnp::NeuralNetwork::Neuron::d2fdx2__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1ad6458baa36c140a1d1b583c113108742"></span>double <code class="sig-name descname">d2fdx2</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron6d2fdx2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Second derivative of activation function with respect to its argument <span class="math notranslate nohighlight">\( \frac{\partial^2 f_a}{\partial x^2} \)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron4biasE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron4biasE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron4biasE"></span><span id="nnp::NeuralNetwork::Neuron::bias__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1a3668a8f15c31037fc737e970d65111f5"></span>double <code class="sig-name descname">bias</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron4biasE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bias value assigned to this neuron (if this is neuron <span class="math notranslate nohighlight">\( y_i^n \)</span> this bias value is <span class="math notranslate nohighlight">\( b_{i}^{n} \)</span>). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron4dxdGE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron4dxdGE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron4dxdGE"></span><span id="nnp::NeuralNetwork::Neuron::dxdG__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1a72a2be6d45403d23a24b87f422e6f43e"></span>double <code class="sig-name descname">dxdG</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron4dxdGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivative of neuron value before application of activation function with respect to input layer neurons <span class="math notranslate nohighlight">\( \frac{\partial x}{\partial G} \)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron3minE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron3minE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron3minE"></span><span id="nnp::NeuralNetwork::Neuron::min__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1aecad843fcbecd294483e68ebd7c5f96f"></span>double <code class="sig-name descname">min</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron3minE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Minimum neuron value over data set (neuron statistics). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron3maxE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron3maxE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron3maxE"></span><span id="nnp::NeuralNetwork::Neuron::max__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1a55da924139a5d420334839f85dbf68a6"></span>double <code class="sig-name descname">max</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron3maxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Maximum neuron value over data set (neuron statistics). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron3sumE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron3sumE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron3sumE"></span><span id="nnp::NeuralNetwork::Neuron::sum__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1a6bdd9ae246ce4f0b60055c80ee133620"></span>double <code class="sig-name descname">sum</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron3sumE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sum of neuron values over data set (neuron statistics). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron4sum2E">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron4sum2E"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron4sum2E"></span><span id="nnp::NeuralNetwork::Neuron::sum2__double"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1afb86dbc90e72c3b79ac6f1d721bfef04"></span>double <code class="sig-name descname">sum2</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron4sum2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sum of squared neuron values over data set (neuron statistics). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork6Neuron7weightsE">
+<span id="_CPPv3N3nnp13NeuralNetwork6Neuron7weightsE"></span><span id="_CPPv2N3nnp13NeuralNetwork6Neuron7weightsE"></span><span id="nnp::NeuralNetwork::Neuron::weights__doubleP"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Neuron_1a2e81c4bbc7861ab9ca5071c07bddf26e"></span>double *<code class="sig-name descname">weights</code><a class="headerlink" href="#_CPPv4N3nnp13NeuralNetwork6Neuron7weightsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>NN weights assigned to neuron. If this is neuron <span class="math notranslate nohighlight">\(i\)</span> in layer <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\( y_i^n \)</span>, these weights are <span class="math notranslate nohighlight">\( \left\{ a_{ji}^{n-1, n} \right\}_{j=1,\ldots,N_n} \)</span>. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1Prediction.html" class="btn btn-neutral float-right" title="Class Prediction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1Mode.html" class="btn btn-neutral float-left" title="Class Mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

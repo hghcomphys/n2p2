@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class GradientDescent &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class InterfaceLammps" href="classnnp_1_1InterfaceLammps.html" />
+    <link rel="prev" title="Class ElementMap" href="classnnp_1_1ElementMap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class GradientDescent</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1GradientDescent.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-gradientdescent">
+<span id="exhale-class-classnnp-1-1gradientdescent"></span><h1>Class GradientDescent<a class="headerlink" href="#class-gradientdescent" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnptrain-gradientdescent-h"><span class="std std-ref">File GradientDescent.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::Updater</span></code> (<a class="reference internal" href="classnnp_1_1Updater.html#exhale-class-classnnp-1-1updater"><span class="std std-ref">Class Updater</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp15GradientDescentE">
+<span id="_CPPv3N3nnp15GradientDescentE"></span><span id="_CPPv2N3nnp15GradientDescentE"></span><span id="nnp::GradientDescent"></span><span class="target" id="classnnp_1_1GradientDescent"></span><em class="property">class </em><code class="sig-name descname">GradientDescent</code> : <em class="property">public</em> nnp::<a class="reference internal" href="classnnp_1_1Updater.html#_CPPv4N3nnp7UpdaterE" title="nnp::Updater">Updater</a><a class="headerlink" href="#_CPPv4N3nnp15GradientDescentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Weight updates based on simple gradient descent methods. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N3nnp15GradientDescent11DescentTypeE">
+<span id="_CPPv3N3nnp15GradientDescent11DescentTypeE"></span><span id="_CPPv2N3nnp15GradientDescent11DescentTypeE"></span><span class="target" id="classnnp_1_1GradientDescent_1a54d38d540466c376ccd73014954de27e"></span><em class="property">enum </em><code class="sig-name descname">DescentType</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent11DescentTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enumerate different gradient descent variants. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp15GradientDescent8DT_FIXEDE">
+<span id="_CPPv3N3nnp15GradientDescent8DT_FIXEDE"></span><span id="_CPPv2N3nnp15GradientDescent8DT_FIXEDE"></span><span class="target" id="classnnp_1_1GradientDescent_1a54d38d540466c376ccd73014954de27eaf3f7383ef188f4eb5c5e0bda3c048b25"></span><code class="sig-name descname">DT_FIXED</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent8DT_FIXEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fixed step size. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp15GradientDescent7DT_ADAME">
+<span id="_CPPv3N3nnp15GradientDescent7DT_ADAME"></span><span id="_CPPv2N3nnp15GradientDescent7DT_ADAME"></span><span class="target" id="classnnp_1_1GradientDescent_1a54d38d540466c376ccd73014954de27ea64d014e31fc1b88e2f4fcec133340c6e"></span><code class="sig-name descname">DT_ADAM</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent7DT_ADAME" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adaptive moment estimation (Adam). </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N15GradientDescent15GradientDescentEKNSt6size_tEK11DescentType">
+<span id="_CPPv3N15GradientDescent15GradientDescentEKNSt6size_tEK11DescentType"></span><span id="_CPPv2N15GradientDescent15GradientDescentEKNSt6size_tEK11DescentType"></span><span id="GradientDescent::GradientDescent__std::sC.DescentTypeC"></span><span class="target" id="classnnp_1_1GradientDescent_1a0d4c7fa712dd6bde9a77507cebd7c983"></span><code class="sig-name descname">GradientDescent</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>sizeState</em>, DescentType <em class="property">const</em> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15GradientDescent15GradientDescentEKNSt6size_tEK11DescentType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>GradientDescent class constructor.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sizeState</span></code>: Number of neural network connections (weights and biases). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">type</span></code>: Descent type used for step size. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp15GradientDescentD0Ev">
+<span id="_CPPv3N3nnp15GradientDescentD0Ev"></span><span id="_CPPv2N3nnp15GradientDescentD0Ev"></span><span id="nnp::GradientDescent::~GradientDescent"></span><span class="target" id="classnnp_1_1GradientDescent_1ac8b384eac386da2bf0ffac84580715f7"></span><em class="property">virtual</em> <code class="sig-name descname">~GradientDescent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp15GradientDescentD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15GradientDescent8setStateEPd">
+<span id="_CPPv3N15GradientDescent8setStateEPd"></span><span id="_CPPv2N15GradientDescent8setStateEPd"></span><span id="GradientDescent::setState__doubleP"></span><span class="target" id="classnnp_1_1GradientDescent_1ab62491101a113800d9d07c1746bdeb6d"></span>void <code class="sig-name descname">setState</code><span class="sig-paren">(</span>double *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15GradientDescent8setStateEPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current state.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">state</span></code>: Pointer to state vector (weights vector), will be changed in-place upon calling <a class="reference internal" href="#classnnp_1_1GradientDescent_1af70ae5d1478a4d09c3c0fcf714a942e0"><span class="std std-ref">update()</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15GradientDescent8setErrorEPCKdKNSt6size_tE">
+<span id="_CPPv3N15GradientDescent8setErrorEPCKdKNSt6size_tE"></span><span id="_CPPv2N15GradientDescent8setErrorEPCKdKNSt6size_tE"></span><span id="GradientDescent::setError__doubleCPC.std::sC"></span><span class="target" id="classnnp_1_1GradientDescent_1af5917de548655a18e4de94ab5508d0dd"></span>void <code class="sig-name descname">setError</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> <em>error</em>, std::size_t <em class="property">const</em> <em>size</em> = 1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15GradientDescent8setErrorEPCKdKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current error vector.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">error</span></code>: Pointer to error (difference between reference and neural network potential output). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">size</span></code>: Number of error vector entries. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15GradientDescent11setJacobianEPCKdKNSt6size_tE">
+<span id="_CPPv3N15GradientDescent11setJacobianEPCKdKNSt6size_tE"></span><span id="_CPPv2N15GradientDescent11setJacobianEPCKdKNSt6size_tE"></span><span id="GradientDescent::setJacobian__doubleCPC.std::sC"></span><span class="target" id="classnnp_1_1GradientDescent_1aaf1491f345a3fa89a2448a66eaa32267"></span>void <code class="sig-name descname">setJacobian</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> <em>jacobian</em>, std::size_t <em class="property">const</em> <em>columns</em> = 1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15GradientDescent11setJacobianEPCKdKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current Jacobi matrix.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If there are <span class="math notranslate nohighlight">\(m\)</span> errors and <span class="math notranslate nohighlight">\(n\)</span> weights, the Jacobi matrix is a <span class="math notranslate nohighlight">\(n \times m\)</span> matrix stored in column-major order. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">jacobian</span></code>: Derivatives of error with respect to weights. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">columns</span></code>: Number of gradients provided.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15GradientDescent6updateEv">
+<span id="_CPPv3N15GradientDescent6updateEv"></span><span id="_CPPv2N15GradientDescent6updateEv"></span><span id="GradientDescent::update"></span><span class="target" id="classnnp_1_1GradientDescent_1af70ae5d1478a4d09c3c0fcf714a942e0"></span>void <code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15GradientDescent6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Perform connection update.</p>
+<p>Update the connections via steepest descent method. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15GradientDescent18setParametersFixedEKd">
+<span id="_CPPv3N15GradientDescent18setParametersFixedEKd"></span><span id="_CPPv2N15GradientDescent18setParametersFixedEKd"></span><span id="GradientDescent::setParametersFixed__doubleC"></span><span class="target" id="classnnp_1_1GradientDescent_1a0fc36f84c5f9d35f75be83b1e8d54b9d"></span>void <code class="sig-name descname">setParametersFixed</code><span class="sig-paren">(</span>double <em class="property">const</em> <em>eta</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15GradientDescent18setParametersFixedEKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set parameters for fixed step gradient descent algorithm.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">eta</span></code>: Step size = ratio of gradient subtracted from current weights. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15GradientDescent17setParametersAdamEKdKdKdKd">
+<span id="_CPPv3N15GradientDescent17setParametersAdamEKdKdKdKd"></span><span id="_CPPv2N15GradientDescent17setParametersAdamEKdKdKdKd"></span><span id="GradientDescent::setParametersAdam__doubleC.doubleC.doubleC.doubleC"></span><span class="target" id="classnnp_1_1GradientDescent_1a26d7bd9f4c4d88d27a1046364b0f779a"></span>void <code class="sig-name descname">setParametersAdam</code><span class="sig-paren">(</span>double <em class="property">const</em> <em>eta</em>, double <em class="property">const</em> <em>beta1</em>, double <em class="property">const</em> <em>beta2</em>, double <em class="property">const</em> <em>epsilon</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15GradientDescent17setParametersAdamEKdKdKdKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set parameters for Adam algorithm.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">eta</span></code>: Step size (corresponds to <span class="math notranslate nohighlight">\(\alpha\)</span> in Adam publication). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">beta1</span></code>: Decay rate 1 (first moment). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">beta2</span></code>: Decay rate 2 (second moment). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">epsilon</span></code>: Small scalar. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15GradientDescent6statusENSt6size_tE">
+<span id="_CPPv3NK15GradientDescent6statusENSt6size_tE"></span><span id="_CPPv2NK15GradientDescent6statusENSt6size_tE"></span><span id="GradientDescent::status__std::sC"></span><span class="target" id="classnnp_1_1GradientDescent_1a30aacd590244a6d09d16ec6012774c04"></span>string <code class="sig-name descname">status</code><span class="sig-paren">(</span>std::size_t <em>epoch</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15GradientDescent6statusENSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Status report.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Line with current status information. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">epoch</span></code>: Current epoch.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15GradientDescent12statusHeaderEv">
+<span id="_CPPv3NK15GradientDescent12statusHeaderEv"></span><span id="_CPPv2NK15GradientDescent12statusHeaderEv"></span><span id="GradientDescent::statusHeaderC"></span><span class="target" id="classnnp_1_1GradientDescent_1a632f65b7ea63d685e4a2b8782be26c77"></span>vector&lt;string&gt; <code class="sig-name descname">statusHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15GradientDescent12statusHeaderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Header for status report file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with header lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15GradientDescent4infoEv">
+<span id="_CPPv3NK15GradientDescent4infoEv"></span><span id="_CPPv2NK15GradientDescent4infoEv"></span><span id="GradientDescent::infoC"></span><span class="target" id="classnnp_1_1GradientDescent_1ad0007b9c014734401b60a3ecb7786c78"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15GradientDescent4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Information about gradient descent settings.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with info lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent4typeE">
+<span id="_CPPv3N3nnp15GradientDescent4typeE"></span><span id="_CPPv2N3nnp15GradientDescent4typeE"></span><span id="nnp::GradientDescent::type__DescentType"></span><span class="target" id="classnnp_1_1GradientDescent_1ab0383b8be2b378d5dac6f378f185dafa"></span><a class="reference internal" href="#_CPPv4N3nnp15GradientDescent11DescentTypeE" title="nnp::GradientDescent::DescentType">DescentType</a> <code class="sig-name descname">type</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent4typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent3etaE">
+<span id="_CPPv3N3nnp15GradientDescent3etaE"></span><span id="_CPPv2N3nnp15GradientDescent3etaE"></span><span id="nnp::GradientDescent::eta__double"></span><span class="target" id="classnnp_1_1GradientDescent_1a8c4b61086b1bf4b4cc82466f7905dedd"></span>double <code class="sig-name descname">eta</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent3etaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Learning rate <span class="math notranslate nohighlight">\(\eta\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent5beta1E">
+<span id="_CPPv3N3nnp15GradientDescent5beta1E"></span><span id="_CPPv2N3nnp15GradientDescent5beta1E"></span><span id="nnp::GradientDescent::beta1__double"></span><span class="target" id="classnnp_1_1GradientDescent_1a99bbeecb8ed027924f798b43eb4c4c37"></span>double <code class="sig-name descname">beta1</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent5beta1E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Decay rate 1 (Adam). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent5beta2E">
+<span id="_CPPv3N3nnp15GradientDescent5beta2E"></span><span id="_CPPv2N3nnp15GradientDescent5beta2E"></span><span id="nnp::GradientDescent::beta2__double"></span><span class="target" id="classnnp_1_1GradientDescent_1aca680d3ecabedd6c1421aae386a346b1"></span>double <code class="sig-name descname">beta2</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent5beta2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Decay rate 2 (Adam). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent7epsilonE">
+<span id="_CPPv3N3nnp15GradientDescent7epsilonE"></span><span id="_CPPv2N3nnp15GradientDescent7epsilonE"></span><span id="nnp::GradientDescent::epsilon__double"></span><span class="target" id="classnnp_1_1GradientDescent_1a47e2ea51dd23803d4ac845ac33603b21"></span>double <code class="sig-name descname">epsilon</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent7epsilonE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Small scalar. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent4eta0E">
+<span id="_CPPv3N3nnp15GradientDescent4eta0E"></span><span id="_CPPv2N3nnp15GradientDescent4eta0E"></span><span id="nnp::GradientDescent::eta0__double"></span><span class="target" id="classnnp_1_1GradientDescent_1a84dd54c5bbf7f64dd48d55059c32f9d6"></span>double <code class="sig-name descname">eta0</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent4eta0E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initial learning rate. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent6beta1tE">
+<span id="_CPPv3N3nnp15GradientDescent6beta1tE"></span><span id="_CPPv2N3nnp15GradientDescent6beta1tE"></span><span id="nnp::GradientDescent::beta1t__double"></span><span class="target" id="classnnp_1_1GradientDescent_1a6fca610794ca65290ff385f14323565a"></span>double <code class="sig-name descname">beta1t</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent6beta1tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Decay rate 1 to the power of t (Adam). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent6beta2tE">
+<span id="_CPPv3N3nnp15GradientDescent6beta2tE"></span><span id="_CPPv2N3nnp15GradientDescent6beta2tE"></span><span id="nnp::GradientDescent::beta2t__double"></span><span class="target" id="classnnp_1_1GradientDescent_1a6adf72df4902147c6f21bd086dcd01bb"></span>double <code class="sig-name descname">beta2t</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent6beta2tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Decay rate 2 to the power of t (Adam). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent5stateE">
+<span id="_CPPv3N3nnp15GradientDescent5stateE"></span><span id="_CPPv2N3nnp15GradientDescent5stateE"></span><span id="nnp::GradientDescent::state__doubleP"></span><span class="target" id="classnnp_1_1GradientDescent_1ad82f664353b27a2154b654d79a36c984"></span>double *<code class="sig-name descname">state</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent5stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>State vector pointer. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent5errorE">
+<span id="_CPPv3N3nnp15GradientDescent5errorE"></span><span id="_CPPv2N3nnp15GradientDescent5errorE"></span><span id="nnp::GradientDescent::error__doubleCP"></span><span class="target" id="classnnp_1_1GradientDescent_1acb365788c8139a3fd489b2b93a456580"></span>double <em class="property">const</em> *<code class="sig-name descname">error</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent5errorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Error pointer (single double value). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent8gradientE">
+<span id="_CPPv3N3nnp15GradientDescent8gradientE"></span><span id="_CPPv2N3nnp15GradientDescent8gradientE"></span><span id="nnp::GradientDescent::gradient__doubleCP"></span><span class="target" id="classnnp_1_1GradientDescent_1a98051f7000fef22ae56b2ae387eb020e"></span>double <em class="property">const</em> *<code class="sig-name descname">gradient</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent8gradientE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gradient vector pointer. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent1mE">
+<span id="_CPPv3N3nnp15GradientDescent1mE"></span><span id="_CPPv2N3nnp15GradientDescent1mE"></span><span id="nnp::GradientDescent::m__std::vector:double:"></span><span class="target" id="classnnp_1_1GradientDescent_1a9dd2043f5d838ea9ac8ff0e67bbb6e37"></span>std::vector&lt;double&gt; <code class="sig-name descname">m</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent1mE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>First moment estimate (Adam). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15GradientDescent1vE">
+<span id="_CPPv3N3nnp15GradientDescent1vE"></span><span id="_CPPv2N3nnp15GradientDescent1vE"></span><span id="nnp::GradientDescent::v__std::vector:double:"></span><span class="target" id="classnnp_1_1GradientDescent_1a6a02f3e84399b815d8350274b434dd97"></span>std::vector&lt;double&gt; <code class="sig-name descname">v</code><a class="headerlink" href="#_CPPv4N3nnp15GradientDescent1vE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Second moment estimate (Adam). </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1InterfaceLammps.html" class="btn btn-neutral float-right" title="Class InterfaceLammps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1ElementMap.html" class="btn btn-neutral float-left" title="Class ElementMap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

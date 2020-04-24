@@ -1,0 +1,20 @@
+<map id="nnp::Training::loop" name="nnp::Training::loop">
+<area shape="rect" id="node2" href="$a00944.html#a6c96bd09f7bae33a10ccca37cb655f0e" title="Check if training loop should be continued. " alt="" coords="234,5,402,32"/>
+<area shape="rect" id="node3" href="$a00944.html#a43ccb65cd4785afda565f94614c58b5c" title="Calculate RMSE per epoch for all structures with file names used in training loop. " alt="" coords="232,57,404,98"/>
+<area shape="rect" id="node4" href="$a00258.html#a398f0bcafb57e99ba1581c4b8f8a7f76" title="String version of printf function. " alt="" coords="489,785,573,812"/>
+<area shape="rect" id="node5" href="$a00944.html#a3d0cecb1a3e0197fdb693186d39c8796" title="Check if selection mode should be changed. " alt="" coords="195,173,441,200"/>
+<area shape="rect" id="node6" href="$a00860.html#a54ab35cc03b434bc2468e1e4742b78bf" title="Return total time elapsed (of a stopped watch). " alt="" coords="201,224,435,251"/>
+<area shape="rect" id="node7" href="$a00860.html#a42c7014e7fffcf4c56ca6fb07f8eb31c" title="Reset stopwatch (total time zero, not running). " alt="" coords="237,275,399,301"/>
+<area shape="rect" id="node8" href="$a00944.html#a6eb04b2ac7e9dbea0fd4e21d36d0ce38" title="Reset neuron statistics for all elements. " alt="" coords="221,326,415,367"/>
+<area shape="rect" id="node9" href="$a00944.html#aee02964b08a2acc442add33d96dbb1a2" title="Select energies/forces schedule for one epoch. " alt="" coords="203,392,433,419"/>
+<area shape="rect" id="node10" href="$a00944.html#af03f911b88ff2e589da550cae5f4f367" title="Shuffle update candidates. " alt="" coords="216,443,420,485"/>
+<area shape="rect" id="node11" href="$a00944.html#a5a22d148851c520c64eb8599d7c113f4" title="Sort update candidates with descending RMSE. " alt="" coords="225,509,411,550"/>
+<area shape="rect" id="node12" href="$a00860.html#a271efe642c0cf0cc29f63db24c1d74bf" title="Take a split time (returns total time elapsed). " alt="" coords="239,575,397,601"/>
+<area shape="rect" id="node13" href="$a00860.html#a6d01ecc80c92f1d5210cd9c3eb72883d" title="Start the stopwatch. " alt="" coords="238,625,398,652"/>
+<area shape="rect" id="node14" href="$a00860.html#a64d053a5edbe3a659f09d0840d617c32" title="Stop and return elapsed time. " alt="" coords="239,676,397,703"/>
+<area shape="rect" id="node15" href="$a00944.html#a146b6a09592858950a3cbb666c4a59fa" title="Perform one update. " alt="" coords="239,727,397,753"/>
+<area shape="rect" id="node16" href="$a00944.html#ae4ccff5ae694d46c03cae84aa7ae696d" title="Write current RMSEs and epoch information to file. " alt="" coords="217,778,419,819"/>
+<area shape="rect" id="node17" href="$a00944.html#a79793fcf50af45c9b128ea972b14b6a8" title="Write neuron statistics during training loop. " alt="" coords="221,843,415,885"/>
+<area shape="rect" id="node18" href="$a00944.html#ad50f7e1c48f3f558653f831aae83a38c" title="Write updater information to file. " alt="" coords="219,909,417,950"/>
+<area shape="rect" id="node19" href="$a00944.html#a369e6446df8b2b39db30b799c912afde" title="Write weights to files during training loop. " alt="" coords="219,974,417,1015"/>
+</map>

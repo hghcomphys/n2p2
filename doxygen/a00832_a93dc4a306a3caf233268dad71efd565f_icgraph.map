@@ -1,0 +1,7 @@
+<map id="nnp::Mode::calculateAtomicNeuralNetworks" name="nnp::Mode::calculateAtomicNeuralNetworks">
+<area shape="rect" id="node2" href="$a00944.html#a601b23e841bd853ee5d623401867762b" title="Calculate RMSE for all structures. " alt="" coords="256,5,465,32"/>
+<area shape="rect" id="node3" href="$a00011.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="333,56,388,83"/>
+<area shape="rect" id="node4" href="$a00848.html#af86efaec86e8002a84368c7282704858" title="nnp::Prediction::predict" alt="" coords="275,107,447,133"/>
+<area shape="rect" id="node5" href="$a00928.html#a0837984fb5d6fe14d298bb2c0b7d01f2" title="Calculate symmetry functions, atomic neural networks and sum of local energy contributions. " alt="" coords="277,158,445,199"/>
+<area shape="rect" id="node6" href="$a00944.html#a146b6a09592858950a3cbb666c4a59fa" title="Perform one update. " alt="" coords="281,224,440,251"/>
+</map>

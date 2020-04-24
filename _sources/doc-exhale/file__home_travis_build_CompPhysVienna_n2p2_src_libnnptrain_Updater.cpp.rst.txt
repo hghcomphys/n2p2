@@ -1,0 +1,37 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.cpp:
+
+File Updater.cpp
+================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Updater.cpp``)
+-----------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Updater.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h`)
+
+
+
+
+

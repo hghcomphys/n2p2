@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct Vec3D &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class CutoffFunction" href="classnnp_1_1CutoffFunction.html" />
+    <link rel="prev" title="Struct Training::UpdateCandidate" href="structnnp_1_1Training_1_1UpdateCandidate.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Struct Vec3D</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/structnnp_1_1Vec3D.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-vec3d">
+<span id="exhale-struct-structnnp-1-1vec3d"></span><h1>Struct Vec3D<a class="headerlink" href="#struct-vec3d" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-vec3d-h"><span class="std std-ref">File Vec3D.h</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp5Vec3DE">
+<span id="_CPPv3N3nnp5Vec3DE"></span><span id="_CPPv2N3nnp5Vec3DE"></span><span id="nnp::Vec3D"></span><span class="target" id="structnnp_1_1Vec3D"></span><em class="property">struct </em><code class="sig-name descname">Vec3D</code><a class="headerlink" href="#_CPPv4N3nnp5Vec3DE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vector in 3 dimensional real space. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3D5Vec3DEv">
+<span id="_CPPv3N3nnp5Vec3D5Vec3DEv"></span><span id="_CPPv2N3nnp5Vec3D5Vec3DEv"></span><span id="nnp::Vec3D::Vec3D"></span><span class="target" id="structnnp_1_1Vec3D_1a5701bd8f2791ad4451d88f79fcadcdf8"></span><code class="sig-name descname">Vec3D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3D5Vec3DEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor, initializes to zero. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3D5Vec3DEddd">
+<span id="_CPPv3N3nnp5Vec3D5Vec3DEddd"></span><span id="_CPPv2N3nnp5Vec3D5Vec3DEddd"></span><span id="nnp::Vec3D::Vec3D__double.double.double"></span><span class="target" id="structnnp_1_1Vec3D_1ae3353099b87aeacc143c4faca2d6d7ff"></span><code class="sig-name descname">Vec3D</code><span class="sig-paren">(</span>double <em>x</em>, double <em>y</em>, double <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3D5Vec3DEddd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor, with initialization of coordinates. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3D5Vec3DERK5Vec3D">
+<span id="_CPPv3N3nnp5Vec3D5Vec3DERK5Vec3D"></span><span id="_CPPv2N3nnp5Vec3D5Vec3DERK5Vec3D"></span><span id="nnp::Vec3D::Vec3D__Vec3DCR"></span><span class="target" id="structnnp_1_1Vec3D_1a8018bcc4ebaed539e840f12293ffc8bb"></span><code class="sig-name descname">Vec3D</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp5Vec3D5Vec3DERK5Vec3D" title="nnp::Vec3D::Vec3D">Vec3D</a> <em class="property">const</em> &amp;<em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3D5Vec3DERK5Vec3D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3DaSERK5Vec3D">
+<span id="_CPPv3N3nnp5Vec3DaSERK5Vec3D"></span><span id="_CPPv2N3nnp5Vec3DaSERK5Vec3D"></span><span id="nnp::Vec3D::assign-operator__Vec3DCR"></span><span class="target" id="structnnp_1_1Vec3D_1a8e0d3c869417589e508e1f9ee33e9161"></span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> &amp;<code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3DaSERK5Vec3D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload = operator.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with copied data. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3DpLERK5Vec3D">
+<span id="_CPPv3N3nnp5Vec3DpLERK5Vec3D"></span><span id="_CPPv2N3nnp5Vec3DpLERK5Vec3D"></span><span id="nnp::Vec3D::add-assign-operator__Vec3DCR"></span><span class="target" id="structnnp_1_1Vec3D_1ab6ff873dd05098900ecdb73bc0dbfa2f"></span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> &amp;<code class="sig-name descname">operator+=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <em class="property">const</em> &amp;<em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3DpLERK5Vec3D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload += operator to implement in-place vector addition.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Replace original vector with sum of two vectors. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3DmIERK5Vec3D">
+<span id="_CPPv3N3nnp5Vec3DmIERK5Vec3D"></span><span id="_CPPv2N3nnp5Vec3DmIERK5Vec3D"></span><span id="nnp::Vec3D::sub-assign-operator__Vec3DCR"></span><span class="target" id="structnnp_1_1Vec3D_1a2e045bf13fb22898bb550ad532b82cbe"></span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> &amp;<code class="sig-name descname">operator-=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <em class="property">const</em> &amp;<em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3DmIERK5Vec3D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload -= operator to implement in-place vector subtraction.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Replace original vector with original minus given. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3DmLEKd">
+<span id="_CPPv3N3nnp5Vec3DmLEKd"></span><span id="_CPPv2N3nnp5Vec3DmLEKd"></span><span id="nnp::Vec3D::mul-assign-operator__doubleC"></span><span class="target" id="structnnp_1_1Vec3D_1ad9b3960c253b92efdd96565c38a50d1b"></span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> &amp;<code class="sig-name descname">operator*=</code><span class="sig-paren">(</span>double <em class="property">const</em> <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3DmLEKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload *= operator to implement multiplication with scalar.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Original vector multiplied with scalar. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3DdVEKd">
+<span id="_CPPv3N3nnp5Vec3DdVEKd"></span><span id="_CPPv2N3nnp5Vec3DdVEKd"></span><span id="nnp::Vec3D::div-assign-operator__doubleC"></span><span class="target" id="structnnp_1_1Vec3D_1a943428387ab2500adfb947a384800a22"></span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> &amp;<code class="sig-name descname">operator/=</code><span class="sig-paren">(</span>double <em class="property">const</em> <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3DdVEKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload /= operator to implement division by scalar.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Original vector divided by scalar. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp5Vec3DmlERK5Vec3D">
+<span id="_CPPv3NK3nnp5Vec3DmlERK5Vec3D"></span><span id="_CPPv2NK3nnp5Vec3DmlERK5Vec3D"></span><span id="nnp::Vec3D::mul-operator__Vec3DCRC"></span><span class="target" id="structnnp_1_1Vec3D_1ab1944872f3dd1ed1fef024158a63b4cf"></span>double <code class="sig-name descname">operator*</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <em class="property">const</em> &amp;<em>v</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp5Vec3DmlERK5Vec3D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload * operator to implement scalar product.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Scalar product of two vectors. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3DixEKNSt6size_tE">
+<span id="_CPPv3N3nnp5Vec3DixEKNSt6size_tE"></span><span id="_CPPv2N3nnp5Vec3DixEKNSt6size_tE"></span><span id="nnp::Vec3D::subscript-operator__std::sC"></span><span class="target" id="structnnp_1_1Vec3D_1ab5b9aba261f200fdcb4e0a02f5763242"></span>double &amp;<code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3DixEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload [] operator to return coordinate by index.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>x,y or z when index is 0, 1 or 2, respectively. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp5Vec3DixEKNSt6size_tE">
+<span id="_CPPv3NK3nnp5Vec3DixEKNSt6size_tE"></span><span id="_CPPv2NK3nnp5Vec3DixEKNSt6size_tE"></span><span id="nnp::Vec3D::subscript-operator__std::sCC"></span><span class="target" id="structnnp_1_1Vec3D_1aa1d2344933a8e6c799a663ff96515f5d"></span>double <em class="property">const</em> &amp;<code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp5Vec3DixEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload [] operator to return coordinate by index (const version).</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>x,y or z when index is 0, 1 or 2, respectively. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp5Vec3DeqERK5Vec3D">
+<span id="_CPPv3NK3nnp5Vec3DeqERK5Vec3D"></span><span id="_CPPv2NK3nnp5Vec3DeqERK5Vec3D"></span><span id="nnp::Vec3D::eq-operator__Vec3DCRC"></span><span class="target" id="structnnp_1_1Vec3D_1a025aaf3c2fdf740665a7562662647ed3"></span>bool <code class="sig-name descname">operator==</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp5Vec3DeqERK5Vec3D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compare if vectors are equal.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if all components are equal, <code class="docutils literal notranslate"><span class="pre">false</span></code> else. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp5Vec3DneERK5Vec3D">
+<span id="_CPPv3NK3nnp5Vec3DneERK5Vec3D"></span><span id="_CPPv2NK3nnp5Vec3DneERK5Vec3D"></span><span id="nnp::Vec3D::neq-operator__Vec3DCRC"></span><span class="target" id="structnnp_1_1Vec3D_1a3cb15594f5a1fc084eae46321b45ae75"></span>bool <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp5Vec3DneERK5Vec3D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compare if vectors are not equal.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if all components are equal, <code class="docutils literal notranslate"><span class="pre">false</span></code> else. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp5Vec3D4normEv">
+<span id="_CPPv3NK3nnp5Vec3D4normEv"></span><span id="_CPPv2NK3nnp5Vec3D4normEv"></span><span id="nnp::Vec3D::normC"></span><span class="target" id="structnnp_1_1Vec3D_1aeb7a761001a28045ccb6cfb175f5d399"></span>double <code class="sig-name descname">norm</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp5Vec3D4normEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate norm of vector.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Norm of vector. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp5Vec3D5norm2Ev">
+<span id="_CPPv3NK3nnp5Vec3D5norm2Ev"></span><span id="_CPPv2NK3nnp5Vec3D5norm2Ev"></span><span id="nnp::Vec3D::norm2C"></span><span class="target" id="structnnp_1_1Vec3D_1a4dd2e5fef207b1bd2021142bf678f251"></span>double <code class="sig-name descname">norm2</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp5Vec3D5norm2Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate square of norm of vector.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Square of norm of vector. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp5Vec3D9normalizeEv">
+<span id="_CPPv3N3nnp5Vec3D9normalizeEv"></span><span id="_CPPv2N3nnp5Vec3D9normalizeEv"></span><span id="nnp::Vec3D::normalize"></span><span class="target" id="structnnp_1_1Vec3D_1a6a59afd117951d8bc98391da9d894741"></span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> &amp;<code class="sig-name descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp5Vec3D9normalizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Normalize vector, norm equals 1.0 afterwards. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp5Vec3D5crossERK5Vec3D">
+<span id="_CPPv3NK3nnp5Vec3D5crossERK5Vec3D"></span><span id="_CPPv2NK3nnp5Vec3D5crossERK5Vec3D"></span><span id="nnp::Vec3D::cross__Vec3DCRC"></span><span class="target" id="structnnp_1_1Vec3D_1acb8ab5515d194a43e10c2fa43636dffc"></span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <code class="sig-name descname">cross</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <em class="property">const</em> &amp;<em>v</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp5Vec3D5crossERK5Vec3D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cross product, argument vector is second in product.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Cross product of two vectors. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp5Vec3D1rE">
+<span id="_CPPv3N3nnp5Vec3D1rE"></span><span id="_CPPv2N3nnp5Vec3D1rE"></span><span id="nnp::Vec3D::r__doubleA"></span><span class="target" id="structnnp_1_1Vec3D_1a4edaddb021629424003223c131f44d6d"></span>double <code class="sig-name descname">r</code>[3]<a class="headerlink" href="#_CPPv4N3nnp5Vec3D1rE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>cartesian coordinates. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1CutoffFunction.html" class="btn btn-neutral float-right" title="Class CutoffFunction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="structnnp_1_1Training_1_1UpdateCandidate.html" class="btn btn-neutral float-left" title="Struct Training::UpdateCandidate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

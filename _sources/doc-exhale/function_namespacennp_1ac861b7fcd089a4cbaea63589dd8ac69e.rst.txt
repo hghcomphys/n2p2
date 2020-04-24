@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1ac861b7fcd089a4cbaea63589dd8ac69e:
+
+Template Function nnp::comparePointerTargets
+============================================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::comparePointerTargets(T *, T *)

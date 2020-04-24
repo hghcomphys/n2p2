@@ -1,0 +1,1189 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Full API &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Full API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/unabridged_orphan.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="full-api">
+<h1>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir__home_travis_build_CompPhysVienna_n2p2_src_libnnp.html">Directory libnnp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir__home_travis_build_CompPhysVienna_n2p2_src_libnnp.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir__home_travis_build_CompPhysVienna_n2p2_src_libnnpif.html">Directory libnnpif</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir__home_travis_build_CompPhysVienna_n2p2_src_libnnpif.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain.html">Directory libnnptrain</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.cpp.html">File Atom.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-atom-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Atom.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.cpp.html">Program Listing for File Atom.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.cpp.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html">File Atom.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-atom-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Atom.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html">Program Listing for File Atom.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.cpp.html">File CutoffFunction.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-cutofffunction-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/CutoffFunction.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.cpp.html">Program Listing for File CutoffFunction.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.h.html">File CutoffFunction.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-cutofffunction-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/CutoffFunction.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.h.html">Program Listing for File CutoffFunction.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.cpp.html">File Dataset.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-dataset-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Dataset.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.cpp.html">Program Listing for File Dataset.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h.html">File Dataset.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-dataset-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Dataset.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h.html">Program Listing for File Dataset.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.cpp.html">File Element.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-element-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Element.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.cpp.html">Program Listing for File Element.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h.html">File Element.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-element-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Element.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h.html">Program Listing for File Element.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.cpp.html">File ElementMap.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-elementmap-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/ElementMap.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.cpp.html">Program Listing for File ElementMap.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.html">File ElementMap.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-elementmap-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/ElementMap.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.html">Program Listing for File ElementMap.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.cpp.html">File GradientDescent.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-gradientdescent-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/GradientDescent.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.cpp.html">Program Listing for File GradientDescent.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h.html">File GradientDescent.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-gradientdescent-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/GradientDescent.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h.html">Program Listing for File GradientDescent.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp.html">File InterfaceLammps.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnpif-interfacelammps-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnpif/InterfaceLammps.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp.html">Program Listing for File InterfaceLammps.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h.html">File InterfaceLammps.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnpif-interfacelammps-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnpif/InterfaceLammps.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h.html">Program Listing for File InterfaceLammps.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp.html">File KalmanFilter.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-kalmanfilter-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/KalmanFilter.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp.html">Program Listing for File KalmanFilter.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h.html">File KalmanFilter.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-kalmanfilter-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/KalmanFilter.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h.html">Program Listing for File KalmanFilter.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.cpp.html">File Log.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-log-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Log.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.cpp.html">Program Listing for File Log.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.h.html">File Log.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-log-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Log.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.h.html">Program Listing for File Log.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Log.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.cpp.html">File Mode.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-mode-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Mode.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.cpp.html">Program Listing for File Mode.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h.html">File Mode.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-mode-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Mode.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h.html">Program Listing for File Mode.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h.html">File mpi-extra.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnpif-mpi-extra-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnpif/mpi-extra.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h.html">Program Listing for File mpi-extra.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h.html">File mpi-extra.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-mpi-extra-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/mpi-extra.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h.html">Program Listing for File mpi-extra.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp.html">File NeuralNetwork.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-neuralnetwork-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/NeuralNetwork.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp.html">Program Listing for File NeuralNetwork.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.cpp.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html">File NeuralNetwork.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-neuralnetwork-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/NeuralNetwork.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html">Program Listing for File NeuralNetwork.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.cpp.html">File Prediction.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-prediction-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Prediction.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.cpp.html">Program Listing for File Prediction.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.h.html">File Prediction.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-prediction-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Prediction.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.h.html">Program Listing for File Prediction.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.cpp.html">File Settings.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-settings-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Settings.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.cpp.html">Program Listing for File Settings.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h.html">File Settings.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-settings-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Settings.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h.html">Program Listing for File Settings.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.cpp.html">File SetupAnalysis.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-setupanalysis-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SetupAnalysis.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.cpp.html">Program Listing for File SetupAnalysis.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.h.html">File SetupAnalysis.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-setupanalysis-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SetupAnalysis.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.h.html">Program Listing for File SetupAnalysis.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SetupAnalysis.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.cpp.html">File Stopwatch.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-stopwatch-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Stopwatch.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.cpp.html">Program Listing for File Stopwatch.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.html">File Stopwatch.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-stopwatch-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Stopwatch.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.html">Program Listing for File Stopwatch.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.cpp.html">File Structure.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-structure-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Structure.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.cpp.html">Program Listing for File Structure.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h.html">File Structure.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-structure-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Structure.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h.html">Program Listing for File Structure.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.cpp.html">File SymmetryFunction.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunction-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunction.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.cpp.html">Program Listing for File SymmetryFunction.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h.html">File SymmetryFunction.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunction-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunction.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h.html">Program Listing for File SymmetryFunction.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.cpp.html">File SymmetryFunctionAngularNarrow.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionangularnarrow-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionAngularNarrow.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.cpp.html">Program Listing for File SymmetryFunctionAngularNarrow.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.h.html">File SymmetryFunctionAngularNarrow.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionangularnarrow-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionAngularNarrow.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.h.html">Program Listing for File SymmetryFunctionAngularNarrow.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.cpp.html">File SymmetryFunctionAngularWide.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionangularwide-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionAngularWide.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.cpp.html">Program Listing for File SymmetryFunctionAngularWide.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h.html">File SymmetryFunctionAngularWide.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionangularwide-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionAngularWide.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h.html">Program Listing for File SymmetryFunctionAngularWide.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.cpp.html">File SymmetryFunctionGroup.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroup-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroup.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.cpp.html">Program Listing for File SymmetryFunctionGroup.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h.html">File SymmetryFunctionGroup.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroup-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroup.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h.html">Program Listing for File SymmetryFunctionGroup.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.cpp.html">File SymmetryFunctionGroupAngularNarrow.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupangularnarrow-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupAngularNarrow.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.cpp.html">Program Listing for File SymmetryFunctionGroupAngularNarrow.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.h.html">File SymmetryFunctionGroupAngularNarrow.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupangularnarrow-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupAngularNarrow.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.h.html">Program Listing for File SymmetryFunctionGroupAngularNarrow.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularNarrow.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.cpp.html">File SymmetryFunctionGroupAngularWide.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupangularwide-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupAngularWide.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.cpp.html">Program Listing for File SymmetryFunctionGroupAngularWide.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.h.html">File SymmetryFunctionGroupAngularWide.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupangularwide-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupAngularWide.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.h.html">Program Listing for File SymmetryFunctionGroupAngularWide.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupAngularWide.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.cpp.html">File SymmetryFunctionGroupRadial.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupradial-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupRadial.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.cpp.html">Program Listing for File SymmetryFunctionGroupRadial.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h.html">File SymmetryFunctionGroupRadial.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupradial-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupRadial.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h.html">Program Listing for File SymmetryFunctionGroupRadial.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.cpp.html">File SymmetryFunctionGroupWeightedAngular.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupweightedangular-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupWeightedAngular.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.cpp.html">Program Listing for File SymmetryFunctionGroupWeightedAngular.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.h.html">File SymmetryFunctionGroupWeightedAngular.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupweightedangular-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupWeightedAngular.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.h.html">Program Listing for File SymmetryFunctionGroupWeightedAngular.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedAngular.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.cpp.html">File SymmetryFunctionGroupWeightedRadial.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupweightedradial-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupWeightedRadial.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.cpp.html">Program Listing for File SymmetryFunctionGroupWeightedRadial.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.h.html">File SymmetryFunctionGroupWeightedRadial.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctiongroupweightedradial-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupWeightedRadial.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.h.html">Program Listing for File SymmetryFunctionGroupWeightedRadial.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupWeightedRadial.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.cpp.html">File SymmetryFunctionRadial.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionradial-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionRadial.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.cpp.html">Program Listing for File SymmetryFunctionRadial.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.h.html">File SymmetryFunctionRadial.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionradial-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionRadial.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.h.html">Program Listing for File SymmetryFunctionRadial.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.cpp.html">File SymmetryFunctionStatistics.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionstatistics-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionStatistics.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.cpp.html">Program Listing for File SymmetryFunctionStatistics.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h.html">File SymmetryFunctionStatistics.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionstatistics-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionStatistics.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h.html">Program Listing for File SymmetryFunctionStatistics.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.cpp.html">File SymmetryFunctionWeightedAngular.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionweightedangular-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionWeightedAngular.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.cpp.html">Program Listing for File SymmetryFunctionWeightedAngular.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.h.html">File SymmetryFunctionWeightedAngular.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionweightedangular-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionWeightedAngular.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.h.html">Program Listing for File SymmetryFunctionWeightedAngular.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.cpp.html">File SymmetryFunctionWeightedRadial.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionweightedradial-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionWeightedRadial.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.cpp.html">Program Listing for File SymmetryFunctionWeightedRadial.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.h.html">File SymmetryFunctionWeightedRadial.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionweightedradial-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionWeightedRadial.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.h.html">Program Listing for File SymmetryFunctionWeightedRadial.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp.html">File Training.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-training-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Training.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp.html">Program Listing for File Training.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.html">File Training.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-training-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Training.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.html">Program Listing for File Training.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.cpp.html">File Updater.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-updater-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Updater.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.cpp.html">Program Listing for File Updater.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h.html">File Updater.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnptrain-updater-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Updater.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h.html">Program Listing for File Updater.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp.html">File utility.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-utility-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/utility.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp.html">Program Listing for File utility.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h.html">File utility.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-utility-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/utility.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h.html">Program Listing for File utility.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html">File Vec3D.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-vec3d-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Vec3D.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html">Program Listing for File Vec3D.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_version.h.html">File version.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_version.h.html#definition-home-travis-build-compphysvienna-n2p2-src-libnnp-version-h">Definition (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnp/version.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_version.h.html">Program Listing for File version.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_version.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_version.h.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

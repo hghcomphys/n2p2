@@ -1,0 +1,171 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h:
+
+Program Listing for File KalmanFilter.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/KalmanFilter.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef KALMANFILTER_H
+   #define KALMANFILTER_H
+   
+   #include <mpi.h>
+   #include "Updater.h"
+   #include <Eigen/Core>
+   #include <cstddef>
+   #include <string>
+   #include <vector>
+   
+   namespace nnp
+   {
+   
+   class KalmanFilter : public Updater
+   {
+   public:
+       enum KalmanType
+       {
+           KT_STANDARD,
+           KT_FADINGMEMORY
+       };
+   
+       KalmanFilter(std::size_t const sizeState,
+                    KalmanType const  type);
+       virtual ~KalmanFilter();
+       void                     setSizeObservation(
+                                               std::size_t const sizeObservation);
+       void                     setState(double* state);
+       void                     setError(double const* const error);
+       void                     setError(double const* const error,
+                                         std::size_t const   size);
+       void                     setJacobian(double const* const jacobian);
+       void                     setJacobian(double const* const jacobian,
+                                            std::size_t const   columns);
+       void                     update();
+       void                     update(std::size_t const sizeObservation);
+       void                     setParametersStandard(double const epsilon,
+                                                      double const q0,
+                                                      double const qtau,
+                                                      double const qmin,
+                                                      double const eta0,
+                                                      double const etatau,
+                                                      double const etamax);
+       void                     setParametersFadingMemory(double const epsilon,
+                                                          double const q0,
+                                                          double const qtau,
+                                                          double const qmin,
+                                                          double const lambda,
+                                                          double const nu);
+       std::string              status(std::size_t epoch) const;
+       std::vector<std::string> statusHeader() const;
+       std::vector<std::string> info() const;
+       KalmanType               getType() const;
+       std::size_t              getSizeObservation() const;
+       std::size_t              getNumUpdates() const;
+       double                   getEta() const;
+       double                   getEpsilon() const;
+       double                   getQ0() const;
+       double                   getQtau() const;
+       double                   getQmin() const;
+       double                   getLambda() const;
+       double                   getNu() const;
+       double                   getGamma() const;
+   
+   private:
+       KalmanType                         type;
+       std::size_t                        sizeObservation;
+       std::size_t                        numUpdates;
+       double                             epsilon;
+       double                             q;
+       double                             q0;
+       double                             qtau;
+       double                             qmin;
+       double                             eta;
+       double                             eta0;
+       double                             etatau;
+       double                             etamax;
+       double                             lambda;
+       double                             nu;
+       double                             gamma;
+       Eigen::Map<Eigen::VectorXd>*       w;
+       Eigen::Map<Eigen::VectorXd const>* xi;
+       Eigen::Map<Eigen::MatrixXd const>* H;
+       Eigen::MatrixXd                    P;
+       Eigen::MatrixXd                    K;
+       Eigen::MatrixXd                    X;
+   };
+   
+   // Inlined function definitions //
+   
+   inline KalmanFilter::KalmanType KalmanFilter::getType() const
+   {
+       return type;
+   }
+   
+   inline std::size_t KalmanFilter::getSizeObservation() const
+   {
+       return sizeObservation;
+   }
+   
+   inline std::size_t KalmanFilter::getNumUpdates() const
+   {
+       return numUpdates;
+   }
+   
+   inline double KalmanFilter::getEta() const
+   {
+       return eta;
+   }
+   
+   inline double KalmanFilter::getEpsilon() const
+   {
+       return epsilon;
+   }
+   
+   inline double KalmanFilter::getQ0() const
+   {
+       return q0;
+   }
+   
+   inline double KalmanFilter::getQtau() const
+   {
+       return qtau;
+   }
+   
+   inline double KalmanFilter::getQmin() const
+   {
+       return qmin;
+   }
+   
+   inline double KalmanFilter::getLambda() const
+   {
+       return lambda;
+   }
+   
+   inline double KalmanFilter::getNu() const
+   {
+       return nu;
+   }
+   
+   }
+   
+   #endif

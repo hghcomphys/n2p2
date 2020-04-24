@@ -1,0 +1,29 @@
+.. _exhale_class_classnnp_1_1Mode:
+
+Class Mode
+==========
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public nnp::Dataset`` (:ref:`exhale_class_classnnp_1_1Dataset`)
+- ``public nnp::InterfaceLammps`` (:ref:`exhale_class_classnnp_1_1InterfaceLammps`)
+- ``public nnp::Prediction`` (:ref:`exhale_class_classnnp_1_1Prediction`)
+- ``public nnp::SetupAnalysis`` (:ref:`exhale_class_classnnp_1_1SetupAnalysis`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::Mode
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

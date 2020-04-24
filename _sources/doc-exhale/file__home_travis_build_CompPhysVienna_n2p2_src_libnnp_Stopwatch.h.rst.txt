@@ -1,0 +1,68 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h:
+
+File Stopwatch.h
+================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnp>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Stopwatch.h``)
+------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ctime``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_nnp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classnnp_1_1Stopwatch`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_Stopwatch_8h_1a5d391b49011fbb7fed985e90557b1b79`
+

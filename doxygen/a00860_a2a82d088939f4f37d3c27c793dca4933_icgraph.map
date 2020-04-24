@@ -1,0 +1,4 @@
+<map id="nnp::Stopwatch::updateTime" name="nnp::Stopwatch::updateTime">
+<area shape="rect" id="node2" href="$a00860.html#a271efe642c0cf0cc29f63db24c1d74bf" title="Take a split time (returns total time elapsed). " alt="" coords="261,5,420,32"/>
+<area shape="rect" id="node3" href="$a00860.html#a64d053a5edbe3a659f09d0840d617c32" title="Stop and return elapsed time. " alt="" coords="261,56,420,83"/>
+</map>

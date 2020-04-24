@@ -1,0 +1,5 @@
+<map id="nnp::Element::numSymmetryFunctions" name="nnp::Element::numSymmetryFunctions">
+<area shape="rect" id="node2" href="$a00832.html#a8aec6fb4708b93b93a9cfa0e8045f955" title="Calculate all symmetry function groups for all atoms in given structure. " alt="" coords="267,5,491,47"/>
+<area shape="rect" id="node3" href="$a00832.html#add11e3c30eb86aba38d8239d1e5d8736" title="Calculate all symmetry functions for all atoms in given structure. " alt="" coords="267,71,491,112"/>
+<area shape="rect" id="node4" href="$a00856.html#a6b1ac29f3320bca87091dc80a528567f" title="Write radial and angular part of symmetry functions to file. " alt="" coords="267,136,492,177"/>
+</map>

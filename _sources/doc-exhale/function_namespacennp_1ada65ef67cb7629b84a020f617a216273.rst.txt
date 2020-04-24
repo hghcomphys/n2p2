@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1ada65ef67cb7629b84a020f617a216273:
+
+Function nnp::pow_int
+=====================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::pow_int(double, int)

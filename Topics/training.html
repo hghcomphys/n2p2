@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NNP training procedure &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Units" href="units.html" />
+    <link rel="prev" title="LAMMPS NNP pair style" href="pair_nnp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NNP training procedure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-data-set">Step 1: Data set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-nn-and-symmetry-function-setup">Step 2: NN and symmetry function setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-compute-symmetry-function-statistics">Step 3: Compute symmetry function statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-nnp-training">Step 4: NNP Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-collect-weight-files">Step 5: Collect weight files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-prediction-and-md-simulation">Step 6: Prediction and MD simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-exhale/root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>NNP training procedure</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Topics/training.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nnp-training-procedure">
+<span id="training"></span><h1>NNP training procedure<a class="headerlink" href="#nnp-training-procedure" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This part of the documentation is incomplete!</p>
+</div>
+<p>Creating a new high-dimensional neural network potential from scratch is
+usually a multi-step iterative procedure which includes</p>
+<ul class="simple">
+<li><p>data set generation/augmentation,</p></li>
+<li><p>selection/refinement/pruning of symmetry function parameters,</p></li>
+<li><p>experimenting with neural network topology/settings,</p></li>
+<li><p>the actual neural network training, i.e. optimizing the weight parameters.</p></li>
+</ul>
+<p>Tools are ready-made for most of these tasks and can be combined to generate a
+new NNP from scratch. Here is a rough guideline of the individual steps from a
+set of configurations to an initial NN potential. However, be aware that
+creating a reliable NNP usually requires repeated data set refining and adequate
+testing before it is ready for production!</p>
+<div class="section" id="step-1-data-set">
+<h2>Step 1: Data set<a class="headerlink" href="#step-1-data-set" title="Permalink to this headline">¶</a></h2>
+<p>Prepare a data set (name the file <code class="docutils literal notranslate"><span class="pre">input.data</span></code>) in the file format described
+<a class="reference internal" href="cfg_file.html#cfg-file"><span class="std std-ref">here</span></a>. Unfortunately there’s no simple recipe how to create a
+“good” set of configurations, you will find more hints in the literature. As a
+starting point you could try with some (100+) configurations taken from an <em>ab
+initio</em> MD simulation.</p>
+</div>
+<div class="section" id="step-2-nn-and-symmetry-function-setup">
+<h2>Step 2: NN and symmetry function setup<a class="headerlink" href="#step-2-nn-and-symmetry-function-setup" title="Permalink to this headline">¶</a></h2>
+<p>Prepare a settings file (name the file <code class="docutils literal notranslate"><span class="pre">input.nn</span></code>): Use the recommended file
+<a class="reference external" href="https://github.com/CompPhysVienna/n2p2/blob/master/examples/input.nn.recommended">here</a>
+and change the settings in the “GENERAL NNP SETTINGS” section according to
+your system. Change the symmetry function definitions in the “SYMMETRY
+FUNCTIONS” section.. again this not a trivial task, please find more information
+in the literature <a class="footnote-reference brackets" href="#id6" id="id1">1</a> <a class="footnote-reference brackets" href="#id7" id="id2">2</a> <a class="footnote-reference brackets" href="#id8" id="id3">3</a>. See also the description of the
+<code class="docutils literal notranslate"><span class="pre">symfunction_short</span></code> keyword <a class="reference internal" href="keywords.html#keywords"><span class="std std-ref">here</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a very useful standalone Python tool written by Florian Buchner (see
+his <a class="reference external" href="https://github.com/CompPhysVienna/n2p2/pull/15">pull request</a>) which
+allows to create sets of symmetry function lines following the guidelines
+given in <a class="footnote-reference brackets" href="#id7" id="id4">2</a> and <a class="footnote-reference brackets" href="#id8" id="id5">3</a>. To use it, just copy the file <a class="reference external" href="https://github.com/flobuch/n2p2/blob/symfunc_paramgen/tools/python/symfunc_paramgen/src/sfparamgen.py">sfparamgen.py</a>
+to a local directory and follow the instructions given in this <a class="reference external" href="https://github.com/flobuch/n2p2/blob/symfunc_paramgen/tools/python/symfunc_paramgen/examples/example.ipynb">Jupyter
+notebook</a>.</p>
+</div>
+</div>
+<div class="section" id="step-3-compute-symmetry-function-statistics">
+<h2>Step 3: Compute symmetry function statistics<a class="headerlink" href="#step-3-compute-symmetry-function-statistics" title="Permalink to this headline">¶</a></h2>
+<p>With the files <code class="docutils literal notranslate"><span class="pre">input.data</span></code> and <code class="docutils literal notranslate"><span class="pre">input.nn</span></code> ready in the same directoy, run
+the tool <code class="docutils literal notranslate"><span class="pre">nnp-scaling</span></code> (supports MPI parallelization). This will compute all
+symmetry functions for all atoms once and store statistics about them in a
+third file (<code class="docutils literal notranslate"><span class="pre">scaling.data</span></code>) required for training.</p>
+</div>
+<div class="section" id="step-4-nnp-training">
+<h2>Step 4: NNP Training<a class="headerlink" href="#step-4-nnp-training" title="Permalink to this headline">¶</a></h2>
+<p>Run the actual training program <code class="docutils literal notranslate"><span class="pre">nnp-train</span></code>, preferably in parallel via:
+<code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">16</span> <span class="pre">nnp-train</span></code> Be aware of the memory footprint which is estimated
+in the previous step (see end of log file or screen output).</p>
+</div>
+<div class="section" id="step-5-collect-weight-files">
+<h2>Step 5: Collect weight files<a class="headerlink" href="#step-5-collect-weight-files" title="Permalink to this headline">¶</a></h2>
+<p>Upon training weight files are created for each epoch <code class="docutils literal notranslate"><span class="pre">weights.???.&lt;epoch&gt;</span></code>.
+Select an epoch with satisfying RMSE and rename the corresponding weight
+files to <code class="docutils literal notranslate"><span class="pre">weights.???.data</span></code> (<code class="docutils literal notranslate"><span class="pre">???</span></code> is the atomic number of elements
+occurring).</p>
+</div>
+<div class="section" id="step-6-prediction-and-md-simulation">
+<h2>Step 6: Prediction and MD simulation<a class="headerlink" href="#step-6-prediction-and-md-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Try the potential by predicting energies and forces for a new configuration:
+Collect the files from training (<code class="docutils literal notranslate"><span class="pre">input.nn</span></code>, <code class="docutils literal notranslate"><span class="pre">scaling.data</span></code> and
+<code class="docutils literal notranslate"><span class="pre">weights.???</span></code>) in a folder together with a single configuration (named again
+<code class="docutils literal notranslate"><span class="pre">input.data</span></code>) and run the tool <code class="docutils literal notranslate"><span class="pre">nnp-predict</span></code>. Alternatively, try to run a MD
+simulation with LAMMPS (see setup instructions <a class="reference internal" href="if_lammps.html#if-lammps"><span class="std std-ref">here</span></a> and
+<a class="reference internal" href="pair_nnp.html#pair-nnp"><span class="std std-ref">here</span></a>).</p>
+<p>Please also have a look at the <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory which provides working
+example setups for each tool. If there are problems don’t hesitate to ask
+again…</p>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Behler, J. Atom-Centered Symmetry Functions for Constructing
+High-Dimensional Neural Network Potentials. J. Chem. Phys. 2011, 134 (7),
+074106. <a class="reference external" href="https://doi.org/10.1063/1.3553717">https://doi.org/10.1063/1.3553717</a></p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">2</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
+<dd><p>Imbalzano, G.; Anelli, A.; Giofré, D.; Klees, S.; Behler, J.; Ceriotti,
+M. Automatic Selection of Atomic Fingerprints and Reference Configurations for
+Machine-Learning Potentials. J. Chem. Phys. 2018, 148 (24), 241730.
+<a class="reference external" href="https://doi.org/10.1063/1.5024611">https://doi.org/10.1063/1.5024611</a></p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">3</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>)</span></dt>
+<dd><p>Gastegger, M.; Schwiedrzik, L.; Bittermann, M.; Berzsenyi, F.;
+Marquetand, P. WACSF—Weighted Atom-Centered Symmetry Functions as Descriptors in
+Machine Learning Potentials. J. Chem. Phys. 2018, 148 (24), 241709.
+<a class="reference external" href="https://doi.org/10.1063/1.5019667">https://doi.org/10.1063/1.5019667</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="units.html" class="btn btn-neutral float-right" title="Units" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pair_nnp.html" class="btn btn-neutral float-left" title="LAMMPS NNP pair style" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+<map id="nnp::NeuralNetwork::propagate" name="nnp::NeuralNetwork::propagate">
+<area shape="rect" id="node2" href="$a00832.html#a93dc4a306a3caf233268dad71efd565f" title="Calculate atomic neural networks for all atoms in given structure. " alt="" coords="205,5,408,47"/>
+<area shape="rect" id="node3" href="$a00944.html#a146b6a09592858950a3cbb666c4a59fa" title="Perform one update. " alt="" coords="456,42,615,69"/>
+<area shape="rect" id="node4" href="$a00944.html#ae22bf5b246022c4f52f45bcc98d7c4be" title="Calculate derivatives of energy with respect to weights. " alt="" coords="221,123,393,164"/>
+</map>

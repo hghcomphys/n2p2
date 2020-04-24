@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1abbc59184f0532e61f412f99d5f7a33a2:
+
+Function nnp::trim(std::string const&)
+======================================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::trim(std::string const&)

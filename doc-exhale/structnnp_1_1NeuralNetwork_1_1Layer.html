@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct NeuralNetwork::Layer &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct NeuralNetwork::Neuron" href="structnnp_1_1NeuralNetwork_1_1Neuron.html" />
+    <link rel="prev" title="Struct Atom::Neighbor" href="structnnp_1_1Atom_1_1Neighbor.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Struct NeuralNetwork::Layer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/structnnp_1_1NeuralNetwork_1_1Layer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-neuralnetwork-layer">
+<span id="exhale-struct-structnnp-1-1neuralnetwork-1-1layer"></span><h1>Struct NeuralNetwork::Layer<a class="headerlink" href="#struct-neuralnetwork-layer" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-neuralnetwork-h"><span class="std std-ref">File NeuralNetwork.h</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<p>This struct is a nested type of <a class="reference internal" href="classnnp_1_1NeuralNetwork.html#exhale-class-classnnp-1-1neuralnetwork"><span class="std std-ref">Class NeuralNetwork</span></a>.</p>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp13NeuralNetwork5LayerE">
+<span id="_CPPv3N3nnp13NeuralNetwork5LayerE"></span><span id="_CPPv2N3nnp13NeuralNetwork5LayerE"></span><span id="nnp::NeuralNetwork::Layer"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer"></span><em class="property">struct </em><code class="sig-name descname">Layer</code><br /></dt>
+<dd><p>One neural network layer. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork5Layer10numNeuronsE">
+<span id="_CPPv3N3nnp13NeuralNetwork5Layer10numNeuronsE"></span><span id="_CPPv2N3nnp13NeuralNetwork5Layer10numNeuronsE"></span><span id="nnp::NeuralNetwork::Layer::numNeurons__i"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer_1a433e45aaa1fbaa3413da4fc84c747506"></span>int <code class="sig-name descname">numNeurons</code><br /></dt>
+<dd><p>Number of neurons in this layer <span class="math notranslate nohighlight">\( N_n \)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork5Layer19numNeuronsPrevLayerE">
+<span id="_CPPv3N3nnp13NeuralNetwork5Layer19numNeuronsPrevLayerE"></span><span id="_CPPv2N3nnp13NeuralNetwork5Layer19numNeuronsPrevLayerE"></span><span id="nnp::NeuralNetwork::Layer::numNeuronsPrevLayer__i"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer_1af80ea27029ef0c8e4f44bffab2f04914"></span>int <code class="sig-name descname">numNeuronsPrevLayer</code><br /></dt>
+<dd><p>Number of neurons in previous layer <span class="math notranslate nohighlight">\( N_{n-1} \)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork5Layer18activationFunctionE">
+<span id="_CPPv3N3nnp13NeuralNetwork5Layer18activationFunctionE"></span><span id="_CPPv2N3nnp13NeuralNetwork5Layer18activationFunctionE"></span><span id="nnp::NeuralNetwork::Layer::activationFunction__ActivationFunction"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer_1abff1a6be61f7989d7231e382b265f175"></span><a class="reference internal" href="classnnp_1_1NeuralNetwork.html#_CPPv4N3nnp13NeuralNetwork18ActivationFunctionE" title="nnp::NeuralNetwork::ActivationFunction">ActivationFunction</a> <code class="sig-name descname">activationFunction</code><br /></dt>
+<dd><p>Common activation function for all neurons in this layer. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp13NeuralNetwork5Layer7neuronsE">
+<span id="_CPPv3N3nnp13NeuralNetwork5Layer7neuronsE"></span><span id="_CPPv2N3nnp13NeuralNetwork5Layer7neuronsE"></span><span id="nnp::NeuralNetwork::Layer::neurons__NeuronP"></span><span class="target" id="structnnp_1_1NeuralNetwork_1_1Layer_1ab3ec99a587ce9904e7587c3e28495a4e"></span><a class="reference internal" href="classnnp_1_1NeuralNetwork.html#_CPPv4N3nnp13NeuralNetwork6NeuronE" title="nnp::NeuralNetwork::Neuron">Neuron</a> *<code class="sig-name descname">neurons</code><br /></dt>
+<dd><p>Array of neurons in this layer. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structnnp_1_1NeuralNetwork_1_1Neuron.html" class="btn btn-neutral float-right" title="Struct NeuralNetwork::Neuron" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="structnnp_1_1Atom_1_1Neighbor.html" class="btn btn-neutral float-left" title="Struct Atom::Neighbor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Hierarchy &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Class Hierarchy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/class_view_hierarchy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-hierarchy">
+<h1>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this headline">¶</a></h1>
+<ul class="treeView" id="class-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li>Namespace <a href="namespace_nnp.html#namespace-nnp">nnp</a><ul><li>Struct <a href="structnnp_1_1Atom.html#exhale-struct-structnnp-1-1Atom">Atom</a><ul><li class="lastChild">Struct <a href="structnnp_1_1Atom_1_1Neighbor.html#exhale-struct-structnnp-1-1Atom-1-1Neighbor">Atom::Neighbor</a></li></ul></li><li>Struct <a href="structnnp_1_1Structure.html#exhale-struct-structnnp-1-1Structure">Structure</a></li><li>Struct <a href="structnnp_1_1Vec3D.html#exhale-struct-structnnp-1-1Vec3D">Vec3D</a></li><li>Class <a href="classnnp_1_1CutoffFunction.html#exhale-class-classnnp-1-1CutoffFunction">CutoffFunction</a></li><li>Class <a href="classnnp_1_1Dataset.html#exhale-class-classnnp-1-1Dataset">Dataset</a></li><li>Class <a href="classnnp_1_1Element.html#exhale-class-classnnp-1-1Element">Element</a></li><li>Class <a href="classnnp_1_1ElementMap.html#exhale-class-classnnp-1-1ElementMap">ElementMap</a></li><li>Class <a href="classnnp_1_1GradientDescent.html#exhale-class-classnnp-1-1GradientDescent">GradientDescent</a></li><li>Class <a href="classnnp_1_1InterfaceLammps.html#exhale-class-classnnp-1-1InterfaceLammps">InterfaceLammps</a></li><li>Class <a href="classnnp_1_1KalmanFilter.html#exhale-class-classnnp-1-1KalmanFilter">KalmanFilter</a></li><li>Class <a href="classnnp_1_1Log.html#exhale-class-classnnp-1-1Log">Log</a></li><li>Class <a href="classnnp_1_1Mode.html#exhale-class-classnnp-1-1Mode">Mode</a></li><li>Class <a href="classnnp_1_1NeuralNetwork.html#exhale-class-classnnp-1-1NeuralNetwork">NeuralNetwork</a><ul><li>Struct <a href="structnnp_1_1NeuralNetwork_1_1Layer.html#exhale-struct-structnnp-1-1NeuralNetwork-1-1Layer">NeuralNetwork::Layer</a></li><li class="lastChild">Struct <a href="structnnp_1_1NeuralNetwork_1_1Neuron.html#exhale-struct-structnnp-1-1NeuralNetwork-1-1Neuron">NeuralNetwork::Neuron</a></li></ul></li><li>Class <a href="classnnp_1_1Prediction.html#exhale-class-classnnp-1-1Prediction">Prediction</a></li><li>Class <a href="classnnp_1_1Settings.html#exhale-class-classnnp-1-1Settings">Settings</a></li><li>Class <a href="classnnp_1_1SetupAnalysis.html#exhale-class-classnnp-1-1SetupAnalysis">SetupAnalysis</a></li><li>Class <a href="classnnp_1_1Stopwatch.html#exhale-class-classnnp-1-1Stopwatch">Stopwatch</a></li><li>Class <a href="classnnp_1_1SymmetryFunction.html#exhale-class-classnnp-1-1SymmetryFunction">SymmetryFunction</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionAngularNarrow.html#exhale-class-classnnp-1-1SymmetryFunctionAngularNarrow">SymmetryFunctionAngularNarrow</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionAngularWide.html#exhale-class-classnnp-1-1SymmetryFunctionAngularWide">SymmetryFunctionAngularWide</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionGroup.html#exhale-class-classnnp-1-1SymmetryFunctionGroup">SymmetryFunctionGroup</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionGroupAngularNarrow.html#exhale-class-classnnp-1-1SymmetryFunctionGroupAngularNarrow">SymmetryFunctionGroupAngularNarrow</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionGroupAngularWide.html#exhale-class-classnnp-1-1SymmetryFunctionGroupAngularWide">SymmetryFunctionGroupAngularWide</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionGroupRadial.html#exhale-class-classnnp-1-1SymmetryFunctionGroupRadial">SymmetryFunctionGroupRadial</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionGroupWeightedAngular.html#exhale-class-classnnp-1-1SymmetryFunctionGroupWeightedAngular">SymmetryFunctionGroupWeightedAngular</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionGroupWeightedRadial.html#exhale-class-classnnp-1-1SymmetryFunctionGroupWeightedRadial">SymmetryFunctionGroupWeightedRadial</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionRadial.html#exhale-class-classnnp-1-1SymmetryFunctionRadial">SymmetryFunctionRadial</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionStatistics.html#exhale-class-classnnp-1-1SymmetryFunctionStatistics">SymmetryFunctionStatistics</a><ul><li class="lastChild">Struct <a href="structnnp_1_1SymmetryFunctionStatistics_1_1Container.html#exhale-struct-structnnp-1-1SymmetryFunctionStatistics-1-1Container">SymmetryFunctionStatistics::Container</a></li></ul></li><li>Class <a href="classnnp_1_1SymmetryFunctionWeightedAngular.html#exhale-class-classnnp-1-1SymmetryFunctionWeightedAngular">SymmetryFunctionWeightedAngular</a></li><li>Class <a href="classnnp_1_1SymmetryFunctionWeightedRadial.html#exhale-class-classnnp-1-1SymmetryFunctionWeightedRadial">SymmetryFunctionWeightedRadial</a></li><li>Class <a href="classnnp_1_1Training.html#exhale-class-classnnp-1-1Training">Training</a><ul><li class="lastChild">Struct <a href="structnnp_1_1Training_1_1UpdateCandidate.html#exhale-struct-structnnp-1-1Training-1-1UpdateCandidate">Training::UpdateCandidate</a></li></ul></li><li class="lastChild">Class <a href="classnnp_1_1Updater.html#exhale-class-classnnp-1-1Updater">Updater</a></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView class-treeView --></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

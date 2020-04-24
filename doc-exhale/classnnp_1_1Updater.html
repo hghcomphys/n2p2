@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Updater &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Function createKnownKeywordsMap" href="function_Settings_8cpp_1ab3acc0914dc4194db93bc0cf640a1736.html" />
+    <link rel="prev" title="Class Training" href="classnnp_1_1Training.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class Updater</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1Updater.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-updater">
+<span id="exhale-class-classnnp-1-1updater"></span><h1>Class Updater<a class="headerlink" href="#class-updater" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnptrain-updater-h"><span class="std std-ref">File Updater.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="derived-types">
+<h3>Derived Types<a class="headerlink" href="#derived-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::GradientDescent</span></code> (<a class="reference internal" href="classnnp_1_1GradientDescent.html#exhale-class-classnnp-1-1gradientdescent"><span class="std std-ref">Class GradientDescent</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::KalmanFilter</span></code> (<a class="reference internal" href="classnnp_1_1KalmanFilter.html#exhale-class-classnnp-1-1kalmanfilter"><span class="std std-ref">Class KalmanFilter</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp7UpdaterE">
+<span id="_CPPv3N3nnp7UpdaterE"></span><span id="_CPPv2N3nnp7UpdaterE"></span><span id="nnp::Updater"></span><span class="target" id="classnnp_1_1Updater"></span><em class="property">class </em><code class="sig-name descname">Updater</code><a class="headerlink" href="#_CPPv4N3nnp7UpdaterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Base class for different weight update methods. </p>
+<p>Subclassed by <a class="reference internal" href="classnnp_1_1GradientDescent.html#classnnp_1_1GradientDescent"><span class="std std-ref">nnp::GradientDescent</span></a>, <a class="reference internal" href="classnnp_1_1KalmanFilter.html#classnnp_1_1KalmanFilter"><span class="std std-ref">nnp::KalmanFilter</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp7Updater8setStateEPd">
+<span id="_CPPv3N3nnp7Updater8setStateEPd"></span><span id="_CPPv2N3nnp7Updater8setStateEPd"></span><span id="nnp::Updater::setState__doubleP"></span><span class="target" id="classnnp_1_1Updater_1a76ad56d61d38810a999f234123e0c325"></span><em class="property">virtual</em> void <code class="sig-name descname">setState</code><span class="sig-paren">(</span>double *<em>state</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N3nnp7Updater8setStateEPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current state.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">state</span></code>: Pointer to state vector (weights vector), will be changed in-place upon calling <a class="reference internal" href="#classnnp_1_1Updater_1ae0727a8da45cb1439bf0f3d2318c4084"><span class="std std-ref">update()</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp7Updater8setErrorEPCKdKNSt6size_tE">
+<span id="_CPPv3N3nnp7Updater8setErrorEPCKdKNSt6size_tE"></span><span id="_CPPv2N3nnp7Updater8setErrorEPCKdKNSt6size_tE"></span><span id="nnp::Updater::setError__doubleCPC.std::sC"></span><span class="target" id="classnnp_1_1Updater_1a989dc1b7db9dacca4e0fc9fe48db9f19"></span><em class="property">virtual</em> void <code class="sig-name descname">setError</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> <em>error</em>, std::size_t <em class="property">const</em> <em>size</em> = 1<span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N3nnp7Updater8setErrorEPCKdKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current error vector.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">error</span></code>: Pointer to error (difference between reference and neural network potential output). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">size</span></code>: Number of error vector entries. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp7Updater11setJacobianEPCKdKNSt6size_tE">
+<span id="_CPPv3N3nnp7Updater11setJacobianEPCKdKNSt6size_tE"></span><span id="_CPPv2N3nnp7Updater11setJacobianEPCKdKNSt6size_tE"></span><span id="nnp::Updater::setJacobian__doubleCPC.std::sC"></span><span class="target" id="classnnp_1_1Updater_1ad9760758eb8faa7187862e13216609d0"></span><em class="property">virtual</em> void <code class="sig-name descname">setJacobian</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> <em>jacobian</em>, std::size_t <em class="property">const</em> <em>columns</em> = 1<span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N3nnp7Updater11setJacobianEPCKdKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current Jacobi matrix.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If there are <span class="math notranslate nohighlight">\(m\)</span> errors and <span class="math notranslate nohighlight">\(n\)</span> weights, the Jacobi matrix is a <span class="math notranslate nohighlight">\(n \times m\)</span> matrix stored in column-major order. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">jacobian</span></code>: Derivatives of error with respect to weights. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">columns</span></code>: Number of gradients provided.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp7Updater6updateEv">
+<span id="_CPPv3N3nnp7Updater6updateEv"></span><span id="_CPPv2N3nnp7Updater6updateEv"></span><span id="nnp::Updater::update"></span><span class="target" id="classnnp_1_1Updater_1ae0727a8da45cb1439bf0f3d2318c4084"></span><em class="property">virtual</em> void <code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N3nnp7Updater6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Perform single update of state vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp7Updater6statusENSt6size_tE">
+<span id="_CPPv3NK3nnp7Updater6statusENSt6size_tE"></span><span id="_CPPv2NK3nnp7Updater6statusENSt6size_tE"></span><span id="nnp::Updater::status__std::sC"></span><span class="target" id="classnnp_1_1Updater_1a6ec59809e1294294ba8b39bcb10dfa64"></span><em class="property">virtual</em> std::string <code class="sig-name descname">status</code><span class="sig-paren">(</span>std::size_t <em>epoch</em><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK3nnp7Updater6statusENSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Status report.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Line with current status information. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">epoch</span></code>: Current epoch.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp7Updater12statusHeaderEv">
+<span id="_CPPv3NK3nnp7Updater12statusHeaderEv"></span><span id="_CPPv2NK3nnp7Updater12statusHeaderEv"></span><span id="nnp::Updater::statusHeaderC"></span><span class="target" id="classnnp_1_1Updater_1afffa874526db84624524c62fa85d35fd"></span><em class="property">virtual</em> std::vector&lt;std::string&gt; <code class="sig-name descname">statusHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK3nnp7Updater12statusHeaderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Header for status report file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with header lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp7Updater4infoEv">
+<span id="_CPPv3NK3nnp7Updater4infoEv"></span><span id="_CPPv2NK3nnp7Updater4infoEv"></span><span id="nnp::Updater::infoC"></span><span class="target" id="classnnp_1_1Updater_1ac8c0208e5c9a58525e991b912865fcaf"></span><em class="property">virtual</em> std::vector&lt;std::string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK3nnp7Updater4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Information about this updater.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector of information lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N7Updater7UpdaterEKNSt6size_tE">
+<span id="_CPPv3N7Updater7UpdaterEKNSt6size_tE"></span><span id="_CPPv2N7Updater7UpdaterEKNSt6size_tE"></span><span id="Updater::Updater__std::sC"></span><span class="target" id="classnnp_1_1Updater_1a125abe1065797290fda5ef71205217fd"></span><code class="sig-name descname">Updater</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>sizeState</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Updater7UpdaterEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sizeState</span></code>: Size of the state vector (number of parameters to optimize). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Updater9sizeStateE">
+<span id="_CPPv3N3nnp7Updater9sizeStateE"></span><span id="_CPPv2N3nnp7Updater9sizeStateE"></span><span id="nnp::Updater::sizeState__std::s"></span><span class="target" id="classnnp_1_1Updater_1a7b18ae44e518eb33ce9609e48ef1c3cb"></span>std::size_t <code class="sig-name descname">sizeState</code><a class="headerlink" href="#_CPPv4N3nnp7Updater9sizeStateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of neural network connections (weights + biases). </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="function_Settings_8cpp_1ab3acc0914dc4194db93bc0cf640a1736.html" class="btn btn-neutral float-right" title="Function createKnownKeywordsMap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1Training.html" class="btn btn-neutral float-left" title="Class Training" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

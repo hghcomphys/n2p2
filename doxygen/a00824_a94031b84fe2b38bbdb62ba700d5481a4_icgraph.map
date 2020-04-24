@@ -1,0 +1,11 @@
+<map id="nnp::ElementMap::size" name="nnp::ElementMap::size">
+<area shape="rect" id="node2" href="$a00864.html#a7b676463d894c0988c645fed1ddf36b1" title="Add a single atom to structure. " alt="" coords="244,5,424,32"/>
+<area shape="rect" id="node3" href="$a00928.html#a060058c539f0f581afe587db81d1e200" title="Initialize the LAMMPS interface. " alt="" coords="493,99,661,141"/>
+<area shape="rect" id="node4" href="$a00864.html#abf6bf40715b7ffd70707baf5e95746ce" title="Reset everything but elementMap. " alt="" coords="257,107,411,133"/>
+<area shape="rect" id="node5" href="$a00864.html#a57c375126ca37e8d390d406091e7dd5a" title="Set element map of structure. " alt="" coords="223,157,445,184"/>
+<area shape="rect" id="node6" href="$a00832.html#a259303c95ae2f64f2b192de1b2df51f5" title="Set up the element map. " alt="" coords="227,208,441,235"/>
+<area shape="rect" id="node7" href="$a00832.html#afc4e43a8f905900eb4ea153d529053ec" title="Set up all Element instances. " alt="" coords="237,259,431,285"/>
+<area shape="rect" id="node8" href="$a00820.html#a4d601bb1d6da372ba0ee63eea3392a08" title="Extract relevant symmetry function combinations for derivative memory. " alt="" coords="224,310,444,351"/>
+<area shape="rect" id="node9" href="$a00868.html#aa9ea9322cb7168acb4427dedce90909c" title="Constructor, initializes type. " alt="" coords="246,375,422,417"/>
+<area shape="rect" id="node10" href="$a00864.html#a5e1f59c24c85703e6e78c7f85d47a2d8" title="Write configuration to POSCAR file. " alt="" coords="239,441,429,482"/>
+</map>

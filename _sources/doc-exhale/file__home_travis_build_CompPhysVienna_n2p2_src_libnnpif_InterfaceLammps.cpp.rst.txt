@@ -1,0 +1,60 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp:
+
+File InterfaceLammps.cpp
+========================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnpif>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnpif``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnpif/InterfaceLammps.cpp``)
+----------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Atom.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h`)
+
+- ``Element.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h`)
+
+- ``InterfaceLammps.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h`)
+
+- ``cmath``
+
+- ``iostream``
+
+- ``mpi-extra.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h`)
+
+- ``mpi.h``
+
+- ``string``
+
+- ``utility.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`)
+
+
+
+
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_InterfaceLammps_8cpp_1ae888242d7f1a9f14ab3f2c97b3c616c3`
+

@@ -1,0 +1,43 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.cpp:
+
+File GradientDescent.cpp
+========================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/GradientDescent.cpp``)
+-------------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``GradientDescent.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h`)
+
+- ``cmath``
+
+- ``cstddef``
+
+- ``utility.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`)
+
+
+
+
+

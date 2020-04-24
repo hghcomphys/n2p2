@@ -1,0 +1,265 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h:
+
+Program Listing for File Training.h
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Training.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef TRAINING_H
+   #define TRAINING_H
+   
+   #include "Atom.h"
+   #include "Dataset.h"
+   #include "Updater.h"
+   #include <cstddef> // std::size_t
+   #include <fstream> // std::ofstream
+   #include <map>     // std::map
+   #include <random>  // std::mt19937_64
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   class Training : public Dataset
+   {
+   public:
+       enum UpdaterType
+       {
+           UT_GD,
+           UT_KF,
+           UT_LM
+       };
+   
+       enum ParallelMode
+       {
+           //PM_DATASET,
+           PM_TRAIN_RK0,
+           PM_TRAIN_ALL
+       };
+   
+       enum JacobianMode
+       {
+           JM_SUM,
+           JM_TASK,
+           JM_FULL
+       };
+   
+       enum UpdateStrategy
+       {
+           US_COMBINED,
+           US_ELEMENT
+       };
+   
+       enum SelectionMode
+       {
+           SM_RANDOM,
+           SM_SORT,
+           SM_THRESHOLD
+       };
+   
+       Training();
+       ~Training();
+       void                  selectSets();
+       void                  writeSetsToFiles();
+       void                  initializeWeights();
+       void                  initializeWeightsMemory(UpdateStrategy updateStrategy
+                                                         = US_COMBINED);
+       void                  setupTraining();
+       void                  calculateNeighborLists();
+       void                  calculateRmse(bool const        writeCompFiles,
+                                           std::string const identifier           
+                                               = "",
+                                           std::string const fileNameEnergiesTrain
+                                               = "energies-train.comp",
+                                           std::string const fileNameEnergiesTest
+                                               = "energies-test.comp",
+                                           std::string const fileNameForcesTrain
+                                               = "forces-train.comp",
+                                           std::string const fileNameForcesTest
+                                               = "forces-test.comp");
+       void                  calculateRmseEpoch();
+       void                  writeWeights(std::string const fileNameFormat
+                                             = "weights.%03zu.data") const;
+       void                  writeWeightsEpoch() const;
+       void                  writeLearningCurve(bool              append,
+                                                std::string const fileName
+                                                    = "learning-curve.out") const;
+       void                  writeNeuronStatistics(std::string const fileName
+                                                      = "neuron-stats.out") const;
+       void                  writeNeuronStatisticsEpoch() const;
+       void                  resetNeuronStatistics() const;
+       void                  writeUpdaterStatus(bool              append,
+                                                std::string const fileNameFormat
+                                                    = "updater.%03zu.out") const;
+       void                  sortUpdateCandidates();
+       void                  shuffleUpdateCandidates();
+       void                  checkSelectionMode();
+       void                  loop();
+       void                  setEpochSchedule();
+       void                  update(bool force);
+       double                getSingleWeight(std::size_t element,
+                                             std::size_t index);
+       void                  setSingleWeight(std::size_t element,
+                                             std::size_t index,
+                                             double      value);
+       std::vector<
+       std::vector<double> > calculateWeightDerivatives(Structure* structure);
+       std::vector<
+       std::vector<double> > calculateWeightDerivatives(Structure*  structure,
+                                                        std::size_t atom,
+                                                        std::size_t component);
+       void                  setTrainingLogFileName(std::string fileName);
+   
+   private:
+       struct UpdateCandidate
+       {
+           std::size_t s;
+           std::size_t a;
+           std::size_t c;
+           double      error;
+   
+           bool operator<(UpdateCandidate const& rhs) const;
+       };
+   
+       UpdaterType                   updaterType;
+       ParallelMode                  parallelMode;
+       JacobianMode                  jacobianMode;
+       UpdateStrategy                updateStrategy;
+       SelectionMode                 selectionMode;
+       bool                          hasUpdaters;
+       bool                          hasStructures;
+       bool                          useForces;
+       bool                          reapeatedEnergyUpdates;
+       bool                          freeMemory;
+       bool                          writeTrainingLog;
+       std::size_t                   numUpdaters;
+       std::size_t                   numEnergiesTrain;
+       std::size_t                   numForcesTrain;
+       std::size_t                   numEpochs;
+       std::size_t                   taskBatchSizeEnergy;
+       std::size_t                   taskBatchSizeForce;
+       std::size_t                   epoch;
+       std::size_t                   writeEnergiesEvery;
+       std::size_t                   writeForcesEvery;
+       std::size_t                   writeWeightsEvery;
+       std::size_t                   writeNeuronStatisticsEvery;
+       std::size_t                   writeEnergiesAlways;
+       std::size_t                   writeForcesAlways;
+       std::size_t                   writeWeightsAlways;
+       std::size_t                   writeNeuronStatisticsAlways;
+       std::size_t                   posUpdateCandidatesEnergy;
+       std::size_t                   posUpdateCandidatesForce;
+       std::size_t                   rmseThresholdTrials;
+       std::size_t                   countUpdates;
+       std::size_t                   energyUpdates;
+       std::size_t                   forceUpdates;
+       std::size_t                   energiesPerUpdate;
+       std::size_t                   energiesPerUpdateGlobal;
+       std::size_t                   errorsGlobalEnergy;
+       std::size_t                   forcesPerUpdate;
+       std::size_t                   forcesPerUpdateGlobal;
+       std::size_t                   errorsGlobalForce;
+       std::size_t                   numWeights;
+       double                        epochFractionEnergies;
+       double                        epochFractionForces;
+       double                        rmseEnergiesTrain;
+       double                        rmseEnergiesTest;
+       double                        rmseForcesTrain;
+       double                        rmseForcesTest;
+       double                        rmseThresholdEnergy;
+       double                        rmseThresholdForce;
+       double                        forceWeight;
+       std::string                   trainingLogFileName;
+       std::ofstream                 trainingLog;
+       std::vector<int>              epochSchedule;
+       std::vector<int>              errorsPerTaskEnergy;
+       std::vector<int>              errorsPerTaskForce;
+       std::vector<int>              offsetPerTaskEnergy;
+       std::vector<int>              offsetPerTaskForce;
+       std::vector<std::size_t>      numWeightsPerUpdater;
+       std::vector<std::size_t>      weightsOffset;
+   #ifdef IMPROVED_SFD_MEMORY
+       std::vector<double>           dGdxia;
+   #endif
+       std::vector<UpdateCandidate>  updateCandidatesEnergy;
+       std::vector<UpdateCandidate>  updateCandidatesForce;
+       std::vector<
+       std::vector<int> >            weightsPerTaskEnergy;
+       std::vector<
+       std::vector<int> >            offsetJacobianEnergy;
+       std::vector<
+       std::vector<int> >            weightsPerTaskForce;
+       std::vector<
+       std::vector<int> >            offsetJacobianForce;
+       std::vector<
+       std::vector<double> >         weights;
+       std::vector<
+       std::vector<double> >         errorE;
+       std::vector<
+       std::vector<double> >         errorF;
+       std::vector<
+       std::vector<double> >         jacobianE;
+       std::vector<
+       std::vector<double> >         jacobianF;
+       std::vector<Updater*>         updaters;
+       std::map<std::size_t,
+                SelectionMode>       selectionModeSchedule;
+       std::mt19937_64               rngNew;
+       std::mt19937_64               rngGlobalNew;
+   
+       bool advance() const;
+       void getWeights();
+       void setWeights();
+       void addTrainingLogEntry(int                 proc,
+                                std::size_t         il,
+                                double              f,
+                                std::size_t         isg,
+                                std::size_t         is);
+       void addTrainingLogEntry(int                 proc,
+                                std::size_t         il,
+                                double              f,
+                                std::size_t         isg,
+                                std::size_t         is,
+                                std::size_t         ia,
+                                std::size_t         ic);
+   #ifdef IMPROVED_SFD_MEMORY
+   
+       void collectDGdxia(Atom const& atom,
+                          std::size_t indexAtom,
+                          std::size_t indexComponent);
+   #endif
+   };
+   
+   // Inlined function definitions //
+   
+   inline bool Training::UpdateCandidate::operator<(
+                                       Training::UpdateCandidate const& rhs) const
+   {
+       return this->error > rhs.error;
+   }
+   
+   }
+   
+   #endif

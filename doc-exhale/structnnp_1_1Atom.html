@@ -1,0 +1,694 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct Atom &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct Atom::Neighbor" href="structnnp_1_1Atom_1_1Neighbor.html" />
+    <link rel="prev" title="Namespace std" href="namespace_std.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Struct Atom</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/structnnp_1_1Atom.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-atom">
+<span id="exhale-struct-structnnp-1-1atom"></span><h1>Struct Atom<a class="headerlink" href="#struct-atom" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-atom-h"><span class="std std-ref">File Atom.h</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#exhale-struct-structnnp-1-1atom-1-1neighbor"><span class="std std-ref">Struct Atom::Neighbor</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp4AtomE">
+<span id="_CPPv3N3nnp4AtomE"></span><span id="_CPPv2N3nnp4AtomE"></span><span id="nnp::Atom"></span><span class="target" id="structnnp_1_1Atom"></span><em class="property">struct </em><code class="sig-name descname">Atom</code><a class="headerlink" href="#_CPPv4N3nnp4AtomE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Storage for a single atom. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom4AtomEv">
+<span id="_CPPv3N4Atom4AtomEv"></span><span id="_CPPv2N4Atom4AtomEv"></span><span id="Atom::Atom"></span><span class="target" id="structnnp_1_1Atom_1aa0147d7e49ab90f559b66e38d3d12863"></span><code class="sig-name descname">Atom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Atom4AtomEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a> constructor, initialize to zero. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom13collectDGdxiaENSt6size_tENSt6size_tE">
+<span id="_CPPv3N4Atom13collectDGdxiaENSt6size_tENSt6size_tE"></span><span id="_CPPv2N4Atom13collectDGdxiaENSt6size_tENSt6size_tE"></span><span id="Atom::collectDGdxia__std::s.std::s"></span><span class="target" id="structnnp_1_1Atom_1a67bb6554512ee96f32a0a16bd4ac85f1"></span>void <code class="sig-name descname">collectDGdxia</code><span class="sig-paren">(</span>std::size_t <em>indexAtom</em>, std::size_t <em>indexComponent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Atom13collectDGdxiaENSt6size_tENSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Collect derivative of symmetry functions with repect to one atom’s coordinate.</p>
+<p><p>This calculates an array of derivatives </p>
+<div class="math notranslate nohighlight">
+\[ \left(\frac{\partial G_1}{\partial x_{i,\alpha}}, \ldots, \frac{\partial G_n}{\partial x_{i,\alpha}}\right), \]</div>
+ where <span class="math notranslate nohighlight">\(\{G_j\}_{j=1,\ldots,n}\)</span> are the symmetry functions for this atom and <span class="math notranslate nohighlight">\(x_{i,\alpha}\)</span> is the <span class="math notranslate nohighlight">\(\alpha\)</span>-component of the position of atom <span class="math notranslate nohighlight">\(i\)</span>. The result is stored in <a class="reference internal" href="#structnnp_1_1Atom_1a24ed7e5fa3db9acf8cd8bb4b42d25f3f"><span class="std std-ref">dGdxia</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">indexAtom</span></code>: The index <span class="math notranslate nohighlight">\(i\)</span> of the atom requested. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">indexComponent</span></code>: The component <span class="math notranslate nohighlight">\(\alpha\)</span> of the atom requested.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom17toNormalizedUnitsEdd">
+<span id="_CPPv3N4Atom17toNormalizedUnitsEdd"></span><span id="_CPPv2N4Atom17toNormalizedUnitsEdd"></span><span id="Atom::toNormalizedUnits__double.double"></span><span class="target" id="structnnp_1_1Atom_1aa3ae7e14a67c44e6d921cd8587b1d5c4"></span>void <code class="sig-name descname">toNormalizedUnits</code><span class="sig-paren">(</span>double <em>convEnergy</em>, double <em>convLength</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Atom17toNormalizedUnitsEdd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Switch to normalized length and energy units.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convEnergy</span></code>: Multiplicative energy unit conversion factor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convLength</span></code>: Multiplicative length unit conversion factor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom15toPhysicalUnitsEdd">
+<span id="_CPPv3N4Atom15toPhysicalUnitsEdd"></span><span id="_CPPv2N4Atom15toPhysicalUnitsEdd"></span><span id="Atom::toPhysicalUnits__double.double"></span><span class="target" id="structnnp_1_1Atom_1a4dd0a4c3fe4a480b745ae4a40873d2d3"></span>void <code class="sig-name descname">toPhysicalUnits</code><span class="sig-paren">(</span>double <em>convEnergy</em>, double <em>convLength</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Atom15toPhysicalUnitsEdd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Switch to physical length and energy units.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convEnergy</span></code>: Multiplicative energy unit conversion factor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">convLength</span></code>: Multiplicative length unit conversion factor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom8allocateEb">
+<span id="_CPPv3N4Atom8allocateEb"></span><span id="_CPPv2N4Atom8allocateEb"></span><span id="Atom::allocate__b"></span><span class="target" id="structnnp_1_1Atom_1a2de21db9dfe00cf608d5b77e6b0f6299"></span>void <code class="sig-name descname">allocate</code><span class="sig-paren">(</span>bool <em>all</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Atom8allocateEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Allocate vectors related to symmetry functions (<a class="reference internal" href="#structnnp_1_1Atom_1abc64f09e49aabb8112004f5af6983102"><span class="std std-ref">G</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a139bcae479dfbf132aa5e33956c0610d"><span class="std std-ref">dEdG</span></a>).</p>
+<p><p>Warning: </p>
+<a class="reference internal" href="#structnnp_1_1Atom_1a0b2e4de557a8b4f97936fcd4bab7a564"><span class="std std-ref">numSymmetryFunctions</span></a> and <a class="reference internal" href="#structnnp_1_1Atom_1a318eadf8f83a00480174a168020f7e84"><span class="std std-ref">numSymmetryFunctionDerivatives</span></a> need to be set first (the latter only in case of argument all == true. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">all</span></code>: If <code class="docutils literal notranslate"><span class="pre">true</span></code> allocate also vectors corresponding to derivatives of symmetry functions (<a class="reference internal" href="#structnnp_1_1Atom_1a139bcae479dfbf132aa5e33956c0610d"><span class="std std-ref">dEdG</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a482ea8be24723a1a05012e4d405a60db"><span class="std std-ref">dGdr</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a24ed7e5fa3db9acf8cd8bb4b42d25f3f"><span class="std std-ref">dGdxia</span></a> and <a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#structnnp_1_1Atom_1_1Neighbor_1ace4770399203773624ab9c7db8db66d5"><span class="std std-ref">Neighbor::dGdr</span></a>, neighbors must be present). If <code class="docutils literal notranslate"><span class="pre">false</span></code> allocate only <a class="reference internal" href="#structnnp_1_1Atom_1abc64f09e49aabb8112004f5af6983102"><span class="std std-ref">G</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom4freeEb">
+<span id="_CPPv3N4Atom4freeEb"></span><span id="_CPPv2N4Atom4freeEb"></span><span id="Atom::free__b"></span><span class="target" id="structnnp_1_1Atom_1af58101aed1994065d84c59814892a887"></span>void <code class="sig-name descname">free</code><span class="sig-paren">(</span>bool <em>all</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Atom4freeEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Free vectors related to symmetry functions, opposite of <a class="reference internal" href="#structnnp_1_1Atom_1a2de21db9dfe00cf608d5b77e6b0f6299"><span class="std std-ref">allocate()</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">all</span></code>: If <code class="docutils literal notranslate"><span class="pre">true</span></code> free all vectors (<a class="reference internal" href="#structnnp_1_1Atom_1abc64f09e49aabb8112004f5af6983102"><span class="std std-ref">G</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a139bcae479dfbf132aa5e33956c0610d"><span class="std std-ref">dEdG</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a482ea8be24723a1a05012e4d405a60db"><span class="std std-ref">dGdr</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a24ed7e5fa3db9acf8cd8bb4b42d25f3f"><span class="std std-ref">dGdxia</span></a> and <a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#structnnp_1_1Atom_1_1Neighbor_1ace4770399203773624ab9c7db8db66d5"><span class="std std-ref">Neighbor::dGdr</span></a>) otherwise free only <a class="reference internal" href="#structnnp_1_1Atom_1a139bcae479dfbf132aa5e33956c0610d"><span class="std std-ref">dEdG</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a482ea8be24723a1a05012e4d405a60db"><span class="std std-ref">dGdr</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a24ed7e5fa3db9acf8cd8bb4b42d25f3f"><span class="std std-ref">dGdxia</span></a> and <a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#structnnp_1_1Atom_1_1Neighbor_1ace4770399203773624ab9c7db8db66d5"><span class="std std-ref">Neighbor::dGdr</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom17clearNeighborListEv">
+<span id="_CPPv3N4Atom17clearNeighborListEv"></span><span id="_CPPv2N4Atom17clearNeighborListEv"></span><span id="Atom::clearNeighborList"></span><span class="target" id="structnnp_1_1Atom_1a53667a4b6cad924e3c15aeda65c2223d"></span>void <code class="sig-name descname">clearNeighborList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Atom17clearNeighborListEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear neighbor list.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Also clears symmetry function data. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp4Atom17clearNeighborListEKNSt6size_tE">
+<span id="_CPPv3N3nnp4Atom17clearNeighborListEKNSt6size_tE"></span><span id="_CPPv2N3nnp4Atom17clearNeighborListEKNSt6size_tE"></span><span id="nnp::Atom::clearNeighborList__std::sC"></span><span class="target" id="structnnp_1_1Atom_1a0bf88225ec524eba847df097ba649247"></span>void <code class="sig-name descname">clearNeighborList</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>numElements</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp4Atom17clearNeighborListEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear neighbor list and change number of elements.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Also clears symmetry function data. The number of elements is necessary to allocate the <a class="reference internal" href="#structnnp_1_1Atom_1ad53c703ea0d760ad25b5f6ebb7bdbf4c"><span class="std std-ref">numNeighborsPerElement</span></a> vector. Use the overloaded version <a class="reference internal" href="#structnnp_1_1Atom_1a53667a4b6cad924e3c15aeda65c2223d"><span class="std std-ref">clearNeighborList()</span></a> if the number of elements stays the same. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">numElements</span></code>: Number of elements present.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom15getNumNeighborsEd">
+<span id="_CPPv3NK4Atom15getNumNeighborsEd"></span><span id="_CPPv2NK4Atom15getNumNeighborsEd"></span><span id="Atom::getNumNeighbors__doubleC"></span><span class="target" id="structnnp_1_1Atom_1af1688532887675a8f0dd944768589fff"></span>size_t <code class="sig-name descname">getNumNeighbors</code><span class="sig-paren">(</span>double <em>cutoffRadius</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Atom15getNumNeighborsEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate number of neighbors for a given cutoff radius.</p>
+<p><p>This function assumes that the neighbor list has already been calculated for a large cutoff radius and now the number of neighbor atoms for a smaller cutoff is requested. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">cutoffRadius</span></code>: Desired cutoff radius.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom16updateRmseForcesERdRNSt6size_tE">
+<span id="_CPPv3NK4Atom16updateRmseForcesERdRNSt6size_tE"></span><span id="_CPPv2NK4Atom16updateRmseForcesERdRNSt6size_tE"></span><span id="Atom::updateRmseForces__doubleR.std::sRC"></span><span class="target" id="structnnp_1_1Atom_1a72d150f3ed3e9fc40b1f67613feb8675"></span>void <code class="sig-name descname">updateRmseForces</code><span class="sig-paren">(</span>double &amp;<em>rmse</em>, std::size_t &amp;<em>count</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Atom16updateRmseForcesERdRNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update force RMSE with forces of this atom.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">rmse</span></code>: Input RMSE to be updated. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">count</span></code>: Input counter to be updated. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom14getForcesLinesEv">
+<span id="_CPPv3NK4Atom14getForcesLinesEv"></span><span id="_CPPv2NK4Atom14getForcesLinesEv"></span><span id="Atom::getForcesLinesC"></span><span class="target" id="structnnp_1_1Atom_1ae2c515af17e45c8eb95fa9d097e6abd8"></span>vector&lt;string&gt; <code class="sig-name descname">getForcesLines</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Atom14getForcesLinesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get reference and NN forces for this atoms.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector of strings with <a class="reference internal" href="#structnnp_1_1Atom_1a708047feeff8f20e48b6a3d476ddb643"><span class="std std-ref">indexStructure</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a2e45492f424bf0af6841ce9a9033d11e"><span class="std std-ref">index</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a3ef1d07944abca654800f68676cd2e89"><span class="std std-ref">fRef</span></a>, <a class="reference internal" href="#structnnp_1_1Atom_1a170d82083599ace5c7973bd22c79ddae"><span class="std std-ref">f</span></a> values. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom4infoEv">
+<span id="_CPPv3NK4Atom4infoEv"></span><span id="_CPPv2NK4Atom4infoEv"></span><span id="Atom::infoC"></span><span class="target" id="structnnp_1_1Atom_1a07d8989d525d9fbce75271cb6ccb637a"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Atom4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get atom information as a vector of strings.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Lines with atom information. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom15hasNeighborListE">
+<span id="_CPPv3N3nnp4Atom15hasNeighborListE"></span><span id="_CPPv2N3nnp4Atom15hasNeighborListE"></span><span id="nnp::Atom::hasNeighborList__b"></span><span class="target" id="structnnp_1_1Atom_1aa4a9596079af5fb7a6218f74b073a690"></span>bool <code class="sig-name descname">hasNeighborList</code><a class="headerlink" href="#_CPPv4N3nnp4Atom15hasNeighborListE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If the neighbor list has been calculated for this atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom20hasSymmetryFunctionsE">
+<span id="_CPPv3N3nnp4Atom20hasSymmetryFunctionsE"></span><span id="_CPPv2N3nnp4Atom20hasSymmetryFunctionsE"></span><span id="nnp::Atom::hasSymmetryFunctions__b"></span><span class="target" id="structnnp_1_1Atom_1a8b6403674a98b82e02508193fa86f196"></span>bool <code class="sig-name descname">hasSymmetryFunctions</code><a class="headerlink" href="#_CPPv4N3nnp4Atom20hasSymmetryFunctionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If symmetry function values are saved for this atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom30hasSymmetryFunctionDerivativesE">
+<span id="_CPPv3N3nnp4Atom30hasSymmetryFunctionDerivativesE"></span><span id="_CPPv2N3nnp4Atom30hasSymmetryFunctionDerivativesE"></span><span id="nnp::Atom::hasSymmetryFunctionDerivatives__b"></span><span class="target" id="structnnp_1_1Atom_1a1f3ed8b68d3c546d068024b0c949eac1"></span>bool <code class="sig-name descname">hasSymmetryFunctionDerivatives</code><a class="headerlink" href="#_CPPv4N3nnp4Atom30hasSymmetryFunctionDerivativesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If symmetry function derivatives are saved for this atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom5indexE">
+<span id="_CPPv3N3nnp4Atom5indexE"></span><span id="_CPPv2N3nnp4Atom5indexE"></span><span id="nnp::Atom::index__std::s"></span><span class="target" id="structnnp_1_1Atom_1a2e45492f424bf0af6841ce9a9033d11e"></span>std::size_t <code class="sig-name descname">index</code><a class="headerlink" href="#_CPPv4N3nnp4Atom5indexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Index number of this atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom14indexStructureE">
+<span id="_CPPv3N3nnp4Atom14indexStructureE"></span><span id="_CPPv2N3nnp4Atom14indexStructureE"></span><span id="nnp::Atom::indexStructure__std::s"></span><span class="target" id="structnnp_1_1Atom_1a708047feeff8f20e48b6a3d476ddb643"></span>std::size_t <code class="sig-name descname">indexStructure</code><a class="headerlink" href="#_CPPv4N3nnp4Atom14indexStructureE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Index number of structure this atom belongs to. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom3tagE">
+<span id="_CPPv3N3nnp4Atom3tagE"></span><span id="_CPPv2N3nnp4Atom3tagE"></span><span id="nnp::Atom::tag__std::s"></span><span class="target" id="structnnp_1_1Atom_1ad0a23cecc4ec0a86b1f7aa3c635d4434"></span>std::size_t <code class="sig-name descname">tag</code><a class="headerlink" href="#_CPPv4N3nnp4Atom3tagE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Tag number of this atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom7elementE">
+<span id="_CPPv3N3nnp4Atom7elementE"></span><span id="_CPPv2N3nnp4Atom7elementE"></span><span id="nnp::Atom::element__std::s"></span><span class="target" id="structnnp_1_1Atom_1a807a4cf41842f8225d88f1848f1ef6ee"></span>std::size_t <code class="sig-name descname">element</code><a class="headerlink" href="#_CPPv4N3nnp4Atom7elementE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Element index of this atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom12numNeighborsE">
+<span id="_CPPv3N3nnp4Atom12numNeighborsE"></span><span id="_CPPv2N3nnp4Atom12numNeighborsE"></span><span id="nnp::Atom::numNeighbors__std::s"></span><span class="target" id="structnnp_1_1Atom_1afebaaf27a0e6b30eab2f4cbc8c66d046"></span>std::size_t <code class="sig-name descname">numNeighbors</code><a class="headerlink" href="#_CPPv4N3nnp4Atom12numNeighborsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Total number of neighbors. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom18numNeighborsUniqueE">
+<span id="_CPPv3N3nnp4Atom18numNeighborsUniqueE"></span><span id="_CPPv2N3nnp4Atom18numNeighborsUniqueE"></span><span id="nnp::Atom::numNeighborsUnique__std::s"></span><span class="target" id="structnnp_1_1Atom_1ae82755d80b223ee7bbfee57d4e7fae4c"></span>std::size_t <code class="sig-name descname">numNeighborsUnique</code><a class="headerlink" href="#_CPPv4N3nnp4Atom18numNeighborsUniqueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of unique neighbor indices (don’t count multiple PBC images). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom20numSymmetryFunctionsE">
+<span id="_CPPv3N3nnp4Atom20numSymmetryFunctionsE"></span><span id="_CPPv2N3nnp4Atom20numSymmetryFunctionsE"></span><span id="nnp::Atom::numSymmetryFunctions__std::s"></span><span class="target" id="structnnp_1_1Atom_1a0b2e4de557a8b4f97936fcd4bab7a564"></span>std::size_t <code class="sig-name descname">numSymmetryFunctions</code><a class="headerlink" href="#_CPPv4N3nnp4Atom20numSymmetryFunctionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of symmetry functions used to describe the atom environment. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom6energyE">
+<span id="_CPPv3N3nnp4Atom6energyE"></span><span id="_CPPv2N3nnp4Atom6energyE"></span><span id="nnp::Atom::energy__double"></span><span class="target" id="structnnp_1_1Atom_1abae2157524b61b7772f09d7fae340fa3"></span>double <code class="sig-name descname">energy</code><a class="headerlink" href="#_CPPv4N3nnp4Atom6energyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Atomic energy determined by neural network. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom6chargeE">
+<span id="_CPPv3N3nnp4Atom6chargeE"></span><span id="_CPPv2N3nnp4Atom6chargeE"></span><span id="nnp::Atom::charge__double"></span><span class="target" id="structnnp_1_1Atom_1a2352aabf707595bd9893ed59a9c4977e"></span>double <code class="sig-name descname">charge</code><a class="headerlink" href="#_CPPv4N3nnp4Atom6chargeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Atomic charge determined by neural network. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom1rE">
+<span id="_CPPv3N3nnp4Atom1rE"></span><span id="_CPPv2N3nnp4Atom1rE"></span><span id="nnp::Atom::r__Vec3D"></span><span class="target" id="structnnp_1_1Atom_1a0e8397ecd8e60cf9db1f4dfe7378d447"></span><a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <code class="sig-name descname">r</code><a class="headerlink" href="#_CPPv4N3nnp4Atom1rE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cartesian coordinates. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom1fE">
+<span id="_CPPv3N3nnp4Atom1fE"></span><span id="_CPPv2N3nnp4Atom1fE"></span><span id="nnp::Atom::f__Vec3D"></span><span class="target" id="structnnp_1_1Atom_1a170d82083599ace5c7973bd22c79ddae"></span><a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <code class="sig-name descname">f</code><a class="headerlink" href="#_CPPv4N3nnp4Atom1fE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Force vector calculated by neural network. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom4fRefE">
+<span id="_CPPv3N3nnp4Atom4fRefE"></span><span id="_CPPv2N3nnp4Atom4fRefE"></span><span id="nnp::Atom::fRef__Vec3D"></span><span class="target" id="structnnp_1_1Atom_1a3ef1d07944abca654800f68676cd2e89"></span><a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <code class="sig-name descname">fRef</code><a class="headerlink" href="#_CPPv4N3nnp4Atom4fRefE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reference force vector from data set. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom15neighborsUniqueE">
+<span id="_CPPv3N3nnp4Atom15neighborsUniqueE"></span><span id="_CPPv2N3nnp4Atom15neighborsUniqueE"></span><span id="nnp::Atom::neighborsUnique__std::vector:std::s:"></span><span class="target" id="structnnp_1_1Atom_1ac4f376687337d16d376f1ea76c4d5f9c"></span>std::vector&lt;std::size_t&gt; <code class="sig-name descname">neighborsUnique</code><a class="headerlink" href="#_CPPv4N3nnp4Atom15neighborsUniqueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List of unique neighbor indices (don’t count multiple PBC images). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom22numNeighborsPerElementE">
+<span id="_CPPv3N3nnp4Atom22numNeighborsPerElementE"></span><span id="_CPPv2N3nnp4Atom22numNeighborsPerElementE"></span><span id="nnp::Atom::numNeighborsPerElement__std::vector:std::s:"></span><span class="target" id="structnnp_1_1Atom_1ad53c703ea0d760ad25b5f6ebb7bdbf4c"></span>std::vector&lt;std::size_t&gt; <code class="sig-name descname">numNeighborsPerElement</code><a class="headerlink" href="#_CPPv4N3nnp4Atom22numNeighborsPerElementE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of neighbors per element. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom30numSymmetryFunctionDerivativesE">
+<span id="_CPPv3N3nnp4Atom30numSymmetryFunctionDerivativesE"></span><span id="_CPPv2N3nnp4Atom30numSymmetryFunctionDerivativesE"></span><span id="nnp::Atom::numSymmetryFunctionDerivatives__std::vector:std::s:"></span><span class="target" id="structnnp_1_1Atom_1a318eadf8f83a00480174a168020f7e84"></span>std::vector&lt;std::size_t&gt; <code class="sig-name descname">numSymmetryFunctionDerivatives</code><a class="headerlink" href="#_CPPv4N3nnp4Atom30numSymmetryFunctionDerivativesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of neighbor atom symmetry function derivatives per element. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom1GE">
+<span id="_CPPv3N3nnp4Atom1GE"></span><span id="_CPPv2N3nnp4Atom1GE"></span><span id="nnp::Atom::G__std::vector:double:"></span><span class="target" id="structnnp_1_1Atom_1abc64f09e49aabb8112004f5af6983102"></span>std::vector&lt;double&gt; <code class="sig-name descname">G</code><a class="headerlink" href="#_CPPv4N3nnp4Atom1GE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Symmetry function values. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom4dEdGE">
+<span id="_CPPv3N3nnp4Atom4dEdGE"></span><span id="_CPPv2N3nnp4Atom4dEdGE"></span><span id="nnp::Atom::dEdG__std::vector:double:"></span><span class="target" id="structnnp_1_1Atom_1a139bcae479dfbf132aa5e33956c0610d"></span>std::vector&lt;double&gt; <code class="sig-name descname">dEdG</code><a class="headerlink" href="#_CPPv4N3nnp4Atom4dEdGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivative of atomic energy with respect to symmetry functions. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom6dGdxiaE">
+<span id="_CPPv3N3nnp4Atom6dGdxiaE"></span><span id="_CPPv2N3nnp4Atom6dGdxiaE"></span><span id="nnp::Atom::dGdxia__std::vector:double:"></span><span class="target" id="structnnp_1_1Atom_1a24ed7e5fa3db9acf8cd8bb4b42d25f3f"></span>std::vector&lt;double&gt; <code class="sig-name descname">dGdxia</code><a class="headerlink" href="#_CPPv4N3nnp4Atom6dGdxiaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivative of symmetry functions with respect to one specific atom coordinate. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom4dGdrE">
+<span id="_CPPv3N3nnp4Atom4dGdrE"></span><span id="_CPPv2N3nnp4Atom4dGdrE"></span><span id="nnp::Atom::dGdr__std::vector:Vec3D:"></span><span class="target" id="structnnp_1_1Atom_1a482ea8be24723a1a05012e4d405a60db"></span>std::vector&lt;<a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a>&gt; <code class="sig-name descname">dGdr</code><a class="headerlink" href="#_CPPv4N3nnp4Atom4dGdrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivative of symmetry functions with respect to this atom’s coordinates. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom9neighborsE">
+<span id="_CPPv3N3nnp4Atom9neighborsE"></span><span id="_CPPv2N3nnp4Atom9neighborsE"></span><span id="nnp::Atom::neighbors__std::vector:Neighbor:"></span><span class="target" id="structnnp_1_1Atom_1a0361a8e48f3b762f76db75abcf6fc305"></span>std::vector&lt;<a class="reference internal" href="#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a>&gt; <code class="sig-name descname">neighbors</code><a class="headerlink" href="#_CPPv4N3nnp4Atom9neighborsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#structnnp_1_1Atom_1_1Neighbor"><span class="std std-ref">Neighbor</span></a> array (maximum number defined in macros.h. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp4Atom8NeighborE">
+<span id="_CPPv3N3nnp4Atom8NeighborE"></span><span id="_CPPv2N3nnp4Atom8NeighborE"></span><span id="nnp::Atom::Neighbor"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor"></span><em class="property">struct </em><code class="sig-name descname">Neighbor</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8NeighborE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Struct to store information on neighbor atoms. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom8Neighbor8NeighborEv">
+<span id="_CPPv3N4Atom8Neighbor8NeighborEv"></span><span id="_CPPv2N4Atom8Neighbor8NeighborEv"></span><span id="Atom::Neighbor::Neighbor"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a1ec6870a366bbce26e7ba574eb8d6d81"></span><code class="sig-name descname">Neighbor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Atom8Neighbor8NeighborEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#structnnp_1_1Atom_1_1Neighbor"><span class="std std-ref">Neighbor</span></a> constructor, initialize to zero. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom8NeighboreqERK8Neighbor">
+<span id="_CPPv3NK4Atom8NeighboreqERK8Neighbor"></span><span id="_CPPv2NK4Atom8NeighboreqERK8Neighbor"></span><span id="Atom::Neighbor::eq-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a996c56138f8d0430fde95e8c0f3f35a3"></span>bool <code class="sig-name descname">operator==</code><span class="sig-paren">(</span>Neighbor <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Atom8NeighboreqERK8Neighbor" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload == operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Atom8NeighborneERK8Neighbor">
+<span id="_CPPv3NK3nnp4Atom8NeighborneERK8Neighbor"></span><span id="_CPPv2NK3nnp4Atom8NeighborneERK8Neighbor"></span><span id="nnp::Atom::Neighbor::neq-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a121a1bb590e9e578d86fc3a8e5244444"></span>bool <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Atom8NeighborneERK8Neighbor" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload != operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom8NeighborltERK8Neighbor">
+<span id="_CPPv3NK4Atom8NeighborltERK8Neighbor"></span><span id="_CPPv2NK4Atom8NeighborltERK8Neighbor"></span><span id="Atom::Neighbor::lt-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1ae02c5c3425292b8ea157ae9403176a67"></span>bool <code class="sig-name descname">operator&lt;</code><span class="sig-paren">(</span>Neighbor <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Atom8NeighborltERK8Neighbor" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &lt; operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Atom8NeighborgtERK8Neighbor">
+<span id="_CPPv3NK3nnp4Atom8NeighborgtERK8Neighbor"></span><span id="_CPPv2NK3nnp4Atom8NeighborgtERK8Neighbor"></span><span id="nnp::Atom::Neighbor::gt-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1aecf339545b12c6184e9bae2ba789394f"></span>bool <code class="sig-name descname">operator&gt;</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Atom8NeighborgtERK8Neighbor" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &gt; operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Atom8NeighborleERK8Neighbor">
+<span id="_CPPv3NK3nnp4Atom8NeighborleERK8Neighbor"></span><span id="_CPPv2NK3nnp4Atom8NeighborleERK8Neighbor"></span><span id="nnp::Atom::Neighbor::lte-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1aa9a88cb8efea5cc0923b70d2fee70bb3"></span>bool <code class="sig-name descname">operator&lt;=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Atom8NeighborleERK8Neighbor" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &lt;= operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Atom8NeighborgeERK8Neighbor">
+<span id="_CPPv3NK3nnp4Atom8NeighborgeERK8Neighbor"></span><span id="_CPPv2NK3nnp4Atom8NeighborgeERK8Neighbor"></span><span id="nnp::Atom::Neighbor::gte-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a649122eab310db0078fd5fdbae59e9a5"></span>bool <code class="sig-name descname">operator&gt;=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Atom8NeighborgeERK8Neighbor" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload &gt;= operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom8Neighbor4infoEv">
+<span id="_CPPv3NK4Atom8Neighbor4infoEv"></span><span id="_CPPv2NK4Atom8Neighbor4infoEv"></span><span id="Atom::Neighbor::infoC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1acbba61dc58c16fe7002a14a7a5017e7f"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Atom8Neighbor4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get atom information as a vector of strings.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Lines with atom information. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor5indexE">
+<span id="_CPPv3N3nnp4Atom8Neighbor5indexE"></span><span id="_CPPv2N3nnp4Atom8Neighbor5indexE"></span><span id="nnp::Atom::Neighbor::index__std::s"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a2a19893fb87b0de43ec460939209d726"></span>std::size_t <code class="sig-name descname">index</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor5indexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Index of neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor3tagE">
+<span id="_CPPv3N3nnp4Atom8Neighbor3tagE"></span><span id="_CPPv2N3nnp4Atom8Neighbor3tagE"></span><span id="nnp::Atom::Neighbor::tag__std::s"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1aecb8bf92173fb3959c934fe9efed2d15"></span>std::size_t <code class="sig-name descname">tag</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor3tagE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Tag of neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor7elementE">
+<span id="_CPPv3N3nnp4Atom8Neighbor7elementE"></span><span id="_CPPv2N3nnp4Atom8Neighbor7elementE"></span><span id="nnp::Atom::Neighbor::element__std::s"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a3c0720664c09022328aeb7a676b1a266"></span>std::size_t <code class="sig-name descname">element</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor7elementE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Element index of neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor1dE">
+<span id="_CPPv3N3nnp4Atom8Neighbor1dE"></span><span id="_CPPv2N3nnp4Atom8Neighbor1dE"></span><span id="nnp::Atom::Neighbor::d__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a46922b548b9819bbdeafaa0d9db9aa05"></span>double <code class="sig-name descname">d</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor1dE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Distance to neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor2fcE">
+<span id="_CPPv3N3nnp4Atom8Neighbor2fcE"></span><span id="_CPPv2N3nnp4Atom8Neighbor2fcE"></span><span id="nnp::Atom::Neighbor::fc__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a2c0c81ecc16f2f2241c555054b12c755"></span>double <code class="sig-name descname">fc</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor2fcE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cutoff function value. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor3dfcE">
+<span id="_CPPv3N3nnp4Atom8Neighbor3dfcE"></span><span id="_CPPv2N3nnp4Atom8Neighbor3dfcE"></span><span id="nnp::Atom::Neighbor::dfc__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a6de19249dc15f8126c03373af66c3794"></span>double <code class="sig-name descname">dfc</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor3dfcE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivative of cutoff function. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor2rcE">
+<span id="_CPPv3N3nnp4Atom8Neighbor2rcE"></span><span id="_CPPv2N3nnp4Atom8Neighbor2rcE"></span><span id="nnp::Atom::Neighbor::rc__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a3328aba160956a1fc4f976513cca025b"></span>double <code class="sig-name descname">rc</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor2rcE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cutoff radius for which cutoff and its derivative is cached. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor11cutoffAlphaE">
+<span id="_CPPv3N3nnp4Atom8Neighbor11cutoffAlphaE"></span><span id="_CPPv2N3nnp4Atom8Neighbor11cutoffAlphaE"></span><span id="nnp::Atom::Neighbor::cutoffAlpha__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1adcdb9f0c8af0587c32a59e7228adb8a8"></span>double <code class="sig-name descname">cutoffAlpha</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor11cutoffAlphaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cutoff <span class="math notranslate nohighlight">\(\alpha\)</span> for which cutoff and its derivative is cached. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor10cutoffTypeE">
+<span id="_CPPv3N3nnp4Atom8Neighbor10cutoffTypeE"></span><span id="_CPPv2N3nnp4Atom8Neighbor10cutoffTypeE"></span><span id="nnp::Atom::Neighbor::cutoffType__CutoffFunction::CutoffType"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a13a2bb9a946a9241b23240abae32ee6b"></span><a class="reference internal" href="classnnp_1_1CutoffFunction.html#_CPPv4N3nnp14CutoffFunctionE" title="nnp::CutoffFunction">CutoffFunction</a>::<a class="reference internal" href="classnnp_1_1CutoffFunction.html#_CPPv4N3nnp14CutoffFunction10CutoffTypeE" title="nnp::CutoffFunction::CutoffType">CutoffType</a> <code class="sig-name descname">cutoffType</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor10cutoffTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cutoff type of cached cutoff values. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor2drE">
+<span id="_CPPv3N3nnp4Atom8Neighbor2drE"></span><span id="_CPPv2N3nnp4Atom8Neighbor2drE"></span><span id="nnp::Atom::Neighbor::dr__Vec3D"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a5f338e8ace13b36746031fa76f1e170f"></span><a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <code class="sig-name descname">dr</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor2drE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Distance vector to neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor4dGdrE">
+<span id="_CPPv3N3nnp4Atom8Neighbor4dGdrE"></span><span id="_CPPv2N3nnp4Atom8Neighbor4dGdrE"></span><span id="nnp::Atom::Neighbor::dGdr__std::vector:Vec3D:"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1ace4770399203773624ab9c7db8db66d5"></span>std::vector&lt;<a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a>&gt; <code class="sig-name descname">dGdr</code><a class="headerlink" href="#_CPPv4N3nnp4Atom8Neighbor4dGdrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivatives of symmetry functions with respect to neighbor coordinates.</p>
+<p>May be empty, only filled when needed. Contains <span class="math notranslate nohighlight">\( \frac{\partial G_i}{\partial \alpha_j} \)</span>, where <span class="math notranslate nohighlight">\(G_i\)</span> is a symmetry function of atom <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(\alpha_j\)</span> is a coordinate <span class="math notranslate nohighlight">\( \alpha = x,y,z \)</span> of neighbor atom <span class="math notranslate nohighlight">\( j \)</span>, necessary for force calculation. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structnnp_1_1Atom_1_1Neighbor.html" class="btn btn-neutral float-right" title="Struct Atom::Neighbor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="namespace_std.html" class="btn btn-neutral float-left" title="Namespace std" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

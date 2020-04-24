@@ -1,0 +1,943 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Full API &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Full API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/unabridged_api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="full-api">
+<h1>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Eigen.html">Namespace Eigen</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_nnp.html">Namespace nnp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_nnp.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_nnp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_std.html">Namespace std</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="classes-and-structs">
+<h2>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnnp_1_1Atom.html">Struct Atom</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1Atom.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structnnp_1_1Atom.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1Atom.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html">Struct Atom::Neighbor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Layer.html">Struct NeuralNetwork::Layer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Layer.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Layer.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Neuron.html">Struct NeuralNetwork::Neuron</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Neuron.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1NeuralNetwork_1_1Neuron.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnnp_1_1Structure.html">Struct Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1Structure.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnnp_1_1SymmetryFunctionStatistics_1_1Container.html">Struct SymmetryFunctionStatistics::Container</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1SymmetryFunctionStatistics_1_1Container.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1SymmetryFunctionStatistics_1_1Container.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnnp_1_1Training_1_1UpdateCandidate.html">Struct Training::UpdateCandidate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1Training_1_1UpdateCandidate.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1Training_1_1UpdateCandidate.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structnnp_1_1Vec3D.html">Struct Vec3D</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structnnp_1_1Vec3D.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1CutoffFunction.html">Class CutoffFunction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1CutoffFunction.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Dataset.html">Class Dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Dataset.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1Dataset.html#base-type">Base Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1Dataset.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Dataset.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Element.html">Class Element</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Element.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1ElementMap.html">Class ElementMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1ElementMap.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1GradientDescent.html">Class GradientDescent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1GradientDescent.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1GradientDescent.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1GradientDescent.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1InterfaceLammps.html">Class InterfaceLammps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1InterfaceLammps.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1InterfaceLammps.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1InterfaceLammps.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1KalmanFilter.html">Class KalmanFilter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1KalmanFilter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1KalmanFilter.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1KalmanFilter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Log.html">Class Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Log.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Mode.html">Class Mode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Mode.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1Mode.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Mode.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1NeuralNetwork.html">Class NeuralNetwork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1NeuralNetwork.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1NeuralNetwork.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1NeuralNetwork.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Prediction.html">Class Prediction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Prediction.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1Prediction.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Prediction.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Settings.html">Class Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Settings.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SetupAnalysis.html">Class SetupAnalysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SetupAnalysis.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SetupAnalysis.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SetupAnalysis.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Stopwatch.html">Class Stopwatch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Stopwatch.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunction.html">Class SymmetryFunction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunction.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunction.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunction.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionAngularNarrow.html">Class SymmetryFunctionAngularNarrow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionAngularNarrow.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionAngularNarrow.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionAngularNarrow.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionAngularWide.html">Class SymmetryFunctionAngularWide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionAngularWide.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionAngularWide.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionAngularWide.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html">Class SymmetryFunctionGroup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroup.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupAngularNarrow.html">Class SymmetryFunctionGroupAngularNarrow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupAngularNarrow.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupAngularNarrow.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupAngularNarrow.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupAngularWide.html">Class SymmetryFunctionGroupAngularWide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupAngularWide.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupAngularWide.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupAngularWide.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupRadial.html">Class SymmetryFunctionGroupRadial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupRadial.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupRadial.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupRadial.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupWeightedAngular.html">Class SymmetryFunctionGroupWeightedAngular</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupWeightedAngular.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupWeightedAngular.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupWeightedAngular.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupWeightedRadial.html">Class SymmetryFunctionGroupWeightedRadial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupWeightedRadial.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupWeightedRadial.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionGroupWeightedRadial.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionRadial.html">Class SymmetryFunctionRadial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionRadial.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionRadial.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionRadial.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionStatistics.html">Class SymmetryFunctionStatistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionStatistics.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionStatistics.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionStatistics.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedAngular.html">Class SymmetryFunctionWeightedAngular</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedAngular.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedAngular.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedAngular.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedRadial.html">Class SymmetryFunctionWeightedRadial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedRadial.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedRadial.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1SymmetryFunctionWeightedRadial.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Training.html">Class Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Training.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1Training.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Training.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1Training.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Training.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classnnp_1_1Updater.html">Class Updater</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Updater.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classnnp_1_1Updater.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classnnp_1_1Updater.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_Settings_8cpp_1ab3acc0914dc4194db93bc0cf640a1736.html">Function createKnownKeywordsMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_Settings_8cpp_1ab3acc0914dc4194db93bc0cf640a1736.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a922944f33e09f55769b9834251be1b0c.html">Function nnp::appendLinesToFile(ofstream&amp;, vector&lt;string&gt; const)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a922944f33e09f55769b9834251be1b0c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a0ae30152be7ac9fbb4a595fd586eef7a.html">Function nnp::appendLinesToFile(FILE *const&amp;, vector&lt;string&gt; const)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a0ae30152be7ac9fbb4a595fd586eef7a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1aeed037cd4a793db2c1b490e6607c0866.html">Function nnp::appendLinesToFile(std::ofstream&amp;, std::vector&lt;std::string&gt; const)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1aeed037cd4a793db2c1b490e6607c0866.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a9a01beaa989d3578f213a32be1283f76.html">Function nnp::appendLinesToFile(FILE *const&amp;, std::vector&lt;std::string&gt; const)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a9a01beaa989d3578f213a32be1283f76.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1ac861b7fcd089a4cbaea63589dd8ac69e.html">Template Function nnp::comparePointerTargets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1ac861b7fcd089a4cbaea63589dd8ac69e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a9d1bbacf408dac7e040ce679791bc570.html">Function nnp::createFileHeader(vector&lt;string&gt; const&amp;, vector&lt;size_t&gt; const&amp;, vector&lt;string&gt; const&amp;, vector&lt;string&gt; const&amp;, char const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a9d1bbacf408dac7e040ce679791bc570.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a14c0fb8e3da51194b595b8a7a6470cd2.html">Function nnp::createFileHeader(std::vector&lt;std::string&gt; const&amp;, std::vector&lt;std::size_t&gt; const&amp;, std::vector&lt;std::string&gt; const&amp;, std::vector&lt;std::string&gt; const&amp;, char const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a14c0fb8e3da51194b595b8a7a6470cd2.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a5d65048b293d0abbd6c77a3f0365ea6a.html">Function nnp::operator*(Vec3D, double const)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a5d65048b293d0abbd6c77a3f0365ea6a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1aa351f31ce77706c4a47f54dd018fb11f.html">Function nnp::operator*(double const, Vec3D)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1aa351f31ce77706c4a47f54dd018fb11f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a0fca5b1d14fc5cf58d0503812ace7542.html">Function nnp::operator+</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a0fca5b1d14fc5cf58d0503812ace7542.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1aa41946cc03a845d677b7ec47c11edf17.html">Function nnp::operator-(Vec3D, Vec3D const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1aa41946cc03a845d677b7ec47c11edf17.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1aa9f1f4126ca847a2d5a060772f6d4cb6.html">Function nnp::operator-(Vec3D)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1aa9f1f4126ca847a2d5a060772f6d4cb6.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1ae895f68792de93c081ef2d568ae3358e.html">Function nnp::operator/</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1ae895f68792de93c081ef2d568ae3358e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a1589c883b03419579131181b3337f531.html">Function nnp::pad(string const&amp;, size_t, char, bool)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a1589c883b03419579131181b3337f531.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1ac5a2a928d69bd2ddc2e3aaea872f7e3b.html">Function nnp::pad(std::string const&amp;, std::size_t, char, bool)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1ac5a2a928d69bd2ddc2e3aaea872f7e3b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1ada65ef67cb7629b84a020f617a216273.html">Function nnp::pow_int</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1ada65ef67cb7629b84a020f617a216273.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1ac4dd8c6de17f9509eabaed0f143e95ea.html">Function nnp::reduce(string const&amp;, string const&amp;, string const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1ac4dd8c6de17f9509eabaed0f143e95ea.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a5d24728171accd3d3ea6ce905607c0ac.html">Function nnp::reduce(std::string const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a5d24728171accd3d3ea6ce905607c0ac.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a355b6ae0b4e3495fa9461cb59e22fa76.html">Template Function nnp::safeFind</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a355b6ae0b4e3495fa9461cb59e22fa76.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a63742bb398a42070e489b7c465952126.html">Function nnp::split(string const&amp;, char)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a63742bb398a42070e489b7c465952126.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1af6ccf9c445dcf9671d4dfb9486d0a56c.html">Function nnp::split(std::string const&amp;, char)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1af6ccf9c445dcf9671d4dfb9486d0a56c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a398f0bcafb57e99ba1581c4b8f8a7f76.html">Function nnp::strpr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a398f0bcafb57e99ba1581c4b8f8a7f76.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1a6a3c96fac1f80064cea00a2688e5287b.html">Function nnp::trim(string const&amp;, string const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1a6a3c96fac1f80064cea00a2688e5287b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespacennp_1abbc59184f0532e61f412f99d5f7a33a2.html">Function nnp::trim(std::string const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacennp_1abbc59184f0532e61f412f99d5f7a33a2.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="defines">
+<h2>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_NeuralNetwork_8cpp_1ae9e86c8b5c8422daa552e390225303ca.html">Define EXP_LIMIT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_NeuralNetwork_8cpp_1ae9e86c8b5c8422daa552e390225303ca.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_libnnpif_2mpi-extra_8h_1aaae430420e25984e327a89b068e1582b.html">Define MPI_SIZE_T</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_libnnpif_2mpi-extra_8h_1aaae430420e25984e327a89b068e1582b.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_libnnptrain_2mpi-extra_8h_1aaae430420e25984e327a89b068e1582b.html">Define MPI_SIZE_T</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_libnnptrain_2mpi-extra_8h_1aaae430420e25984e327a89b068e1582b.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_version_8h_1a38dab5423f1c93cd2dc3b8079fd88895.html">Define NNP_GIT_BRANCH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_version_8h_1a38dab5423f1c93cd2dc3b8079fd88895.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_version_8h_1a4ea9d7ff8f854998b863f71a670e6d2d.html">Define NNP_GIT_REV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_version_8h_1a4ea9d7ff8f854998b863f71a670e6d2d.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_version_8h_1a85d9a234f54dd66fb4b3e9e281188996.html">Define NNP_GIT_REV_SHORT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_version_8h_1a85d9a234f54dd66fb4b3e9e281188996.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_version_8h_1aaf49e9de66a3e2c3e71ab3d928deac71.html">Define NNP_VERSION</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_version_8h_1aaf49e9de66a3e2c3e71ab3d928deac71.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_Stopwatch_8h_1a5d391b49011fbb7fed985e90557b1b79.html">Define NOTIME</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_Stopwatch_8h_1a5d391b49011fbb7fed985e90557b1b79.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_utility_8cpp_1a6a9b23aa79b884aa301ad87a43bfbd96.html">Define STRPR_MAXBUF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_utility_8cpp_1a6a9b23aa79b884aa301ad87a43bfbd96.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_InterfaceLammps_8cpp_1ae888242d7f1a9f14ab3f2c97b3c616c3.html">Define TOLCUTOFF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_InterfaceLammps_8cpp_1ae888242d7f1a9f14ab3f2c97b3c616c3.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

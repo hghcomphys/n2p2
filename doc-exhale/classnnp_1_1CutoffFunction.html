@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class CutoffFunction &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class Dataset" href="classnnp_1_1Dataset.html" />
+    <link rel="prev" title="Struct Vec3D" href="structnnp_1_1Vec3D.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class CutoffFunction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1CutoffFunction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-cutofffunction">
+<span id="exhale-class-classnnp-1-1cutofffunction"></span><h1>Class CutoffFunction<a class="headerlink" href="#class-cutofffunction" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-cutofffunction-h"><span class="std std-ref">File CutoffFunction.h</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp14CutoffFunctionE">
+<span id="_CPPv3N3nnp14CutoffFunctionE"></span><span id="_CPPv2N3nnp14CutoffFunctionE"></span><span id="nnp::CutoffFunction"></span><span class="target" id="classnnp_1_1CutoffFunction"></span><em class="property">class </em><code class="sig-name descname">CutoffFunction</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunctionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N3nnp14CutoffFunction10CutoffTypeE">
+<span id="_CPPv3N3nnp14CutoffFunction10CutoffTypeE"></span><span id="_CPPv2N3nnp14CutoffFunction10CutoffTypeE"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8"></span><em class="property">enum </em><code class="sig-name descname">CutoffType</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction10CutoffTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List of available cutoff function types.</p>
+<p>Most cutoff types allow the definition of an inner cutoff <span class="math notranslate nohighlight">\( r_{ci} := \alpha \, r_c\)</span>. Then the cutoff is equal to <span class="math notranslate nohighlight">\(1\)</span> up to the inner cutoff:</p>
+<p><span class="math notranslate nohighlight">\( f_c(r) = \begin{cases} 1, &amp; \text{for } 0 \le r &lt; r_{ci} \\ f(x), &amp; \text{for } r_{ci} \le r &lt; r_c \text{ where } x := \frac{r - r_{ci}}{r_c - r_{ci}} \\ 0 &amp; \text{for } r \geq r_c \end{cases} \)</span> </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction7CT_HARDE">
+<span id="_CPPv3N3nnp14CutoffFunction7CT_HARDE"></span><span id="_CPPv2N3nnp14CutoffFunction7CT_HARDE"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8aad0969728f1ff733e44eeb23a0243f29"></span><code class="sig-name descname">CT_HARD</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction7CT_HARDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f(x) = 1\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction6CT_COSE">
+<span id="_CPPv3N3nnp14CutoffFunction6CT_COSE"></span><span id="_CPPv2N3nnp14CutoffFunction6CT_COSE"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8adb8558ac5f4c7f7e47ecc6e6febf6cc1"></span><code class="sig-name descname">CT_COS</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction6CT_COSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f(x) = \frac{1}{2} \left[ \cos (\pi x) + 1\right] \)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction8CT_TANHUE">
+<span id="_CPPv3N3nnp14CutoffFunction8CT_TANHUE"></span><span id="_CPPv2N3nnp14CutoffFunction8CT_TANHUE"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8aea950c10f5352bfe6d601fd68e61237c"></span><code class="sig-name descname">CT_TANHU</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction8CT_TANHUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_c(r) = \tanh^3 \left(1 - \frac{r}{r_c} \right) \)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction7CT_TANHE">
+<span id="_CPPv3N3nnp14CutoffFunction7CT_TANHE"></span><span id="_CPPv2N3nnp14CutoffFunction7CT_TANHE"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8a0ec474efe78ea6ee51f6a92b109c1688"></span><code class="sig-name descname">CT_TANH</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction7CT_TANHE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f_c(r) = c \tanh^3 \left(1 - \frac{r}{r_c} \right),\, f(0) = 1 \)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction6CT_EXPE">
+<span id="_CPPv3N3nnp14CutoffFunction6CT_EXPE"></span><span id="_CPPv2N3nnp14CutoffFunction6CT_EXPE"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8ac56c478b60424a8239af9240824c75ab"></span><code class="sig-name descname">CT_EXP</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction6CT_EXPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f(x) = e^{1 - \frac{1}{1 - x^2}}\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction8CT_POLY1E">
+<span id="_CPPv3N3nnp14CutoffFunction8CT_POLY1E"></span><span id="_CPPv2N3nnp14CutoffFunction8CT_POLY1E"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8aa026feb56e31f7b86310470f6d4b8fc3"></span><code class="sig-name descname">CT_POLY1</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction8CT_POLY1E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f(x) = (2x - 3)x^2 + 1\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction8CT_POLY2E">
+<span id="_CPPv3N3nnp14CutoffFunction8CT_POLY2E"></span><span id="_CPPv2N3nnp14CutoffFunction8CT_POLY2E"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8a58e2b60c88345e1eda934ccfa8a502db"></span><code class="sig-name descname">CT_POLY2</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction8CT_POLY2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f(x) = ((15 - 6x)x - 10) x^3 + 1\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction8CT_POLY3E">
+<span id="_CPPv3N3nnp14CutoffFunction8CT_POLY3E"></span><span id="_CPPv2N3nnp14CutoffFunction8CT_POLY3E"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8af34a44bd38be6dfdde4bc60a19c09e34"></span><code class="sig-name descname">CT_POLY3</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction8CT_POLY3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f(x) = (x(x(20x - 70) + 84) - 35)x^4 + 1\)</span> </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp14CutoffFunction8CT_POLY4E">
+<span id="_CPPv3N3nnp14CutoffFunction8CT_POLY4E"></span><span id="_CPPv2N3nnp14CutoffFunction8CT_POLY4E"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0a5fd8220ae66e1442b6692885316fa8ae5d32c978f9537fd2e2fa4ac42797cc7"></span><code class="sig-name descname">CT_POLY4</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction8CT_POLY4E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\(f(x) = (x(x((315 - 70x)x - 540) + 420) - 126)x^5 + 1\)</span> </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N14CutoffFunction14CutoffFunctionEv">
+<span id="_CPPv3N14CutoffFunction14CutoffFunctionEv"></span><span id="_CPPv2N14CutoffFunction14CutoffFunctionEv"></span><span id="CutoffFunction::CutoffFunction"></span><span class="target" id="classnnp_1_1CutoffFunction_1a7f4899e36151a1cb511485fa4d545860"></span><code class="sig-name descname">CutoffFunction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14CutoffFunction14CutoffFunctionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor, initializes to ´CT_HARD´. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N14CutoffFunction13setCutoffTypeEK10CutoffType">
+<span id="_CPPv3N14CutoffFunction13setCutoffTypeEK10CutoffType"></span><span id="_CPPv2N14CutoffFunction13setCutoffTypeEK10CutoffType"></span><span id="CutoffFunction::setCutoffType__CutoffTypeC"></span><span class="target" id="classnnp_1_1CutoffFunction_1aa1f346f37b24b88ca7cd9846bdae30bf"></span>void <code class="sig-name descname">setCutoffType</code><span class="sig-paren">(</span>CutoffType <em class="property">const</em> <em>cutoffType</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14CutoffFunction13setCutoffTypeEK10CutoffType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set cutoff type.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">cutoffType</span></code>: Type of cutoff used. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction13getCutoffTypeEv">
+<span id="_CPPv3NK3nnp14CutoffFunction13getCutoffTypeEv"></span><span id="_CPPv2NK3nnp14CutoffFunction13getCutoffTypeEv"></span><span id="nnp::CutoffFunction::getCutoffTypeC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a5c52729c9d4e3a3630518ff6057ef882"></span><a class="reference internal" href="#_CPPv4N3nnp14CutoffFunctionE" title="nnp::CutoffFunction">CutoffFunction</a>::<a class="reference internal" href="#_CPPv4N3nnp14CutoffFunction10CutoffTypeE" title="nnp::CutoffFunction::CutoffType">CutoffType</a> <code class="sig-name descname">getCutoffType</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction13getCutoffTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1CutoffFunction_1ab8209fb59cdb04830cf6e5e75509eea5"><span class="std std-ref">cutoffType</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>CutoffType used. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N14CutoffFunction15setCutoffRadiusEKd">
+<span id="_CPPv3N14CutoffFunction15setCutoffRadiusEKd"></span><span id="_CPPv2N14CutoffFunction15setCutoffRadiusEKd"></span><span id="CutoffFunction::setCutoffRadius__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1afc4ce48d3fe6450efb47ed3e2c1de239"></span>void <code class="sig-name descname">setCutoffRadius</code><span class="sig-paren">(</span>double <em class="property">const</em> <em>cutoffRadius</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14CutoffFunction15setCutoffRadiusEKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set cutoff radius.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">cutoffRadius</span></code>: Cutoff radius <span class="math notranslate nohighlight">\(r_c\)</span>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction15getCutoffRadiusEv">
+<span id="_CPPv3NK3nnp14CutoffFunction15getCutoffRadiusEv"></span><span id="_CPPv2NK3nnp14CutoffFunction15getCutoffRadiusEv"></span><span id="nnp::CutoffFunction::getCutoffRadiusC"></span><span class="target" id="classnnp_1_1CutoffFunction_1ab01d0c309e472b2922f73b38212aa0fd"></span>double <code class="sig-name descname">getCutoffRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction15getCutoffRadiusEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1CutoffFunction_1aa24d2dec5b988c0d4d0c575de30387b4"><span class="std std-ref">rc</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Cutoff radius used. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N14CutoffFunction18setCutoffParameterEKd">
+<span id="_CPPv3N14CutoffFunction18setCutoffParameterEKd"></span><span id="_CPPv2N14CutoffFunction18setCutoffParameterEKd"></span><span id="CutoffFunction::setCutoffParameter__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a6c7e681af3177f922e80f6896b210f26"></span>void <code class="sig-name descname">setCutoffParameter</code><span class="sig-paren">(</span>double <em class="property">const</em> <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14CutoffFunction18setCutoffParameterEKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set parameter for polynomial cutoff function (CT_POLY).</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">alpha</span></code>: Width parameter <span class="math notranslate nohighlight">\(\alpha\)</span>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction18getCutoffParameterEv">
+<span id="_CPPv3NK3nnp14CutoffFunction18getCutoffParameterEv"></span><span id="_CPPv2NK3nnp14CutoffFunction18getCutoffParameterEv"></span><span id="nnp::CutoffFunction::getCutoffParameterC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a9a5686d35bee1194512aaecf2d04a353"></span>double <code class="sig-name descname">getCutoffParameter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction18getCutoffParameterEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1CutoffFunction_1ac446e2e99aa95f5f5ebd14987b17a842"><span class="std std-ref">alpha</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Cutoff parameter used. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction1fEd">
+<span id="_CPPv3NK3nnp14CutoffFunction1fEd"></span><span id="_CPPv2NK3nnp14CutoffFunction1fEd"></span><span id="nnp::CutoffFunction::f__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a20f8fb3444c909d70d30f776fd7c3264"></span>double <code class="sig-name descname">f</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction1fEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cutoff function <span class="math notranslate nohighlight">\(f_c\)</span>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Cutoff function value. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">r</span></code>: Distance. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction2dfEd">
+<span id="_CPPv3NK3nnp14CutoffFunction2dfEd"></span><span id="_CPPv2NK3nnp14CutoffFunction2dfEd"></span><span id="nnp::CutoffFunction::df__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1af200145e23feafde412abf4a043d58c3"></span>double <code class="sig-name descname">df</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction2dfEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivative of cutoff function <span class="math notranslate nohighlight">\(\frac{d f_c}{d r}\)</span>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Value of cutoff function derivative. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">r</span></code>: Distance. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction3fdfEdRdRd">
+<span id="_CPPv3NK3nnp14CutoffFunction3fdfEdRdRd"></span><span id="_CPPv2NK3nnp14CutoffFunction3fdfEdRdRd"></span><span id="nnp::CutoffFunction::fdf__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a4c75abd984936445883a48c64080c015"></span>void <code class="sig-name descname">fdf</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction3fdfEdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate cutoff function <span class="math notranslate nohighlight">\(f_c\)</span> and derivative <span class="math notranslate nohighlight">\(\frac{d f_c}{d r}\)</span>.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">r</span></code>: Distance. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">fc</span></code>: Cutoff function value. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">dfc</span></code>: Value of cutoff function derivative. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction5fHARDEd">
+<span id="_CPPv3NK3nnp14CutoffFunction5fHARDEd"></span><span id="_CPPv2NK3nnp14CutoffFunction5fHARDEd"></span><span id="nnp::CutoffFunction::fHARD__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0373e0e1dbb7209d4b8a73ad351662e4"></span>double <code class="sig-name descname">fHARD</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction5fHARDEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction6dfHARDEd">
+<span id="_CPPv3NK3nnp14CutoffFunction6dfHARDEd"></span><span id="_CPPv2NK3nnp14CutoffFunction6dfHARDEd"></span><span id="nnp::CutoffFunction::dfHARD__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1ad55f96ed2a7519f501793d783ab5e6de"></span>double <code class="sig-name descname">dfHARD</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction6dfHARDEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp14CutoffFunction7fdfHARDEdRdRd">
+<span id="_CPPv3NK3nnp14CutoffFunction7fdfHARDEdRdRd"></span><span id="_CPPv2NK3nnp14CutoffFunction7fdfHARDEdRdRd"></span><span id="nnp::CutoffFunction::fdfHARD__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a1e2f4f3a7dfc2f9a2b9a4b653cca31b1"></span>void <code class="sig-name descname">fdfHARD</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp14CutoffFunction7fdfHARDEdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction4fCOSEd">
+<span id="_CPPv3NK14CutoffFunction4fCOSEd"></span><span id="_CPPv2NK14CutoffFunction4fCOSEd"></span><span id="CutoffFunction::fCOS__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a780b7b2b9e74d48f7b2b3049e8c76376"></span>double <code class="sig-name descname">fCOS</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction4fCOSEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction5dfCOSEd">
+<span id="_CPPv3NK14CutoffFunction5dfCOSEd"></span><span id="_CPPv2NK14CutoffFunction5dfCOSEd"></span><span id="CutoffFunction::dfCOS__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a74174c1695b9eac6109268755c5b3b64"></span>double <code class="sig-name descname">dfCOS</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction5dfCOSEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction6fdfCOSEdRdRd">
+<span id="_CPPv3NK14CutoffFunction6fdfCOSEdRdRd"></span><span id="_CPPv2NK14CutoffFunction6fdfCOSEdRdRd"></span><span id="CutoffFunction::fdfCOS__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a16669e0f04bd62f4229572eae57551f3"></span>void <code class="sig-name descname">fdfCOS</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction6fdfCOSEdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction6fTANHUEd">
+<span id="_CPPv3NK14CutoffFunction6fTANHUEd"></span><span id="_CPPv2NK14CutoffFunction6fTANHUEd"></span><span id="CutoffFunction::fTANHU__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a42586e892fce855dce102400c82a75c2"></span>double <code class="sig-name descname">fTANHU</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction6fTANHUEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction7dfTANHUEd">
+<span id="_CPPv3NK14CutoffFunction7dfTANHUEd"></span><span id="_CPPv2NK14CutoffFunction7dfTANHUEd"></span><span id="CutoffFunction::dfTANHU__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a9b8e50892ac89fcb6ebcf7eef846025a"></span>double <code class="sig-name descname">dfTANHU</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction7dfTANHUEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction8fdfTANHUEdRdRd">
+<span id="_CPPv3NK14CutoffFunction8fdfTANHUEdRdRd"></span><span id="_CPPv2NK14CutoffFunction8fdfTANHUEdRdRd"></span><span id="CutoffFunction::fdfTANHU__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a472c9e5059f2da5b23a673e8daeed723"></span>void <code class="sig-name descname">fdfTANHU</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction8fdfTANHUEdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction5fTANHEd">
+<span id="_CPPv3NK14CutoffFunction5fTANHEd"></span><span id="_CPPv2NK14CutoffFunction5fTANHEd"></span><span id="CutoffFunction::fTANH__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a62a54a42d19231a8b82e3a8b90910b83"></span>double <code class="sig-name descname">fTANH</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction5fTANHEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction6dfTANHEd">
+<span id="_CPPv3NK14CutoffFunction6dfTANHEd"></span><span id="_CPPv2NK14CutoffFunction6dfTANHEd"></span><span id="CutoffFunction::dfTANH__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a869aa192f06a8ad30d34c234c74be09d"></span>double <code class="sig-name descname">dfTANH</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction6dfTANHEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction7fdfTANHEdRdRd">
+<span id="_CPPv3NK14CutoffFunction7fdfTANHEdRdRd"></span><span id="_CPPv2NK14CutoffFunction7fdfTANHEdRdRd"></span><span id="CutoffFunction::fdfTANH__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a210a02a008b6880621502b3af7cbd21a"></span>void <code class="sig-name descname">fdfTANH</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction7fdfTANHEdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction6fPOLY1Ed">
+<span id="_CPPv3NK14CutoffFunction6fPOLY1Ed"></span><span id="_CPPv2NK14CutoffFunction6fPOLY1Ed"></span><span id="CutoffFunction::fPOLY1__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a3d3fd0c236e450fe6780c2d48fc25a12"></span>double <code class="sig-name descname">fPOLY1</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction6fPOLY1Ed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction7dfPOLY1Ed">
+<span id="_CPPv3NK14CutoffFunction7dfPOLY1Ed"></span><span id="_CPPv2NK14CutoffFunction7dfPOLY1Ed"></span><span id="CutoffFunction::dfPOLY1__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a07d1c591dc6b6fbb5aff70b2f6a7c709"></span>double <code class="sig-name descname">dfPOLY1</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction7dfPOLY1Ed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction8fdfPOLY1EdRdRd">
+<span id="_CPPv3NK14CutoffFunction8fdfPOLY1EdRdRd"></span><span id="_CPPv2NK14CutoffFunction8fdfPOLY1EdRdRd"></span><span id="CutoffFunction::fdfPOLY1__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1aca4834c43481b71c17eabd656700e378"></span>void <code class="sig-name descname">fdfPOLY1</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction8fdfPOLY1EdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction6fPOLY2Ed">
+<span id="_CPPv3NK14CutoffFunction6fPOLY2Ed"></span><span id="_CPPv2NK14CutoffFunction6fPOLY2Ed"></span><span id="CutoffFunction::fPOLY2__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a6aa845825a573e73e6ab7e01f6c8a928"></span>double <code class="sig-name descname">fPOLY2</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction6fPOLY2Ed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction7dfPOLY2Ed">
+<span id="_CPPv3NK14CutoffFunction7dfPOLY2Ed"></span><span id="_CPPv2NK14CutoffFunction7dfPOLY2Ed"></span><span id="CutoffFunction::dfPOLY2__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a8d6d1b13d998138e174f83e768410e18"></span>double <code class="sig-name descname">dfPOLY2</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction7dfPOLY2Ed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction8fdfPOLY2EdRdRd">
+<span id="_CPPv3NK14CutoffFunction8fdfPOLY2EdRdRd"></span><span id="_CPPv2NK14CutoffFunction8fdfPOLY2EdRdRd"></span><span id="CutoffFunction::fdfPOLY2__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1ae864fc4f490f8d1f2de92bf426e30005"></span>void <code class="sig-name descname">fdfPOLY2</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction8fdfPOLY2EdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction6fPOLY3Ed">
+<span id="_CPPv3NK14CutoffFunction6fPOLY3Ed"></span><span id="_CPPv2NK14CutoffFunction6fPOLY3Ed"></span><span id="CutoffFunction::fPOLY3__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a82988578ed08f0edf94a71d711b6f6bb"></span>double <code class="sig-name descname">fPOLY3</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction6fPOLY3Ed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction7dfPOLY3Ed">
+<span id="_CPPv3NK14CutoffFunction7dfPOLY3Ed"></span><span id="_CPPv2NK14CutoffFunction7dfPOLY3Ed"></span><span id="CutoffFunction::dfPOLY3__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1ae7543e58ad9e221426e51e358e357915"></span>double <code class="sig-name descname">dfPOLY3</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction7dfPOLY3Ed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction8fdfPOLY3EdRdRd">
+<span id="_CPPv3NK14CutoffFunction8fdfPOLY3EdRdRd"></span><span id="_CPPv2NK14CutoffFunction8fdfPOLY3EdRdRd"></span><span id="CutoffFunction::fdfPOLY3__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a84ad44b9e87f440128ead5c6063099ab"></span>void <code class="sig-name descname">fdfPOLY3</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction8fdfPOLY3EdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction6fPOLY4Ed">
+<span id="_CPPv3NK14CutoffFunction6fPOLY4Ed"></span><span id="_CPPv2NK14CutoffFunction6fPOLY4Ed"></span><span id="CutoffFunction::fPOLY4__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a72e033b71df5c0514b41e863ac9aadfd"></span>double <code class="sig-name descname">fPOLY4</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction6fPOLY4Ed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction7dfPOLY4Ed">
+<span id="_CPPv3NK14CutoffFunction7dfPOLY4Ed"></span><span id="_CPPv2NK14CutoffFunction7dfPOLY4Ed"></span><span id="CutoffFunction::dfPOLY4__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1ae54cf76eeebbb04c97e92d9b8c53b7e5"></span>double <code class="sig-name descname">dfPOLY4</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction7dfPOLY4Ed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction8fdfPOLY4EdRdRd">
+<span id="_CPPv3NK14CutoffFunction8fdfPOLY4EdRdRd"></span><span id="_CPPv2NK14CutoffFunction8fdfPOLY4EdRdRd"></span><span id="CutoffFunction::fdfPOLY4__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1ac7f1d833e814d6388d07df3663e440fd"></span>void <code class="sig-name descname">fdfPOLY4</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction8fdfPOLY4EdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction4fEXPEd">
+<span id="_CPPv3NK14CutoffFunction4fEXPEd"></span><span id="_CPPv2NK14CutoffFunction4fEXPEd"></span><span id="CutoffFunction::fEXP__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a79ba19a48c27665ae00056d7a53304d6"></span>double <code class="sig-name descname">fEXP</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction4fEXPEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction5dfEXPEd">
+<span id="_CPPv3NK14CutoffFunction5dfEXPEd"></span><span id="_CPPv2NK14CutoffFunction5dfEXPEd"></span><span id="CutoffFunction::dfEXP__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a9dd86bedb541f1535ea72969f907dfe0"></span>double <code class="sig-name descname">dfEXP</code><span class="sig-paren">(</span>double <em>r</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction5dfEXPEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK14CutoffFunction6fdfEXPEdRdRd">
+<span id="_CPPv3NK14CutoffFunction6fdfEXPEdRdRd"></span><span id="_CPPv2NK14CutoffFunction6fdfEXPEdRdRd"></span><span id="CutoffFunction::fdfEXP__double.doubleR.doubleRC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a309642c2ac593fb2d9a6a4c2c7029d2c"></span>void <code class="sig-name descname">fdfEXP</code><span class="sig-paren">(</span>double <em>r</em>, double &amp;<em>fc</em>, double &amp;<em>dfc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14CutoffFunction6fdfEXPEdRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction10cutoffTypeE">
+<span id="_CPPv3N3nnp14CutoffFunction10cutoffTypeE"></span><span id="_CPPv2N3nnp14CutoffFunction10cutoffTypeE"></span><span id="nnp::CutoffFunction::cutoffType__CutoffType"></span><span class="target" id="classnnp_1_1CutoffFunction_1ab8209fb59cdb04830cf6e5e75509eea5"></span><a class="reference internal" href="#_CPPv4N3nnp14CutoffFunction10CutoffTypeE" title="nnp::CutoffFunction::CutoffType">CutoffType</a> <code class="sig-name descname">cutoffType</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction10cutoffTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cutoff function type. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction2rcE">
+<span id="_CPPv3N3nnp14CutoffFunction2rcE"></span><span id="_CPPv2N3nnp14CutoffFunction2rcE"></span><span id="nnp::CutoffFunction::rc__double"></span><span class="target" id="classnnp_1_1CutoffFunction_1aa24d2dec5b988c0d4d0c575de30387b4"></span>double <code class="sig-name descname">rc</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction2rcE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Outer cutoff radius <span class="math notranslate nohighlight">\(r_c\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction5rcinvE">
+<span id="_CPPv3N3nnp14CutoffFunction5rcinvE"></span><span id="_CPPv2N3nnp14CutoffFunction5rcinvE"></span><span id="nnp::CutoffFunction::rcinv__double"></span><span class="target" id="classnnp_1_1CutoffFunction_1a3b49fe0d0a23564e793c4870326e9189"></span>double <code class="sig-name descname">rcinv</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction5rcinvE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inverse cutoff radius <span class="math notranslate nohighlight">\(\frac{1}{r_c}\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction3rciE">
+<span id="_CPPv3N3nnp14CutoffFunction3rciE"></span><span id="_CPPv2N3nnp14CutoffFunction3rciE"></span><span id="nnp::CutoffFunction::rci__double"></span><span class="target" id="classnnp_1_1CutoffFunction_1a0cfa150a9bdccd7069db2658c6476fcd"></span>double <code class="sig-name descname">rci</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction3rciE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inner cutoff for cutoff function types which allow shifting. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction5alphaE">
+<span id="_CPPv3N3nnp14CutoffFunction5alphaE"></span><span id="_CPPv2N3nnp14CutoffFunction5alphaE"></span><span id="nnp::CutoffFunction::alpha__double"></span><span class="target" id="classnnp_1_1CutoffFunction_1ac446e2e99aa95f5f5ebd14987b17a842"></span>double <code class="sig-name descname">alpha</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction5alphaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cutoff function parameter for <code class="docutils literal notranslate"><span class="pre">CT_POLYn</span></code> and <code class="docutils literal notranslate"><span class="pre">CT_EXP</span></code> <span class="math notranslate nohighlight">\(\alpha\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction2iwE">
+<span id="_CPPv3N3nnp14CutoffFunction2iwE"></span><span id="_CPPv2N3nnp14CutoffFunction2iwE"></span><span id="nnp::CutoffFunction::iw__double"></span><span class="target" id="classnnp_1_1CutoffFunction_1a4817d8512667e5f3701102fc1341d4c0"></span>double <code class="sig-name descname">iw</code><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction2iwE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inverse width of cutoff function <span class="math notranslate nohighlight">\(\frac{1}{r_c - r_{ci}}\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction4fPtrE">
+<span id="_CPPv3N3nnp14CutoffFunction4fPtrE"></span><span id="_CPPv2N3nnp14CutoffFunction4fPtrE"></span><span class="target" id="classnnp_1_1CutoffFunction_1a71b73f62e0117f37ed1adecaa7f25c53"></span>double (<code class="sig-name descname">CutoffFunction</code>::* <code class="sig-name descname">fPtr</code>)<span class="sig-paren">(</span>double r<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction4fPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function pointer to f. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction5dfPtrE">
+<span id="_CPPv3N3nnp14CutoffFunction5dfPtrE"></span><span id="_CPPv2N3nnp14CutoffFunction5dfPtrE"></span><span class="target" id="classnnp_1_1CutoffFunction_1a9204d9d7da0b9c8f35463ccd6f948d00"></span>double (<code class="sig-name descname">CutoffFunction</code>::* <code class="sig-name descname">dfPtr</code>)<span class="sig-paren">(</span>double r<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction5dfPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function pointer to df. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp14CutoffFunction6fdfPtrE">
+<span id="_CPPv3N3nnp14CutoffFunction6fdfPtrE"></span><span id="_CPPv2N3nnp14CutoffFunction6fdfPtrE"></span><span class="target" id="classnnp_1_1CutoffFunction_1afdee165e8b5ffa137b8a4bdb6e4d9263"></span>void (<code class="sig-name descname">CutoffFunction</code>::* <code class="sig-name descname">fdfPtr</code>)<span class="sig-paren">(</span>double r, double &amp;fc, double &amp;dfc<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4N3nnp14CutoffFunction6fdfPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function pointer to fdf. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Static Attributes</p>
+<dl class="cpp member">
+<dt id="_CPPv4N14CutoffFunction2PIE">
+<span id="_CPPv3N14CutoffFunction2PIE"></span><span id="_CPPv2N14CutoffFunction2PIE"></span><span id="CutoffFunction::PI__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a55e8a080377097e32d157c68c882ccc7"></span>double <em class="property">const</em> <code class="sig-name descname">PI</code> = 4.0 * atan(1.0)<a class="headerlink" href="#_CPPv4N14CutoffFunction2PIE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N14CutoffFunction4PI_2E">
+<span id="_CPPv3N14CutoffFunction4PI_2E"></span><span id="_CPPv2N14CutoffFunction4PI_2E"></span><span id="CutoffFunction::PI_2__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a5dbfd7a760341a2d026bdfd8d15665fe"></span>double <em class="property">const</em> <code class="sig-name descname">PI_2</code> = 2.0 * atan(1.0)<a class="headerlink" href="#_CPPv4N14CutoffFunction4PI_2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N14CutoffFunction1EE">
+<span id="_CPPv3N14CutoffFunction1EE"></span><span id="_CPPv2N14CutoffFunction1EE"></span><span id="CutoffFunction::E__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1ab449d1a100fe7094be973daaadb6c139"></span>double <em class="property">const</em> <code class="sig-name descname">E</code> = exp(1.0)<a class="headerlink" href="#_CPPv4N14CutoffFunction1EE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N14CutoffFunction8TANH_PREE">
+<span id="_CPPv3N14CutoffFunction8TANH_PREE"></span><span id="_CPPv2N14CutoffFunction8TANH_PREE"></span><span id="CutoffFunction::TANH_PRE__doubleC"></span><span class="target" id="classnnp_1_1CutoffFunction_1a1026475d56930d8917132b5a7ed022fa"></span>double <em class="property">const</em> <code class="sig-name descname">TANH_PRE</code> = pow((<a class="reference internal" href="#_CPPv4N14CutoffFunction1EE" title="CutoffFunction::E">E</a> + 1 / <a class="reference internal" href="#_CPPv4N14CutoffFunction1EE" title="CutoffFunction::E">E</a>) / (<a class="reference internal" href="#_CPPv4N14CutoffFunction1EE" title="CutoffFunction::E">E</a> - 1 / <a class="reference internal" href="#_CPPv4N14CutoffFunction1EE" title="CutoffFunction::E">E</a>), 3)<a class="headerlink" href="#_CPPv4N14CutoffFunction8TANH_PREE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1Dataset.html" class="btn btn-neutral float-right" title="Class Dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="structnnp_1_1Vec3D.html" class="btn btn-neutral float-left" title="Struct Vec3D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

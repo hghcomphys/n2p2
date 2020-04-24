@@ -1,0 +1,156 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h:
+
+Program Listing for File NeuralNetwork.h
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/NeuralNetwork.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef NEURALNETWORK_H
+   #define NEURALNETWORK_H
+   
+   #include <fstream>   // std::ofstream
+   #include <string>    // std::string
+   #include <vector>    // std::vector
+   
+   namespace nnp
+   {
+   
+   class NeuralNetwork
+   {
+   public:
+       enum ActivationFunction
+       {
+           AF_IDENTITY,
+           AF_TANH,
+           AF_LOGISTIC,
+           AF_SOFTPLUS,
+           AF_RELU,
+           AF_GAUSSIAN,
+           AF_COS,
+           AF_REVLOGISTIC,
+           AF_EXP,
+           AF_HARMONIC
+       };
+   
+       enum ModificationScheme
+       {
+           MS_ZEROBIAS,
+           MS_ZEROOUTPUTWEIGHTS,
+           MS_FANIN,
+           MS_GLOROTBENGIO,
+           MS_NGUYENWIDROW,
+           MS_PRECONDITIONOUTPUT
+       };
+   
+       NeuralNetwork(
+                   int                              numLayers,
+                   int const* const&                numNeuronsPerLayer,
+                   ActivationFunction const* const& activationFunctionsPerLayer);
+       ~NeuralNetwork();
+       void                     setNormalizeNeurons(bool normalizeNeurons);
+       int                      getNumNeurons() const;
+       int                      getNumConnections() const;
+       int                      getNumWeights() const;
+       int                      getNumBiases() const;
+       void                     setConnections(double const* const& connections);
+       void                     getConnections(double* connections) const;
+       void                     initializeConnectionsRandomUniform(
+                                                               unsigned int seed);
+       void                     modifyConnections(
+                                           ModificationScheme modificationScheme);
+       void                     modifyConnections(
+                                            ModificationScheme modificationScheme,
+                                            double             parameter1,
+                                            double             parameter2);
+       void                     setInput(double const* const& input) const;
+       void                     getOutput(double* output) const;
+       void                     propagate();
+       void                     calculateDEdG(double* dEdG) const;
+       void                     calculateDEdc(double* dEdc) const;
+       void                     calculateDFdc(double*              dFdc,
+                                              double const* const& dGdxyz) const;
+       void                     writeConnections(std::ofstream& file) const;
+       void                     getNeuronStatistics(long*   count,
+                                                    double* min,
+                                                    double* max,
+                                                    double* sum,
+                                                    double* sum2);
+       void                     resetNeuronStatistics();
+       //void   writeStatus(int, int);
+       long                     getMemoryUsage();
+       std::vector<std::string> info() const;
+   
+   private:
+       typedef struct
+       {
+           long    count;
+           double  x;
+           double  value;
+           double  dfdx;
+           double  d2fdx2;
+           double  bias;
+           double  dxdG;
+           double  min;
+           double  max;
+           double  sum;
+           double  sum2;
+           double* weights;
+       } Neuron;
+   
+       typedef struct
+       {
+           int                numNeurons;
+           int                numNeuronsPrevLayer;
+           ActivationFunction activationFunction;
+           Neuron*            neurons;
+       } Layer;
+   
+       bool   normalizeNeurons;
+       int    numWeights;
+       int    numBiases;
+       int    numConnections;
+       int    numLayers;
+       int    numHiddenLayers;
+       int*   weightOffset;
+       int*   biasOffset;
+       int*   biasOnlyOffset;
+       Layer* inputLayer;
+       Layer* outputLayer;
+       Layer* layers;
+   
+       void   calculateDEdb(double* dEdb) const;
+       void   calculateDxdG(int index) const;
+       void   calculateD2EdGdc(int                  index,
+                               double const* const& dEdb,
+                               double*              d2EdGdc) const;
+       void   allocateLayer(Layer&             layer,
+                            int                numNeuronsPrevLayer,
+                            int                numNeurons,
+                            ActivationFunction activationFunction);
+       void   propagateLayer(Layer& layer, Layer& layerPrev);
+   };
+   
+   }
+   
+   #endif

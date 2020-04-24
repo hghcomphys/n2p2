@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct Atom::Neighbor &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct NeuralNetwork::Layer" href="structnnp_1_1NeuralNetwork_1_1Layer.html" />
+    <link rel="prev" title="Struct Atom" href="structnnp_1_1Atom.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Struct Atom::Neighbor</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/structnnp_1_1Atom_1_1Neighbor.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-atom-neighbor">
+<span id="exhale-struct-structnnp-1-1atom-1-1neighbor"></span><h1>Struct Atom::Neighbor<a class="headerlink" href="#struct-atom-neighbor" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Atom.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-atom-h"><span class="std std-ref">File Atom.h</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<p>This struct is a nested type of <a class="reference internal" href="structnnp_1_1Atom.html#exhale-struct-structnnp-1-1atom"><span class="std std-ref">Struct Atom</span></a>.</p>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp4Atom8NeighborE">
+<span id="_CPPv3N3nnp4Atom8NeighborE"></span><span id="_CPPv2N3nnp4Atom8NeighborE"></span><span id="nnp::Atom::Neighbor"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor"></span><em class="property">struct </em><code class="sig-name descname">Neighbor</code><br /></dt>
+<dd><p>Struct to store information on neighbor atoms. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N4Atom8Neighbor8NeighborEv">
+<span id="_CPPv3N4Atom8Neighbor8NeighborEv"></span><span id="_CPPv2N4Atom8Neighbor8NeighborEv"></span><span id="Atom::Neighbor::Neighbor"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a1ec6870a366bbce26e7ba574eb8d6d81"></span><code class="sig-name descname">Neighbor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p><a class="reference internal" href="#structnnp_1_1Atom_1_1Neighbor"><span class="std std-ref">Neighbor</span></a> constructor, initialize to zero. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom8NeighboreqERK8Neighbor">
+<span id="_CPPv3NK4Atom8NeighboreqERK8Neighbor"></span><span id="_CPPv2NK4Atom8NeighboreqERK8Neighbor"></span><span id="Atom::Neighbor::eq-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a996c56138f8d0430fde95e8c0f3f35a3"></span>bool <code class="sig-name descname">operator==</code><span class="sig-paren">(</span>Neighbor <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<dd><p>Overload == operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Atom8NeighborneERK8Neighbor">
+<span id="_CPPv3NK3nnp4Atom8NeighborneERK8Neighbor"></span><span id="_CPPv2NK3nnp4Atom8NeighborneERK8Neighbor"></span><span id="nnp::Atom::Neighbor::neq-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a121a1bb590e9e578d86fc3a8e5244444"></span>bool <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><a class="reference internal" href="structnnp_1_1Atom.html#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<dd><p>Overload != operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom8NeighborltERK8Neighbor">
+<span id="_CPPv3NK4Atom8NeighborltERK8Neighbor"></span><span id="_CPPv2NK4Atom8NeighborltERK8Neighbor"></span><span id="Atom::Neighbor::lt-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1ae02c5c3425292b8ea157ae9403176a67"></span>bool <code class="sig-name descname">operator&lt;</code><span class="sig-paren">(</span>Neighbor <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<dd><p>Overload &lt; operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Atom8NeighborgtERK8Neighbor">
+<span id="_CPPv3NK3nnp4Atom8NeighborgtERK8Neighbor"></span><span id="_CPPv2NK3nnp4Atom8NeighborgtERK8Neighbor"></span><span id="nnp::Atom::Neighbor::gt-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1aecf339545b12c6184e9bae2ba789394f"></span>bool <code class="sig-name descname">operator&gt;</code><span class="sig-paren">(</span><a class="reference internal" href="structnnp_1_1Atom.html#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<dd><p>Overload &gt; operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Atom8NeighborleERK8Neighbor">
+<span id="_CPPv3NK3nnp4Atom8NeighborleERK8Neighbor"></span><span id="_CPPv2NK3nnp4Atom8NeighborleERK8Neighbor"></span><span id="nnp::Atom::Neighbor::lte-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1aa9a88cb8efea5cc0923b70d2fee70bb3"></span>bool <code class="sig-name descname">operator&lt;=</code><span class="sig-paren">(</span><a class="reference internal" href="structnnp_1_1Atom.html#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<dd><p>Overload &lt;= operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Atom8NeighborgeERK8Neighbor">
+<span id="_CPPv3NK3nnp4Atom8NeighborgeERK8Neighbor"></span><span id="_CPPv2NK3nnp4Atom8NeighborgeERK8Neighbor"></span><span id="nnp::Atom::Neighbor::gte-operator__NeighborCRC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a649122eab310db0078fd5fdbae59e9a5"></span>bool <code class="sig-name descname">operator&gt;=</code><span class="sig-paren">(</span><a class="reference internal" href="structnnp_1_1Atom.html#_CPPv4N3nnp4Atom8NeighborE" title="nnp::Atom::Neighbor">Neighbor</a> <em class="property">const</em> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<dd><p>Overload &gt;= operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Atom8Neighbor4infoEv">
+<span id="_CPPv3NK4Atom8Neighbor4infoEv"></span><span id="_CPPv2NK4Atom8Neighbor4infoEv"></span><span id="Atom::Neighbor::infoC"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1acbba61dc58c16fe7002a14a7a5017e7f"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<dd><p>Get atom information as a vector of strings.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Lines with atom information. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor5indexE">
+<span id="_CPPv3N3nnp4Atom8Neighbor5indexE"></span><span id="_CPPv2N3nnp4Atom8Neighbor5indexE"></span><span id="nnp::Atom::Neighbor::index__std::s"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a2a19893fb87b0de43ec460939209d726"></span>std::size_t <code class="sig-name descname">index</code><br /></dt>
+<dd><p>Index of neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor3tagE">
+<span id="_CPPv3N3nnp4Atom8Neighbor3tagE"></span><span id="_CPPv2N3nnp4Atom8Neighbor3tagE"></span><span id="nnp::Atom::Neighbor::tag__std::s"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1aecb8bf92173fb3959c934fe9efed2d15"></span>std::size_t <code class="sig-name descname">tag</code><br /></dt>
+<dd><p>Tag of neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor7elementE">
+<span id="_CPPv3N3nnp4Atom8Neighbor7elementE"></span><span id="_CPPv2N3nnp4Atom8Neighbor7elementE"></span><span id="nnp::Atom::Neighbor::element__std::s"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a3c0720664c09022328aeb7a676b1a266"></span>std::size_t <code class="sig-name descname">element</code><br /></dt>
+<dd><p>Element index of neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor1dE">
+<span id="_CPPv3N3nnp4Atom8Neighbor1dE"></span><span id="_CPPv2N3nnp4Atom8Neighbor1dE"></span><span id="nnp::Atom::Neighbor::d__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a46922b548b9819bbdeafaa0d9db9aa05"></span>double <code class="sig-name descname">d</code><br /></dt>
+<dd><p>Distance to neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor2fcE">
+<span id="_CPPv3N3nnp4Atom8Neighbor2fcE"></span><span id="_CPPv2N3nnp4Atom8Neighbor2fcE"></span><span id="nnp::Atom::Neighbor::fc__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a2c0c81ecc16f2f2241c555054b12c755"></span>double <code class="sig-name descname">fc</code><br /></dt>
+<dd><p>Cutoff function value. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor3dfcE">
+<span id="_CPPv3N3nnp4Atom8Neighbor3dfcE"></span><span id="_CPPv2N3nnp4Atom8Neighbor3dfcE"></span><span id="nnp::Atom::Neighbor::dfc__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a6de19249dc15f8126c03373af66c3794"></span>double <code class="sig-name descname">dfc</code><br /></dt>
+<dd><p>Derivative of cutoff function. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor2rcE">
+<span id="_CPPv3N3nnp4Atom8Neighbor2rcE"></span><span id="_CPPv2N3nnp4Atom8Neighbor2rcE"></span><span id="nnp::Atom::Neighbor::rc__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a3328aba160956a1fc4f976513cca025b"></span>double <code class="sig-name descname">rc</code><br /></dt>
+<dd><p>Cutoff radius for which cutoff and its derivative is cached. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor11cutoffAlphaE">
+<span id="_CPPv3N3nnp4Atom8Neighbor11cutoffAlphaE"></span><span id="_CPPv2N3nnp4Atom8Neighbor11cutoffAlphaE"></span><span id="nnp::Atom::Neighbor::cutoffAlpha__double"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1adcdb9f0c8af0587c32a59e7228adb8a8"></span>double <code class="sig-name descname">cutoffAlpha</code><br /></dt>
+<dd><p>Cutoff <span class="math notranslate nohighlight">\(\alpha\)</span> for which cutoff and its derivative is cached. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor10cutoffTypeE">
+<span id="_CPPv3N3nnp4Atom8Neighbor10cutoffTypeE"></span><span id="_CPPv2N3nnp4Atom8Neighbor10cutoffTypeE"></span><span id="nnp::Atom::Neighbor::cutoffType__CutoffFunction::CutoffType"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a13a2bb9a946a9241b23240abae32ee6b"></span><a class="reference internal" href="classnnp_1_1CutoffFunction.html#_CPPv4N3nnp14CutoffFunctionE" title="nnp::CutoffFunction">CutoffFunction</a>::<a class="reference internal" href="classnnp_1_1CutoffFunction.html#_CPPv4N3nnp14CutoffFunction10CutoffTypeE" title="nnp::CutoffFunction::CutoffType">CutoffType</a> <code class="sig-name descname">cutoffType</code><br /></dt>
+<dd><p>Cutoff type of cached cutoff values. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor2drE">
+<span id="_CPPv3N3nnp4Atom8Neighbor2drE"></span><span id="_CPPv2N3nnp4Atom8Neighbor2drE"></span><span id="nnp::Atom::Neighbor::dr__Vec3D"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1a5f338e8ace13b36746031fa76f1e170f"></span><a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a> <code class="sig-name descname">dr</code><br /></dt>
+<dd><p>Distance vector to neighbor atom. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Atom8Neighbor4dGdrE">
+<span id="_CPPv3N3nnp4Atom8Neighbor4dGdrE"></span><span id="_CPPv2N3nnp4Atom8Neighbor4dGdrE"></span><span id="nnp::Atom::Neighbor::dGdr__std::vector:Vec3D:"></span><span class="target" id="structnnp_1_1Atom_1_1Neighbor_1ace4770399203773624ab9c7db8db66d5"></span>std::vector&lt;<a class="reference internal" href="structnnp_1_1Vec3D.html#_CPPv4N3nnp5Vec3DE" title="nnp::Vec3D">Vec3D</a>&gt; <code class="sig-name descname">dGdr</code><br /></dt>
+<dd><p>Derivatives of symmetry functions with respect to neighbor coordinates.</p>
+<p>May be empty, only filled when needed. Contains <span class="math notranslate nohighlight">\( \frac{\partial G_i}{\partial \alpha_j} \)</span>, where <span class="math notranslate nohighlight">\(G_i\)</span> is a symmetry function of atom <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(\alpha_j\)</span> is a coordinate <span class="math notranslate nohighlight">\( \alpha = x,y,z \)</span> of neighbor atom <span class="math notranslate nohighlight">\( j \)</span>, necessary for force calculation. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structnnp_1_1NeuralNetwork_1_1Layer.html" class="btn btn-neutral float-right" title="Struct NeuralNetwork::Layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="structnnp_1_1Atom.html" class="btn btn-neutral float-left" title="Struct Atom" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

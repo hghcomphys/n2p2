@@ -1,0 +1,13 @@
+.. _exhale_function_Settings_8cpp_1ab3acc0914dc4194db93bc0cf640a1736:
+
+Function createKnownKeywordsMap
+===============================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: createKnownKeywordsMap()

@@ -1,0 +1,8 @@
+<map id="nnp::Mode::physicalEnergy" name="nnp::Mode::physicalEnergy">
+<area shape="rect" id="node2" href="$a00944.html#a601b23e841bd853ee5d623401867762b" title="Calculate RMSE for all structures. " alt="" coords="252,5,461,32"/>
+<area shape="rect" id="node3" href="$a00928.html#a680dca82d8c1670ac2effe7ba7df60fc" title="Return energy contribution of one atom. " alt="" coords="273,57,441,98"/>
+<area shape="rect" id="node4" href="$a00020.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="329,123,384,149"/>
+<area shape="rect" id="node5" href="$a00928.html#a0837984fb5d6fe14d298bb2c0b7d01f2" title="Calculate symmetry functions, atomic neural networks and sum of local energy contributions. " alt="" coords="273,174,441,215"/>
+<area shape="rect" id="node6" href="$a00944.html#ae4ccff5ae694d46c03cae84aa7ae696d" title="Write current RMSEs and epoch information to file. " alt="" coords="255,239,458,281"/>
+<area shape="rect" id="node7" href="$a00932.html#aa12823183030d6cff2e059e860d15671" title="Write symmetry function legacy file (&quot;function.data&quot;). " alt="" coords="249,305,464,346"/>
+</map>

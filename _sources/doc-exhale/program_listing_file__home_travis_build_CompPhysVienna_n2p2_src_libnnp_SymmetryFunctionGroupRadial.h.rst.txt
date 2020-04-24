@@ -1,0 +1,97 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h:
+
+Program Listing for File SymmetryFunctionGroupRadial.h
+======================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroupRadial.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroupRadial.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef SYMMETRYFUNCTIONGROUPRADIAL_H
+   #define SYMMETRYFUNCTIONGROUPRADIAL_H
+   
+   #include "SymmetryFunctionGroup.h"
+   #include <cstddef> // std::size_t
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   struct Atom;
+   class ElementMap;
+   class SymmetryFunction;
+   class SymmetryFunctionRadial;
+   
+   class SymmetryFunctionGroupRadial : public SymmetryFunctionGroup
+   {
+   public:
+       SymmetryFunctionGroupRadial(ElementMap const& elementMap);
+       bool operator==(SymmetryFunctionGroup const& rhs) const;
+       bool operator!=(SymmetryFunctionGroup const& rhs) const;
+       bool operator<(SymmetryFunctionGroup const& rhs) const;
+       bool operator>(SymmetryFunctionGroup const& rhs) const;
+       bool operator<=(SymmetryFunctionGroup const& rhs) const;
+       bool operator>=(SymmetryFunctionGroup const& rhs) const;
+       bool addMember(SymmetryFunction const* const symmetryFunction);
+       void sortMembers();
+       void setScalingFactors();
+       void calculate(Atom& atom, bool const derivatives) const;
+       std::vector<std::string>
+            parameterLines() const;
+   
+   private:
+       std::size_t                                e1;
+       std::vector<SymmetryFunctionRadial const*> members;
+       std::vector<double>                        eta;
+       std::vector<double>                        rs;
+   };
+   
+   // Inlined function definitions //
+   
+   inline bool SymmetryFunctionGroupRadial::
+   operator!=(SymmetryFunctionGroup const& rhs) const
+   {
+       return !((*this) == rhs);
+   }
+   
+   inline bool SymmetryFunctionGroupRadial::
+   operator>(SymmetryFunctionGroup const& rhs) const
+   {
+       return rhs < (*this);
+   }
+   
+   inline bool SymmetryFunctionGroupRadial::
+   operator<=(SymmetryFunctionGroup const& rhs) const
+   {
+       return !((*this) > rhs);
+   }
+   
+   inline bool SymmetryFunctionGroupRadial::
+   operator>=(SymmetryFunctionGroup const& rhs) const
+   {
+       return !((*this) < rhs);
+   }
+   
+   }
+   
+   #endif

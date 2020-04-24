@@ -1,0 +1,98 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h:
+
+Program Listing for File Dataset.h
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Dataset.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef DATASET_H
+   #define DATASET_H
+   
+   #include <mpi.h>
+   #include "Mode.h"
+   #include "Structure.h"
+   #include <cstddef> // std::size_t
+   #include <fstream> // std::ifstream
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   #include <gsl/gsl_rng.h>
+   
+   namespace nnp
+   {
+   
+   class Dataset : public Mode
+   {
+   public:
+       Dataset();
+       ~Dataset();
+       void        setupMPI();
+       void        setupMPI(MPI_Comm* communicator);
+       void        setupRandomNumberGenerator();
+       std::size_t getNumStructures(std::ifstream& dataFile);
+       int         calculateBufferSize(Structure const& structure) const;
+       int         sendStructure(Structure const& structure, int dest) const;
+       int         recvStructure(Structure* structure, int src);
+       int         distributeStructures(bool               randomize,
+                                        bool               excludeRank0 = false,
+                                        std::string const& fileName
+                                            = "input.data");
+       void        toNormalizedUnits();
+       void        toPhysicalUnits();
+       void        collectSymmetryFunctionStatistics();
+       void        writeSymmetryFunctionScaling(std::string const& fileName
+                                                    = "scaling.data");
+       void        writeSymmetryFunctionHistograms(std::size_t numBins,
+                                                   std::string fileNameFormat
+                                                       = "sf.%03zu.%04zu.histo");
+       void        writeSymmetryFunctionFile(std::string fileName
+                                                 = "function.data");
+       std::size_t writeNeighborHistogram(std::string const& fileName
+                                              = "neighbors.histo");
+       void        sortNeighborLists();
+       void        writeNeighborLists(std::string const& fileName
+                                          = "neighbor-list.data");
+       void        writeAtomicEnvironmentFile(
+                                           std::vector<std::vector<
+                                           std::size_t> >           neighCutoff,
+                                           bool                     derivatives,
+                                           std::string const &      fileNamePrefix
+                                                = "atomic-env");
+       void        averageRmse(double& rmse, std::size_t& count) const;
+       void        combineFiles(std::string filePrefix) const;
+   
+       std::vector<Structure> structures;
+   
+   protected:
+       int         myRank;
+       int         numProcs;
+       std::size_t numStructures;
+       std::string myName;
+       MPI_Comm    comm;
+       gsl_rng*    rng;
+       gsl_rng*    rngGlobal;
+   };
+   
+   }
+   
+   #endif

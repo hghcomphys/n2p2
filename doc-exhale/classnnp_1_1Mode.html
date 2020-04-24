@@ -1,0 +1,976 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Mode &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class NeuralNetwork" href="classnnp_1_1NeuralNetwork.html" />
+    <link rel="prev" title="Class Log" href="classnnp_1_1Log.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class Mode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1Mode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-mode">
+<span id="exhale-class-classnnp-1-1mode"></span><h1>Class Mode<a class="headerlink" href="#class-mode" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-mode-h"><span class="std std-ref">File Mode.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="derived-types">
+<h3>Derived Types<a class="headerlink" href="#derived-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::Dataset</span></code> (<a class="reference internal" href="classnnp_1_1Dataset.html#exhale-class-classnnp-1-1dataset"><span class="std std-ref">Class Dataset</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::InterfaceLammps</span></code> (<a class="reference internal" href="classnnp_1_1InterfaceLammps.html#exhale-class-classnnp-1-1interfacelammps"><span class="std std-ref">Class InterfaceLammps</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::Prediction</span></code> (<a class="reference internal" href="classnnp_1_1Prediction.html#exhale-class-classnnp-1-1prediction"><span class="std std-ref">Class Prediction</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::SetupAnalysis</span></code> (<a class="reference internal" href="classnnp_1_1SetupAnalysis.html#exhale-class-classnnp-1-1setupanalysis"><span class="std std-ref">Class SetupAnalysis</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp4ModeE">
+<span id="_CPPv3N3nnp4ModeE"></span><span id="_CPPv2N3nnp4ModeE"></span><span id="nnp::Mode"></span><span class="target" id="classnnp_1_1Mode"></span><em class="property">class </em><code class="sig-name descname">Mode</code><a class="headerlink" href="#_CPPv4N3nnp4ModeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Base class for all NNP applications.</p>
+<p>This top-level class is the anchor point for existing and future applications. It contains functions to set up an existing neural network potential and calculate energies and forces for configurations given as <a class="reference internal" href="structnnp_1_1Structure.html#structnnp_1_1Structure"><span class="std std-ref">Structure</span></a>. A minimal setup requires some consecutive functions calls as this minimal example shows:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Mode</span> <span class="n">mode</span><span class="p">;</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">initialize</span><span class="p">();</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">loadSettingsFile</span><span class="p">();</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">setupElementMap</span><span class="p">();</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">setupElements</span><span class="p">();</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">setupCutoff</span><span class="p">();</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">setupSymmetryFunctions</span><span class="p">();</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">setupSymmetryFunctionGroups</span><span class="p">();</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">setupSymmetryFunctionStatistics</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">setupNeuralNetwork</span><span class="p">();</span>
+</pre></div>
+</div>
+ To load weights and scaling information from files add these lines: <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span><span class="p">.</span><span class="n">setupSymmetryFunctionScaling</span><span class="p">();</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">setupNeuralNetworkWeights</span><span class="p">();</span>
+</pre></div>
+</div>
+ The NNP is now ready! If we load a structure from a data file: <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Structure</span> <span class="n">structure</span><span class="p">;</span>
+<span class="n">ifstream</span> <span class="n">file</span><span class="p">;</span>
+<span class="n">file</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;input.data&quot;</span><span class="p">);</span>
+<span class="n">structure</span><span class="p">.</span><span class="n">setupElementMap</span><span class="p">(</span><span class="n">mode</span><span class="p">.</span><span class="n">elementMap</span><span class="p">);</span>
+<span class="n">structure</span><span class="p">.</span><span class="n">readFromFile</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="n">file</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+</pre></div>
+</div>
+ we can finally predict the energy and forces from the neural network potential: <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">structure</span><span class="p">.</span><span class="n">calculateNeighborList</span><span class="p">(</span><span class="n">mode</span><span class="p">.</span><span class="n">getMaxCutoffRadius</span><span class="p">());</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">calculateSymmetryFunctionGroups</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">calculateAtomicNeuralNetworks</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">calculateEnergy</span><span class="p">(</span><span class="n">structure</span><span class="p">);</span>
+<span class="n">mode</span><span class="p">.</span><span class="n">calculateForces</span><span class="p">(</span><span class="n">structure</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">structure</span><span class="p">.</span><span class="n">energy</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+ The resulting potential energy is stored in <a class="reference internal" href="structnnp_1_1Structure.html#structnnp_1_1Structure_1aa9fd0fd0f8a23b6bf96247589feceeb5"><span class="std std-ref">Structure::energy</span></a>, the forces on individual atoms are located within the <a class="reference internal" href="structnnp_1_1Structure.html#structnnp_1_1Structure_1adee965dec483f9479378a2ed4acd5544"><span class="std std-ref">Structure::atoms</span></a> vector in <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom_1a170d82083599ace5c7973bd22c79ddae"><span class="std std-ref">Atom::f</span></a>. </p>
+<p>Subclassed by <a class="reference internal" href="classnnp_1_1Dataset.html#classnnp_1_1Dataset"><span class="std std-ref">nnp::Dataset</span></a>, <a class="reference internal" href="classnnp_1_1InterfaceLammps.html#classnnp_1_1InterfaceLammps"><span class="std std-ref">nnp::InterfaceLammps</span></a>, <a class="reference internal" href="classnnp_1_1Prediction.html#classnnp_1_1Prediction"><span class="std std-ref">nnp::Prediction</span></a>, <a class="reference internal" href="classnnp_1_1SetupAnalysis.html#classnnp_1_1SetupAnalysis"><span class="std std-ref">nnp::SetupAnalysis</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode4ModeEv">
+<span id="_CPPv3N4Mode4ModeEv"></span><span id="_CPPv2N4Mode4ModeEv"></span><span id="Mode::Mode"></span><span class="target" id="classnnp_1_1Mode_1a098246baedeee64fa0ed3b53547cf55f"></span><code class="sig-name descname">Mode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode4ModeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode10initializeEv">
+<span id="_CPPv3N4Mode10initializeEv"></span><span id="_CPPv2N4Mode10initializeEv"></span><span id="Mode::initialize"></span><span class="target" id="classnnp_1_1Mode_1a19a68b9d8750ddc0b440b1828ecf9f17"></span>void <code class="sig-name descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode10initializeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write welcome message with version information. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode16loadSettingsFileERKNSt6stringE">
+<span id="_CPPv3N4Mode16loadSettingsFileERKNSt6stringE"></span><span id="_CPPv2N4Mode16loadSettingsFileERKNSt6stringE"></span><span id="Mode::loadSettingsFile__ssCR"></span><span class="target" id="classnnp_1_1Mode_1ae8ca16789e7794309cf9931e58eb882b"></span>void <code class="sig-name descname">loadSettingsFile</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>fileName</em> = &quot;input.nn&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode16loadSettingsFileERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open settings file and load all keywords into memory.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: <a class="reference internal" href="classnnp_1_1Settings.html#classnnp_1_1Settings"><span class="std std-ref">Settings</span></a> file name. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode12setupGenericEv">
+<span id="_CPPv3N4Mode12setupGenericEv"></span><span id="_CPPv2N4Mode12setupGenericEv"></span><span id="Mode::setupGeneric"></span><span class="target" id="classnnp_1_1Mode_1adffbed0cbae8bc9c4f4c4556ff113b5f"></span>void <code class="sig-name descname">setupGeneric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode12setupGenericEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Combine multiple setup routines and provide a basic NNP setup.</p>
+<p>Sets up elements, symmetry functions, symmetry function groups, neural networks. No symmetry function scaling data is read, no weights are set. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode18setupNormalizationEv">
+<span id="_CPPv3N4Mode18setupNormalizationEv"></span><span id="_CPPv2N4Mode18setupNormalizationEv"></span><span id="Mode::setupNormalization"></span><span class="target" id="classnnp_1_1Mode_1aa837413e8d998f165f0b8527de636cb5"></span>void <code class="sig-name descname">setupNormalization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode18setupNormalizationEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up normalization.</p>
+<p>If the keywords <code class="docutils literal notranslate"><span class="pre">mean_energy</span></code>, <code class="docutils literal notranslate"><span class="pre">conv_length</span></code> and <code class="docutils literal notranslate"><span class="pre">conv_length</span></code> are present, the provided conversion factors are used to internally use a different unit system. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode15setupElementMapEv">
+<span id="_CPPv3N4Mode15setupElementMapEv"></span><span id="_CPPv2N4Mode15setupElementMapEv"></span><span id="Mode::setupElementMap"></span><span class="target" id="classnnp_1_1Mode_1a259303c95ae2f64f2b192de1b2df51f5"></span>void <code class="sig-name descname">setupElementMap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode15setupElementMapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up the element map.</p>
+<p>Uses keyword <code class="docutils literal notranslate"><span class="pre">elements</span></code>. This function should follow immediately after settings are loaded via <a class="reference internal" href="#classnnp_1_1Mode_1ae8ca16789e7794309cf9931e58eb882b"><span class="std std-ref">loadSettingsFile()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode13setupElementsEv">
+<span id="_CPPv3N4Mode13setupElementsEv"></span><span id="_CPPv2N4Mode13setupElementsEv"></span><span id="Mode::setupElements"></span><span class="target" id="classnnp_1_1Mode_1afc4e43a8f905900eb4ea153d529053ec"></span>void <code class="sig-name descname">setupElements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode13setupElementsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up all <a class="reference internal" href="classnnp_1_1Element.html#classnnp_1_1Element"><span class="std std-ref">Element</span></a> instances.</p>
+<p>Uses keywords <code class="docutils literal notranslate"><span class="pre">number_of_elements</span></code> and <code class="docutils literal notranslate"><span class="pre">atom_energy</span></code>. This function should follow immediately after <a class="reference internal" href="#classnnp_1_1Mode_1a259303c95ae2f64f2b192de1b2df51f5"><span class="std std-ref">setupElementMap()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode11setupCutoffEv">
+<span id="_CPPv3N4Mode11setupCutoffEv"></span><span id="_CPPv2N4Mode11setupCutoffEv"></span><span id="Mode::setupCutoff"></span><span class="target" id="classnnp_1_1Mode_1ae72c03926dc7ea9b8f43770fb5861ccf"></span>void <code class="sig-name descname">setupCutoff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode11setupCutoffEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up cutoff function for all symmetry functions.</p>
+<p>Uses keyword <code class="docutils literal notranslate"><span class="pre">cutoff_type</span></code>. Cutoff parameters are read from settings keywords and stored internally. As soon as <a class="reference internal" href="#classnnp_1_1Mode_1ad0080b25ea49cdd6ce085162751a379b"><span class="std std-ref">setupSymmetryFunctions()</span></a> is called the settings are restored and used for all symmetry functions. Thus, this function must be called before <a class="reference internal" href="#classnnp_1_1Mode_1ad0080b25ea49cdd6ce085162751a379b"><span class="std std-ref">setupSymmetryFunctions()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode22setupSymmetryFunctionsEv">
+<span id="_CPPv3N4Mode22setupSymmetryFunctionsEv"></span><span id="_CPPv2N4Mode22setupSymmetryFunctionsEv"></span><span id="Mode::setupSymmetryFunctions"></span><span class="target" id="classnnp_1_1Mode_1ad0080b25ea49cdd6ce085162751a379b"></span>void <code class="sig-name descname">setupSymmetryFunctions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode22setupSymmetryFunctionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up all symmetry functions.</p>
+<p>Uses keyword <code class="docutils literal notranslate"><span class="pre">symfunction_short</span></code>. Reads all symmetry functions from settings and automatically assigns them to the correct element. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode32setupSymmetryFunctionScalingNoneEv">
+<span id="_CPPv3N4Mode32setupSymmetryFunctionScalingNoneEv"></span><span id="_CPPv2N4Mode32setupSymmetryFunctionScalingNoneEv"></span><span id="Mode::setupSymmetryFunctionScalingNone"></span><span class="target" id="classnnp_1_1Mode_1a9a672cac54995b226d8e69bb8be2669d"></span>void <code class="sig-name descname">setupSymmetryFunctionScalingNone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode32setupSymmetryFunctionScalingNoneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up “empy” symmetry function scaling.</p>
+<p>Does not use any keywords. Sets no scaling for all symmetry functions. Call after <a class="reference internal" href="#classnnp_1_1Mode_1ad0080b25ea49cdd6ce085162751a379b"><span class="std std-ref">setupSymmetryFunctions()</span></a>. Alternatively set scaling via <a class="reference internal" href="#classnnp_1_1Mode_1aa26222b7b9dc3fd141f6e775690b5d2b"><span class="std std-ref">setupSymmetryFunctionScaling()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode28setupSymmetryFunctionScalingERKNSt6stringE">
+<span id="_CPPv3N4Mode28setupSymmetryFunctionScalingERKNSt6stringE"></span><span id="_CPPv2N4Mode28setupSymmetryFunctionScalingERKNSt6stringE"></span><span id="Mode::setupSymmetryFunctionScaling__ssCR"></span><span class="target" id="classnnp_1_1Mode_1aa26222b7b9dc3fd141f6e775690b5d2b"></span>void <code class="sig-name descname">setupSymmetryFunctionScaling</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>fileName</em> = &quot;scaling.data&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode28setupSymmetryFunctionScalingERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up symmetry function scaling from file.</p>
+<p><p>Uses keywords </p>
+<code class="docutils literal notranslate"><span class="pre">scale_symmetry_functions</span></code>, <code class="docutils literal notranslate"><span class="pre">center_symmetry_functions</span></code>, <code class="docutils literal notranslate"><span class="pre">scale_symmetry_functions_sigma</span></code>, <code class="docutils literal notranslate"><span class="pre">scale_min_short</span></code> and <code class="docutils literal notranslate"><span class="pre">scale_max_short</span></code>. Reads in scaling information and sets correct scaling behavior for all symmetry functions. Call after <a class="reference internal" href="#classnnp_1_1Mode_1ad0080b25ea49cdd6ce085162751a379b"><span class="std std-ref">setupSymmetryFunctions()</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: Scaling file name.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode27setupSymmetryFunctionGroupsEv">
+<span id="_CPPv3N4Mode27setupSymmetryFunctionGroupsEv"></span><span id="_CPPv2N4Mode27setupSymmetryFunctionGroupsEv"></span><span id="Mode::setupSymmetryFunctionGroups"></span><span class="target" id="classnnp_1_1Mode_1a6f0184f87845a572cf4c3db0958a97d9"></span>void <code class="sig-name descname">setupSymmetryFunctionGroups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode27setupSymmetryFunctionGroupsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up symmetry function groups.</p>
+<p>Does not use any keywords. Call after <a class="reference internal" href="#classnnp_1_1Mode_1ad0080b25ea49cdd6ce085162751a379b"><span class="std std-ref">setupSymmetryFunctions()</span></a> and ensure that correct scaling behavior has already been set. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode27setupSymmetryFunctionMemoryEb">
+<span id="_CPPv3N4Mode27setupSymmetryFunctionMemoryEb"></span><span id="_CPPv2N4Mode27setupSymmetryFunctionMemoryEb"></span><span id="Mode::setupSymmetryFunctionMemory__b"></span><span class="target" id="classnnp_1_1Mode_1af1d1548ef2d6a9bbfdc519b76b904700"></span>void <code class="sig-name descname">setupSymmetryFunctionMemory</code><span class="sig-paren">(</span>bool <em>verbose</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode27setupSymmetryFunctionMemoryEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extract required memory dimensions for symmetry function derivatives.</p>
+<p><p>Call after symmetry functions have been set up and sorted. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">verbose</span></code>: If true, print all symmetry function lines.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode31setupSymmetryFunctionStatisticsEbbbb">
+<span id="_CPPv3N4Mode31setupSymmetryFunctionStatisticsEbbbb"></span><span id="_CPPv2N4Mode31setupSymmetryFunctionStatisticsEbbbb"></span><span id="Mode::setupSymmetryFunctionStatistics__b.b.b.b"></span><span class="target" id="classnnp_1_1Mode_1ae4b348e9b5e2ef89cb30c760bdb55153"></span>void <code class="sig-name descname">setupSymmetryFunctionStatistics</code><span class="sig-paren">(</span>bool <em>collectStatistics</em>, bool <em>collectExtrapolationWarnings</em>, bool <em>writeExtrapolationWarnings</em>, bool <em>stopOnExtrapolationWarnings</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode31setupSymmetryFunctionStatisticsEbbbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up symmetry function statistics collection.</p>
+<p><p>Does not use any keywords. Calling this setup function is not required, by default no statistics collection is enabled (all arguments </p>
+<code class="docutils literal notranslate"><span class="pre">false</span></code>). Call after <a class="reference internal" href="#classnnp_1_1Mode_1afc4e43a8f905900eb4ea153d529053ec"><span class="std std-ref">setupElements()</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">collectStatistics</span></code>: Whether statistics (min, max, mean, sigma) is collected. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">collectExtrapolationWarnings</span></code>: Whether extrapolation warnings are logged. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">writeExtrapolationWarnings</span></code>: Write extrapolation warnings immediately when they occur. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">stopOnExtrapolationWarnings</span></code>: Throw error immediately when an extrapolation warning occurs.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode18setupNeuralNetworkEv">
+<span id="_CPPv3N4Mode18setupNeuralNetworkEv"></span><span id="_CPPv2N4Mode18setupNeuralNetworkEv"></span><span id="Mode::setupNeuralNetwork"></span><span class="target" id="classnnp_1_1Mode_1a3488a7fb2b0ccf17a9b2af514590f57c"></span>void <code class="sig-name descname">setupNeuralNetwork</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode18setupNeuralNetworkEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up neural networks for all elements.</p>
+<p>Uses keywords <code class="docutils literal notranslate"><span class="pre">global_hidden_layers_short</span></code>, <code class="docutils literal notranslate"><span class="pre">global_nodes_short</span></code>, <code class="docutils literal notranslate"><span class="pre">global_activation_short</span></code>, <code class="docutils literal notranslate"><span class="pre">normalize_nodes</span></code>. Call after <a class="reference internal" href="#classnnp_1_1Mode_1ad0080b25ea49cdd6ce085162751a379b"><span class="std std-ref">setupSymmetryFunctions()</span></a>, only then the number of input layer neurons is known. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode25setupNeuralNetworkWeightsERKNSt6stringE">
+<span id="_CPPv3N4Mode25setupNeuralNetworkWeightsERKNSt6stringE"></span><span id="_CPPv2N4Mode25setupNeuralNetworkWeightsERKNSt6stringE"></span><span id="Mode::setupNeuralNetworkWeights__ssCR"></span><span class="target" id="classnnp_1_1Mode_1a091fea0011ed8260c93db7c38c3d1e82"></span>void <code class="sig-name descname">setupNeuralNetworkWeights</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>fileNameFormat</em> = &quot;weights.%03zu.data&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode25setupNeuralNetworkWeightsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set up neural network weights from files.</p>
+<p><p>Does not use any keywords. The weight files should contain one weight per line, see </p>
+<a class="reference internal" href="classnnp_1_1NeuralNetwork.html#classnnp_1_1NeuralNetwork_1a3479cb0b5dc64c4260837adbfa11f868"><span class="std std-ref">NeuralNetwork::setConnections()</span></a> for the correct order. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileNameFormat</span></code>: Format for weights file name. The string must contain one placeholder for the atomic number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode26calculateSymmetryFunctionsER9StructureKb">
+<span id="_CPPv3N4Mode26calculateSymmetryFunctionsER9StructureKb"></span><span id="_CPPv2N4Mode26calculateSymmetryFunctionsER9StructureKb"></span><span id="Mode::calculateSymmetryFunctions__StructureR.bC"></span><span class="target" id="classnnp_1_1Mode_1add11e3c30eb86aba38d8239d1e5d8736"></span>void <code class="sig-name descname">calculateSymmetryFunctions</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em>, bool <em class="property">const</em> <em>derivatives</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode26calculateSymmetryFunctionsER9StructureKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate all symmetry functions for all atoms in given structure.</p>
+<p><p>This function should be replaced by </p>
+<a class="reference internal" href="#classnnp_1_1Mode_1a8aec6fb4708b93b93a9cfa0e8045f955"><span class="std std-ref">calculateSymmetryFunctionGroups()</span></a> whenever possible. Results are stored in <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom_1abc64f09e49aabb8112004f5af6983102"><span class="std std-ref">Atom::G</span></a>. If derivatives are calculated, additional results are stored in <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom_1a482ea8be24723a1a05012e4d405a60db"><span class="std std-ref">Atom::dGdr</span></a> and <a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#structnnp_1_1Atom_1_1Neighbor_1ace4770399203773624ab9c7db8db66d5"><span class="std std-ref">Atom::Neighbor::dGdr</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">derivatives</span></code>: If <code class="docutils literal notranslate"><span class="pre">true</span></code> calculate also derivatives of symmetry functions.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode31calculateSymmetryFunctionGroupsER9StructureKb">
+<span id="_CPPv3N4Mode31calculateSymmetryFunctionGroupsER9StructureKb"></span><span id="_CPPv2N4Mode31calculateSymmetryFunctionGroupsER9StructureKb"></span><span id="Mode::calculateSymmetryFunctionGroups__StructureR.bC"></span><span class="target" id="classnnp_1_1Mode_1a8aec6fb4708b93b93a9cfa0e8045f955"></span>void <code class="sig-name descname">calculateSymmetryFunctionGroups</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em>, bool <em class="property">const</em> <em>derivatives</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode31calculateSymmetryFunctionGroupsER9StructureKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate all symmetry function groups for all atoms in given structure.</p>
+<p><p>This function replaces </p>
+<a class="reference internal" href="#classnnp_1_1Mode_1add11e3c30eb86aba38d8239d1e5d8736"><span class="std std-ref">calculateSymmetryFunctions()</span></a> when symmetry function groups are enabled (faster, default behavior). Results are stored in <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom_1abc64f09e49aabb8112004f5af6983102"><span class="std std-ref">Atom::G</span></a>. If derivatives are calculated, additional results are stored in <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom_1a482ea8be24723a1a05012e4d405a60db"><span class="std std-ref">Atom::dGdr</span></a> and <a class="reference internal" href="structnnp_1_1Atom_1_1Neighbor.html#structnnp_1_1Atom_1_1Neighbor_1ace4770399203773624ab9c7db8db66d5"><span class="std std-ref">Atom::Neighbor::dGdr</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">derivatives</span></code>: If <code class="docutils literal notranslate"><span class="pre">true</span></code> calculate also derivatives of symmetry functions.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode29calculateAtomicNeuralNetworksER9StructureKb">
+<span id="_CPPv3NK4Mode29calculateAtomicNeuralNetworksER9StructureKb"></span><span id="_CPPv2NK4Mode29calculateAtomicNeuralNetworksER9StructureKb"></span><span id="Mode::calculateAtomicNeuralNetworks__StructureR.bCC"></span><span class="target" id="classnnp_1_1Mode_1a93dc4a306a3caf233268dad71efd565f"></span>void <code class="sig-name descname">calculateAtomicNeuralNetworks</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em>, bool <em class="property">const</em> <em>derivatives</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode29calculateAtomicNeuralNetworksER9StructureKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate atomic neural networks for all atoms in given structure.</p>
+<p><p>The atomic energy is stored in </p>
+<a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom_1abae2157524b61b7772f09d7fae340fa3"><span class="std std-ref">Atom::energy</span></a>. If derivatives are calculated the results are stored in <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom_1a139bcae479dfbf132aa5e33956c0610d"><span class="std std-ref">Atom::dEdG</span></a>. The atomic energy energy offset (keyword <code class="docutils literal notranslate"><span class="pre">atom_energy</span></code>) is also added at this point. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">derivatives</span></code>: If <code class="docutils literal notranslate"><span class="pre">true</span></code> calculate also derivatives of neural networks with respect to input layer neurons (required for force calculation).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode15calculateEnergyER9Structure">
+<span id="_CPPv3NK4Mode15calculateEnergyER9Structure"></span><span id="_CPPv2NK4Mode15calculateEnergyER9Structure"></span><span id="Mode::calculateEnergy__StructureRC"></span><span class="target" id="classnnp_1_1Mode_1a88fb8800851f3d440fcf393cbc073308"></span>void <code class="sig-name descname">calculateEnergy</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode15calculateEnergyER9Structure" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate potential energy for a given structure.</p>
+<p><p>Sum up potential energy from atomic energy contributions. Result is stored in </p>
+<a class="reference internal" href="structnnp_1_1Structure.html#structnnp_1_1Structure_1aa9fd0fd0f8a23b6bf96247589feceeb5"><span class="std std-ref">Structure::energy</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode15calculateForcesER9Structure">
+<span id="_CPPv3NK4Mode15calculateForcesER9Structure"></span><span id="_CPPv2NK4Mode15calculateForcesER9Structure"></span><span id="Mode::calculateForces__StructureRC"></span><span class="target" id="classnnp_1_1Mode_1ae2fddd6f29bb63ef67b9619544d81ab1"></span>void <code class="sig-name descname">calculateForces</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode15calculateForcesER9Structure" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate forces for all atoms in given structure.</p>
+<p><p>Combine intermediate results from symmetry function and neural network computation to atomic forces. Results are stored in </p>
+<a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom_1a170d82083599ace5c7973bd22c79ddae"><span class="std std-ref">Atom::f</span></a>. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode15addEnergyOffsetER9Structureb">
+<span id="_CPPv3N4Mode15addEnergyOffsetER9Structureb"></span><span id="_CPPv2N4Mode15addEnergyOffsetER9Structureb"></span><span id="Mode::addEnergyOffset__StructureR.b"></span><span class="target" id="classnnp_1_1Mode_1a17ba3ecbce972ff28d7a17bdade38674"></span>void <code class="sig-name descname">addEnergyOffset</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em>, bool <em>ref</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode15addEnergyOffsetER9Structureb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add atomic energy offsets to reference energy.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ref</span></code>: If true, use reference energy, otherwise use NN energy. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode18removeEnergyOffsetER9Structureb">
+<span id="_CPPv3N4Mode18removeEnergyOffsetER9Structureb"></span><span id="_CPPv2N4Mode18removeEnergyOffsetER9Structureb"></span><span id="Mode::removeEnergyOffset__StructureR.b"></span><span class="target" id="classnnp_1_1Mode_1aa8ddf0701dbcd60868955ca556892bc5"></span>void <code class="sig-name descname">removeEnergyOffset</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em>, bool <em>ref</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode18removeEnergyOffsetER9Structureb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove atomic energy offsets from reference energy.</p>
+<p><p>This function should be called immediately after structures are read in. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ref</span></code>: If true, use reference energy, otherwise use NN energy.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode15getEnergyOffsetERK9Structure">
+<span id="_CPPv3NK4Mode15getEnergyOffsetERK9Structure"></span><span id="_CPPv2NK4Mode15getEnergyOffsetERK9Structure"></span><span id="Mode::getEnergyOffset__StructureCRC"></span><span class="target" id="classnnp_1_1Mode_1af05a24414c9b595a8ccb95b05b5030de"></span>double <code class="sig-name descname">getEnergyOffset</code><span class="sig-paren">(</span>Structure <em class="property">const</em> &amp;<em>structure</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode15getEnergyOffsetERK9Structure" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get atomic energy offset for given structure.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Summed atomic energy offsets for structure. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode19getEnergyWithOffsetERK9Structureb">
+<span id="_CPPv3NK4Mode19getEnergyWithOffsetERK9Structureb"></span><span id="_CPPv2NK4Mode19getEnergyWithOffsetERK9Structureb"></span><span id="Mode::getEnergyWithOffset__StructureCR.bC"></span><span class="target" id="classnnp_1_1Mode_1ab86800b032be86f1321d3f6683c75b01"></span>double <code class="sig-name descname">getEnergyWithOffset</code><span class="sig-paren">(</span>Structure <em class="property">const</em> &amp;<em>structure</em>, bool <em>ref</em> = true<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode19getEnergyWithOffsetERK9Structureb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add atomic energy offsets and return energy.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Reference or NNP energy with energy offsets added.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>If normalization is used, ensure that structure energy is already in physical units. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ref</span></code>: If true, use reference energy, otherwise use NN energy.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode16normalizedEnergyEd">
+<span id="_CPPv3NK4Mode16normalizedEnergyEd"></span><span id="_CPPv2NK4Mode16normalizedEnergyEd"></span><span id="Mode::normalizedEnergy__doubleC"></span><span class="target" id="classnnp_1_1Mode_1ad914604c902d947d44c32b4f760e1da3"></span>double <code class="sig-name descname">normalizedEnergy</code><span class="sig-paren">(</span>double <em>energy</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode16normalizedEnergyEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Apply normalization to given energy.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Energy in normalized units. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">energy</span></code>: Input energy in physical units.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode16normalizedEnergyERK9Structureb">
+<span id="_CPPv3NK4Mode16normalizedEnergyERK9Structureb"></span><span id="_CPPv2NK4Mode16normalizedEnergyERK9Structureb"></span><span id="Mode::normalizedEnergy__StructureCR.bC"></span><span class="target" id="classnnp_1_1Mode_1af5d51e9328414aea8106d85bde5a1729"></span>double <code class="sig-name descname">normalizedEnergy</code><span class="sig-paren">(</span>Structure <em class="property">const</em> &amp;<em>structure</em>, bool <em>ref</em> = true<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode16normalizedEnergyERK9Structureb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Apply normalization to given energy of structure.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Energy in normalized units. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure with energy in physical units. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ref</span></code>: If true, use reference energy, otherwise use NN energy.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode15normalizedForceEd">
+<span id="_CPPv3NK4Mode15normalizedForceEd"></span><span id="_CPPv2NK4Mode15normalizedForceEd"></span><span id="Mode::normalizedForce__doubleC"></span><span class="target" id="classnnp_1_1Mode_1a42377e19341fd2666856b9177b6588dd"></span>double <code class="sig-name descname">normalizedForce</code><span class="sig-paren">(</span>double <em>force</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode15normalizedForceEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Apply normalization to given force.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Force in normalized units. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">force</span></code>: Input force in physical units.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode14physicalEnergyEd">
+<span id="_CPPv3NK4Mode14physicalEnergyEd"></span><span id="_CPPv2NK4Mode14physicalEnergyEd"></span><span id="Mode::physicalEnergy__doubleC"></span><span class="target" id="classnnp_1_1Mode_1a9fcf4fe91e191c78e4bc2a999225b8b1"></span>double <code class="sig-name descname">physicalEnergy</code><span class="sig-paren">(</span>double <em>energy</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode14physicalEnergyEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undo normalization for a given energy.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Energy in physical units. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">energy</span></code>: Input energy in normalized units.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode14physicalEnergyERK9Structureb">
+<span id="_CPPv3NK4Mode14physicalEnergyERK9Structureb"></span><span id="_CPPv2NK4Mode14physicalEnergyERK9Structureb"></span><span id="Mode::physicalEnergy__StructureCR.bC"></span><span class="target" id="classnnp_1_1Mode_1a02d558483ab82d340ee587febcfddd8f"></span>double <code class="sig-name descname">physicalEnergy</code><span class="sig-paren">(</span>Structure <em class="property">const</em> &amp;<em>structure</em>, bool <em>ref</em> = true<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode14physicalEnergyERK9Structureb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undo normalization for a given energy of structure.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Energy in physical units. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure with energy in normalized units. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ref</span></code>: If true, use reference energy, otherwise use NN energy.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode13physicalForceEd">
+<span id="_CPPv3NK4Mode13physicalForceEd"></span><span id="_CPPv2NK4Mode13physicalForceEd"></span><span id="Mode::physicalForce__doubleC"></span><span class="target" id="classnnp_1_1Mode_1a9cfdc02d7860f91735b789ee11532982"></span>double <code class="sig-name descname">physicalForce</code><span class="sig-paren">(</span>double <em>force</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode13physicalForceEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undo normalization for a given force.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Force in physical units. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">force</span></code>: Input force in normalized units.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode24convertToNormalizedUnitsER9Structure">
+<span id="_CPPv3NK4Mode24convertToNormalizedUnitsER9Structure"></span><span id="_CPPv2NK4Mode24convertToNormalizedUnitsER9Structure"></span><span id="Mode::convertToNormalizedUnits__StructureRC"></span><span class="target" id="classnnp_1_1Mode_1a8353f189a07813687e6cda9dff5ef55a"></span>void <code class="sig-name descname">convertToNormalizedUnits</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode24convertToNormalizedUnitsER9Structure" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert one structure to normalized units.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">structure</span></code>: Input structure. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode22convertToPhysicalUnitsER9Structure">
+<span id="_CPPv3NK4Mode22convertToPhysicalUnitsER9Structure"></span><span id="_CPPv2NK4Mode22convertToPhysicalUnitsER9Structure"></span><span id="Mode::convertToPhysicalUnits__StructureRC"></span><span class="target" id="classnnp_1_1Mode_1abbe07bd6a67b5df0b6dd5f5ce00fb1f6"></span>void <code class="sig-name descname">convertToPhysicalUnits</code><span class="sig-paren">(</span>Structure &amp;<em>structure</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode22convertToPhysicalUnitsER9Structure" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert one structure to physical units.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">structure</span></code>: Input structure. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode27getNumExtrapolationWarningsEv">
+<span id="_CPPv3NK4Mode27getNumExtrapolationWarningsEv"></span><span id="_CPPv2NK4Mode27getNumExtrapolationWarningsEv"></span><span id="Mode::getNumExtrapolationWarningsC"></span><span class="target" id="classnnp_1_1Mode_1aa73bc18bc5e85e53303fea2132c4e78c"></span>size_t <code class="sig-name descname">getNumExtrapolationWarnings</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode27getNumExtrapolationWarningsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Count total number of extrapolation warnings encountered for all elements and symmetry functions.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of extrapolation warnings. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode26resetExtrapolationWarningsEv">
+<span id="_CPPv3N4Mode26resetExtrapolationWarningsEv"></span><span id="_CPPv2N4Mode26resetExtrapolationWarningsEv"></span><span id="Mode::resetExtrapolationWarnings"></span><span class="target" id="classnnp_1_1Mode_1ab71571b8b4742c474c645fa50ffa667e"></span>void <code class="sig-name descname">resetExtrapolationWarnings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode26resetExtrapolationWarningsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Erase all extrapolation warnings and reset counters. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Mode13getMeanEnergyEv">
+<span id="_CPPv3NK3nnp4Mode13getMeanEnergyEv"></span><span id="_CPPv2NK3nnp4Mode13getMeanEnergyEv"></span><span id="nnp::Mode::getMeanEnergyC"></span><span class="target" id="classnnp_1_1Mode_1ab6e30b5a1e840dc2a98516a0f276a3c4"></span>double <code class="sig-name descname">getMeanEnergy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Mode13getMeanEnergyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1Mode_1a5c6554727f0af7501fe82dfe136b3865"><span class="std std-ref">Mode::meanEnergy</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Mean energy per atom. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Mode13getConvEnergyEv">
+<span id="_CPPv3NK3nnp4Mode13getConvEnergyEv"></span><span id="_CPPv2NK3nnp4Mode13getConvEnergyEv"></span><span id="nnp::Mode::getConvEnergyC"></span><span class="target" id="classnnp_1_1Mode_1a8da7486dc693fafe772c12a440a623d8"></span>double <code class="sig-name descname">getConvEnergy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Mode13getConvEnergyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1Mode_1a09461989d84484833b10c96e6871f87e"><span class="std std-ref">Mode::convEnergy</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Energy unit conversion factor. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Mode13getConvLengthEv">
+<span id="_CPPv3NK3nnp4Mode13getConvLengthEv"></span><span id="_CPPv2NK3nnp4Mode13getConvLengthEv"></span><span id="nnp::Mode::getConvLengthC"></span><span class="target" id="classnnp_1_1Mode_1a373073bd1acb1c9ac293369bb892bdc4"></span>double <code class="sig-name descname">getConvLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Mode13getConvLengthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1Mode_1a1d6eccfa0f21d64823f74cc75c89473f"><span class="std std-ref">Mode::convLength</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Length unit conversion factor. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Mode18getMaxCutoffRadiusEv">
+<span id="_CPPv3NK3nnp4Mode18getMaxCutoffRadiusEv"></span><span id="_CPPv2NK3nnp4Mode18getMaxCutoffRadiusEv"></span><span id="nnp::Mode::getMaxCutoffRadiusC"></span><span class="target" id="classnnp_1_1Mode_1a73f1fcdcbb76828f6aca2d322bfeb2a9"></span>double <code class="sig-name descname">getMaxCutoffRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Mode18getMaxCutoffRadiusEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1Mode_1a38f8bc8db576ad1762dd306b4d225383"><span class="std std-ref">Mode::maxCutoffRadius</span></a>.</p>
+<p><p>The maximum cutoff radius is determined by </p>
+<a class="reference internal" href="#classnnp_1_1Mode_1ad0080b25ea49cdd6ce085162751a379b"><span class="std std-ref">setupSymmetryFunctions()</span></a>. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Maximum cutoff radius of all symmetry functions.</p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Mode14getNumElementsEv">
+<span id="_CPPv3NK3nnp4Mode14getNumElementsEv"></span><span id="_CPPv2NK3nnp4Mode14getNumElementsEv"></span><span id="nnp::Mode::getNumElementsC"></span><span class="target" id="classnnp_1_1Mode_1a2dbf87eaa9cc33fa740e03608acdf156"></span>std::size_t <code class="sig-name descname">getNumElements</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Mode14getNumElementsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1Mode_1a76d3694d566d2052c298325a18ee865c"><span class="std std-ref">Mode::numElements</span></a>.</p>
+<p><p>The number of elements is determined by </p>
+<a class="reference internal" href="#classnnp_1_1Mode_1afc4e43a8f905900eb4ea153d529053ec"><span class="std std-ref">setupElements()</span></a>. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of elements defined.</p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode23getNumSymmetryFunctionsEv">
+<span id="_CPPv3NK4Mode23getNumSymmetryFunctionsEv"></span><span id="_CPPv2NK4Mode23getNumSymmetryFunctionsEv"></span><span id="Mode::getNumSymmetryFunctionsC"></span><span class="target" id="classnnp_1_1Mode_1aa4fc3399c130a3778a20a625fa2ee34c"></span>vector&lt;size_t&gt; <code class="sig-name descname">getNumSymmetryFunctions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode23getNumSymmetryFunctionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get number of symmetry functions per element.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with number of symmetry functions for each element. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp4Mode16useNormalizationEv">
+<span id="_CPPv3NK3nnp4Mode16useNormalizationEv"></span><span id="_CPPv2NK3nnp4Mode16useNormalizationEv"></span><span id="nnp::Mode::useNormalizationC"></span><span class="target" id="classnnp_1_1Mode_1a7c500a49ebbd16752c9dbe988f56f451"></span>bool <code class="sig-name descname">useNormalization</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp4Mode16useNormalizationEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if normalization is enabled.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Value of <a class="reference internal" href="#classnnp_1_1Mode_1a043ac1c36d5edc38a6c72f4366823c69"><span class="std std-ref">normalize</span></a>. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode21settingsKeywordExistsERKNSt6stringE">
+<span id="_CPPv3NK4Mode21settingsKeywordExistsERKNSt6stringE"></span><span id="_CPPv2NK4Mode21settingsKeywordExistsERKNSt6stringE"></span><span id="Mode::settingsKeywordExists__ssCRC"></span><span class="target" id="classnnp_1_1Mode_1aa9606884fa146912a6b4ab6d26df9275"></span>bool <code class="sig-name descname">settingsKeywordExists</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>keyword</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode21settingsKeywordExistsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if keyword was found in settings file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if keyword exists, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">keyword</span></code>: Keyword for which value is requested.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode16settingsGetValueERKNSt6stringE">
+<span id="_CPPv3NK4Mode16settingsGetValueERKNSt6stringE"></span><span id="_CPPv2NK4Mode16settingsGetValueERKNSt6stringE"></span><span id="Mode::settingsGetValue__ssCRC"></span><span class="target" id="classnnp_1_1Mode_1a9b7eeb5daa541cc8e3ab36a9bcf69ab8"></span>string <code class="sig-name descname">settingsGetValue</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>keyword</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode16settingsGetValueERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get value for given keyword in <a class="reference internal" href="classnnp_1_1Settings.html#classnnp_1_1Settings"><span class="std std-ref">Settings</span></a> instance.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Value string corresponding to keyword. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">keyword</span></code>: Keyword for which value is requested.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode27pruneSymmetryFunctionsRangeEd">
+<span id="_CPPv3N4Mode27pruneSymmetryFunctionsRangeEd"></span><span id="_CPPv2N4Mode27pruneSymmetryFunctionsRangeEd"></span><span id="Mode::pruneSymmetryFunctionsRange__double"></span><span class="target" id="classnnp_1_1Mode_1a5b8ceb8be242844ec8b72987e0bf0c3e"></span>vector&lt;size_t&gt; <code class="sig-name descname">pruneSymmetryFunctionsRange</code><span class="sig-paren">(</span>double <em>threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode27pruneSymmetryFunctionsRangeEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prune symmetry functions according to their range and write settings file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>List of line numbers with symmetry function to be removed. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">threshold</span></code>: Symmetry functions with range (max - min) smaller than this threshold will be pruned.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N4Mode33pruneSymmetryFunctionsSensitivityEdNSt6vectorINSt6vectorIdEEEE">
+<span id="_CPPv3N4Mode33pruneSymmetryFunctionsSensitivityEdNSt6vectorINSt6vectorIdEEEE"></span><span id="_CPPv2N4Mode33pruneSymmetryFunctionsSensitivityEdNSt6vectorINSt6vectorIdEEEE"></span><span id="Mode::pruneSymmetryFunctionsSensitivity__double.std::vector:std::vector:double::"></span><span class="target" id="classnnp_1_1Mode_1ae922768942eef6c6e9000700595bc00d"></span>vector&lt;size_t&gt; <code class="sig-name descname">pruneSymmetryFunctionsSensitivity</code><span class="sig-paren">(</span>double <em>threshold</em>, std::vector&lt;std::vector&lt;double&gt;&gt; <em>sensitivity</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Mode33pruneSymmetryFunctionsSensitivityEdNSt6vectorINSt6vectorIdEEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prune symmetry functions with sensitivity analysis data.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>List of line numbers with symmetry function to be removed. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">threshold</span></code>: Symmetry functions with sensitivity lower than this threshold will be pruned. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sensitivity</span></code>: Sensitivity data for each element and symmetry function.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode23writePrunedSettingsFileENSt6vectorINSt6size_tEEENSt6stringE">
+<span id="_CPPv3NK4Mode23writePrunedSettingsFileENSt6vectorINSt6size_tEEENSt6stringE"></span><span id="_CPPv2NK4Mode23writePrunedSettingsFileENSt6vectorINSt6size_tEEENSt6stringE"></span><span id="Mode::writePrunedSettingsFile__std::vector:std::s:.ssC"></span><span class="target" id="classnnp_1_1Mode_1a6ac0b02c0a91917b17cd6e2fb96afb18"></span>void <code class="sig-name descname">writePrunedSettingsFile</code><span class="sig-paren">(</span>std::vector&lt;std::size_t&gt; <em>prune</em>, std::string <em>fileName</em> = &quot;output.nn&quot;<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode23writePrunedSettingsFileENSt6vectorINSt6size_tEEENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy settings file but comment out lines provided.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">prune</span></code>: List of line numbers to comment out. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: Output file name. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK4Mode17writeSettingsFileERPCNSt8ofstreamE">
+<span id="_CPPv3NK4Mode17writeSettingsFileERPCNSt8ofstreamE"></span><span id="_CPPv2NK4Mode17writeSettingsFileERPCNSt8ofstreamE"></span><span id="Mode::writeSettingsFile__std::ofstreamPCRC"></span><span class="target" id="classnnp_1_1Mode_1af2d61853475185baae3fa3a7d358557a"></span>void <code class="sig-name descname">writeSettingsFile</code><span class="sig-paren">(</span>std::ofstream *<em class="property">const</em> &amp;<em>file</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4Mode17writeSettingsFileERPCNSt8ofstreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write complete settings file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">file</span></code>: <a class="reference internal" href="classnnp_1_1Settings.html#classnnp_1_1Settings"><span class="std std-ref">Settings</span></a> file. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode10elementMapE">
+<span id="_CPPv3N3nnp4Mode10elementMapE"></span><span id="_CPPv2N3nnp4Mode10elementMapE"></span><span id="nnp::Mode::elementMap__ElementMap"></span><span class="target" id="classnnp_1_1Mode_1a12a8249ac3aab222922c42781c344779"></span><a class="reference internal" href="classnnp_1_1ElementMap.html#_CPPv4N3nnp10ElementMapE" title="nnp::ElementMap">ElementMap</a> <code class="sig-name descname">elementMap</code><a class="headerlink" href="#_CPPv4N3nnp4Mode10elementMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Global element map, populated by <a class="reference internal" href="#classnnp_1_1Mode_1a259303c95ae2f64f2b192de1b2df51f5"><span class="std std-ref">setupElementMap()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode3logE">
+<span id="_CPPv3N3nnp4Mode3logE"></span><span id="_CPPv2N3nnp4Mode3logE"></span><span id="nnp::Mode::log__Log"></span><span class="target" id="classnnp_1_1Mode_1aae5d8b1186dde3ffbf2545fca1d08923"></span><a class="reference internal" href="classnnp_1_1Log.html#_CPPv4N3nnp3LogE" title="nnp::Log">Log</a> <code class="sig-name descname">log</code><a class="headerlink" href="#_CPPv4N3nnp4Mode3logE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Global log file. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode9normalizeE">
+<span id="_CPPv3N3nnp4Mode9normalizeE"></span><span id="_CPPv2N3nnp4Mode9normalizeE"></span><span id="nnp::Mode::normalize__b"></span><span class="target" id="classnnp_1_1Mode_1a043ac1c36d5edc38a6c72f4366823c69"></span>bool <code class="sig-name descname">normalize</code><a class="headerlink" href="#_CPPv4N3nnp4Mode9normalizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode26checkExtrapolationWarningsE">
+<span id="_CPPv3N3nnp4Mode26checkExtrapolationWarningsE"></span><span id="_CPPv2N3nnp4Mode26checkExtrapolationWarningsE"></span><span id="nnp::Mode::checkExtrapolationWarnings__b"></span><span class="target" id="classnnp_1_1Mode_1a03ee0e33408435b18a79a253e967856a"></span>bool <code class="sig-name descname">checkExtrapolationWarnings</code><a class="headerlink" href="#_CPPv4N3nnp4Mode26checkExtrapolationWarningsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode11numElementsE">
+<span id="_CPPv3N3nnp4Mode11numElementsE"></span><span id="_CPPv2N3nnp4Mode11numElementsE"></span><span id="nnp::Mode::numElements__std::s"></span><span class="target" id="classnnp_1_1Mode_1a76d3694d566d2052c298325a18ee865c"></span>std::size_t <code class="sig-name descname">numElements</code><a class="headerlink" href="#_CPPv4N3nnp4Mode11numElementsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode12minNeighborsE">
+<span id="_CPPv3N3nnp4Mode12minNeighborsE"></span><span id="_CPPv2N3nnp4Mode12minNeighborsE"></span><span id="nnp::Mode::minNeighbors__std::vector:std::s:"></span><span class="target" id="classnnp_1_1Mode_1abbb183f90ace9311391b9847580009ba"></span>std::vector&lt;std::size_t&gt; <code class="sig-name descname">minNeighbors</code><a class="headerlink" href="#_CPPv4N3nnp4Mode12minNeighborsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode15minCutoffRadiusE">
+<span id="_CPPv3N3nnp4Mode15minCutoffRadiusE"></span><span id="_CPPv2N3nnp4Mode15minCutoffRadiusE"></span><span id="nnp::Mode::minCutoffRadius__std::vector:double:"></span><span class="target" id="classnnp_1_1Mode_1a16cf1320e7b8e3ff52802dff5b114fae"></span>std::vector&lt;double&gt; <code class="sig-name descname">minCutoffRadius</code><a class="headerlink" href="#_CPPv4N3nnp4Mode15minCutoffRadiusE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode15maxCutoffRadiusE">
+<span id="_CPPv3N3nnp4Mode15maxCutoffRadiusE"></span><span id="_CPPv2N3nnp4Mode15maxCutoffRadiusE"></span><span id="nnp::Mode::maxCutoffRadius__double"></span><span class="target" id="classnnp_1_1Mode_1a38f8bc8db576ad1762dd306b4d225383"></span>double <code class="sig-name descname">maxCutoffRadius</code><a class="headerlink" href="#_CPPv4N3nnp4Mode15maxCutoffRadiusE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode11cutoffAlphaE">
+<span id="_CPPv3N3nnp4Mode11cutoffAlphaE"></span><span id="_CPPv2N3nnp4Mode11cutoffAlphaE"></span><span id="nnp::Mode::cutoffAlpha__double"></span><span class="target" id="classnnp_1_1Mode_1aded25017ec58efa0cc8d55bb9fb7dd25"></span>double <code class="sig-name descname">cutoffAlpha</code><a class="headerlink" href="#_CPPv4N3nnp4Mode11cutoffAlphaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode10meanEnergyE">
+<span id="_CPPv3N3nnp4Mode10meanEnergyE"></span><span id="_CPPv2N3nnp4Mode10meanEnergyE"></span><span id="nnp::Mode::meanEnergy__double"></span><span class="target" id="classnnp_1_1Mode_1a5c6554727f0af7501fe82dfe136b3865"></span>double <code class="sig-name descname">meanEnergy</code><a class="headerlink" href="#_CPPv4N3nnp4Mode10meanEnergyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode10convEnergyE">
+<span id="_CPPv3N3nnp4Mode10convEnergyE"></span><span id="_CPPv2N3nnp4Mode10convEnergyE"></span><span id="nnp::Mode::convEnergy__double"></span><span class="target" id="classnnp_1_1Mode_1a09461989d84484833b10c96e6871f87e"></span>double <code class="sig-name descname">convEnergy</code><a class="headerlink" href="#_CPPv4N3nnp4Mode10convEnergyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode10convLengthE">
+<span id="_CPPv3N3nnp4Mode10convLengthE"></span><span id="_CPPv2N3nnp4Mode10convLengthE"></span><span id="nnp::Mode::convLength__double"></span><span class="target" id="classnnp_1_1Mode_1a1d6eccfa0f21d64823f74cc75c89473f"></span>double <code class="sig-name descname">convLength</code><a class="headerlink" href="#_CPPv4N3nnp4Mode10convLengthE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode8settingsE">
+<span id="_CPPv3N3nnp4Mode8settingsE"></span><span id="_CPPv2N3nnp4Mode8settingsE"></span><span id="nnp::Mode::settings__Settings"></span><span class="target" id="classnnp_1_1Mode_1acaf7de3d7a75f960af6a66c3e9ab6acb"></span><a class="reference internal" href="classnnp_1_1Settings.html#_CPPv4N3nnp8SettingsE" title="nnp::Settings">Settings</a> <code class="sig-name descname">settings</code><a class="headerlink" href="#_CPPv4N3nnp4Mode8settingsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode11scalingTypeE">
+<span id="_CPPv3N3nnp4Mode11scalingTypeE"></span><span id="_CPPv2N3nnp4Mode11scalingTypeE"></span><span id="nnp::Mode::scalingType__SymmetryFunction::ScalingType"></span><span class="target" id="classnnp_1_1Mode_1ab7ff5331297adab87a18dd7b0fac4e0b"></span><a class="reference internal" href="classnnp_1_1SymmetryFunction.html#_CPPv4N3nnp16SymmetryFunctionE" title="nnp::SymmetryFunction">SymmetryFunction</a>::<a class="reference internal" href="classnnp_1_1SymmetryFunction.html#_CPPv4N3nnp16SymmetryFunction11ScalingTypeE" title="nnp::SymmetryFunction::ScalingType">ScalingType</a> <code class="sig-name descname">scalingType</code><a class="headerlink" href="#_CPPv4N3nnp4Mode11scalingTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode10cutoffTypeE">
+<span id="_CPPv3N3nnp4Mode10cutoffTypeE"></span><span id="_CPPv2N3nnp4Mode10cutoffTypeE"></span><span id="nnp::Mode::cutoffType__CutoffFunction::CutoffType"></span><span class="target" id="classnnp_1_1Mode_1af7e76062a64f8acdcf384bc487f8a4fb"></span><a class="reference internal" href="classnnp_1_1CutoffFunction.html#_CPPv4N3nnp14CutoffFunctionE" title="nnp::CutoffFunction">CutoffFunction</a>::<a class="reference internal" href="classnnp_1_1CutoffFunction.html#_CPPv4N3nnp14CutoffFunction10CutoffTypeE" title="nnp::CutoffFunction::CutoffType">CutoffType</a> <code class="sig-name descname">cutoffType</code><a class="headerlink" href="#_CPPv4N3nnp4Mode10cutoffTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp4Mode8elementsE">
+<span id="_CPPv3N3nnp4Mode8elementsE"></span><span id="_CPPv2N3nnp4Mode8elementsE"></span><span id="nnp::Mode::elements__std::vector:Element:"></span><span class="target" id="classnnp_1_1Mode_1a6f777011d3e3fbe644616e7763f9dd11"></span>std::vector&lt;<a class="reference internal" href="classnnp_1_1Element.html#_CPPv4N3nnp7ElementE" title="nnp::Element">Element</a>&gt; <code class="sig-name descname">elements</code><a class="headerlink" href="#_CPPv4N3nnp4Mode8elementsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1NeuralNetwork.html" class="btn btn-neutral float-right" title="Class NeuralNetwork" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1Log.html" class="btn btn-neutral float-left" title="Class Log" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

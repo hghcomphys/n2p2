@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class InterfaceLammps &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class KalmanFilter" href="classnnp_1_1KalmanFilter.html" />
+    <link rel="prev" title="Class GradientDescent" href="classnnp_1_1GradientDescent.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class InterfaceLammps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1InterfaceLammps.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-interfacelammps">
+<span id="exhale-class-classnnp-1-1interfacelammps"></span><h1>Class InterfaceLammps<a class="headerlink" href="#class-interfacelammps" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnpif-interfacelammps-h"><span class="std std-ref">File InterfaceLammps.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::Mode</span></code> (<a class="reference internal" href="classnnp_1_1Mode.html#exhale-class-classnnp-1-1mode"><span class="std std-ref">Class Mode</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp15InterfaceLammpsE">
+<span id="_CPPv3N3nnp15InterfaceLammpsE"></span><span id="_CPPv2N3nnp15InterfaceLammpsE"></span><span id="nnp::InterfaceLammps"></span><span class="target" id="classnnp_1_1InterfaceLammps"></span><em class="property">class </em><code class="sig-name descname">InterfaceLammps</code> : <em class="property">public</em> nnp::<a class="reference internal" href="classnnp_1_1Mode.html#_CPPv4N3nnp4ModeE" title="nnp::Mode">Mode</a><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammpsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N15InterfaceLammps15InterfaceLammpsEv">
+<span id="_CPPv3N15InterfaceLammps15InterfaceLammpsEv"></span><span id="_CPPv2N15InterfaceLammps15InterfaceLammpsEv"></span><span id="InterfaceLammps::InterfaceLammps"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a58811845284c65712f1efd8a325d7155"></span><code class="sig-name descname">InterfaceLammps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15InterfaceLammps15InterfaceLammpsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15InterfaceLammps10initializeERPCcbbiidddii">
+<span id="_CPPv3N15InterfaceLammps10initializeERPCcbbiidddii"></span><span id="_CPPv2N15InterfaceLammps10initializeERPCcbbiidddii"></span><span id="InterfaceLammps::initialize__cPCR.b.b.i.i.double.double.double.i.i"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a060058c539f0f581afe587db81d1e200"></span>void <code class="sig-name descname">initialize</code><span class="sig-paren">(</span>char *<em class="property">const</em> &amp;<em>directory</em>, bool <em>showew</em>, bool <em>resetew</em>, int <em>showewsum</em>, int <em>maxew</em>, double <em>cflength</em>, double <em>cfenergy</em>, double <em>lammpsCutoff</em>, int <em>lammpsNtypes</em>, int <em>myRank</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15InterfaceLammps10initializeERPCcbbiidddii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize the LAMMPS interface.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">directory</span></code>: Directory containing NNP data files (weights, scaling, settings). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">showew</span></code>: If detailed extrapolation warnings for all atoms are shown. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">resetew</span></code>: If extrapolation warnings counter is reset every timestep. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">showewsum</span></code>: Show number of warnings every this many timesteps. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">maxew</span></code>: Abort simulation if more than this many warnings are encountered. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">cflength</span></code>: Length unit conversion factor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">cfenergy</span></code>: Energy unit conversion factor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">lammpsCutoff</span></code>: Cutoff radius from LAMMPS (via pair_coeff). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">lammpsNtypes</span></code>: Number of atom types in LAMMPS. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">myRank</span></code>: MPI process rank (passed on to structure index). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15InterfaceLammps13setLocalAtomsEiPCKiPCKi">
+<span id="_CPPv3N15InterfaceLammps13setLocalAtomsEiPCKiPCKi"></span><span id="_CPPv2N15InterfaceLammps13setLocalAtomsEiPCKiPCKi"></span><span id="InterfaceLammps::setLocalAtoms__i.iCPC.iCPC"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a28d41810dc652d5cdf1db90035e8d495"></span>void <code class="sig-name descname">setLocalAtoms</code><span class="sig-paren">(</span>int <em>numAtomsLocal</em>, int <em class="property">const</em> *<em class="property">const</em> <em>atomTag</em>, int <em class="property">const</em> *<em class="property">const</em> <em>atomType</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15InterfaceLammps13setLocalAtomsEiPCKiPCKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>(Re)set <a class="reference internal" href="#classnnp_1_1InterfaceLammps_1a03e60940f2f957ba3d3e15beb04c9730"><span class="std std-ref">structure</span></a> to contain only local LAMMPS atoms.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">numAtomsLocal</span></code>: Number of local atoms. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">atomTag</span></code>: LAMMPS atom tag. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">atomType</span></code>: LAMMPS atom type. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15InterfaceLammps11addNeighborEiiiidddd">
+<span id="_CPPv3N15InterfaceLammps11addNeighborEiiiidddd"></span><span id="_CPPv2N15InterfaceLammps11addNeighborEiiiidddd"></span><span id="InterfaceLammps::addNeighbor__i.i.i.i.double.double.double.double"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a61bd2c84ec25020a021a1f1038c7d9fe"></span>void <code class="sig-name descname">addNeighbor</code><span class="sig-paren">(</span>int <em>i</em>, int <em>j</em>, int <em>tag</em>, int <em>type</em>, double <em>dx</em>, double <em>dy</em>, double <em>dz</em>, double <em>d2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15InterfaceLammps11addNeighborEiiiidddd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add one neighbor to atom.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">i</span></code>: Local atom index. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">j</span></code>: Neighbor atom index. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">tag</span></code>: Neighbor atom tag. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">type</span></code>: Neighbor atom type. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">dx</span></code>: Neighbor atom distance in x direction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">dy</span></code>: Neighbor atom distance in y direction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">dz</span></code>: Neighbor atom distance in z direction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">d2</span></code>: Square of neighbor atom distance. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15InterfaceLammps7processEv">
+<span id="_CPPv3N15InterfaceLammps7processEv"></span><span id="_CPPv2N15InterfaceLammps7processEv"></span><span id="InterfaceLammps::process"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a0837984fb5d6fe14d298bb2c0b7d01f2"></span>void <code class="sig-name descname">process</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15InterfaceLammps7processEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate symmetry functions, atomic neural networks and sum of local energy contributions. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15InterfaceLammps9getEnergyEv">
+<span id="_CPPv3NK15InterfaceLammps9getEnergyEv"></span><span id="_CPPv2NK15InterfaceLammps9getEnergyEv"></span><span id="InterfaceLammps::getEnergyC"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a5efd42ba997e4cefca70ae3445f60f3f"></span>double <code class="sig-name descname">getEnergy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15InterfaceLammps9getEnergyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return sum of local energy contributions.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Sum of local energy contributions. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15InterfaceLammps15getAtomicEnergyEi">
+<span id="_CPPv3NK15InterfaceLammps15getAtomicEnergyEi"></span><span id="_CPPv2NK15InterfaceLammps15getAtomicEnergyEi"></span><span id="InterfaceLammps::getAtomicEnergy__iC"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a680dca82d8c1670ac2effe7ba7df60fc"></span>double <code class="sig-name descname">getAtomicEnergy</code><span class="sig-paren">(</span>int <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15InterfaceLammps15getAtomicEnergyEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return energy contribution of one atom.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>energy contribution of atom with given index.</p>
+</dd>
+<dt><strong>Attention</strong></dt><dd><p>These atomic contributions are not physical! </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">index</span></code>: <a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a> index.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15InterfaceLammps9getForcesERPCPCd">
+<span id="_CPPv3NK15InterfaceLammps9getForcesERPCPCd"></span><span id="_CPPv2NK15InterfaceLammps9getForcesERPCPCd"></span><span id="InterfaceLammps::getForces__doublePCPCRC"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a69139b2e95478a30532b1171c284ce4c"></span>void <code class="sig-name descname">getForces</code><span class="sig-paren">(</span>double *<em class="property">const</em> *<em class="property">const</em> &amp;<em>atomF</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15InterfaceLammps9getForcesERPCPCd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate forces and add to LAMMPS atomic force arrays.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">atomF</span></code>: LAMMPS force array for local and ghost atoms. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp15InterfaceLammps13isInitializedEv">
+<span id="_CPPv3NK3nnp15InterfaceLammps13isInitializedEv"></span><span id="_CPPv2NK3nnp15InterfaceLammps13isInitializedEv"></span><span id="nnp::InterfaceLammps::isInitializedC"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a7e9dc6faa2321eb86e04f4b0e026ed7f"></span>bool <code class="sig-name descname">isInitialized</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp15InterfaceLammps13isInitializedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if this interface is correctly initialized.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if initialized, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15InterfaceLammps18getMaxCutoffRadiusEv">
+<span id="_CPPv3NK15InterfaceLammps18getMaxCutoffRadiusEv"></span><span id="_CPPv2NK15InterfaceLammps18getMaxCutoffRadiusEv"></span><span id="InterfaceLammps::getMaxCutoffRadiusC"></span><span class="target" id="classnnp_1_1InterfaceLammps_1ae6baf0f4691b0eb4a57feaaa6f3f10bb"></span>double <code class="sig-name descname">getMaxCutoffRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15InterfaceLammps18getMaxCutoffRadiusEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get largest cutoff.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Largest cutoff of all symmetry functions. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15InterfaceLammps15getEWBufferSizeEv">
+<span id="_CPPv3NK15InterfaceLammps15getEWBufferSizeEv"></span><span id="_CPPv2NK15InterfaceLammps15getEWBufferSizeEv"></span><span id="InterfaceLammps::getEWBufferSizeC"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a05076e9e514d0d0f002e27b235f2f01f"></span>long <code class="sig-name descname">getEWBufferSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15InterfaceLammps15getEWBufferSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate buffer size for extrapolation warning communication.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Buffer size. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15InterfaceLammps12fillEWBufferERPCci">
+<span id="_CPPv3NK15InterfaceLammps12fillEWBufferERPCci"></span><span id="_CPPv2NK15InterfaceLammps12fillEWBufferERPCci"></span><span id="InterfaceLammps::fillEWBuffer__cPCR.iC"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a655e577553b61b9bbe3bbe2bb9d9f785"></span>void <code class="sig-name descname">fillEWBuffer</code><span class="sig-paren">(</span>char *<em class="property">const</em> &amp;<em>buf</em>, int <em>bs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15InterfaceLammps12fillEWBufferERPCci" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fill provided buffer with extrapolation warning entries.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">buf</span></code>: Communication buffer to fill. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">bs</span></code>: Buffer size. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15InterfaceLammps15extractEWBufferERPCKci">
+<span id="_CPPv3N15InterfaceLammps15extractEWBufferERPCKci"></span><span id="_CPPv2N15InterfaceLammps15extractEWBufferERPCKci"></span><span id="InterfaceLammps::extractEWBuffer__cCPCR.i"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a0ef9d95aeeb71882068bda355ebbd8cf"></span>void <code class="sig-name descname">extractEWBuffer</code><span class="sig-paren">(</span>char <em class="property">const</em> *<em class="property">const</em> &amp;<em>buf</em>, int <em>bs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15InterfaceLammps15extractEWBufferERPCKci" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extract given buffer to symmetry function statistics class.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">buf</span></code>: Buffer with extrapolation warnings data. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">bs</span></code>: Buffer size. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15InterfaceLammps26writeExtrapolationWarningsEv">
+<span id="_CPPv3N15InterfaceLammps26writeExtrapolationWarningsEv"></span><span id="_CPPv2N15InterfaceLammps26writeExtrapolationWarningsEv"></span><span id="InterfaceLammps::writeExtrapolationWarnings"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a7f6455e00e75a9f50289fb46cedcf395"></span>void <code class="sig-name descname">writeExtrapolationWarnings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15InterfaceLammps26writeExtrapolationWarningsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write extrapolation warnings to log. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15InterfaceLammps26clearExtrapolationWarningsEv">
+<span id="_CPPv3N15InterfaceLammps26clearExtrapolationWarningsEv"></span><span id="_CPPv2N15InterfaceLammps26clearExtrapolationWarningsEv"></span><span id="InterfaceLammps::clearExtrapolationWarnings"></span><span class="target" id="classnnp_1_1InterfaceLammps_1ad88b019d3d4f89dd1a8c118dcaf4f887"></span>void <code class="sig-name descname">clearExtrapolationWarnings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15InterfaceLammps26clearExtrapolationWarningsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear extrapolation warnings storage. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps6myRankE">
+<span id="_CPPv3N3nnp15InterfaceLammps6myRankE"></span><span id="_CPPv2N3nnp15InterfaceLammps6myRankE"></span><span id="nnp::InterfaceLammps::myRank__i"></span><span class="target" id="classnnp_1_1InterfaceLammps_1ae49ace744eb0f7690c801cb5fdcdc53e"></span>int <code class="sig-name descname">myRank</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps6myRankE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Process rank. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps11initializedE">
+<span id="_CPPv3N3nnp15InterfaceLammps11initializedE"></span><span id="_CPPv2N3nnp15InterfaceLammps11initializedE"></span><span id="nnp::InterfaceLammps::initialized__b"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a05ad5b918d5551c98dbcf8ae071f2fad"></span>bool <code class="sig-name descname">initialized</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps11initializedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialization state. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps6showewE">
+<span id="_CPPv3N3nnp15InterfaceLammps6showewE"></span><span id="_CPPv2N3nnp15InterfaceLammps6showewE"></span><span id="nnp::InterfaceLammps::showew__b"></span><span class="target" id="classnnp_1_1InterfaceLammps_1aa8658806f5a4c374e04999e54e2ae58d"></span>bool <code class="sig-name descname">showew</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps6showewE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Corresponds to LAMMPS <code class="docutils literal notranslate"><span class="pre">showew</span></code> keyword. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps7resetewE">
+<span id="_CPPv3N3nnp15InterfaceLammps7resetewE"></span><span id="_CPPv2N3nnp15InterfaceLammps7resetewE"></span><span id="nnp::InterfaceLammps::resetew__b"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a7d53a23dedee7f177c33e015ac5cabe6"></span>bool <code class="sig-name descname">resetew</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps7resetewE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Corresponds to LAMMPS <code class="docutils literal notranslate"><span class="pre">resetew</span></code> keyword. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps9showewsumE">
+<span id="_CPPv3N3nnp15InterfaceLammps9showewsumE"></span><span id="_CPPv2N3nnp15InterfaceLammps9showewsumE"></span><span id="nnp::InterfaceLammps::showewsum__i"></span><span class="target" id="classnnp_1_1InterfaceLammps_1ab46a74f039710be730881b1ae07931ca"></span>int <code class="sig-name descname">showewsum</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps9showewsumE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Corresponds to LAMMPS <code class="docutils literal notranslate"><span class="pre">showewsum</span></code> keyword. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps5maxewE">
+<span id="_CPPv3N3nnp15InterfaceLammps5maxewE"></span><span id="_CPPv2N3nnp15InterfaceLammps5maxewE"></span><span id="nnp::InterfaceLammps::maxew__i"></span><span class="target" id="classnnp_1_1InterfaceLammps_1aef09cc9497529b61957676b4d7768313"></span>int <code class="sig-name descname">maxew</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps5maxewE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Corresponds to LAMMPS <code class="docutils literal notranslate"><span class="pre">maxew</span></code> keyword. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps8cflengthE">
+<span id="_CPPv3N3nnp15InterfaceLammps8cflengthE"></span><span id="_CPPv2N3nnp15InterfaceLammps8cflengthE"></span><span id="nnp::InterfaceLammps::cflength__double"></span><span class="target" id="classnnp_1_1InterfaceLammps_1af925693726bfefc8bf09847890db7f8f"></span>double <code class="sig-name descname">cflength</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps8cflengthE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Corresponds to LAMMPS <code class="docutils literal notranslate"><span class="pre">cflength</span></code> keyword. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps8cfenergyE">
+<span id="_CPPv3N3nnp15InterfaceLammps8cfenergyE"></span><span id="_CPPv2N3nnp15InterfaceLammps8cfenergyE"></span><span id="nnp::InterfaceLammps::cfenergy__double"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a9b83792f3c813a16158099f7213412f8"></span>double <code class="sig-name descname">cfenergy</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps8cfenergyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Corresponds to LAMMPS <code class="docutils literal notranslate"><span class="pre">cfenergy</span></code> keyword. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp15InterfaceLammps9structureE">
+<span id="_CPPv3N3nnp15InterfaceLammps9structureE"></span><span id="_CPPv2N3nnp15InterfaceLammps9structureE"></span><span id="nnp::InterfaceLammps::structure__Structure"></span><span class="target" id="classnnp_1_1InterfaceLammps_1a03e60940f2f957ba3d3e15beb04c9730"></span><a class="reference internal" href="structnnp_1_1Structure.html#_CPPv4N3nnp9StructureE" title="nnp::Structure">Structure</a> <code class="sig-name descname">structure</code><a class="headerlink" href="#_CPPv4N3nnp15InterfaceLammps9structureE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="structnnp_1_1Structure.html#structnnp_1_1Structure"><span class="std std-ref">Structure</span></a> containing local atoms. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1KalmanFilter.html" class="btn btn-neutral float-right" title="Class KalmanFilter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1GradientDescent.html" class="btn btn-neutral float-left" title="Class GradientDescent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

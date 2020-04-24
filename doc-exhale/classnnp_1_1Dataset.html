@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Dataset &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class Element" href="classnnp_1_1Element.html" />
+    <link rel="prev" title="Class CutoffFunction" href="classnnp_1_1CutoffFunction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class Dataset</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1Dataset.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-dataset">
+<span id="exhale-class-classnnp-1-1dataset"></span><h1>Class Dataset<a class="headerlink" href="#class-dataset" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnptrain-dataset-h"><span class="std std-ref">File Dataset.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::Mode</span></code> (<a class="reference internal" href="classnnp_1_1Mode.html#exhale-class-classnnp-1-1mode"><span class="std std-ref">Class Mode</span></a>)</p></li>
+</ul>
+</div>
+<div class="section" id="derived-type">
+<h3>Derived Type<a class="headerlink" href="#derived-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::Training</span></code> (<a class="reference internal" href="classnnp_1_1Training.html#exhale-class-classnnp-1-1training"><span class="std std-ref">Class Training</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp7DatasetE">
+<span id="_CPPv3N3nnp7DatasetE"></span><span id="_CPPv2N3nnp7DatasetE"></span><span id="nnp::Dataset"></span><span class="target" id="classnnp_1_1Dataset"></span><em class="property">class </em><code class="sig-name descname">Dataset</code> : <em class="property">public</em> nnp::<a class="reference internal" href="classnnp_1_1Mode.html#_CPPv4N3nnp4ModeE" title="nnp::Mode">Mode</a><a class="headerlink" href="#_CPPv4N3nnp7DatasetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Collect and process large data sets. </p>
+<p>Subclassed by <a class="reference internal" href="classnnp_1_1Training.html#classnnp_1_1Training"><span class="std std-ref">nnp::Training</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset7DatasetEv">
+<span id="_CPPv3N7Dataset7DatasetEv"></span><span id="_CPPv2N7Dataset7DatasetEv"></span><span id="Dataset::Dataset"></span><span class="target" id="classnnp_1_1Dataset_1a2ef0a4a688a218d55ef061c6df659a4a"></span><code class="sig-name descname">Dataset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset7DatasetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor, initialize members. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7DatasetD0Ev">
+<span id="_CPPv3N7DatasetD0Ev"></span><span id="_CPPv2N7DatasetD0Ev"></span><span id="Dataset::~Dataset"></span><span class="target" id="classnnp_1_1Dataset_1a7f38b79ccbf9ada90d68d3a50250b193"></span><code class="sig-name descname">~Dataset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7DatasetD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset8setupMPIEv">
+<span id="_CPPv3N7Dataset8setupMPIEv"></span><span id="_CPPv2N7Dataset8setupMPIEv"></span><span id="Dataset::setupMPI"></span><span class="target" id="classnnp_1_1Dataset_1a93a93358a8303c618562487729450455"></span>void <code class="sig-name descname">setupMPI</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset8setupMPIEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize MPI with MPI_COMM_WORLD. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset8setupMPIEP8MPI_Comm">
+<span id="_CPPv3N7Dataset8setupMPIEP8MPI_Comm"></span><span id="_CPPv2N7Dataset8setupMPIEP8MPI_Comm"></span><span id="Dataset::setupMPI__MPI_CommP"></span><span class="target" id="classnnp_1_1Dataset_1afd2470ddbc354289e185a3bd119684a9"></span>void <code class="sig-name descname">setupMPI</code><span class="sig-paren">(</span>MPI_Comm *<em>communicator</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset8setupMPIEP8MPI_Comm" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize MPI with given communicator.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">communicator</span></code>: Provided communicator which should be used. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset26setupRandomNumberGeneratorEv">
+<span id="_CPPv3N7Dataset26setupRandomNumberGeneratorEv"></span><span id="_CPPv2N7Dataset26setupRandomNumberGeneratorEv"></span><span id="Dataset::setupRandomNumberGenerator"></span><span class="target" id="classnnp_1_1Dataset_1abd84c06c5a83789ebe6a3ef8075af632"></span>void <code class="sig-name descname">setupRandomNumberGenerator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset26setupRandomNumberGeneratorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize random number generator.</p>
+<p>CAUTION: MPI communicator required, call <a class="reference internal" href="#classnnp_1_1Dataset_1a93a93358a8303c618562487729450455"><span class="std std-ref">setupMPI()</span></a> before! </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset16getNumStructuresERNSt8ifstreamE">
+<span id="_CPPv3N7Dataset16getNumStructuresERNSt8ifstreamE"></span><span id="_CPPv2N7Dataset16getNumStructuresERNSt8ifstreamE"></span><span id="Dataset::getNumStructures__std::ifstreamR"></span><span class="target" id="classnnp_1_1Dataset_1aed1852f4390b8b97e62f697ee4b16676"></span>size_t <code class="sig-name descname">getNumStructures</code><span class="sig-paren">(</span>std::ifstream &amp;<em>dataFile</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset16getNumStructuresERNSt8ifstreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get number of structures in data file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of structures. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">dataFile</span></code>: Data file name.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7Dataset19calculateBufferSizeERK9Structure">
+<span id="_CPPv3NK7Dataset19calculateBufferSizeERK9Structure"></span><span id="_CPPv2NK7Dataset19calculateBufferSizeERK9Structure"></span><span id="Dataset::calculateBufferSize__StructureCRC"></span><span class="target" id="classnnp_1_1Dataset_1a80b6ba9363df082cf9f7aaaad56ad7c0"></span>int <code class="sig-name descname">calculateBufferSize</code><span class="sig-paren">(</span>Structure <em class="property">const</em> &amp;<em>structure</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7Dataset19calculateBufferSizeERK9Structure" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate buffer size required to communicate structure via MPI</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Buffer size in bytes. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Input structure.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7Dataset13sendStructureERK9Structurei">
+<span id="_CPPv3NK7Dataset13sendStructureERK9Structurei"></span><span id="_CPPv2NK7Dataset13sendStructureERK9Structurei"></span><span id="Dataset::sendStructure__StructureCR.iC"></span><span class="target" id="classnnp_1_1Dataset_1ac032639db8f6f1230f759afd3775c200"></span>int <code class="sig-name descname">sendStructure</code><span class="sig-paren">(</span>Structure <em class="property">const</em> &amp;<em>structure</em>, int <em>dest</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7Dataset13sendStructureERK9Structurei" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Send one structure to destination process.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of bytes sent. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Source structure. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">dest</span></code>: MPI rank of destination process.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset13recvStructureEP9Structurei">
+<span id="_CPPv3N7Dataset13recvStructureEP9Structurei"></span><span id="_CPPv2N7Dataset13recvStructureEP9Structurei"></span><span id="Dataset::recvStructure__StructureP.i"></span><span class="target" id="classnnp_1_1Dataset_1a57630554119a518ecb32d5e1f327256f"></span>int <code class="sig-name descname">recvStructure</code><span class="sig-paren">(</span>Structure *<em>structure</em>, int <em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset13recvStructureEP9Structurei" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive one structure from source process.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of bytes received. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">structure</span></code>: Source structure. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">src</span></code>: MPI rank of source process.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset20distributeStructuresEbbRKNSt6stringE">
+<span id="_CPPv3N7Dataset20distributeStructuresEbbRKNSt6stringE"></span><span id="_CPPv2N7Dataset20distributeStructuresEbbRKNSt6stringE"></span><span id="Dataset::distributeStructures__b.b.ssCR"></span><span class="target" id="classnnp_1_1Dataset_1a1ecb649e652e2c6acb83102340f48afd"></span>int <code class="sig-name descname">distributeStructures</code><span class="sig-paren">(</span>bool <em>randomize</em>, bool <em>excludeRank0</em> = false, std::string <em class="property">const</em> &amp;<em>fileName</em> = &quot;input.data&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset20distributeStructuresEbbRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read data file and distribute structures among processors.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Number of bytes transferred. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">randomize</span></code>: If <code class="docutils literal notranslate"><span class="pre">true</span></code> randomly distribute structures, otherwise they are distributed in order. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">excludeRank0</span></code>: If <code class="docutils literal notranslate"><span class="pre">true</span></code> no structures are distributed to MPI process with rank 0. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: Data file name, e.g. “input.data”.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset17toNormalizedUnitsEv">
+<span id="_CPPv3N7Dataset17toNormalizedUnitsEv"></span><span id="_CPPv2N7Dataset17toNormalizedUnitsEv"></span><span id="Dataset::toNormalizedUnits"></span><span class="target" id="classnnp_1_1Dataset_1affe9632070e632592b6f3d78e4529d3a"></span>void <code class="sig-name descname">toNormalizedUnits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset17toNormalizedUnitsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Switch all structures to normalized units. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset15toPhysicalUnitsEv">
+<span id="_CPPv3N7Dataset15toPhysicalUnitsEv"></span><span id="_CPPv2N7Dataset15toPhysicalUnitsEv"></span><span id="Dataset::toPhysicalUnits"></span><span class="target" id="classnnp_1_1Dataset_1aa99d82945d6250000d26f53173d855c3"></span>void <code class="sig-name descname">toPhysicalUnits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset15toPhysicalUnitsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Switch all structures to physical units. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset33collectSymmetryFunctionStatisticsEv">
+<span id="_CPPv3N7Dataset33collectSymmetryFunctionStatisticsEv"></span><span id="_CPPv2N7Dataset33collectSymmetryFunctionStatisticsEv"></span><span id="Dataset::collectSymmetryFunctionStatistics"></span><span class="target" id="classnnp_1_1Dataset_1a1a204e7dc1bdf91a515b18a0ef06704c"></span>void <code class="sig-name descname">collectSymmetryFunctionStatistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset33collectSymmetryFunctionStatisticsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Collect symmetry function statistics from all processors. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset28writeSymmetryFunctionScalingERKNSt6stringE">
+<span id="_CPPv3N7Dataset28writeSymmetryFunctionScalingERKNSt6stringE"></span><span id="_CPPv2N7Dataset28writeSymmetryFunctionScalingERKNSt6stringE"></span><span id="Dataset::writeSymmetryFunctionScaling__ssCR"></span><span class="target" id="classnnp_1_1Dataset_1a1623c2ddd9e673d12586e067ae536cc8"></span>void <code class="sig-name descname">writeSymmetryFunctionScaling</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>fileName</em> = &quot;scaling.data&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset28writeSymmetryFunctionScalingERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write symmetry function scaling values to file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: Scaling data file name (e.g. “scaling.data”). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset31writeSymmetryFunctionHistogramsENSt6size_tENSt6stringE">
+<span id="_CPPv3N7Dataset31writeSymmetryFunctionHistogramsENSt6size_tENSt6stringE"></span><span id="_CPPv2N7Dataset31writeSymmetryFunctionHistogramsENSt6size_tENSt6stringE"></span><span id="Dataset::writeSymmetryFunctionHistograms__std::s.ss"></span><span class="target" id="classnnp_1_1Dataset_1abb4a2760ca7eb9c03e2ea37474a431c0"></span>void <code class="sig-name descname">writeSymmetryFunctionHistograms</code><span class="sig-paren">(</span>std::size_t <em>numBins</em>, std::string <em>fileNameFormat</em> = &quot;sf.%03zu.%04zu.histo&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset31writeSymmetryFunctionHistogramsENSt6size_tENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate and write symmetry function histograms.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">numBins</span></code>: Number of histogram bins used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileNameFormat</span></code>: Format for histogram file names, must include placeholders for element and symmetry function number. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset25writeSymmetryFunctionFileENSt6stringE">
+<span id="_CPPv3N7Dataset25writeSymmetryFunctionFileENSt6stringE"></span><span id="_CPPv2N7Dataset25writeSymmetryFunctionFileENSt6stringE"></span><span id="Dataset::writeSymmetryFunctionFile__ss"></span><span class="target" id="classnnp_1_1Dataset_1aa12823183030d6cff2e059e860d15671"></span>void <code class="sig-name descname">writeSymmetryFunctionFile</code><span class="sig-paren">(</span>std::string <em>fileName</em> = &quot;function.data&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset25writeSymmetryFunctionFileENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write symmetry function legacy file (“function.data”).</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: File name for symmetry function file. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset22writeNeighborHistogramERKNSt6stringE">
+<span id="_CPPv3N7Dataset22writeNeighborHistogramERKNSt6stringE"></span><span id="_CPPv2N7Dataset22writeNeighborHistogramERKNSt6stringE"></span><span id="Dataset::writeNeighborHistogram__ssCR"></span><span class="target" id="classnnp_1_1Dataset_1afbdec01079adc087d702d5e7fddf2494"></span>size_t <code class="sig-name descname">writeNeighborHistogram</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>fileName</em> = &quot;neighbors.histo&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset22writeNeighborHistogramERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate and write neighbor histogram.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Maximum number of neighbors. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: Name of histogram file.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset17sortNeighborListsEv">
+<span id="_CPPv3N7Dataset17sortNeighborListsEv"></span><span id="_CPPv2N7Dataset17sortNeighborListsEv"></span><span id="Dataset::sortNeighborLists"></span><span class="target" id="classnnp_1_1Dataset_1a72dd2973c5732479df5d76389fd5466f"></span>void <code class="sig-name descname">sortNeighborLists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset17sortNeighborListsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sort all neighbor lists according to element and distance. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset18writeNeighborListsERKNSt6stringE">
+<span id="_CPPv3N7Dataset18writeNeighborListsERKNSt6stringE"></span><span id="_CPPv2N7Dataset18writeNeighborListsERKNSt6stringE"></span><span id="Dataset::writeNeighborLists__ssCR"></span><span class="target" id="classnnp_1_1Dataset_1a7fdf6f361d7e65d31fe1002d6a9aacfd"></span>void <code class="sig-name descname">writeNeighborLists</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>fileName</em> = &quot;neighbor-list.data&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset18writeNeighborListsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write neighbor list file.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileName</span></code>: Name for neighbor list file. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7Dataset26writeAtomicEnvironmentFileENSt6vectorINSt6vectorINSt6size_tEEEEEbRKNSt6stringE">
+<span id="_CPPv3N7Dataset26writeAtomicEnvironmentFileENSt6vectorINSt6vectorINSt6size_tEEEEEbRKNSt6stringE"></span><span id="_CPPv2N7Dataset26writeAtomicEnvironmentFileENSt6vectorINSt6vectorINSt6size_tEEEEEbRKNSt6stringE"></span><span id="Dataset::writeAtomicEnvironmentFile__std::vector:std::vector:std::s::.b.ssCR"></span><span class="target" id="classnnp_1_1Dataset_1a7f59129925f9a0fa7fe2db87dd60e1df"></span>void <code class="sig-name descname">writeAtomicEnvironmentFile</code><span class="sig-paren">(</span>std::vector&lt;std::vector&lt;std::size_t&gt;&gt; <em>neighCutoff</em>, bool <em>derivatives</em>, std::string <em class="property">const</em> &amp;<em>fileNamePrefix</em> = &quot;atomic-env&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Dataset26writeAtomicEnvironmentFileENSt6vectorINSt6vectorINSt6size_tEEEEEbRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write atomic environment file.</p>
+<p><p>This file is used for symmetry function clustering analysis. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">neighCutoff</span></code>: Maximum number of neighbor to consider (for each element combination). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">derivatives</span></code>: If true, write separate files for derivates. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">fileNamePrefix</span></code>: Prefix for atomic environment files.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7Dataset11averageRmseERdRNSt6size_tE">
+<span id="_CPPv3NK7Dataset11averageRmseERdRNSt6size_tE"></span><span id="_CPPv2NK7Dataset11averageRmseERdRNSt6size_tE"></span><span id="Dataset::averageRmse__doubleR.std::sRC"></span><span class="target" id="classnnp_1_1Dataset_1adb242278abb667be39371eff29e360bb"></span>void <code class="sig-name descname">averageRmse</code><span class="sig-paren">(</span>double &amp;<em>rmse</em>, std::size_t &amp;<em>count</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7Dataset11averageRmseERdRNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reduce and average RMSE over all MPI procs.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">rmse</span></code>: RMSE sum of this proc (in), global RMSE (out). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">count</span></code>: Count for this proc (in), global count (out). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7Dataset12combineFilesENSt6stringE">
+<span id="_CPPv3NK7Dataset12combineFilesENSt6stringE"></span><span id="_CPPv2NK7Dataset12combineFilesENSt6stringE"></span><span id="Dataset::combineFiles__ssC"></span><span class="target" id="classnnp_1_1Dataset_1acb7687f6863a18f901b4b13bdd88d225"></span>void <code class="sig-name descname">combineFiles</code><span class="sig-paren">(</span>std::string <em>filePrefix</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7Dataset12combineFilesENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Combine individual MPI proc files to one.</p>
+<p><p>CAUTION: Make sure files are completely written and closed. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">filePrefix</span></code>: File prefix without the “.0001” suffix.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Dataset10structuresE">
+<span id="_CPPv3N3nnp7Dataset10structuresE"></span><span id="_CPPv2N3nnp7Dataset10structuresE"></span><span id="nnp::Dataset::structures__std::vector:Structure:"></span><span class="target" id="classnnp_1_1Dataset_1aa0ab32abb821e98058c7df794ca8103d"></span>std::vector&lt;<a class="reference internal" href="structnnp_1_1Structure.html#_CPPv4N3nnp9StructureE" title="nnp::Structure">Structure</a>&gt; <code class="sig-name descname">structures</code><a class="headerlink" href="#_CPPv4N3nnp7Dataset10structuresE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>All structures in this dataset. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Dataset6myRankE">
+<span id="_CPPv3N3nnp7Dataset6myRankE"></span><span id="_CPPv2N3nnp7Dataset6myRankE"></span><span id="nnp::Dataset::myRank__i"></span><span class="target" id="classnnp_1_1Dataset_1adc4c6b8a47ec99fe2efc2e6851df83e5"></span>int <code class="sig-name descname">myRank</code><a class="headerlink" href="#_CPPv4N3nnp7Dataset6myRankE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>My process ID. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Dataset8numProcsE">
+<span id="_CPPv3N3nnp7Dataset8numProcsE"></span><span id="_CPPv2N3nnp7Dataset8numProcsE"></span><span id="nnp::Dataset::numProcs__i"></span><span class="target" id="classnnp_1_1Dataset_1a96f37380d0a1d86920e3da271df3b089"></span>int <code class="sig-name descname">numProcs</code><a class="headerlink" href="#_CPPv4N3nnp7Dataset8numProcsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Total number of MPI processors. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Dataset13numStructuresE">
+<span id="_CPPv3N3nnp7Dataset13numStructuresE"></span><span id="_CPPv2N3nnp7Dataset13numStructuresE"></span><span id="nnp::Dataset::numStructures__std::s"></span><span class="target" id="classnnp_1_1Dataset_1a0d03b673a86dbf7484f2da9e41872c2f"></span>std::size_t <code class="sig-name descname">numStructures</code><a class="headerlink" href="#_CPPv4N3nnp7Dataset13numStructuresE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Total number of structures in dataset. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Dataset6myNameE">
+<span id="_CPPv3N3nnp7Dataset6myNameE"></span><span id="_CPPv2N3nnp7Dataset6myNameE"></span><span id="nnp::Dataset::myName__ss"></span><span class="target" id="classnnp_1_1Dataset_1ac1aa836b7597b2e37b2677b36e2c626e"></span>std::string <code class="sig-name descname">myName</code><a class="headerlink" href="#_CPPv4N3nnp7Dataset6myNameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>My processor name. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Dataset4commE">
+<span id="_CPPv3N3nnp7Dataset4commE"></span><span id="_CPPv2N3nnp7Dataset4commE"></span><span id="nnp::Dataset::comm__MPI_Comm"></span><span class="target" id="classnnp_1_1Dataset_1a8818ce2d15fcad4037b0db8057ad7f59"></span>MPI_Comm <code class="sig-name descname">comm</code><a class="headerlink" href="#_CPPv4N3nnp7Dataset4commE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Global MPI communicator. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Dataset3rngE">
+<span id="_CPPv3N3nnp7Dataset3rngE"></span><span id="_CPPv2N3nnp7Dataset3rngE"></span><span id="nnp::Dataset::rng__gsl_rngP"></span><span class="target" id="classnnp_1_1Dataset_1a1e39dc46c8015f4dbe34010b0d7a5648"></span>gsl_rng *<code class="sig-name descname">rng</code><a class="headerlink" href="#_CPPv4N3nnp7Dataset3rngE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>GSL random number generator (different seed for each MPI process). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp7Dataset9rngGlobalE">
+<span id="_CPPv3N3nnp7Dataset9rngGlobalE"></span><span id="_CPPv2N3nnp7Dataset9rngGlobalE"></span><span id="nnp::Dataset::rngGlobal__gsl_rngP"></span><span class="target" id="classnnp_1_1Dataset_1ae35949dc7242a6e2f5e81885e737e38f"></span>gsl_rng *<code class="sig-name descname">rngGlobal</code><a class="headerlink" href="#_CPPv4N3nnp7Dataset9rngGlobalE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Global GSL random number generator (equal seed for each MPI process). </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1Element.html" class="btn btn-neutral float-right" title="Class Element" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1CutoffFunction.html" class="btn btn-neutral float-left" title="Class CutoffFunction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

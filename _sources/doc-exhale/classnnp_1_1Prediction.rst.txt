@@ -1,0 +1,26 @@
+.. _exhale_class_classnnp_1_1Prediction:
+
+Class Prediction
+================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Prediction.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public nnp::Mode`` (:ref:`exhale_class_classnnp_1_1Mode`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::Prediction
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

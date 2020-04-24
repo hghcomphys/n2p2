@@ -1,0 +1,10 @@
+<map id="nnp::Mode::setupGeneric" name="nnp::Mode::setupGeneric">
+<area shape="rect" id="node2" href="$a00832.html#ae72c03926dc7ea9b8f43770fb5861ccf" title="Set up cutoff function for all symmetry functions. " alt="" coords="265,5,437,32"/>
+<area shape="rect" id="node3" href="$a00832.html#a259303c95ae2f64f2b192de1b2df51f5" title="Set up the element map. " alt="" coords="244,56,459,83"/>
+<area shape="rect" id="node4" href="$a00832.html#afc4e43a8f905900eb4ea153d529053ec" title="Set up all Element instances. " alt="" coords="254,107,449,133"/>
+<area shape="rect" id="node5" href="$a00832.html#a3488a7fb2b0ccf17a9b2af514590f57c" title="Set up neural networks for all elements. " alt="" coords="236,157,467,184"/>
+<area shape="rect" id="node6" href="$a00832.html#aa837413e8d998f165f0b8527de636cb5" title="Set up normalization. " alt="" coords="239,208,464,235"/>
+<area shape="rect" id="node7" href="$a00832.html#a6f0184f87845a572cf4c3db0958a97d9" title="Set up symmetry function groups. " alt="" coords="251,259,452,301"/>
+<area shape="rect" id="node8" href="$a00832.html#af1d1548ef2d6a9bbfdc519b76b904700" title="Extract required memory dimensions for symmetry function derivatives. " alt="" coords="251,325,452,366"/>
+<area shape="rect" id="node9" href="$a00832.html#ad0080b25ea49cdd6ce085162751a379b" title="Set up all symmetry functions. " alt="" coords="251,390,452,431"/>
+</map>

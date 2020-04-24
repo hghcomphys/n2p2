@@ -1,0 +1,717 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File InterfaceLammps.cpp &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File InterfaceLammps.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-interfacelammps-cpp">
+<span id="program-listing-file-home-travis-build-compphysvienna-n2p2-src-libnnpif-interfacelammps-cpp"></span><h1>Program Listing for File InterfaceLammps.cpp<a class="headerlink" href="#program-listing-for-file-interfacelammps-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp.html#file-home-travis-build-compphysvienna-n2p2-src-libnnpif-interfacelammps-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">/home/travis/build/CompPhysVienna/n2p2/src/libnnpif/InterfaceLammps.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// n2p2 - A neural network potential package</span>
+<span class="c1">// Copyright (C) 2018 Andreas Singraber (University of Vienna)</span>
+<span class="c1">//</span>
+<span class="c1">// This program is free software: you can redistribute it and/or modify</span>
+<span class="c1">// it under the terms of the GNU General Public License as published by</span>
+<span class="c1">// the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1">// (at your option) any later version.</span>
+<span class="c1">//</span>
+<span class="c1">// This program is distributed in the hope that it will be useful,</span>
+<span class="c1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1">// GNU General Public License for more details.</span>
+<span class="c1">//</span>
+<span class="c1">// You should have received a copy of the GNU General Public License</span>
+<span class="c1">// along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
+
+<span class="cp">#ifndef NOMPI</span>
+<span class="cp">#include</span> <span class="cpf">&lt;mpi.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;mpi-extra.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+<span class="cp">#include</span> <span class="cpf">&quot;InterfaceLammps.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Atom.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Element.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;utility.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="cp">#define TOLCUTOFF 1.0E-2</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">nnp</span><span class="p">;</span>
+
+<span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">InterfaceLammps</span><span class="p">()</span> <span class="o">:</span> <span class="n">myRank</span>      <span class="p">(</span><span class="mi">0</span>    <span class="p">),</span>
+                                     <span class="n">initialized</span> <span class="p">(</span><span class="nb">false</span><span class="p">),</span>
+                                     <span class="n">showew</span>      <span class="p">(</span><span class="nb">true</span> <span class="p">),</span>
+                                     <span class="n">resetew</span>     <span class="p">(</span><span class="nb">false</span><span class="p">),</span>
+                                     <span class="n">showewsum</span>   <span class="p">(</span><span class="mi">0</span>    <span class="p">),</span>
+                                     <span class="n">maxew</span>       <span class="p">(</span><span class="mi">0</span>    <span class="p">),</span>
+                                     <span class="n">cflength</span>    <span class="p">(</span><span class="mf">1.0</span>  <span class="p">),</span>
+                                     <span class="n">cfenergy</span>    <span class="p">(</span><span class="mf">1.0</span>  <span class="p">)</span>
+
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">initialize</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">directory</span><span class="p">,</span>
+                                 <span class="kt">bool</span>         <span class="n">showew</span><span class="p">,</span>
+                                 <span class="kt">bool</span>         <span class="n">resetew</span><span class="p">,</span>
+                                 <span class="kt">int</span>          <span class="n">showewsum</span><span class="p">,</span>
+                                 <span class="kt">int</span>          <span class="n">maxew</span><span class="p">,</span>
+                                 <span class="kt">double</span>       <span class="n">cflength</span><span class="p">,</span>
+                                 <span class="kt">double</span>       <span class="n">cfenergy</span><span class="p">,</span>
+                                 <span class="kt">double</span>       <span class="n">lammpsCutoff</span><span class="p">,</span>
+                                 <span class="kt">int</span>          <span class="n">lammpsNtypes</span><span class="p">,</span>
+                                 <span class="kt">int</span>          <span class="n">myRank</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">showew</span> <span class="o">=</span> <span class="n">showew</span><span class="p">;</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">resetew</span> <span class="o">=</span> <span class="n">resetew</span><span class="p">;</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">showewsum</span> <span class="o">=</span> <span class="n">showewsum</span><span class="p">;</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">maxew</span> <span class="o">=</span> <span class="n">maxew</span><span class="p">;</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">cflength</span> <span class="o">=</span> <span class="n">cflength</span><span class="p">;</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">cfenergy</span> <span class="o">=</span> <span class="n">cfenergy</span><span class="p">;</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">myRank</span> <span class="o">=</span> <span class="n">myRank</span><span class="p">;</span>
+    <span class="n">log</span><span class="p">.</span><span class="n">writeToStdout</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">string</span> <span class="nf">dir</span><span class="p">(</span><span class="n">directory</span><span class="p">);</span>
+    <span class="n">Mode</span><span class="o">::</span><span class="n">initialize</span><span class="p">();</span>
+    <span class="n">loadSettingsFile</span><span class="p">(</span><span class="n">dir</span> <span class="o">+</span> <span class="s">&quot;input.nn&quot;</span><span class="p">);</span>
+    <span class="n">setupGeneric</span><span class="p">();</span>
+    <span class="n">setupSymmetryFunctionScaling</span><span class="p">(</span><span class="n">dir</span> <span class="o">+</span> <span class="s">&quot;scaling.data&quot;</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">collectStatistics</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">collectExtrapolationWarnings</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">writeExtrapolationWarnings</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">stopOnExtrapolationWarnings</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">showew</span> <span class="o">==</span> <span class="nb">true</span> <span class="o">||</span> <span class="n">showewsum</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">maxew</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">collectExtrapolationWarnings</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">setupSymmetryFunctionStatistics</span><span class="p">(</span><span class="n">collectStatistics</span><span class="p">,</span>
+                                    <span class="n">collectExtrapolationWarnings</span><span class="p">,</span>
+                                    <span class="n">writeExtrapolationWarnings</span><span class="p">,</span>
+                                    <span class="n">stopOnExtrapolationWarnings</span><span class="p">);</span>
+    <span class="n">setupNeuralNetworkWeights</span><span class="p">(</span><span class="n">dir</span> <span class="o">+</span> <span class="s">&quot;weights.%03d.data&quot;</span><span class="p">);</span>
+
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;*** SETUP: LAMMPS INTERFACE *************&quot;</span>
+           <span class="s">&quot;**************************************</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">showew</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Individual extrapolation warnings will be shown.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Individual extrapolation warnings will not be shown.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">showewsum</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;Extrapolation warning summary will be shown every %d&quot;</span>
+                     <span class="s">&quot; timesteps.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">showewsum</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Extrapolation warning summary will not be shown.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">maxew</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;The simulation will be stopped when %d extrapolation&quot;</span>
+                     <span class="s">&quot; warnings are exceeded.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">maxew</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;No extrapolation warning limit set.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">resetew</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Extrapolation warning counter is reset every time step.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Extrapolation warnings are accumulated over all time steps.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;-----------------------------------------&quot;</span>
+           <span class="s">&quot;--------------------------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;CAUTION: If the LAMMPS unit system differs from the one used</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;         during NN training, appropriate conversion factors</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;         must be provided (see keywords cflength and cfenergy).</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;Length unit conversion factor: %24.16E</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">cflength</span><span class="p">);</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;Energy unit conversion factor: %24.16E</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">cfenergy</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">sfCutoff</span> <span class="o">=</span> <span class="n">getMaxCutoffRadius</span><span class="p">();</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Checking consistency of cutoff radii (in LAMMPS units):</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;LAMMPS Cutoff (via pair_coeff)  : %11.3E</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">lammpsCutoff</span><span class="p">);</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;Maximum symmetry function cutoff: %11.3E</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sfCutoff</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">lammpsCutoff</span> <span class="o">&lt;</span> <span class="n">sfCutoff</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;ERROR: LAMMPS cutoff via pair_coeff keyword is&quot;</span>
+                            <span class="s">&quot; smaller than maximum symmetry function&quot;</span>
+                            <span class="s">&quot; cutoff.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="n">sfCutoff</span> <span class="o">-</span> <span class="n">lammpsCutoff</span><span class="p">)</span> <span class="o">/</span> <span class="n">lammpsCutoff</span> <span class="o">&gt;</span> <span class="n">TOLCUTOFF</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;WARNING: Potential length units mismatch!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Cutoff radii are consistent.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">elementMap</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="n">lammpsNtypes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">runtime_error</span><span class="p">(</span><span class="n">strpr</span><span class="p">(</span><span class="s">&quot;ERROR: Number of LAMMPS atom types (%d) and&quot;</span>
+                                  <span class="s">&quot; NNP elements (%zu) does not match.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+                                  <span class="n">lammpsNtypes</span><span class="p">,</span> <span class="n">elementMap</span><span class="p">.</span><span class="n">size</span><span class="p">()));</span>
+    <span class="p">}</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;-----------------------------------------&quot;</span>
+           <span class="s">&quot;--------------------------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;CAUTION: Please ensure that this mapping between LAMMPS</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;         atom types and NNP elements is consistent:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;---------------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;LAMMPS type  |  NNP element</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;---------------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">lammpsNtypes</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="n">strpr</span><span class="p">(</span><span class="s">&quot;%11d &lt;-&gt; %2s (%3zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+                     <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="n">elementMap</span><span class="p">[(</span><span class="kt">size_t</span><span class="p">)</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">(),</span>
+                     <span class="n">elementMap</span><span class="p">.</span><span class="n">atomicNumber</span><span class="p">((</span><span class="kt">size_t</span><span class="p">)</span><span class="n">i</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;---------------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;NNP setup for LAMMPS completed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+    <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;*****************************************&quot;</span>
+           <span class="s">&quot;**************************************</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+    <span class="n">structure</span><span class="p">.</span><span class="n">setElementMap</span><span class="p">(</span><span class="n">elementMap</span><span class="p">);</span>
+
+    <span class="n">initialized</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">setLocalAtoms</span><span class="p">(</span><span class="kt">int</span>              <span class="n">numAtomsLocal</span><span class="p">,</span>
+                                    <span class="kt">int</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span> <span class="n">atomTag</span><span class="p">,</span>
+                                    <span class="kt">int</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span> <span class="n">atomType</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numElements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">structure</span><span class="p">.</span><span class="n">numAtomsPerElement</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">structure</span><span class="p">.</span><span class="n">index</span>                          <span class="o">=</span> <span class="n">myRank</span><span class="p">;</span>
+    <span class="n">structure</span><span class="p">.</span><span class="n">numAtoms</span>                       <span class="o">=</span> <span class="n">numAtomsLocal</span><span class="p">;</span>
+    <span class="n">structure</span><span class="p">.</span><span class="n">hasNeighborList</span>                <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">structure</span><span class="p">.</span><span class="n">hasSymmetryFunctions</span>           <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">structure</span><span class="p">.</span><span class="n">hasSymmetryFunctionDerivatives</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">structure</span><span class="p">.</span><span class="n">energy</span>                         <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="n">structure</span><span class="p">.</span><span class="n">atoms</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">numAtomsLocal</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">structure</span><span class="p">.</span><span class="n">atoms</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Atom</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">structure</span><span class="p">.</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">free</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">index</span>                          <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">indexStructure</span>                 <span class="o">=</span> <span class="n">myRank</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">tag</span>                            <span class="o">=</span> <span class="n">atomTag</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">element</span>                        <span class="o">=</span> <span class="n">atomType</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">numNeighbors</span>                   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">hasSymmetryFunctions</span>           <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">hasSymmetryFunctionDerivatives</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">neighbors</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">numNeighborsPerElement</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">numNeighborsPerElement</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">numElements</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">structure</span><span class="p">.</span><span class="n">numAtomsPerElement</span><span class="p">[</span><span class="n">a</span><span class="p">.</span><span class="n">element</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">addNeighbor</span><span class="p">(</span><span class="kt">int</span>    <span class="n">i</span><span class="p">,</span>
+                                  <span class="kt">int</span>    <span class="n">j</span><span class="p">,</span>
+                                  <span class="kt">int</span>    <span class="n">tag</span><span class="p">,</span>
+                                  <span class="kt">int</span>    <span class="n">type</span><span class="p">,</span>
+                                  <span class="kt">double</span> <span class="n">dx</span><span class="p">,</span>
+                                  <span class="kt">double</span> <span class="n">dy</span><span class="p">,</span>
+                                  <span class="kt">double</span> <span class="n">dz</span><span class="p">,</span>
+                                  <span class="kt">double</span> <span class="n">d2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Atom</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">structure</span><span class="p">.</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">a</span><span class="p">.</span><span class="n">numNeighbors</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">a</span><span class="p">.</span><span class="n">neighbors</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Atom</span><span class="o">::</span><span class="n">Neighbor</span><span class="p">());</span>
+    <span class="n">a</span><span class="p">.</span><span class="n">numNeighborsPerElement</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">type</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">Atom</span><span class="o">::</span><span class="n">Neighbor</span><span class="o">&amp;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">neighbors</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+    <span class="n">n</span><span class="p">.</span><span class="n">index</span>   <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+    <span class="n">n</span><span class="p">.</span><span class="n">tag</span>     <span class="o">=</span> <span class="n">tag</span><span class="p">;</span>
+    <span class="n">n</span><span class="p">.</span><span class="n">element</span> <span class="o">=</span> <span class="n">type</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">n</span><span class="p">.</span><span class="n">dr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>   <span class="o">=</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">cflength</span><span class="p">;</span>
+    <span class="n">n</span><span class="p">.</span><span class="n">dr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="o">=</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">cflength</span><span class="p">;</span>
+    <span class="n">n</span><span class="p">.</span><span class="n">dr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>   <span class="o">=</span> <span class="n">dz</span> <span class="o">*</span> <span class="n">cflength</span><span class="p">;</span>
+    <span class="n">n</span><span class="p">.</span><span class="n">d</span>       <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span> <span class="o">*</span> <span class="n">cflength</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">normalize</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">dr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="n">convLength</span><span class="p">;</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">dr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">convLength</span><span class="p">;</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">dr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*=</span> <span class="n">convLength</span><span class="p">;</span>
+        <span class="n">n</span><span class="p">.</span><span class="n">d</span>     <span class="o">*=</span> <span class="n">convLength</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">process</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#ifdef NOSFGROUPS</span>
+    <span class="n">calculateSymmetryFunctions</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+<span class="cp">#else</span>
+    <span class="n">calculateSymmetryFunctionGroups</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+<span class="cp">#endif</span>
+    <span class="n">calculateAtomicNeuralNetworks</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="n">calculateEnergy</span><span class="p">(</span><span class="n">structure</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">normalize</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">structure</span><span class="p">.</span><span class="n">energy</span> <span class="o">=</span> <span class="n">physicalEnergy</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">addEnergyOffset</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">getMaxCutoffRadius</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">normalize</span><span class="p">)</span> <span class="k">return</span> <span class="n">maxCutoffRadius</span> <span class="o">/</span> <span class="n">convLength</span> <span class="o">/</span> <span class="n">cflength</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="n">maxCutoffRadius</span> <span class="o">/</span> <span class="n">cflength</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">getEnergy</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">structure</span><span class="p">.</span><span class="n">energy</span> <span class="o">/</span> <span class="n">cfenergy</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">getAtomicEnergy</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="n">Atom</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">structure</span><span class="p">.</span><span class="n">atoms</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">normalize</span><span class="p">)</span> <span class="k">return</span> <span class="n">physicalEnergy</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">energy</span><span class="p">)</span> <span class="o">/</span> <span class="n">cfenergy</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">energy</span> <span class="o">/</span> <span class="n">cfenergy</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">getForces</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">atomF</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="k">const</span> <span class="n">cfforce</span> <span class="o">=</span> <span class="n">cflength</span> <span class="o">/</span> <span class="n">cfenergy</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">convForce</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">normalize</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">convForce</span> <span class="o">=</span> <span class="n">convLength</span> <span class="o">/</span> <span class="n">convEnergy</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Loop over all local atoms. Neural network and Symmetry function</span>
+    <span class="c1">// derivatives are saved in the dEdG arrays of atoms and dGdr arrays of</span>
+    <span class="c1">// atoms and their neighbors. These are now summed up to the force</span>
+    <span class="c1">// contributions of local and ghost atoms.</span>
+    <span class="n">Atom</span> <span class="k">const</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span>  <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">structure</span><span class="p">.</span><span class="n">atoms</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Set pointer to atom.</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">structure</span><span class="p">.</span><span class="n">atoms</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+
+<span class="cp">#ifdef IMPROVED_SFD_MEMORY</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tableFull</span>
+            <span class="o">=</span> <span class="n">elements</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">a</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">).</span><span class="n">getSymmetryFunctionTable</span><span class="p">();</span>
+<span class="cp">#endif</span>
+        <span class="c1">// Loop over all neighbor atoms. Some are local, some are ghost atoms.</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Atom</span><span class="o">::</span><span class="n">Neighbor</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">neighbors</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+             <span class="n">n</span> <span class="o">!=</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">neighbors</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">n</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Temporarily save the neighbor index. Note: this is the index for</span>
+            <span class="c1">// the LAMMPS force array.</span>
+            <span class="kt">size_t</span> <span class="k">const</span> <span class="n">in</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">index</span><span class="p">;</span>
+            <span class="c1">// Now loop over all symmetry functions and add force contributions</span>
+            <span class="c1">// (local + ghost atoms).</span>
+<span class="cp">#ifdef IMPROVED_SFD_MEMORY</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">tableFull</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">n</span><span class="o">-&gt;</span><span class="n">element</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">dGdr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">s</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">double</span> <span class="k">const</span> <span class="n">dEdG</span> <span class="o">=</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">dEdG</span><span class="p">[</span><span class="n">table</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">s</span><span class="p">)]</span> <span class="o">*</span> <span class="n">cfforce</span> <span class="o">*</span> <span class="n">convForce</span><span class="p">;</span>
+<span class="cp">#else</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">numSymmetryFunctions</span><span class="p">;</span> <span class="o">++</span><span class="n">s</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">double</span> <span class="k">const</span> <span class="n">dEdG</span> <span class="o">=</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">dEdG</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">*</span> <span class="n">cfforce</span> <span class="o">*</span> <span class="n">convForce</span><span class="p">;</span>
+<span class="cp">#endif</span>
+                <span class="kt">double</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span> <span class="n">dGdr</span> <span class="o">=</span> <span class="n">n</span><span class="o">-&gt;</span><span class="n">dGdr</span><span class="p">[</span><span class="n">s</span><span class="p">].</span><span class="n">r</span><span class="p">;</span>
+                <span class="n">atomF</span><span class="p">[</span><span class="n">in</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dEdG</span> <span class="o">*</span> <span class="n">dGdr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="n">atomF</span><span class="p">[</span><span class="n">in</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dEdG</span> <span class="o">*</span> <span class="n">dGdr</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+                <span class="n">atomF</span><span class="p">[</span><span class="n">in</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dEdG</span> <span class="o">*</span> <span class="n">dGdr</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// Temporarily save the atom index. Note: this is the index for</span>
+        <span class="c1">// the LAMMPS force array.</span>
+        <span class="kt">size_t</span> <span class="k">const</span> <span class="n">ia</span> <span class="o">=</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">index</span><span class="p">;</span>
+        <span class="c1">// Loop over all symmetry functions and add force contributions (local</span>
+        <span class="c1">// atoms).</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">numSymmetryFunctions</span><span class="p">;</span> <span class="o">++</span><span class="n">s</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">double</span> <span class="k">const</span> <span class="n">dEdG</span> <span class="o">=</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">dEdG</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">*</span> <span class="n">cfforce</span> <span class="o">*</span> <span class="n">convForce</span><span class="p">;</span>
+            <span class="kt">double</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span> <span class="n">dGdr</span> <span class="o">=</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">dGdr</span><span class="p">[</span><span class="n">s</span><span class="p">].</span><span class="n">r</span><span class="p">;</span>
+            <span class="n">atomF</span><span class="p">[</span><span class="n">ia</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dEdG</span> <span class="o">*</span> <span class="n">dGdr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+            <span class="n">atomF</span><span class="p">[</span><span class="n">ia</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dEdG</span> <span class="o">*</span> <span class="n">dGdr</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+            <span class="n">atomF</span><span class="p">[</span><span class="n">ia</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dEdG</span> <span class="o">*</span> <span class="n">dGdr</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">long</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">getEWBufferSize</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">long</span> <span class="n">bs</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#ifndef NOMPI</span>
+    <span class="kt">int</span> <span class="n">ss</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// size_t size.</span>
+    <span class="kt">int</span> <span class="n">ds</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// double size.</span>
+    <span class="kt">int</span> <span class="n">cs</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// char size.</span>
+    <span class="n">MPI_Pack_size</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ss</span><span class="p">);</span>
+    <span class="n">MPI_Pack_size</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MPI_DOUBLE</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ds</span><span class="p">);</span>
+    <span class="n">MPI_Pack_size</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MPI_CHAR</span>  <span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cs</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Element</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">elements</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+         <span class="n">it</span> <span class="o">!=</span> <span class="n">elements</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">SymmetryFunctionStatistics</span><span class="o">::</span><span class="n">Container</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">m</span> <span class="o">=</span>
+                                                           <span class="n">it</span><span class="o">-&gt;</span><span class="n">statistics</span><span class="p">.</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">bs</span> <span class="o">+=</span> <span class="n">ss</span><span class="p">;</span> <span class="c1">// n.</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">SymmetryFunctionStatistics</span><span class="o">::</span><span class="n">Container</span><span class="o">&gt;::</span><span class="n">const_iterator</span>
+             <span class="n">it2</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it2</span> <span class="o">!=</span> <span class="n">m</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">bs</span> <span class="o">+=</span> <span class="n">ss</span><span class="p">;</span> <span class="c1">// index   (it2-&gt;first).</span>
+            <span class="n">bs</span> <span class="o">+=</span> <span class="n">ss</span><span class="p">;</span> <span class="c1">// countEW (it2-&gt;second.countEW).</span>
+            <span class="n">bs</span> <span class="o">+=</span> <span class="n">ds</span><span class="p">;</span> <span class="c1">// Gmin    (it2-&gt;second.Gmin).</span>
+            <span class="n">bs</span> <span class="o">+=</span> <span class="n">ds</span><span class="p">;</span> <span class="c1">// Gmax    (it2-&gt;second.Gmax).</span>
+            <span class="kt">size_t</span> <span class="n">countEW</span> <span class="o">=</span> <span class="n">it2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">countEW</span><span class="p">;</span>
+            <span class="n">bs</span> <span class="o">+=</span> <span class="n">countEW</span> <span class="o">*</span> <span class="n">ss</span><span class="p">;</span> <span class="c1">// indexStructureEW.</span>
+            <span class="n">bs</span> <span class="o">+=</span> <span class="n">countEW</span> <span class="o">*</span> <span class="n">ss</span><span class="p">;</span> <span class="c1">// indexAtomEW.</span>
+            <span class="n">bs</span> <span class="o">+=</span> <span class="n">countEW</span> <span class="o">*</span> <span class="n">ds</span><span class="p">;</span> <span class="c1">// valueEW.</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="cp">#endif</span>
+    <span class="k">return</span> <span class="n">bs</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">fillEWBuffer</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bs</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+<span class="cp">#ifndef NOMPI</span>
+    <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Element</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">elements</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+         <span class="n">it</span> <span class="o">!=</span> <span class="n">elements</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">SymmetryFunctionStatistics</span><span class="o">::</span><span class="n">Container</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">m</span> <span class="o">=</span>
+                                                           <span class="n">it</span><span class="o">-&gt;</span><span class="n">statistics</span><span class="p">.</span><span class="n">data</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">n</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="n">MPI_Pack</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">SymmetryFunctionStatistics</span><span class="o">::</span><span class="n">Container</span><span class="o">&gt;::</span><span class="n">const_iterator</span>
+             <span class="n">it2</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it2</span> <span class="o">!=</span> <span class="n">m</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">MPI_Pack</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">it2</span><span class="o">-&gt;</span><span class="n">first</span>                          <span class="p">),</span>       <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="kt">size_t</span> <span class="n">countEW</span> <span class="o">=</span> <span class="n">it2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">countEW</span><span class="p">;</span>
+            <span class="n">MPI_Pack</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">countEW</span>                             <span class="p">),</span>       <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="n">MPI_Pack</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">it2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">Gmin</span>                    <span class="p">),</span>       <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_DOUBLE</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="n">MPI_Pack</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">it2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">Gmax</span>                    <span class="p">),</span>       <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_DOUBLE</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="n">MPI_Pack</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">it2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">indexStructureEW</span><span class="p">.</span><span class="n">front</span><span class="p">()),</span> <span class="n">countEW</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="n">MPI_Pack</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">it2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">indexAtomEW</span><span class="p">.</span><span class="n">front</span><span class="p">()</span>     <span class="p">),</span> <span class="n">countEW</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="n">MPI_Pack</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">it2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">valueEW</span><span class="p">.</span><span class="n">front</span><span class="p">()</span>         <span class="p">),</span> <span class="n">countEW</span><span class="p">,</span> <span class="n">MPI_DOUBLE</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="cp">#endif</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">extractEWBuffer</span><span class="p">(</span><span class="kt">char</span> <span class="k">const</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bs</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifndef NOMPI</span>
+    <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Element</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">elements</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+         <span class="n">it</span> <span class="o">!=</span> <span class="n">elements</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">size_t</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">MPI_Unpack</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">MPI_Unpack</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="n">SymmetryFunctionStatistics</span><span class="o">::</span>
+            <span class="n">Container</span><span class="o">&amp;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">statistics</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+            <span class="kt">size_t</span> <span class="n">countEW</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">MPI_Unpack</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">countEW</span>                      <span class="p">),</span>       <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="n">MPI_Unpack</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">Gmin</span>                       <span class="p">),</span>       <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_DOUBLE</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="n">MPI_Unpack</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">Gmax</span>                       <span class="p">),</span>       <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_DOUBLE</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="c1">// indexStructureEW.</span>
+            <span class="n">d</span><span class="p">.</span><span class="n">indexStructureEW</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">countEW</span> <span class="o">+</span> <span class="n">countEW</span><span class="p">);</span>
+            <span class="n">MPI_Unpack</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">indexStructureEW</span><span class="p">[</span><span class="n">d</span><span class="p">.</span><span class="n">countEW</span><span class="p">]),</span> <span class="n">countEW</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="c1">// indexAtomEW.</span>
+            <span class="n">d</span><span class="p">.</span><span class="n">indexAtomEW</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">countEW</span> <span class="o">+</span> <span class="n">countEW</span><span class="p">);</span>
+            <span class="n">MPI_Unpack</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">indexAtomEW</span><span class="p">[</span><span class="n">d</span><span class="p">.</span><span class="n">countEW</span><span class="p">]</span>     <span class="p">),</span> <span class="n">countEW</span><span class="p">,</span> <span class="n">MPI_SIZE_T</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+            <span class="c1">// valueEW.</span>
+            <span class="n">d</span><span class="p">.</span><span class="n">valueEW</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">countEW</span> <span class="o">+</span> <span class="n">countEW</span><span class="p">);</span>
+            <span class="n">MPI_Unpack</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">valueEW</span><span class="p">[</span><span class="n">d</span><span class="p">.</span><span class="n">countEW</span><span class="p">]</span>         <span class="p">),</span> <span class="n">countEW</span><span class="p">,</span> <span class="n">MPI_DOUBLE</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+
+            <span class="n">d</span><span class="p">.</span><span class="n">countEW</span> <span class="o">+=</span> <span class="n">countEW</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="cp">#endif</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">writeExtrapolationWarnings</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Element</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">elements</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+         <span class="n">it</span> <span class="o">!=</span> <span class="n">elements</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">vs</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">statistics</span><span class="p">.</span><span class="n">getExtrapolationWarningLines</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">vs</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+             <span class="n">it2</span> <span class="o">!=</span> <span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">log</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="o">*</span><span class="n">it2</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">InterfaceLammps</span><span class="o">::</span><span class="n">clearExtrapolationWarnings</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Element</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">elements</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+         <span class="n">it</span> <span class="o">!=</span> <span class="n">elements</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">it</span><span class="o">-&gt;</span><span class="n">statistics</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,680 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class KalmanFilter &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class Log" href="classnnp_1_1Log.html" />
+    <link rel="prev" title="Class InterfaceLammps" href="classnnp_1_1InterfaceLammps.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Class KalmanFilter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/classnnp_1_1KalmanFilter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-kalmanfilter">
+<span id="exhale-class-classnnp-1-1kalmanfilter"></span><h1>Class KalmanFilter<a class="headerlink" href="#class-kalmanfilter" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnptrain-kalmanfilter-h"><span class="std std-ref">File KalmanFilter.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nnp::Updater</span></code> (<a class="reference internal" href="classnnp_1_1Updater.html#exhale-class-classnnp-1-1updater"><span class="std std-ref">Class Updater</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N3nnp12KalmanFilterE">
+<span id="_CPPv3N3nnp12KalmanFilterE"></span><span id="_CPPv2N3nnp12KalmanFilterE"></span><span id="nnp::KalmanFilter"></span><span class="target" id="classnnp_1_1KalmanFilter"></span><em class="property">class </em><code class="sig-name descname">KalmanFilter</code> : <em class="property">public</em> nnp::<a class="reference internal" href="classnnp_1_1Updater.html#_CPPv4N3nnp7UpdaterE" title="nnp::Updater">Updater</a><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Implementation of the Kalman filter method. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N3nnp12KalmanFilter10KalmanTypeE">
+<span id="_CPPv3N3nnp12KalmanFilter10KalmanTypeE"></span><span id="_CPPv2N3nnp12KalmanFilter10KalmanTypeE"></span><span class="target" id="classnnp_1_1KalmanFilter_1a8ef6e31fa3d3e6a0261ec2006e6c963a"></span><em class="property">enum </em><code class="sig-name descname">KalmanType</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter10KalmanTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enumerate different Kalman filter types. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp12KalmanFilter11KT_STANDARDE">
+<span id="_CPPv3N3nnp12KalmanFilter11KT_STANDARDE"></span><span id="_CPPv2N3nnp12KalmanFilter11KT_STANDARDE"></span><span class="target" id="classnnp_1_1KalmanFilter_1a8ef6e31fa3d3e6a0261ec2006e6c963aa8054c56093b2a97bc14d3722d08b0aee"></span><code class="sig-name descname">KT_STANDARD</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter11KT_STANDARDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Regular Kalman filter. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N3nnp12KalmanFilter15KT_FADINGMEMORYE">
+<span id="_CPPv3N3nnp12KalmanFilter15KT_FADINGMEMORYE"></span><span id="_CPPv2N3nnp12KalmanFilter15KT_FADINGMEMORYE"></span><span class="target" id="classnnp_1_1KalmanFilter_1a8ef6e31fa3d3e6a0261ec2006e6c963aac400ef737d94b7dfcc280f37f76dbf38"></span><code class="sig-name descname">KT_FADINGMEMORY</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter15KT_FADINGMEMORYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Kalman filtering with fading memory modification. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilter12KalmanFilterEKNSt6size_tEK10KalmanType">
+<span id="_CPPv3N12KalmanFilter12KalmanFilterEKNSt6size_tEK10KalmanType"></span><span id="_CPPv2N12KalmanFilter12KalmanFilterEKNSt6size_tEK10KalmanType"></span><span id="KalmanFilter::KalmanFilter__std::sC.KalmanTypeC"></span><span class="target" id="classnnp_1_1KalmanFilter_1aa47e8c7850e6f9f2b61bed8854841e4a"></span><code class="sig-name descname">KalmanFilter</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>sizeState</em>, KalmanType <em class="property">const</em> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilter12KalmanFilterEKNSt6size_tEK10KalmanType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Kalman filter class constructor.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sizeState</span></code>: Size of the state vector <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a421dc9ca0dcf1213d7424611b29071b0"><span class="std std-ref">w</span></a>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">type</span></code>: Kalman filter type (see <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a8ef6e31fa3d3e6a0261ec2006e6c963a"><span class="std std-ref">KalmanType</span></a>). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilterD0Ev">
+<span id="_CPPv3N12KalmanFilterD0Ev"></span><span id="_CPPv2N12KalmanFilterD0Ev"></span><span id="KalmanFilter::~KalmanFilter"></span><span class="target" id="classnnp_1_1KalmanFilter_1af01e932cd20cec5dd06ca5d8f0b722f4"></span><code class="sig-name descname">~KalmanFilter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilterD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilter18setSizeObservationEKNSt6size_tE">
+<span id="_CPPv3N12KalmanFilter18setSizeObservationEKNSt6size_tE"></span><span id="_CPPv2N12KalmanFilter18setSizeObservationEKNSt6size_tE"></span><span id="KalmanFilter::setSizeObservation__std::sC"></span><span class="target" id="classnnp_1_1KalmanFilter_1aa75026a60054469cc7fb3a211e501f2f"></span>void <code class="sig-name descname">setSizeObservation</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>sizeObservation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilter18setSizeObservationEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set observation vector size.</p>
+<p><p>If the size of the observation vector is known in advance it can be set here. </p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">size</span></code>: Size of the observation vector.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilter8setStateEPd">
+<span id="_CPPv3N12KalmanFilter8setStateEPd"></span><span id="_CPPv2N12KalmanFilter8setStateEPd"></span><span id="KalmanFilter::setState__doubleP"></span><span class="target" id="classnnp_1_1KalmanFilter_1a5f3cd56e4f996086a9b1689ed2466be8"></span>void <code class="sig-name descname">setState</code><span class="sig-paren">(</span>double *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilter8setStateEPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current state.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">state</span></code>: Pointer to state vector (weights vector), will be changed in-place upon calling <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a0683a07b11f424b766636dee9ef65582"><span class="std std-ref">update()</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilter8setErrorEPCKd">
+<span id="_CPPv3N12KalmanFilter8setErrorEPCKd"></span><span id="_CPPv2N12KalmanFilter8setErrorEPCKd"></span><span id="KalmanFilter::setError__doubleCPC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a8310985ebe0c559b134db342eeaa0931"></span>void <code class="sig-name descname">setError</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> <em>error</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilter8setErrorEPCKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current error vector.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">error</span></code>: Pointer to error (difference between reference and neural network potential output). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp12KalmanFilter8setErrorEPCKdKNSt6size_tE">
+<span id="_CPPv3N3nnp12KalmanFilter8setErrorEPCKdKNSt6size_tE"></span><span id="_CPPv2N3nnp12KalmanFilter8setErrorEPCKdKNSt6size_tE"></span><span id="nnp::KalmanFilter::setError__doubleCPC.std::sC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a91b93a5a4da2c5a49bf4f7dbc2ceed28"></span>void <code class="sig-name descname">setError</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> <em>error</em>, std::size_t <em class="property">const</em> <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter8setErrorEPCKdKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current error vector.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">error</span></code>: Pointer to error (difference between reference and neural network potential output). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">size</span></code>: Number of error vector entries. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilter11setJacobianEPCKd">
+<span id="_CPPv3N12KalmanFilter11setJacobianEPCKd"></span><span id="_CPPv2N12KalmanFilter11setJacobianEPCKd"></span><span id="KalmanFilter::setJacobian__doubleCPC"></span><span class="target" id="classnnp_1_1KalmanFilter_1afed2b9cd0b835280c81fcdfb1e2b61ef"></span>void <code class="sig-name descname">setJacobian</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> <em>jacobian</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilter11setJacobianEPCKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current Jacobi matrix.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">jacobian</span></code>: Derivatives of error with respect to weights. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp12KalmanFilter11setJacobianEPCKdKNSt6size_tE">
+<span id="_CPPv3N3nnp12KalmanFilter11setJacobianEPCKdKNSt6size_tE"></span><span id="_CPPv2N3nnp12KalmanFilter11setJacobianEPCKdKNSt6size_tE"></span><span id="nnp::KalmanFilter::setJacobian__doubleCPC.std::sC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a63c3c612d6c20a8c96efb4d1d477112d"></span>void <code class="sig-name descname">setJacobian</code><span class="sig-paren">(</span>double <em class="property">const</em> *<em class="property">const</em> <em>jacobian</em>, std::size_t <em class="property">const</em> <em>columns</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter11setJacobianEPCKdKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set pointer to current Jacobi matrix.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If there are <span class="math notranslate nohighlight">\(m\)</span> errors and <span class="math notranslate nohighlight">\(n\)</span> weights, the Jacobi matrix is a <span class="math notranslate nohighlight">\(n \times m\)</span> matrix stored in column-major order. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">jacobian</span></code>: Derivatives of error with respect to weights. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">columns</span></code>: Number of gradients provided.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilter6updateEv">
+<span id="_CPPv3N12KalmanFilter6updateEv"></span><span id="_CPPv2N12KalmanFilter6updateEv"></span><span id="KalmanFilter::update"></span><span class="target" id="classnnp_1_1KalmanFilter_1a0683a07b11f424b766636dee9ef65582"></span>void <code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilter6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update error covariance matrix and state vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N3nnp12KalmanFilter6updateEKNSt6size_tE">
+<span id="_CPPv3N3nnp12KalmanFilter6updateEKNSt6size_tE"></span><span id="_CPPv2N3nnp12KalmanFilter6updateEKNSt6size_tE"></span><span id="nnp::KalmanFilter::update__std::sC"></span><span class="target" id="classnnp_1_1KalmanFilter_1afd60320bc82cb87db51c925133ef7f22"></span>void <code class="sig-name descname">update</code><span class="sig-paren">(</span>std::size_t <em class="property">const</em> <em>sizeObservation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter6updateEKNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update error covariance matrix and state vector.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sizeObservation</span></code>: Size of the observation vector. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilter21setParametersStandardEKdKdKdKdKdKdKd">
+<span id="_CPPv3N12KalmanFilter21setParametersStandardEKdKdKdKdKdKdKd"></span><span id="_CPPv2N12KalmanFilter21setParametersStandardEKdKdKdKdKdKdKd"></span><span id="KalmanFilter::setParametersStandard__doubleC.doubleC.doubleC.doubleC.doubleC.doubleC.doubleC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a0969a2748b485c3ca33c20c76fb4f5e2"></span>void <code class="sig-name descname">setParametersStandard</code><span class="sig-paren">(</span>double <em class="property">const</em> <em>epsilon</em>, double <em class="property">const</em> <em>q0</em>, double <em class="property">const</em> <em>qtau</em>, double <em class="property">const</em> <em>qmin</em>, double <em class="property">const</em> <em>eta0</em>, double <em class="property">const</em> <em>etatau</em>, double <em class="property">const</em> <em>etamax</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilter21setParametersStandardEKdKdKdKdKdKdKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set parameters for standard Kalman filter.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">epsilon</span></code>: Error covariance initialization parameter <span class="math notranslate nohighlight">\(\epsilon\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">q0</span></code>: Process noise initial value <span class="math notranslate nohighlight">\(q_0\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qtau</span></code>: Process noise exponential decay parameter <span class="math notranslate nohighlight">\(q_{\tau}\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qmin</span></code>: Process noise minimum value <span class="math notranslate nohighlight">\(q_{\text{min}}\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">eta0</span></code>: Initial learning rate <span class="math notranslate nohighlight">\(\eta_0\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">etatau</span></code>: Learning rate exponential increase parameter <span class="math notranslate nohighlight">\(\eta_{\tau}\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">etamax</span></code>: Learning rate maximum value <span class="math notranslate nohighlight">\(\eta_{\text{max}}\)</span>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N12KalmanFilter25setParametersFadingMemoryEKdKdKdKdKdKd">
+<span id="_CPPv3N12KalmanFilter25setParametersFadingMemoryEKdKdKdKdKdKd"></span><span id="_CPPv2N12KalmanFilter25setParametersFadingMemoryEKdKdKdKdKdKd"></span><span id="KalmanFilter::setParametersFadingMemory__doubleC.doubleC.doubleC.doubleC.doubleC.doubleC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a5792beef75d223f3df178ce494c74ac6"></span>void <code class="sig-name descname">setParametersFadingMemory</code><span class="sig-paren">(</span>double <em class="property">const</em> <em>epsilon</em>, double <em class="property">const</em> <em>q0</em>, double <em class="property">const</em> <em>qtau</em>, double <em class="property">const</em> <em>qmin</em>, double <em class="property">const</em> <em>lambda</em>, double <em class="property">const</em> <em>nu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12KalmanFilter25setParametersFadingMemoryEKdKdKdKdKdKd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set parameters for fading memory Kalman filter.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">epsilon</span></code>: Error covariance initialization parameter <span class="math notranslate nohighlight">\(\epsilon\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">q0</span></code>: Process noise initial value <span class="math notranslate nohighlight">\(q_0\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qtau</span></code>: Process noise exponential decay parameter <span class="math notranslate nohighlight">\(q_{\tau}\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qmin</span></code>: Process noise minimum value <span class="math notranslate nohighlight">\(q_{\text{min}}\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">lambda</span></code>: Forgetting factor <span class="math notranslate nohighlight">\(\lambda\)</span>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">nu</span></code>: Fading memory parameter <span class="math notranslate nohighlight">\(\nu\)</span>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK12KalmanFilter6statusENSt6size_tE">
+<span id="_CPPv3NK12KalmanFilter6statusENSt6size_tE"></span><span id="_CPPv2NK12KalmanFilter6statusENSt6size_tE"></span><span id="KalmanFilter::status__std::sC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a33ca3b23fed8ded93e9caca96a2384fc"></span>string <code class="sig-name descname">status</code><span class="sig-paren">(</span>std::size_t <em>epoch</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK12KalmanFilter6statusENSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Status report.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Line with current status information. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">epoch</span></code>: Current epoch.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK12KalmanFilter12statusHeaderEv">
+<span id="_CPPv3NK12KalmanFilter12statusHeaderEv"></span><span id="_CPPv2NK12KalmanFilter12statusHeaderEv"></span><span id="KalmanFilter::statusHeaderC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a76fd22632fbda4b77fb51d382cf0889b"></span>vector&lt;string&gt; <code class="sig-name descname">statusHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK12KalmanFilter12statusHeaderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Header for status report file.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with header lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK12KalmanFilter4infoEv">
+<span id="_CPPv3NK12KalmanFilter4infoEv"></span><span id="_CPPv2NK12KalmanFilter4infoEv"></span><span id="KalmanFilter::infoC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a824d1250e7cc5ed72e3525d48b9f2f92"></span>vector&lt;string&gt; <code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK12KalmanFilter4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Information about Kalman filter settings.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Vector with info lines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter7getTypeEv">
+<span id="_CPPv3NK3nnp12KalmanFilter7getTypeEv"></span><span id="_CPPv2NK3nnp12KalmanFilter7getTypeEv"></span><span id="nnp::KalmanFilter::getTypeC"></span><span class="target" id="classnnp_1_1KalmanFilter_1ad00a0491c45085e76e4cd582b3ade91e"></span><a class="reference internal" href="#_CPPv4N3nnp12KalmanFilterE" title="nnp::KalmanFilter">KalmanFilter</a>::<a class="reference internal" href="#_CPPv4N3nnp12KalmanFilter10KalmanTypeE" title="nnp::KalmanFilter::KalmanType">KalmanType</a> <code class="sig-name descname">getType</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter7getTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a3bc9cd4501729de55ce51c0f3a184fae"><span class="std std-ref">type</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter18getSizeObservationEv">
+<span id="_CPPv3NK3nnp12KalmanFilter18getSizeObservationEv"></span><span id="_CPPv2NK3nnp12KalmanFilter18getSizeObservationEv"></span><span id="nnp::KalmanFilter::getSizeObservationC"></span><span class="target" id="classnnp_1_1KalmanFilter_1ad45222529668099132f594c10eac2d56"></span>std::size_t <code class="sig-name descname">getSizeObservation</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter18getSizeObservationEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a33cf02cf8451180361d45376c1083987"><span class="std std-ref">sizeObservation</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter13getNumUpdatesEv">
+<span id="_CPPv3NK3nnp12KalmanFilter13getNumUpdatesEv"></span><span id="_CPPv2NK3nnp12KalmanFilter13getNumUpdatesEv"></span><span id="nnp::KalmanFilter::getNumUpdatesC"></span><span class="target" id="classnnp_1_1KalmanFilter_1aa2b3c5014e82b117d703e1c5f3e476d3"></span>std::size_t <code class="sig-name descname">getNumUpdates</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter13getNumUpdatesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a8d62b1ffae5c6a3c631f3b8d8b0a20a8"><span class="std std-ref">numUpdates</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter6getEtaEv">
+<span id="_CPPv3NK3nnp12KalmanFilter6getEtaEv"></span><span id="_CPPv2NK3nnp12KalmanFilter6getEtaEv"></span><span id="nnp::KalmanFilter::getEtaC"></span><span class="target" id="classnnp_1_1KalmanFilter_1aadc350105406f49dee54a4ce1eb529a6"></span>double <code class="sig-name descname">getEta</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter6getEtaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1ac1810ea368bf6d356d29062160e20b90"><span class="std std-ref">eta</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter10getEpsilonEv">
+<span id="_CPPv3NK3nnp12KalmanFilter10getEpsilonEv"></span><span id="_CPPv2NK3nnp12KalmanFilter10getEpsilonEv"></span><span id="nnp::KalmanFilter::getEpsilonC"></span><span class="target" id="classnnp_1_1KalmanFilter_1a5cfbb736bf8c2bfd80e2b55384fa7b09"></span>double <code class="sig-name descname">getEpsilon</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter10getEpsilonEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1ac2d3e8e6fe84d894ff99af08ece0439b"><span class="std std-ref">epsilon</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter5getQ0Ev">
+<span id="_CPPv3NK3nnp12KalmanFilter5getQ0Ev"></span><span id="_CPPv2NK3nnp12KalmanFilter5getQ0Ev"></span><span id="nnp::KalmanFilter::getQ0C"></span><span class="target" id="classnnp_1_1KalmanFilter_1a39cba5a8bfc6b07e71974cfb260af3d7"></span>double <code class="sig-name descname">getQ0</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter5getQ0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a49d6bc2b56d4d2413cc983abe73bd752"><span class="std std-ref">q0</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter7getQtauEv">
+<span id="_CPPv3NK3nnp12KalmanFilter7getQtauEv"></span><span id="_CPPv2NK3nnp12KalmanFilter7getQtauEv"></span><span id="nnp::KalmanFilter::getQtauC"></span><span class="target" id="classnnp_1_1KalmanFilter_1ad83fd7d020af8325e5d8110b7ea7dffa"></span>double <code class="sig-name descname">getQtau</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter7getQtauEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a2f12d877eee6bfadc8c00b99cc1c74a0"><span class="std std-ref">qtau</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter7getQminEv">
+<span id="_CPPv3NK3nnp12KalmanFilter7getQminEv"></span><span id="_CPPv2NK3nnp12KalmanFilter7getQminEv"></span><span id="nnp::KalmanFilter::getQminC"></span><span class="target" id="classnnp_1_1KalmanFilter_1aeecca2733187a0421e4d0fce6bccd453"></span>double <code class="sig-name descname">getQmin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter7getQminEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1aa4db1c28553740d74edffc0637faad35"><span class="std std-ref">qmin</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter9getLambdaEv">
+<span id="_CPPv3NK3nnp12KalmanFilter9getLambdaEv"></span><span id="_CPPv2NK3nnp12KalmanFilter9getLambdaEv"></span><span id="nnp::KalmanFilter::getLambdaC"></span><span class="target" id="classnnp_1_1KalmanFilter_1add053e0751b6a82833472ea0f45992b7"></span>double <code class="sig-name descname">getLambda</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter9getLambdaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a4a55aac67a448aa95f96f76d0cd4f9d1"><span class="std std-ref">lambda</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter5getNuEv">
+<span id="_CPPv3NK3nnp12KalmanFilter5getNuEv"></span><span id="_CPPv2NK3nnp12KalmanFilter5getNuEv"></span><span id="nnp::KalmanFilter::getNuC"></span><span class="target" id="classnnp_1_1KalmanFilter_1acf450df324722fce2f72246991b3b771"></span>double <code class="sig-name descname">getNu</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter5getNuEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a2c1d3d5e27d59783f8162b19a775ce1a"><span class="std std-ref">nu</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK3nnp12KalmanFilter8getGammaEv">
+<span id="_CPPv3NK3nnp12KalmanFilter8getGammaEv"></span><span id="_CPPv2NK3nnp12KalmanFilter8getGammaEv"></span><span id="nnp::KalmanFilter::getGammaC"></span><span class="target" id="classnnp_1_1KalmanFilter_1adabd22deeb2c1bfe8ea443d351511f0d"></span>double <code class="sig-name descname">getGamma</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3nnp12KalmanFilter8getGammaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter for <a class="reference internal" href="#classnnp_1_1KalmanFilter_1a8063c20c2e7500b2b12d3a6796fbe81e"><span class="std std-ref">gamma</span></a>. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter4typeE">
+<span id="_CPPv3N3nnp12KalmanFilter4typeE"></span><span id="_CPPv2N3nnp12KalmanFilter4typeE"></span><span id="nnp::KalmanFilter::type__KalmanType"></span><span class="target" id="classnnp_1_1KalmanFilter_1a3bc9cd4501729de55ce51c0f3a184fae"></span><a class="reference internal" href="#_CPPv4N3nnp12KalmanFilter10KalmanTypeE" title="nnp::KalmanFilter::KalmanType">KalmanType</a> <code class="sig-name descname">type</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter4typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Kalman filter type. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter15sizeObservationE">
+<span id="_CPPv3N3nnp12KalmanFilter15sizeObservationE"></span><span id="_CPPv2N3nnp12KalmanFilter15sizeObservationE"></span><span id="nnp::KalmanFilter::sizeObservation__std::s"></span><span class="target" id="classnnp_1_1KalmanFilter_1a33cf02cf8451180361d45376c1083987"></span>std::size_t <code class="sig-name descname">sizeObservation</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter15sizeObservationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Size of observation (measurement) vector. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter10numUpdatesE">
+<span id="_CPPv3N3nnp12KalmanFilter10numUpdatesE"></span><span id="_CPPv2N3nnp12KalmanFilter10numUpdatesE"></span><span id="nnp::KalmanFilter::numUpdates__std::s"></span><span class="target" id="classnnp_1_1KalmanFilter_1a8d62b1ffae5c6a3c631f3b8d8b0a20a8"></span>std::size_t <code class="sig-name descname">numUpdates</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter10numUpdatesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Total number of updates performed. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter7epsilonE">
+<span id="_CPPv3N3nnp12KalmanFilter7epsilonE"></span><span id="_CPPv2N3nnp12KalmanFilter7epsilonE"></span><span id="nnp::KalmanFilter::epsilon__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1ac2d3e8e6fe84d894ff99af08ece0439b"></span>double <code class="sig-name descname">epsilon</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter7epsilonE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Error covariance initialization parameter <span class="math notranslate nohighlight">\(\epsilon\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter1qE">
+<span id="_CPPv3N3nnp12KalmanFilter1qE"></span><span id="_CPPv2N3nnp12KalmanFilter1qE"></span><span id="nnp::KalmanFilter::q__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a9ed3d56d76a4e44baf7074262b8b66b6"></span>double <code class="sig-name descname">q</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter1qE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Process noise <span class="math notranslate nohighlight">\(q\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter2q0E">
+<span id="_CPPv3N3nnp12KalmanFilter2q0E"></span><span id="_CPPv2N3nnp12KalmanFilter2q0E"></span><span id="nnp::KalmanFilter::q0__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a49d6bc2b56d4d2413cc983abe73bd752"></span>double <code class="sig-name descname">q0</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter2q0E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Process noise initial value <span class="math notranslate nohighlight">\(q_0\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter4qtauE">
+<span id="_CPPv3N3nnp12KalmanFilter4qtauE"></span><span id="_CPPv2N3nnp12KalmanFilter4qtauE"></span><span id="nnp::KalmanFilter::qtau__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a2f12d877eee6bfadc8c00b99cc1c74a0"></span>double <code class="sig-name descname">qtau</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter4qtauE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Process noise exponential decay parameter <span class="math notranslate nohighlight">\(q_{\tau}\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter4qminE">
+<span id="_CPPv3N3nnp12KalmanFilter4qminE"></span><span id="_CPPv2N3nnp12KalmanFilter4qminE"></span><span id="nnp::KalmanFilter::qmin__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1aa4db1c28553740d74edffc0637faad35"></span>double <code class="sig-name descname">qmin</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter4qminE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Process noise minimum value <span class="math notranslate nohighlight">\(q_{\text{min}}\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter3etaE">
+<span id="_CPPv3N3nnp12KalmanFilter3etaE"></span><span id="_CPPv2N3nnp12KalmanFilter3etaE"></span><span id="nnp::KalmanFilter::eta__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1ac1810ea368bf6d356d29062160e20b90"></span>double <code class="sig-name descname">eta</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter3etaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Learning rate <span class="math notranslate nohighlight">\(\eta\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter4eta0E">
+<span id="_CPPv3N3nnp12KalmanFilter4eta0E"></span><span id="_CPPv2N3nnp12KalmanFilter4eta0E"></span><span id="nnp::KalmanFilter::eta0__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a113f66d6b969215be74d0bc21d4986c8"></span>double <code class="sig-name descname">eta0</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter4eta0E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Learning rate initial value <span class="math notranslate nohighlight">\(\eta_0\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter6etatauE">
+<span id="_CPPv3N3nnp12KalmanFilter6etatauE"></span><span id="_CPPv2N3nnp12KalmanFilter6etatauE"></span><span id="nnp::KalmanFilter::etatau__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a7a585bb4bd5691ba618139a704e54038"></span>double <code class="sig-name descname">etatau</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter6etatauE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Learning rate exponential increase parameter <span class="math notranslate nohighlight">\(\eta_{\tau}\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter6etamaxE">
+<span id="_CPPv3N3nnp12KalmanFilter6etamaxE"></span><span id="_CPPv2N3nnp12KalmanFilter6etamaxE"></span><span id="nnp::KalmanFilter::etamax__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a7b9bca97ac2cd9403430ea03875a864e"></span>double <code class="sig-name descname">etamax</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter6etamaxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Learning rate maximum value <span class="math notranslate nohighlight">\(\eta_{\text{max}}\)</span>. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter6lambdaE">
+<span id="_CPPv3N3nnp12KalmanFilter6lambdaE"></span><span id="_CPPv2N3nnp12KalmanFilter6lambdaE"></span><span id="nnp::KalmanFilter::lambda__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a4a55aac67a448aa95f96f76d0cd4f9d1"></span>double <code class="sig-name descname">lambda</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter6lambdaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forgetting factor for fading memory Kalman filter. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter2nuE">
+<span id="_CPPv3N3nnp12KalmanFilter2nuE"></span><span id="_CPPv2N3nnp12KalmanFilter2nuE"></span><span id="nnp::KalmanFilter::nu__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a2c1d3d5e27d59783f8162b19a775ce1a"></span>double <code class="sig-name descname">nu</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter2nuE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Parameter for fading memory Kalman filter. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter5gammaE">
+<span id="_CPPv3N3nnp12KalmanFilter5gammaE"></span><span id="_CPPv2N3nnp12KalmanFilter5gammaE"></span><span id="nnp::KalmanFilter::gamma__double"></span><span class="target" id="classnnp_1_1KalmanFilter_1a8063c20c2e7500b2b12d3a6796fbe81e"></span>double <code class="sig-name descname">gamma</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter5gammaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forgetting gain factor gamma for fading memory Kalman filter. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter1wE">
+<span id="_CPPv3N3nnp12KalmanFilter1wE"></span><span id="_CPPv2N3nnp12KalmanFilter1wE"></span><span id="nnp::KalmanFilter::w__Eigen::Map:Eigen::VectorXd:P"></span><span class="target" id="classnnp_1_1KalmanFilter_1a421dc9ca0dcf1213d7424611b29071b0"></span>Eigen::Map&lt;Eigen::VectorXd&gt; *<code class="sig-name descname">w</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter1wE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>State vector. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter2xiE">
+<span id="_CPPv3N3nnp12KalmanFilter2xiE"></span><span id="_CPPv2N3nnp12KalmanFilter2xiE"></span><span id="nnp::KalmanFilter::xi__Eigen::Map:Eigen::VectorXdC:P"></span><span class="target" id="classnnp_1_1KalmanFilter_1ada70a30a588c063aeb23d6a2b45c2028"></span>Eigen::Map&lt;Eigen::VectorXd <em class="property">const</em>&gt; *<code class="sig-name descname">xi</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter2xiE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Error vector. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter1HE">
+<span id="_CPPv3N3nnp12KalmanFilter1HE"></span><span id="_CPPv2N3nnp12KalmanFilter1HE"></span><span id="nnp::KalmanFilter::H__Eigen::Map:Eigen::MatrixXdC:P"></span><span class="target" id="classnnp_1_1KalmanFilter_1a1fc3dc688090dabaa14f926c04249892"></span>Eigen::Map&lt;Eigen::MatrixXd <em class="property">const</em>&gt; *<code class="sig-name descname">H</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter1HE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derivative matrix. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter1PE">
+<span id="_CPPv3N3nnp12KalmanFilter1PE"></span><span id="_CPPv2N3nnp12KalmanFilter1PE"></span><span id="nnp::KalmanFilter::P__Eigen::MatrixXd"></span><span class="target" id="classnnp_1_1KalmanFilter_1ae982861edd340e8dc12d455a5033ae32"></span>Eigen::MatrixXd <code class="sig-name descname">P</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter1PE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Error covariance matrix. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter1KE">
+<span id="_CPPv3N3nnp12KalmanFilter1KE"></span><span id="_CPPv2N3nnp12KalmanFilter1KE"></span><span id="nnp::KalmanFilter::K__Eigen::MatrixXd"></span><span class="target" id="classnnp_1_1KalmanFilter_1ab72627bff0468e33b8eb9b39212e344b"></span>Eigen::MatrixXd <code class="sig-name descname">K</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter1KE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Kalman gain matrix. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp12KalmanFilter1XE">
+<span id="_CPPv3N3nnp12KalmanFilter1XE"></span><span id="_CPPv2N3nnp12KalmanFilter1XE"></span><span id="nnp::KalmanFilter::X__Eigen::MatrixXd"></span><span class="target" id="classnnp_1_1KalmanFilter_1a5e1883e9858b3cd7fd81c84a76e4fe44"></span>Eigen::MatrixXd <code class="sig-name descname">X</code><a class="headerlink" href="#_CPPv4N3nnp12KalmanFilter1XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Intermediate result X = P . H. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnnp_1_1Log.html" class="btn btn-neutral float-right" title="Class Log" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnnp_1_1InterfaceLammps.html" class="btn btn-neutral float-left" title="Class InterfaceLammps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

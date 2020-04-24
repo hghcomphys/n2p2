@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1a9a01beaa989d3578f213a32be1283f76:
+
+Function nnp::appendLinesToFile(FILE \*const&, std::vector<std::string> const)
+==============================================================================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::appendLinesToFile(FILE *const&, std::vector<std::string> const)

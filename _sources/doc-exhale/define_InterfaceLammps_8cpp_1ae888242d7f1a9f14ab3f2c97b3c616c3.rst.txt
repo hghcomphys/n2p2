@@ -1,0 +1,13 @@
+.. _exhale_define_InterfaceLammps_8cpp_1ae888242d7f1a9f14ab3f2c97b3c616c3:
+
+Define TOLCUTOFF
+================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: TOLCUTOFF

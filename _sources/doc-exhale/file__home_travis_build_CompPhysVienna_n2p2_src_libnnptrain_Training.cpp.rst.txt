@@ -1,0 +1,61 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp:
+
+File Training.cpp
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain/Training.cpp``)
+------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``GradientDescent.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h`)
+
+- ``KalmanFilter.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h`)
+
+- ``NeuralNetwork.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h`)
+
+- ``Stopwatch.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Stopwatch.h`)
+
+- ``Training.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h`)
+
+- ``algorithm``
+
+- ``cmath``
+
+- ``cstdlib``
+
+- ``gsl/gsl_rng.h``
+
+- ``limits``
+
+- ``mpi-extra.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h`)
+
+- ``stdexcept``
+
+- ``utility.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`)
+
+
+
+
+

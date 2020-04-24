@@ -1,0 +1,13 @@
+.. _exhale_define_version_8h_1a38dab5423f1c93cd2dc3b8079fd88895:
+
+Define NNP_GIT_BRANCH
+=====================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_version.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: NNP_GIT_BRANCH

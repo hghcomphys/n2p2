@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct SymmetryFunctionStatistics::Container &mdash; n2p2 - A neural network potential package 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct Training::UpdateCandidate" href="structnnp_1_1Training_1_1UpdateCandidate.html" />
+    <link rel="prev" title="Struct Structure" href="structnnp_1_1Structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> n2p2 - A neural network potential package
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/build.html">Build instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/descriptors.html">Atomic environment descriptors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/keywords.html">NNP configuration: keywords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/cfg_file.html">Configuration file format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/if_lammps.html">LAMMPS NNP interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/pair_nnp.html">LAMMPS NNP pair style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/training.html">NNP training procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Topics/units.html">Units</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/libnnp.html">The libnnp core library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-convert.html">nnp-convert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-norm.html">nnp-norm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-predict.html">nnp-predict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-prune.html">nnp-prune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-select.html">nnp-select</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/nnp-scaling.html">nnp-scaling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="root.html">n2p2 code documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../About/authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../About/changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">n2p2 - A neural network potential package</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="root.html">n2p2 code documentation</a> &raquo;</li>
+        
+      <li>Struct SymmetryFunctionStatistics::Container</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc-exhale/structnnp_1_1SymmetryFunctionStatistics_1_1Container.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-symmetryfunctionstatistics-container">
+<span id="exhale-struct-structnnp-1-1symmetryfunctionstatistics-1-1container"></span><h1>Struct SymmetryFunctionStatistics::Container<a class="headerlink" href="#struct-symmetryfunctionstatistics-container" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h.html#file-home-travis-build-compphysvienna-n2p2-src-libnnp-symmetryfunctionstatistics-h"><span class="std std-ref">File SymmetryFunctionStatistics.h</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<p>This struct is a nested type of <a class="reference internal" href="classnnp_1_1SymmetryFunctionStatistics.html#exhale-class-classnnp-1-1symmetryfunctionstatistics"><span class="std std-ref">Class SymmetryFunctionStatistics</span></a>.</p>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9ContainerE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9ContainerE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9ContainerE"></span><span id="nnp::SymmetryFunctionStatistics::Container"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container"></span><em class="property">struct </em><code class="sig-name descname">Container</code><br /></dt>
+<dd><p>Struct containing statistics gathered during symmetry function calculation. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N26SymmetryFunctionStatistics9Container9ContainerEv">
+<span id="_CPPv3N26SymmetryFunctionStatistics9Container9ContainerEv"></span><span id="_CPPv2N26SymmetryFunctionStatistics9Container9ContainerEv"></span><span id="SymmetryFunctionStatistics::Container::Container"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1abb282d30b75d79fd0f501dfcefeba9b0"></span><code class="sig-name descname">Container</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor, initializes contents to zero.</p>
+<p>Except min, max which are initialized to largest positive and negative double values, respectively. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N26SymmetryFunctionStatistics9Container5resetEv">
+<span id="_CPPv3N26SymmetryFunctionStatistics9Container5resetEv"></span><span id="_CPPv2N26SymmetryFunctionStatistics9Container5resetEv"></span><span id="SymmetryFunctionStatistics::Container::reset"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a7e9ff5af54556b3545e4f3041f2665be"></span>void <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Reset all values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N26SymmetryFunctionStatistics9Container15resetStatisticsEv">
+<span id="_CPPv3N26SymmetryFunctionStatistics9Container15resetStatisticsEv"></span><span id="_CPPv2N26SymmetryFunctionStatistics9Container15resetStatisticsEv"></span><span id="SymmetryFunctionStatistics::Container::resetStatistics"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1aeed79c6af1e2ed54a80e0275605787fa"></span>void <code class="sig-name descname">resetStatistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Reset only statistics. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N26SymmetryFunctionStatistics9Container26resetExtrapolationWarningsEv">
+<span id="_CPPv3N26SymmetryFunctionStatistics9Container26resetExtrapolationWarningsEv"></span><span id="_CPPv2N26SymmetryFunctionStatistics9Container26resetExtrapolationWarningsEv"></span><span id="SymmetryFunctionStatistics::Container::resetExtrapolationWarnings"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1adb89d13fb4aa2fc2bee55c81ee134a7d"></span>void <code class="sig-name descname">resetExtrapolationWarnings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Reset only extrapolation warnings. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container5countE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container5countE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container5countE"></span><span id="nnp::SymmetryFunctionStatistics::Container::count__std::s"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a1047c3a97af6415593f00283417ca161"></span>std::size_t <code class="sig-name descname">count</code><br /></dt>
+<dd><p>Counts total number of symmetry function evaluations. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container7countEWE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container7countEWE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container7countEWE"></span><span id="nnp::SymmetryFunctionStatistics::Container::countEW__std::s"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1aa236e74e44938dd901f9985d4457cb59"></span>std::size_t <code class="sig-name descname">countEW</code><br /></dt>
+<dd><p>Counts extrapolation warnings. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container3minE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container3minE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container3minE"></span><span id="nnp::SymmetryFunctionStatistics::Container::min__double"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a0a1ee880121a5fdf99cf64332f52c3a7"></span>double <code class="sig-name descname">min</code><br /></dt>
+<dd><p>Minimum symmetry function value encountered. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container3maxE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container3maxE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container3maxE"></span><span id="nnp::SymmetryFunctionStatistics::Container::max__double"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a8e9f4790716a0af7a6761243ed0c52af"></span>double <code class="sig-name descname">max</code><br /></dt>
+<dd><p>Maximum symmetry function value encountered. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container4GminE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container4GminE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container4GminE"></span><span id="nnp::SymmetryFunctionStatistics::Container::Gmin__double"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1aa2e2b0c8624f73baef698e4ca93ab07e"></span>double <code class="sig-name descname">Gmin</code><br /></dt>
+<dd><p>Minimum symmetry function from scaling data. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container4GmaxE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container4GmaxE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container4GmaxE"></span><span id="nnp::SymmetryFunctionStatistics::Container::Gmax__double"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a5c3af628eeee5ff5ebcbf98dc0e81fc5"></span>double <code class="sig-name descname">Gmax</code><br /></dt>
+<dd><p>Maximum symmetry function from scaling data. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container3sumE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container3sumE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container3sumE"></span><span id="nnp::SymmetryFunctionStatistics::Container::sum__double"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a4b0edb0f7621b1ef8b0186ed6058c3f0"></span>double <code class="sig-name descname">sum</code><br /></dt>
+<dd><p>Sum of symmetry function values (to compute mean). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container4sum2E">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container4sum2E"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container4sum2E"></span><span id="nnp::SymmetryFunctionStatistics::Container::sum2__double"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a17e5a9964780f2d4e8efe5ff11573fbf"></span>double <code class="sig-name descname">sum2</code><br /></dt>
+<dd><p>Sum of squared symmetry function values (to compute sigma). </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container16indexStructureEWE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container16indexStructureEWE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container16indexStructureEWE"></span><span id="nnp::SymmetryFunctionStatistics::Container::indexStructureEW__std::vector:std::s:"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a332ee614efae05bf07b88c5cef60ddc6"></span>std::vector&lt;std::size_t&gt; <code class="sig-name descname">indexStructureEW</code><br /></dt>
+<dd><p><a class="reference internal" href="structnnp_1_1Structure.html#structnnp_1_1Structure"><span class="std std-ref">Structure</span></a> indices for which extrapolation warnings occured. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container11indexAtomEWE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container11indexAtomEWE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container11indexAtomEWE"></span><span id="nnp::SymmetryFunctionStatistics::Container::indexAtomEW__std::vector:std::s:"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a77509fecc07b6cf1d496e1472970f75d"></span>std::vector&lt;std::size_t&gt; <code class="sig-name descname">indexAtomEW</code><br /></dt>
+<dd><p><a class="reference internal" href="structnnp_1_1Atom.html#structnnp_1_1Atom"><span class="std std-ref">Atom</span></a> indices for which extrapolation warnings occured. </p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N3nnp26SymmetryFunctionStatistics9Container7valueEWE">
+<span id="_CPPv3N3nnp26SymmetryFunctionStatistics9Container7valueEWE"></span><span id="_CPPv2N3nnp26SymmetryFunctionStatistics9Container7valueEWE"></span><span id="nnp::SymmetryFunctionStatistics::Container::valueEW__std::vector:double:"></span><span class="target" id="structnnp_1_1SymmetryFunctionStatistics_1_1Container_1a397d1a53f3f739a17adec83ce4a14f31"></span>std::vector&lt;double&gt; <code class="sig-name descname">valueEW</code><br /></dt>
+<dd><p>Out-of-bounds values causing extrapolation warnings. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structnnp_1_1Training_1_1UpdateCandidate.html" class="btn btn-neutral float-right" title="Struct Training::UpdateCandidate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="structnnp_1_1Structure.html" class="btn btn-neutral float-left" title="Struct Structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Andreas Singraber
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

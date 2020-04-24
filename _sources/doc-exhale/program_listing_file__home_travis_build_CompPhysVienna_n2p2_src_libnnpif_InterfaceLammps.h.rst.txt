@@ -1,0 +1,98 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h:
+
+Program Listing for File InterfaceLammps.h
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnpif/InterfaceLammps.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef INTERFACELAMMPS_H
+   #define INTERFACELAMMPS_H
+   
+   #include "Mode.h"
+   #include "Structure.h"
+   #include <cstddef> // std::size_t
+   
+   namespace nnp
+   {
+   
+   class InterfaceLammps : public Mode
+   {
+   public:
+       InterfaceLammps();
+   
+       void   initialize(char* const& directory,
+                         bool         showew,
+                         bool         resetew,
+                         int          showewsum,
+                         int          maxew,
+                         double       cflength,
+                         double       cfenergy,
+                         double       lammpsCutoff,
+                         int          lammpsNtypes,
+                         int          myRank);
+       void   setLocalAtoms(int              numAtomsLocal,
+                            int const* const atomTag,
+                            int const* const atomType);
+       void   addNeighbor(int    i,
+                          int    j,
+                          int    tag,
+                          int    type,
+                          double dx,
+                          double dy,
+                          double dz,
+                          double d2);
+       void   process();
+       double getEnergy() const;
+       double getAtomicEnergy(int index) const;
+       void   getForces(double* const* const& atomF) const;
+       bool   isInitialized() const;
+       double getMaxCutoffRadius() const;
+       long   getEWBufferSize() const;
+       void   fillEWBuffer(char* const& buf, int bs) const;
+       void   extractEWBuffer(char const* const& buf, int bs);
+       void   writeExtrapolationWarnings();
+       void   clearExtrapolationWarnings();
+   
+   protected:
+       int       myRank;
+       bool      initialized;
+       bool      showew;
+       bool      resetew;
+       int       showewsum;
+       int       maxew;
+       double    cflength;
+       double    cfenergy;
+       Structure structure;
+   };
+   
+   // Inlined function definitions //
+   
+   inline bool InterfaceLammps::isInitialized() const
+   {
+       return initialized;
+   }
+   
+   }
+   
+   #endif

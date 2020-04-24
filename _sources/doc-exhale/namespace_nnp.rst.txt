@@ -1,0 +1,145 @@
+
+.. _namespace_nnp:
+
+Namespace nnp
+=============
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structnnp_1_1Atom`
+
+- :ref:`exhale_struct_structnnp_1_1Atom_1_1Neighbor`
+
+- :ref:`exhale_struct_structnnp_1_1NeuralNetwork_1_1Layer`
+
+- :ref:`exhale_struct_structnnp_1_1NeuralNetwork_1_1Neuron`
+
+- :ref:`exhale_struct_structnnp_1_1Structure`
+
+- :ref:`exhale_struct_structnnp_1_1SymmetryFunctionStatistics_1_1Container`
+
+- :ref:`exhale_struct_structnnp_1_1Training_1_1UpdateCandidate`
+
+- :ref:`exhale_struct_structnnp_1_1Vec3D`
+
+- :ref:`exhale_class_classnnp_1_1CutoffFunction`
+
+- :ref:`exhale_class_classnnp_1_1Dataset`
+
+- :ref:`exhale_class_classnnp_1_1Element`
+
+- :ref:`exhale_class_classnnp_1_1ElementMap`
+
+- :ref:`exhale_class_classnnp_1_1GradientDescent`
+
+- :ref:`exhale_class_classnnp_1_1InterfaceLammps`
+
+- :ref:`exhale_class_classnnp_1_1KalmanFilter`
+
+- :ref:`exhale_class_classnnp_1_1Log`
+
+- :ref:`exhale_class_classnnp_1_1Mode`
+
+- :ref:`exhale_class_classnnp_1_1NeuralNetwork`
+
+- :ref:`exhale_class_classnnp_1_1Prediction`
+
+- :ref:`exhale_class_classnnp_1_1Settings`
+
+- :ref:`exhale_class_classnnp_1_1SetupAnalysis`
+
+- :ref:`exhale_class_classnnp_1_1Stopwatch`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunction`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionAngularNarrow`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionAngularWide`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionGroup`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionGroupAngularNarrow`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionGroupAngularWide`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionGroupRadial`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionGroupWeightedAngular`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionGroupWeightedRadial`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionRadial`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionStatistics`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionWeightedAngular`
+
+- :ref:`exhale_class_classnnp_1_1SymmetryFunctionWeightedRadial`
+
+- :ref:`exhale_class_classnnp_1_1Training`
+
+- :ref:`exhale_class_classnnp_1_1Updater`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacennp_1a922944f33e09f55769b9834251be1b0c`
+
+- :ref:`exhale_function_namespacennp_1a0ae30152be7ac9fbb4a595fd586eef7a`
+
+- :ref:`exhale_function_namespacennp_1aeed037cd4a793db2c1b490e6607c0866`
+
+- :ref:`exhale_function_namespacennp_1a9a01beaa989d3578f213a32be1283f76`
+
+- :ref:`exhale_function_namespacennp_1ac861b7fcd089a4cbaea63589dd8ac69e`
+
+- :ref:`exhale_function_namespacennp_1a9d1bbacf408dac7e040ce679791bc570`
+
+- :ref:`exhale_function_namespacennp_1a14c0fb8e3da51194b595b8a7a6470cd2`
+
+- :ref:`exhale_function_namespacennp_1a5d65048b293d0abbd6c77a3f0365ea6a`
+
+- :ref:`exhale_function_namespacennp_1aa351f31ce77706c4a47f54dd018fb11f`
+
+- :ref:`exhale_function_namespacennp_1a0fca5b1d14fc5cf58d0503812ace7542`
+
+- :ref:`exhale_function_namespacennp_1aa41946cc03a845d677b7ec47c11edf17`
+
+- :ref:`exhale_function_namespacennp_1aa9f1f4126ca847a2d5a060772f6d4cb6`
+
+- :ref:`exhale_function_namespacennp_1ae895f68792de93c081ef2d568ae3358e`
+
+- :ref:`exhale_function_namespacennp_1ac5a2a928d69bd2ddc2e3aaea872f7e3b`
+
+- :ref:`exhale_function_namespacennp_1a1589c883b03419579131181b3337f531`
+
+- :ref:`exhale_function_namespacennp_1ada65ef67cb7629b84a020f617a216273`
+
+- :ref:`exhale_function_namespacennp_1a5d24728171accd3d3ea6ce905607c0ac`
+
+- :ref:`exhale_function_namespacennp_1ac4dd8c6de17f9509eabaed0f143e95ea`
+
+- :ref:`exhale_function_namespacennp_1a355b6ae0b4e3495fa9461cb59e22fa76`
+
+- :ref:`exhale_function_namespacennp_1af6ccf9c445dcf9671d4dfb9486d0a56c`
+
+- :ref:`exhale_function_namespacennp_1a63742bb398a42070e489b7c465952126`
+
+- :ref:`exhale_function_namespacennp_1a398f0bcafb57e99ba1581c4b8f8a7f76`
+
+- :ref:`exhale_function_namespacennp_1abbc59184f0532e61f412f99d5f7a33a2`
+
+- :ref:`exhale_function_namespacennp_1a6a3c96fac1f80064cea00a2688e5287b`

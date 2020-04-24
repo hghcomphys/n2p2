@@ -1,0 +1,87 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h:
+
+Program Listing for File SymmetryFunctionStatistics.h
+=====================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionStatistics.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef SYMMETRYFUNCTIONSTATISTICS
+   #define SYMMETRYFUNCTIONSTATISTICS
+   
+   #include <cstddef> // std::size_t
+   #include <map>     // std::map
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   class SymmetryFunctionStatistics
+   {
+   public:
+       struct Container
+       {
+           std::size_t              count;
+           std::size_t              countEW;
+           double                   min;
+           double                   max;
+           double                   Gmin;
+           double                   Gmax;
+           double                   sum;
+           double                   sum2;
+           std::vector<std::size_t> indexStructureEW;
+           std::vector<std::size_t> indexAtomEW;
+           std::vector<double>      valueEW;
+   
+           Container();
+           void reset();
+           void resetStatistics();
+           void resetExtrapolationWarnings();
+       };
+   
+       bool                             collectStatistics;
+       bool                             collectExtrapolationWarnings;
+       bool                             writeExtrapolationWarnings;
+       bool                             stopOnExtrapolationWarnings;
+       std::map<std::size_t, Container> data;
+   
+       SymmetryFunctionStatistics();
+       void         addValue(std::size_t index, double value);
+       void         addExtrapolationWarning(std::size_t index,
+                                            double      value,
+                                            double      Gmin,
+                                            double      Gmax,
+                                            std::size_t indexStructure,
+                                            std::size_t indexAtom);
+       std::vector<
+       std::string> getExtrapolationWarningLines() const;
+       std::size_t  countExtrapolationWarnings() const;
+       void         resetStatistics();
+       void         resetExtrapolationWarnings();
+       void         clear();
+   };
+   
+   }
+   
+   #endif

@@ -1,0 +1,27 @@
+.. _exhale_class_classnnp_1_1Updater:
+
+Class Updater
+=============
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public nnp::GradientDescent`` (:ref:`exhale_class_classnnp_1_1GradientDescent`)
+- ``public nnp::KalmanFilter`` (:ref:`exhale_class_classnnp_1_1KalmanFilter`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::Updater
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

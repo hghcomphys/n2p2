@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1a355b6ae0b4e3495fa9461cb59e22fa76:
+
+Template Function nnp::safeFind
+===============================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::safeFind(std::map<K, V> const&, typename std::map<K, V>::key_type const&)

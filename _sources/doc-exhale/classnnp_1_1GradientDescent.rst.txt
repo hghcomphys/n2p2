@@ -1,0 +1,26 @@
+.. _exhale_class_classnnp_1_1GradientDescent:
+
+Class GradientDescent
+=====================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public nnp::Updater`` (:ref:`exhale_class_classnnp_1_1Updater`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::GradientDescent
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -1,0 +1,73 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h:
+
+Program Listing for File Settings.h
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Settings.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Settings.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef SETTINGS_H
+   #define SETTINGS_H
+   
+   #include <cstddef> // std::size_t
+   #include <fstream> // std::ofstream
+   #include <map>     // std::multimap
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   class Settings
+   {
+   public:
+       typedef std::multimap<std::string,
+                             std::pair<std::string, std::size_t> > KeyMap;
+       typedef std::pair<KeyMap::const_iterator,
+                         KeyMap::const_iterator>                   KeyRange;
+   
+       std::string              operator[](std::string const& keyword) const;
+       void                     loadFile(std::string const& fileName);
+       bool                     keywordExists(std::string const& keyword) const;
+       std::string              getValue(std::string const& keyword) const;
+       KeyRange                 getValues(std::string const& keyword) const;
+       std::vector<std::string> info() const;
+       std::vector<std::string> getSettingsLines() const;
+       void                     writeSettingsFile(
+                                                std::ofstream* const& file) const;
+   
+   private:
+       std::vector<std::string>                        lines;
+       std::vector<std::string>                        log;
+       KeyMap                                          contents;
+       static std::map<std::string, std::string> const knownKeywords;
+       std::string                                     fileName;
+   
+       void        readFile();
+       void        parseLines();
+       std::size_t sanityCheck();
+   };
+   
+   }
+   
+   #endif

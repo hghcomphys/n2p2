@@ -1,0 +1,13 @@
+.. _exhale_function_namespacennp_1aa9f1f4126ca847a2d5a060772f6d4cb6:
+
+Function nnp::operator-(Vec3D)
+==============================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Vec3D.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nnp::operator-(Vec3D)

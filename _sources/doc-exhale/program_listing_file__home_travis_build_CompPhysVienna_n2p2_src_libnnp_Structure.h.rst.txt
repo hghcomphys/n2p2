@@ -1,0 +1,123 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h:
+
+Program Listing for File Structure.h
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Structure.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef STRUCTURE_H
+   #define STRUCTURE_H
+   
+   #include "Atom.h"
+   #include "ElementMap.h"
+   #include "Vec3D.h"
+   #include <cstddef> // std::size_t
+   #include <fstream> // std::ofstream
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   struct Structure
+   {
+       enum SampleType
+       {
+           ST_UNKNOWN,
+           ST_TRAINING,
+           ST_VALIDATION,
+           ST_TEST
+       };
+   
+       ElementMap               elementMap;
+       bool                     isPeriodic;
+       bool                     isTriclinic;
+       bool                     hasNeighborList;
+       bool                     hasSymmetryFunctions;
+       bool                     hasSymmetryFunctionDerivatives;
+       std::size_t              index;
+       std::size_t              numAtoms;
+       std::size_t              numElements;
+       std::size_t              numElementsPresent;
+       int                      pbc[3];
+       double                   energy;
+       double                   energyRef;
+       double                   chargeRef;
+       double                   volume;
+       SampleType               sampleType;
+       std::string              comment;
+       Vec3D                    box[3];
+       Vec3D                    invbox[3];
+       std::vector<std::size_t> numAtomsPerElement;
+       std::vector<Atom>        atoms;
+   
+       Structure();
+       void                     setElementMap(ElementMap const& elementMap);
+       void                     addAtom(Atom const&        atom,
+                                        std::string const& element);
+       void                     readFromFile(std::string const fileName
+                                                               = "input.data");
+       void                     readFromFile(std::ifstream& file);
+       void                     readFromLines(std::vector<
+                                              std::string> const& lines);
+       void                     calculateNeighborList(double cutoffRadius);
+       void                     calculatePbcCopies(double cutoffRadius);
+       void                     calculateInverseBox();
+       void                     calculateVolume();
+       void                     remap(Atom& atom);
+       void                     toNormalizedUnits(double meanEnergy,
+                                                  double convEnergy,
+                                                  double convLength);
+       void                     toPhysicalUnits(double meanEnergy,
+                                                double convEnergy,
+                                                double convLength);
+       std::size_t              getMaxNumNeighbors() const;
+       void                     freeAtoms(bool all);
+       void                     reset();
+       void                     clearNeighborList();
+       void                     updateRmseEnergy(double&      rmse,
+                                                 std::size_t& count) const;
+       void                     updateRmseForces(double&      rmse,
+                                                 std::size_t& count) const;
+       std::string              getEnergyLine() const;
+       std::vector<std::string> getForcesLines() const;
+       void                     writeToFile(
+                                        std::string const fileName ="output.data",
+                                        bool const        ref = true,
+                                        bool const        append = false) const;
+       void                     writeToFile(
+                                          std::ofstream* const& file,
+                                          bool const            ref = true) const;
+       void                     writeToFileXyz(std::ofstream* const& file) const;
+       void                     writeToFilePoscar(
+                                                std::ofstream* const& file) const;
+       void                     writeToFilePoscar(
+                                            std::ofstream* const& file,
+                                            std::string const     elements) const;
+       std::vector<std::string> info() const;
+   };
+   
+   }
+   
+   #endif

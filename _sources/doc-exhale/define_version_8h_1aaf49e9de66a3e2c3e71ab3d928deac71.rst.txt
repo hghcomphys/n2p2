@@ -1,0 +1,13 @@
+.. _exhale_define_version_8h_1aaf49e9de66a3e2c3e71ab3d928deac71:
+
+Define NNP_VERSION
+==================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_version.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: NNP_VERSION

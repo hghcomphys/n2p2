@@ -1,0 +1,10 @@
+<map id="nnp::Prediction::predict" name="nnp::Prediction::predict">
+<area shape="rect" id="node2" href="$a00832.html#a17ba3ecbce972ff28d7a17bdade38674" title="Add atomic energy offsets to reference energy. " alt="" coords="235,5,440,32"/>
+<area shape="rect" id="node3" href="$a00832.html#a93dc4a306a3caf233268dad71efd565f" title="Calculate atomic neural networks for all atoms in given structure. " alt="" coords="236,57,439,98"/>
+<area shape="rect" id="node4" href="$a00832.html#a88fb8800851f3d440fcf393cbc073308" title="Calculate potential energy for a given structure. " alt="" coords="237,123,438,149"/>
+<area shape="rect" id="node5" href="$a00832.html#ae2fddd6f29bb63ef67b9619544d81ab1" title="Calculate forces for all atoms in given structure. " alt="" coords="238,173,437,200"/>
+<area shape="rect" id="node6" href="$a00864.html#ade6c70cf70dbbd3db3aa59497ca09f9c" title="Calculate neighbor list for all atoms. " alt="" coords="247,225,427,266"/>
+<area shape="rect" id="node7" href="$a00832.html#a8aec6fb4708b93b93a9cfa0e8045f955" title="Calculate all symmetry function groups for all atoms in given structure. " alt="" coords="225,290,449,331"/>
+<area shape="rect" id="node8" href="$a00832.html#add11e3c30eb86aba38d8239d1e5d8736" title="Calculate all symmetry functions for all atoms in given structure. " alt="" coords="225,355,449,397"/>
+<area shape="rect" id="node9" href="$a00864.html#a041778a6c0a2f6d436852e2325c65d20" title="Switch to physical units, shift energy and change energy and length unit. " alt="" coords="243,421,431,462"/>
+</map>

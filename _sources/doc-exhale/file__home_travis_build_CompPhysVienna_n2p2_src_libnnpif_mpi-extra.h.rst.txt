@@ -1,0 +1,54 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h:
+
+File mpi-extra.h
+================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnpif>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnpif``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnpif/mpi-extra.h``)
+--------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_mpi-extra.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``climits``
+
+- ``cstdint``
+
+- ``mpi.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp`
+
+
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_libnnpif_2mpi-extra_8h_1aaae430420e25984e327a89b068e1582b`
+

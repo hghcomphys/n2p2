@@ -1,0 +1,26 @@
+.. _dir__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain:
+
+
+Directory libnnptrain
+=====================
+
+
+*Directory path:* ``/home/travis/build/CompPhysVienna/n2p2/src/libnnptrain``
+
+
+Files
+-----
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.cpp`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Dataset.h`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.cpp`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_GradientDescent.h`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.cpp`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_KalmanFilter.h`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_mpi-extra.h`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.cpp`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Training.h`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.cpp`
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnptrain_Updater.h`
+
+

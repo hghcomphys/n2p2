@@ -1,0 +1,28 @@
+.. _exhale_class_classnnp_1_1NeuralNetwork:
+
+Class NeuralNetwork
+===================
+
+- Defined in :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_NeuralNetwork.h`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structnnp_1_1NeuralNetwork_1_1Layer`
+- :ref:`exhale_struct_structnnp_1_1NeuralNetwork_1_1Neuron`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nnp::NeuralNetwork
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

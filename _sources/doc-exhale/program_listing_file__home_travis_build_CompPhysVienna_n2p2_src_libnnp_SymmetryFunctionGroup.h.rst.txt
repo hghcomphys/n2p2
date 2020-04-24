@@ -1,0 +1,120 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h:
+
+Program Listing for File SymmetryFunctionGroup.h
+================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/SymmetryFunctionGroup.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef SYMMETRYFUNCTIONGROUP_H
+   #define SYMMETRYFUNCTIONGROUP_H
+   
+   #include "CutoffFunction.h"
+   #include "ElementMap.h"
+   #include <cstddef> // std::size_t
+   #include <set>     // std::set
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   struct Atom;
+   class SymmetryFunction;
+   class SymmetryFunctionStatistics;
+   
+   class SymmetryFunctionGroup
+   {
+   public:
+       virtual ~SymmetryFunctionGroup() {};
+       virtual bool operator==(SymmetryFunctionGroup const& rhs) const = 0;
+       virtual bool operator!=(SymmetryFunctionGroup const& rhs) const = 0;
+       virtual bool operator<(SymmetryFunctionGroup const& rhs) const = 0;
+       virtual bool operator>(SymmetryFunctionGroup const& rhs) const = 0;
+       virtual bool operator<=(SymmetryFunctionGroup const& rhs) const = 0;
+       virtual bool operator>=(SymmetryFunctionGroup const& rhs) const = 0;
+       virtual bool addMember(SymmetryFunction const* const symmetryFunction) = 0;
+       virtual void sortMembers() = 0;
+       virtual void setScalingFactors() = 0;
+       virtual void calculate(Atom& atom, bool const derivatives) const = 0;
+       virtual std::vector<std::string>
+                    parameterLines() const = 0;
+       void         setIndex(std::size_t index);
+       std::size_t  getIndex() const;
+       std::size_t  getType() const;
+       std::size_t  getEc() const;
+   
+   protected:
+       typedef std::map<std::string,
+                        std::pair<std::string, std::string> > PrintFormat;
+       typedef std::vector<std::string>                       PrintOrder;
+       std::size_t                            type;
+       ElementMap                             elementMap;
+       std::size_t                            index;
+       std::size_t                            ec;
+       double                                 rc;
+       double                                 cutoffAlpha;
+       double                                 convLength;
+       CutoffFunction                         fc;
+       CutoffFunction::CutoffType             cutoffType;
+       std::vector<size_t>                    memberIndex;
+       std::vector<double>                    scalingFactors;
+       std::set<std::string>                  parametersCommon;
+       std::set<std::string>                  parametersMember;
+       std::vector<std::vector<std::size_t> > memberIndexPerElement;
+       static PrintFormat const               printFormat;
+       static PrintOrder const                printOrder;
+   
+       SymmetryFunctionGroup(std::size_t type, ElementMap const& elementMap);
+       static PrintFormat const initializePrintFormat();
+       static PrintOrder const  initializePrintOrder();
+       std::string              getPrintFormatCommon() const;
+       std::string              getPrintFormatMember() const;
+   };
+   
+   // Inlined function definitions //
+   
+   inline void SymmetryFunctionGroup::setIndex(size_t index)
+   {
+       this->index = index;
+       return;
+   }
+   
+   inline std::size_t SymmetryFunctionGroup::getIndex() const
+   {
+       return index;
+   }
+   
+   inline std::size_t SymmetryFunctionGroup::getType() const
+   {
+       return type;
+   }
+   
+   inline std::size_t SymmetryFunctionGroup::getEc() const
+   {
+       return ec;
+   }
+   
+   }
+   
+   #endif

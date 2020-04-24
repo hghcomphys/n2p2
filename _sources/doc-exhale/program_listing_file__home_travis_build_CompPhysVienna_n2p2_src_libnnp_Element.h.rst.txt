@@ -1,0 +1,171 @@
+
+.. _program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h:
+
+Program Listing for File Element.h
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Element.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // n2p2 - A neural network potential package
+   // Copyright (C) 2018 Andreas Singraber (University of Vienna)
+   //
+   // This program is free software: you can redistribute it and/or modify
+   // it under the terms of the GNU General Public License as published by
+   // the Free Software Foundation, either version 3 of the License, or
+   // (at your option) any later version.
+   //
+   // This program is distributed in the hope that it will be useful,
+   // but WITHOUT ANY WARRANTY; without even the implied warranty of
+   // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   // GNU General Public License for more details.
+   //
+   // You should have received a copy of the GNU General Public License
+   // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   
+   #ifndef ELEMENT_H
+   #define ELEMENT_H
+   
+   #include "CutoffFunction.h"
+   #include "ElementMap.h"
+   #include "SymmetryFunction.h"
+   #include "SymmetryFunctionStatistics.h"
+   #include <cstddef> // std::size_t
+   #include <string>  // std::string
+   #include <vector>  // std::vector
+   
+   namespace nnp
+   {
+   
+   struct Atom;
+   class NeuralNetwork;
+   class SymmetryFunctionGroup;
+   
+   class Element
+   {
+   public:
+       Element(std::size_t const index, ElementMap const& elementMap);
+       ~Element();
+       void                     setAtomicEnergyOffset(double atomicEnergyOffset);
+       std::size_t              getIndex() const;
+       std::size_t              getAtomicNumber() const;
+       double                   getAtomicEnergyOffset() const;
+       std::string              getSymbol() const;
+       void                     addSymmetryFunction(
+                                                   std::string const& parameters,
+                                                   std::size_t const& lineNumber);
+       void                     changeLengthUnitSymmetryFunctions(
+                                                               double convLength);
+       void                     sortSymmetryFunctions();
+       std::vector<std::string> infoSymmetryFunctionParameters() const;
+       std::vector<std::string> infoSymmetryFunction(std::size_t index) const;
+       std::vector<std::string> infoSymmetryFunctionScaling() const;
+       void                     setupSymmetryFunctionGroups();
+       void                     setupSymmetryFunctionMemory();
+       std::vector<std::string> infoSymmetryFunctionGroups() const;
+       void                     setCutoffFunction(
+                                    CutoffFunction::CutoffType const cutoffType,
+                                    double const                     cutoffAlpha);
+       void                     setScalingNone() const;
+       void                     setScaling(
+                                   SymmetryFunction::ScalingType   scalingType,
+                                   std::vector<std::string> const& statisticsLine,
+                                   double                          minS,
+                                   double                          maxS) const;
+       std::size_t              numSymmetryFunctions() const;
+       std::size_t              getMinNeighbors() const;
+       double                   getMinCutoffRadius() const;
+       double                   getMaxCutoffRadius() const;
+       std::vector<
+       std::size_t> const&      getSymmetryFunctionNumTable() const;
+       std::vector<std::vector<
+       std::size_t>> const&     getSymmetryFunctionTable() const;
+       void                     calculateSymmetryFunctions(
+                                                    Atom&      atom,
+                                                    bool const derivatives) const;
+       void                     calculateSymmetryFunctionGroups(
+                                                   Atom&       atom,
+                                                   bool const  derivatives) const;
+       std::size_t              updateSymmetryFunctionStatistics(
+                                                                Atom const& atom);
+       SymmetryFunction const&  getSymmetryFunction(std::size_t index) const;
+   
+       NeuralNetwork*             neuralNetwork;
+       SymmetryFunctionStatistics statistics;
+   
+   private:
+       ElementMap                            elementMap;
+       std::size_t                           index;
+       std::size_t                           atomicNumber;
+       double                                atomicEnergyOffset;
+       std::string                           symbol;
+       std::vector<std::size_t>              symmetryFunctionNumTable;
+       std::vector<std::vector<std::size_t>> symmetryFunctionTable;
+       std::vector<SymmetryFunction*>        symmetryFunctions;
+       std::vector<SymmetryFunctionGroup*>   symmetryFunctionGroups;
+   };
+   
+   // Inlined function definitions //
+   
+   inline void Element::setAtomicEnergyOffset(double atomicEnergyOffset)
+   {
+       this->atomicEnergyOffset = atomicEnergyOffset;
+   
+       return;
+   }
+   
+   inline size_t Element::getIndex() const
+   {
+       return index;
+   }
+   
+   inline size_t Element::getAtomicNumber() const
+   {
+       return atomicNumber;
+   }
+   
+   inline double Element::getAtomicEnergyOffset() const
+   {
+       return atomicEnergyOffset;
+   }
+   
+   inline std::string Element::getSymbol() const
+   {
+       return symbol;
+   }
+   
+   inline std::vector<std::size_t> const&
+   Element::getSymmetryFunctionNumTable() const
+   {
+       return symmetryFunctionNumTable;
+   }
+   
+   inline std::vector<std::vector<std::size_t>> const&
+   Element::getSymmetryFunctionTable() const
+   {
+       return symmetryFunctionTable;
+   }
+   
+   inline
+   std::vector<std::string> Element::infoSymmetryFunction(std::size_t index) const
+   {
+       return symmetryFunctions.at(index)->parameterInfo();
+   }
+   
+   inline size_t Element::numSymmetryFunctions() const
+   {
+       return symmetryFunctions.size();
+   }
+   
+   inline SymmetryFunction const& Element::getSymmetryFunction(
+                                                          std::size_t index) const
+   {
+       return *(symmetryFunctions.at(index));
+   }
+   
+   }
+   
+   #endif

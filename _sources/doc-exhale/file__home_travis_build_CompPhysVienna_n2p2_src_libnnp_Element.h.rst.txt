@@ -1,0 +1,73 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h:
+
+File Element.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnp>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/Element.h``)
+----------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CutoffFunction.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_CutoffFunction.h`)
+
+- ``ElementMap.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h`)
+
+- ``SymmetryFunction.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h`)
+
+- ``SymmetryFunctionStatistics.h`` (:ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionStatistics.h`)
+
+- ``cstddef``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnpif_InterfaceLammps.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_nnp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classnnp_1_1Element`
+

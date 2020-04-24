@@ -1,0 +1,83 @@
+
+.. _file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h:
+
+File ElementMap.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_travis_build_CompPhysVienna_n2p2_src_libnnp>` (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/travis/build/CompPhysVienna/n2p2/src/libnnp/ElementMap.h``)
+-------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstddef``
+
+- ``map``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Element.h`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunction.h`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionGroup.h`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_ElementMap.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Mode.h`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_Structure.h`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularNarrow.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionAngularWide.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionRadial.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedAngular.cpp`
+
+- :ref:`file__home_travis_build_CompPhysVienna_n2p2_src_libnnp_SymmetryFunctionWeightedRadial.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_nnp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classnnp_1_1ElementMap`
+
