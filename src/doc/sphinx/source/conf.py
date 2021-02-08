@@ -32,67 +32,67 @@
 # ones.
 extensions = [
     'breathe',
-    'exhale',
+#    'exhale',
     'sphinx.ext.mathjax'
 ]
 
 # Setup the breathe extension
 breathe_projects = {
-    "My Project": "./doxyoutput/xml"
+    "n2p2": "../../../../doc/doxygen/xml"
 }
 
-breathe_default_project = "My Project"
+breathe_default_project = "n2p2"
 
-# From https://exhale.readthedocs.io/en/latest/usage.html#customizing-breathe-output
-from exhale import utils
-def specificationsForKind(kind):
-    '''
-    For a given input ``kind``, return the list of reStructuredText specifications
-    for the associated Breathe directive.
-    '''
-    # Change the defaults for .. doxygenclass:: and .. doxygenstruct::
-    if kind == "class" or kind == "struct":
-        return [
-          ":members:",
-          ":protected-members:",
-          ":private-members:",
-          ":undoc-members:"
-        ]
-    # Change the defaults for .. doxygenenum::
-    elif kind == "enum":
-        return [":no-link:"]
-    # An empty list signals to Exhale to use the defaults
-    else:
-        return []
+## From https://exhale.readthedocs.io/en/latest/usage.html#customizing-breathe-output
+#from exhale import utils
+#def specificationsForKind(kind):
+#    '''
+#    For a given input ``kind``, return the list of reStructuredText specifications
+#    for the associated Breathe directive.
+#    '''
+#    # Change the defaults for .. doxygenclass:: and .. doxygenstruct::
+#    if kind == "class" or kind == "struct":
+#        return [
+#          ":members:",
+#          ":protected-members:",
+#          ":private-members:",
+#          ":undoc-members:"
+#        ]
+#    # Change the defaults for .. doxygenenum::
+#    elif kind == "enum":
+#        return [":no-link:"]
+#    # An empty list signals to Exhale to use the defaults
+#    else:
+#        return []
 
-# Setup the exhale extension
-exhale_args = {
-    # These arguments are required
-    "containmentFolder":     "./doc-exhale",
-    "rootFileName":          "root.rst",
-    "rootFileTitle":         "n2p2 code documentation",
-    "doxygenStripFromPath":  "..",
-    # Suggested optional arguments
-    "createTreeView":        True,
-    # TIP: if using the sphinx-bootstrap-theme, you need
-    # "treeViewIsBootstrap": True,
-    "exhaleExecutesDoxygen": True,
-    "exhaleDoxygenStdin":    "INPUT = ../../../libnnp\n"
-                             "INPUT += ../../../libnnpif\n" 
-                             "INPUT += ../../../libnnptrain\n" 
-                             "XML_PROGRAMLISTING     = YES\n"
-                             "EXTRACT_ALL            = YES\n"
-                             "EXTRACT_PRIVATE        = YES\n"
-                             "EXTRACT_STATIC         = YES\n"
-                             "EXTRACT_LOCAL_CLASSES  = YES\n",
-    "customSpecificationsMapping": utils.makeCustomSpecificationsMapping(specificationsForKind)
+## Setup the exhale extension
+#exhale_args = {
+#    # These arguments are required
+#    "containmentFolder":     "./doc-exhale",
+#    "rootFileName":          "root.rst",
+#    "rootFileTitle":         "n2p2 code documentation",
+#    "doxygenStripFromPath":  "..",
+#    # Suggested optional arguments
+#    "createTreeView":        True,
+#    # TIP: if using the sphinx-bootstrap-theme, you need
+#    # "treeViewIsBootstrap": True,
+#    "exhaleExecutesDoxygen": True,
+#    "exhaleDoxygenStdin":    "INPUT = ../../../libnnp\n"
+#                             "INPUT += ../../../libnnpif\n" 
+#                             "INPUT += ../../../libnnptrain\n" 
+#                             "XML_PROGRAMLISTING     = YES\n"
+#                             "EXTRACT_ALL            = YES\n"
+#                             "EXTRACT_PRIVATE        = YES\n"
+#                             "EXTRACT_STATIC         = YES\n"
+#                             "EXTRACT_LOCAL_CLASSES  = YES\n",
+#    "customSpecificationsMapping": utils.makeCustomSpecificationsMapping(specificationsForKind)
+#
+#}
 
-}
-
-# Tell sphinx what the primary language being documented is.
+## Tell sphinx what the primary language being documented is.
 primary_domain = 'cpp'
 
-# Tell sphinx what the pygments highlight language should be.
+## Tell sphinx what the pygments highlight language should be.
 highlight_language = 'cpp'
 
 # Add any paths that contain templates here, relative to this directory.
@@ -109,7 +109,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'n2p2 - A neural network potential package'
-copyright = u'2019, Andreas Singraber'
+copyright = u'2020, Andreas Singraber'
 author = u'Andreas Singraber'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -117,9 +117,14 @@ author = u'Andreas Singraber'
 # built documents.
 #
 # The short X.Y version.
-version = u'1.0.0'
+with open('../../../libnnp/version.h') as f:
+    for line in f:
+        if 'NNP_GIT_VERSION' in line:
+            version = line.split()[2]
+#version = u'1.0.0'
 # The full version, including alpha/beta/rc tags.
-release = u'1.0.0'
+#release = u'1.0.0'
+release = version
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
